@@ -1,0 +1,21 @@
+<section id="experience" class="row-fluid">
+  <aside class="span4">
+    <h2>Experience</h2>
+    <h5>Where I worked</h5>
+    <input class="search-query" ng-model="query" placeholder="search in my experience">
+  </aside>
+  <div class="span8">
+    <article class="employment" ng-repeat="employment in employments | filter:query | orderBy: '-start' | limitTo: 5">
+      <header>
+        <div class="span12">  
+          {{employment.start | myDate}} - {{employment.end | myDate}}
+          <h2 class="span4">{{employment.client.name}}</h2>
+          <a class="span4" href="#/experience/{{employment.start}}" class="thumb">
+          <img class="span4" ng-src="{{employment.client.imageUrl}}">
+          </a>
+        </div>
+        <h3 class="span12">{{employment.position}}</h3>
+      </header>
+    </article>
+  </div>
+</section>

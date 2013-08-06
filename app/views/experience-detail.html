@@ -1,0 +1,13 @@
+<span>{{experience.start | myDate}} - {{experience.end | myDate}}</span>
+ 
+<h1>{{experience.client.name}}</h1>
+<h2>{{experience.project}}</h2>
+<h3>{{experience.position}}</h3>
+ 
+<ul>
+  <li ng-repeat="task in experience.tasks">
+    <h4>{{task.description}}</h5>
+    <a ng-click="showTaskDetails(task)">Details</a>
+    <span>{{task.tech}}</span>
+  </li>
+</ul>

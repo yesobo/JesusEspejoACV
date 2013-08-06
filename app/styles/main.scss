@@ -1,0 +1,213 @@
+@import "bootstrap-sass/lib/bootstrap";
+@import "bootstrap-sass/lib/responsive";
+
+/* Put your CSS here */
+html, body {
+  margin: 20px;
+}
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 300px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 60px;
+}
+
+.hero-unit h1 {
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 830px) {
+    .nav-collapse830.collapse {
+        overflow: hidden;
+        height: 0;
+    }
+
+    .nav-collapse830 .nav {
+        float: none;
+        margin: 0 0 10px;
+    }
+
+    .nav-collapse830 {
+        clear: both;
+    }
+
+    .nav-collapse830 .nav > li {
+        float: none;
+    }
+
+    .nav-collapse830 .nav > li > a, .nav-collapse .dropdown-menu a {
+        padding: 9px 15px;
+        font-weight: bold;
+        color: #777777;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+    .navbar-inverse .nav-collapse830 .nav > li > a, .navbar-inverse .nav-collapse830 .dropdown-menu a {
+        color: #999999;
+    }
+}
+
+@media (min-width: 830px) {
+    .nav-collapse830.collapse {
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .navbar .btn-navbar {
+        display: none;
+    }
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    .nav-collapse480.collapse {
+        overflow: visible !important;
+        height: auto !important;
+    }
+
+    .nav-collapse480 .nav {
+        float: none;
+        margin: 0 0 10px;
+    }
+
+    .nav-collapse480 {
+        clear: both;
+    }
+
+    .nav-collapse480 .nav > li {
+        float: none;
+    }
+
+    .nav-collapse480 .nav > li > a, .nav-collapse .dropdown-menu a {
+        padding: 9px 15px;
+        font-weight: bold;
+        color: #777777;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+    .navbar-inverse .nav-collapse480 .nav > li > a, .navbar-inverse .nav-collapse480 .dropdown-menu a {
+        color: #999999;
+    }
+
+    .secondLastName {
+        display: none;
+    }
+
+}
+
+@media (min-width: 480px) {
+    .nav-collapse480.collapse {
+        height: auto !important;
+        overflow: visible !important;
+    }
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+@media (min-width: 321px) {
+    .nav-collapse320.collapse {
+        height: auto !important;
+        overflow: visible !important;
+    }
+}
+
+@media (max-width: 321px) {
+    .nav-collapse320.collapse {
+        overflow: hidden;
+        height: 0;
+    }
+
+    .nav-collapse320 .nav {
+        float: none;
+        margin: 0 0 10px;
+    }
+
+    .nav-collapse320 {
+        clear: both;
+    }
+
+    .nav-collapse320 .nav > li {
+        float: none;
+    }
+
+    .nav-collapse320 .nav > li > a, .nav-collapse .dropdown-menu a {
+        padding: 9px 15px;
+        font-weight: bold;
+        color: #777777;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+    .navbar-inverse .nav-collapse320 .nav > li > a, .navbar-inverse .nav-collapse320 .dropdown-menu a {
+        color: #999999;
+    }
+
+    .navbar .nav {
+        margin: 0px;
+    }
+
+    .navbar .brand {
+        padding-right: 0px;
+        padding-left: 5px;
+    }
+}
+
+.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
+    color: white;
+    background-color: #111111;
+}
+
+.navitem-wrapper {
+    max-height: 40px;    
+    overflow: visible;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.lang_wrapper ul {
+    margin: 0px;
+}
+
+.navbar img {
+    max-height: 100%;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.navbar-inverse .nav > li.active > a, .navbar-inverse  .dropdown-menu a {
+    color: white;
+}
+
+.navbar .brand {
+    color: white;
+}
+
+#ul-lang {
+    margin: 0px;
+}

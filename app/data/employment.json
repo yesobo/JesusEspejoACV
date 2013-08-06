@@ -1,0 +1,355 @@
+[
+    {
+        "_id": {
+            "$oid": "51bc524de840a529c200009a"
+        },
+        "position": "Desarrollador front y back end",
+        "client": {
+            "name": "Metro de Madrid S.A.",
+            "imageUrl": "img/client/metro_madrid_logo.png"
+        },
+        "employer": "Bull-SICONET",
+        "full-time": "true",
+        "tasks": [
+            {
+                "description": "Desarrollo y Diseño de interfaces web",
+                "tech": "JSF 2.0, RichFaces, Javascritp, ChartDirector, CSS"
+            },
+            {
+                "description": "Desarrollo J2EE",
+                "tech": "EJB 3.0, JPA 1.0, Maven, Oracle SQL"
+            },
+            {
+                "description": "Diseño y desarrollo de informes",
+                "tech": "JasperResport, iReport"
+            },
+            {
+                "description": "Desarrollo de pruebas unitarias",
+                "tech": "JUnit"
+            }
+        ],
+        "tools": [
+            {
+                "name": "Sonar"
+            },
+            {
+                "name": "Hudson"
+            },
+            {
+                "name": "Gimp"
+            },
+            {
+                "name": "SVN"
+            }
+        ],
+        "start": "2010-04-01 00:00:00 UTC",
+        "end": "2011-04-01 00:00:00 UTC",
+        "project": "Migración Reservas Hoteleras Tourmundial",
+        "team": [
+            {
+                "position": "jefe de proyecto"
+            },
+            {
+                "position": "Analista"
+            },
+            {
+                "position": "Arquitecto"
+            },
+            {
+                "position": "me"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "51bc3f3e494f44cf7b00003d"
+        },
+        "position": "Analista/Desarrollador front y back-end",
+        "client": {
+            "name": "IECISA/ Viajes El Corte Inglés",
+            "imageUrl": "img/client/viajes_ECI_logo.png"
+        },
+        "employer": "AT Sistemas",
+        "full-time": "true",
+        "tasks": [
+            {
+                "description": "Desarrollo de interfaces web",
+                "tech": "JQuery, Javascript, HTML5, CSS3, Modernizr, polyfills"
+            },
+            {
+                "description": "Desarrollo J2EE",
+                "tech": "Java 1.6, JSP, Java Servlets, XML, JAX, WS, CICS, JUnit"
+            },
+            {
+                "description": "Análisis a partir de código fuente y diseño técnico de aplicación de reservas hoteleras",
+                "tech": "VB6, ASP, CICS, WS SOA, JSF, JEE, XML"
+            }
+        ],
+        "tools": [
+            {
+                "name": "Git"
+            },
+            {
+                "name": "ClearCase"
+            }
+        ],
+        "start": "2011-04-01 00:00:00 UTC",
+        "end": "2012-06-01 00:00:00 UTC",
+        "project": "Migración Reservas Hoteleras Tourmundial",
+        "team": [
+            {
+                "position": "jefe de proyecto"
+            },
+            {
+                "position": "me"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "51bb66a98c523b196aca5340"
+        },
+        "position": "Desarrollador front y back-end",
+        "client": {
+            "name": "Bankia",
+            "imageUrl": "img/client/bankia_logo.png"
+        },
+        "employer": "AT Sistemas",
+        "full-time": "true",
+        "tasks": [
+            {
+                "description": "Desarrollo de interfaces web",
+                "tech": "JQuery, Javascript, JSP, HTML5, CSS3, Modernizr, polyfills"
+            },
+            {
+                "description": "Desarrollo J2EE",
+                "tech": "Java 1.4, IBM WebSphere Business Component Composer V4.2, Oracle SQL,  HOST"
+            }
+        ],
+        "tools": [
+            {
+                "name": "JIRA"
+            },
+            {
+                "name": "SVN"
+            }
+        ],
+        "start": "2012-10-01 00:00:00 UTC",
+        "end": "2013-07-16 07:27:05 UTC",
+        "project": "Mantenimiento OIE (Oficina Internet Empresas)",
+        "team": [
+            {
+                "position": "Jefe de Proyecto"
+            },
+            {
+                "position": "Administrador Base de Datos"
+            },
+            {
+                "position": "Arquitecto"
+            },
+            {
+                "position": "Desarrollador front y back end",
+                "number": "2"
+            },
+            {
+                "position": "me"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "51c0a366a28303b9ad86ac14"
+        },
+        "position": "Desarrollador C++",
+        "client": {
+            "name": "Seres",
+            "imageUrl": "img/client/seres_logo.jpg"
+        },
+        "employer": "Bull-SICONET",
+        "full-time": "true",
+        "tasks": [
+            {
+                "description": "Desarrollo y diseño de aplicaciones con Borland C++ Builder y Paradox (BBDD)",
+                "tech": "C++, C++ Builder, Paradox"
+            }
+        ],
+        "tools": [
+            {
+                "name": "Borland C++ Builder"
+            }
+        ],
+        "start": "2010-03-01 00:00:00 UTC",
+        "end": "2010-04-01 00:00:00 UTC",
+        "project": "Prototipo de aplicativo de generación de códigos y ficheros de embarque de mercancías marítimas para Liverpool (México).",
+        "team": [
+            {
+                "position": "jefe de proyecto/Analista"
+            },
+            {
+                "position": "me"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "51c1597b22a466afa4000341"
+        },
+        "position": "Analisis y Desarrollo VBA",
+        "client": {
+            "name": "Liberty Seguros",
+            "imageUrl": "img/client/liberty_seguros_logo.png"
+        },
+        "employer": "Bull-SICONET",
+        "full-time": "true",
+        "tasks": [
+            {
+                "description": "Toma y Análisis de requisitos funcionales y técnicos de la aplicación.",
+                "tech": "MS Office"
+            },
+            {
+                "description": "Desarrollo VBA Access y Excel: gráficos, formularios, Automatización y conexión a SQL-Server",
+                "tech": "VBA, Access, Excel, SQL-Server 2010"
+            }
+        ],
+        "tools": [
+            {
+                "name": "MS Office"
+            },
+            {
+                "name": "Visual Studio"
+            }
+        ],
+        "start": "2010-01-01 00:00:00 UTC",
+        "end": "2010-03-01 00:00:00 UTC",
+        "project": "Cuadro de Mandos para Single Sign-On de intranet de Liberty Seguros",
+        "team": [
+            {
+                "position": "jefe de proyecto/Analista"
+            },
+            {
+                "position": "me"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "51c15cce8644157f2c0002e7"
+        },
+        "position": "Desarrollador J2EE",
+        "client": {
+            "name": "Sanitas",
+            "imageUrl": "img/client/sanitas_logo.png"
+        },
+        "employer": "Bull-SICONET",
+        "full-time": "true",
+        "tasks": [
+            {
+                "description": "Desarrollo y Diseño de interfaces web",
+                "tech": "JSF 1.2, IceFaces, Javascript, CSS, Facelets"
+            },
+            {
+                "description": "Desarrollo J2EE",
+                "tech": "EJB 3.0, Maven, Oracle SQL, Weblogic 9.2"
+            },
+            {
+                "description": "Desarrollo de pruebas unitarias",
+                "tech": "JUnit"
+            }
+        ],
+        "tools": [
+            {
+                "name": "Maven"
+            },
+            {
+                "name": "SVN"
+            },
+            {
+                "name": "JDeveloper"
+            },
+            {
+                "name": "Toad"
+            }
+        ],
+        "start": "2009-09-01 00:00:00 UTC",
+        "end": "2010-01-01 00:00:00 UTC",
+        "project": "Contratación Sanitas",
+        "team": [
+            {
+                "position": "jefe de proyecto"
+            },
+            {
+                "position": "Analista"
+            },
+            {
+                "position": "Administrador DB"
+            },
+            {
+                "position": "Desarrollador",
+                "number": "5"
+            },
+            {
+                "position": "me"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "51c15edec5686a7f800000d0"
+        },
+        "position": "Desarrollador J2EE",
+        "client": {
+            "name": "Mapfre",
+            "imageUrl": "img/client/mapfre_logo.png"
+        },
+        "employer": "Bull-SICONET",
+        "full-time": "true",
+        "tasks": [
+            {
+                "description": "Desarrollo de interfaces web",
+                "tech": "JSF 1.2, HTML, Javascript, CSS, Facelets"
+            },
+            {
+                "description": "Desarrollo back-end.",
+                "tech": "Spring Framework 2.5, Hibernate, JBoss, Oracle"
+            }
+        ],
+        "tools": [
+            {
+                "name": "Ant"
+            },
+            {
+                "name": "Eclipse"
+            },
+            {
+                "name": "CVS"
+            },
+            {
+                "name": "Diagramas de secuencia"
+            },
+            {
+                "name": "Maquetas"
+            }
+        ],
+        "start": "2009-06-01 00:00:00 UTC",
+        "end": "2009-10-01 00:00:00 UTC",
+        "project": "Contratación Sanitas",
+        "team": [
+            {
+                "position": "jefe de proyecto"
+            },
+            {
+                "position": "Analista"
+            },
+            {
+                "position": "Administrador DB"
+            },
+            {
+                "position": "Desarrollador",
+                "number": "6"
+            },
+            {
+                "position": "me"
+            }
+        ]
+    }
+]
