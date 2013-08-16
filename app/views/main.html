@@ -1,21 +1,33 @@
 <section id="experience" class="row-fluid">
-  <aside class="span4">
+  <aside class="span3 asideExperience">
     <h2>Experience</h2>
     <h5>Where I worked</h5>
-    <input class="search-query" ng-model="query" placeholder="search in my experience">
+    <input class="input-medium search-query" ng-model="query" placeholder="search in my experience">
   </aside>
-  <div class="span8">
-    <article class="employment" ng-repeat="employment in employments | filter:query | orderBy: '-start' | limitTo: 5">
-      <header>
-        <div class="span12">  
-          {{employment.start | myDate}} - {{employment.end | myDate}}
-          <h2 class="span4">{{employment.client.name}}</h2>
-          <a class="span4" href="#/experience/{{employment.start}}" class="thumb">
-          <img class="span4" ng-src="{{employment.client.imageUrl}}">
-          </a>
+  <div class="span9 main">
+    <div class="row-fluid" ng-repeat="employment in employments | filter:query | orderBy: '-start' | limitTo: 5">
+      <article class="employment">
+        <div class="span2 periodColumn" ng-switch on="employment.end == employersDates[employment.employer].end">
+          <div ng-switch-when="true" class="label label-info period">
+            
+            <span>{{employersDates[employment.employer].start | myDate}} - </span>
+            <span>{{employersDates[employment.employer].end | myDate}} </span>
+          </div>
+        </div> 
+        <div class="span9 mainColumn">
+          <header>
+            <span  ng-switch on="employment.end == employersDates[employment.employer].end">
+               <h3 ng-switch-when="true">{{employment.employer}}</h3>
+            </span>
+            <span class="label">
+              {{employment.start | myDate}} - {{employment.end | myDate}}
+            </span>
+            <h4>{{employment.position}} {{'AT' | translate}} {{employment.client.name}}</h4>
+          </header>
+          <p></p>
+          <p></p>
         </div>
-        <h3 class="span12">{{employment.position}}</h3>
-      </header>
-    </article>
+      </article>
+    </div>
   </div>
 </section>

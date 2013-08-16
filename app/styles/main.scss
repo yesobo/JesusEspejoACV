@@ -31,7 +31,7 @@ body {
 
 
 /* Landscape phone to portrait tablet */
-@media (max-width: 830px) {
+@media (max-width: 850px) {
     .nav-collapse830.collapse {
         overflow: hidden;
         height: 0;
@@ -64,12 +64,14 @@ body {
     }
 }
 
-@media (min-width: 830px) {
+@media (min-width: 852px) {
     .nav-collapse830.collapse {
         height: auto !important;
         overflow: visible !important;
     }
+}
 
+@media (min-width: 852px) {
     .navbar .btn-navbar {
         display: none;
     }
@@ -210,4 +212,37 @@ body {
 
 #ul-lang {
     margin: 0px;
+}
+
+.period {
+    margin-top: 10px;
+}
+
+.periodColumn {
+    width: 8em!important;
+    line-height: 40px;
+    margin-top: 10px;
+}
+
+.main {
+    border-left: 1px solid #3a87ad;
+    padding-left: 1.5em;
+}
+
+.asideExperience {
+    min-width: 165px;
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+    .row-fluid [class*="span"] {
+        min-height: 0px;
+    }
+}
+
+.row-fluid [class*="span"] {
+    min-height: 0px;
+}
+
+.mainColumn {
+    margin-left: 10px!important;
 }

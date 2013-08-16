@@ -2,14 +2,8 @@
 
 describe('Controller: ExperienceDetailCtrl', function () {
 
-  // load the controller's module
-  beforeEach(module('JesusEspejoACVApp'));
-
-  var ExperienceDetailCtrl,
-    scope;
-  
   // creating a mock service
-  beforeEach(module(function($provide) {
+  beforeEach(module('MockServices', function($provide) {
     $provide.factory('mockSharedData', function() {
       var getSharedData = function(callBack){
         return callBack([
@@ -26,6 +20,13 @@ describe('Controller: ExperienceDetailCtrl', function () {
       };
     });
   }));
+
+  // load the controller's module
+  beforeEach(module('JesusEspejoACVApp'));
+
+  var ExperienceDetailCtrl,
+    scope;
+
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope, mockSharedData) {

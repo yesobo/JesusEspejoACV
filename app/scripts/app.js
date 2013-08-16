@@ -21,6 +21,7 @@ angular.module('JesusEspejoACVApp',
   }]).config(['$translateProvider', function ($translateProvider) {
     $translateProvider.translations('en', {
       /* Nav menu */
+      'WHO_I_AM': 'Who I Am',
       'ABOUT_ME': 'About Me',
       'TECHNICAL_SKILLS': 'Technical Skills',
       'EXPERIENCE': 'Experience',
@@ -30,11 +31,16 @@ angular.module('JesusEspejoACVApp',
       /* About me */
       'ABOUT_ME_EXPL': 'Proffesional profile & Contact Info',
       'ABOUT_ME_P1': 'Hello, I’m Jesus, web developer and new technologies enthusiast.',
-      'ABOUT_ME_P2': 'As you will see, I\'ve spent the last years building websites and enjoying web technologies in my job and spare time. I would love to share my knowledge with you, so please don\'t hesitate in contacting with me if you\'re interested.'
+      'ABOUT_ME_P2': 'As you will see, I\'ve spent the last years building websites and enjoying web technologies in my job and spare time. I would love to share my knowledge with you, so please don\'t hesitate in contacting with me if you\'re interested.',
+
+      /* Experience */
+      'AT': 'at',
+      'PRESENT': 'Present'
     });
     
     $translateProvider.translations('es', {
       /* Nav menu */
+      'WHO_I_AM': 'Quien soy',
       'ABOUT_ME': 'Sobre mí',
       'TECHNICAL_SKILLS': 'Tecnologías',
       'EXPERIENCE': 'Experiencia',
@@ -44,7 +50,11 @@ angular.module('JesusEspejoACVApp',
       /* About me */
       'ABOUT_ME_EXPL': 'Perfil profesional e Información de Contacto',
       'ABOUT_ME_P1': 'Hola, soy Jesús, desarrollador web y amante de las nuevas tecnologías.',
-      'ABOUT_ME_P2': 'Como verás, he dedicado los últimos años en crear sitios web y disfrutar de las tecnologías web en el trabajo y mi tiempo libre. Me encantaría compartir mis conocimientos contigo, así que no dudes en contactar conmigo si estás interesado.'
+      'ABOUT_ME_P2': 'Como verás, he dedicado los últimos años en crear sitios web y disfrutar de las tecnologías web en el trabajo y mi tiempo libre. Me encantaría compartir mis conocimientos contigo, así que no dudes en contactar conmigo si estás interesado.',
+
+      /* Experience */
+      'AT': 'en',
+      'PRESENT': 'Hoy'
 
     });
 
