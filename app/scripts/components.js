@@ -1,3 +1,4 @@
+/*global $:false */
 'use strict';
 
 angular.module('JesusEspejoACVDirectives', ['pascalprecht.translate'])
@@ -14,20 +15,20 @@ angular.module('JesusEspejoACVDirectives', ['pascalprecht.translate'])
 				$('#resp-menu-btn').click();
 			});
 
-			$scope.lang_switch_img = 'img/lang_spanish.png';
+			$scope.langSwitchImg = 'img/lang_spanish.png';
 			$scope.changeLanguage = function(langKey) {
 				$translate.uses(langKey);
-			}
+			};
 
 			$scope.switchLanguage = function() {
 				if($translate.uses() === 'en') {
 					$translate.uses('es');
-					$scope.lang_switch_img = 'img/lang_english.png';
+					$scope.langSwitchImg = 'img/lang_english.png';
 				} else {
 					$translate.uses('en');
-					$scope.lang_switch_img = 'img/lang_spanish.png';
+					$scope.langSwitchImg = 'img/lang_spanish.png';
 				}
-			}
+			};
 		},
 		templateUrl: 'views/templates/navmenu.html',
 		replace: true

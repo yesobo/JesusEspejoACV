@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('JesusEspejoACVServices', ['ngResource'])
-.factory('SharedData', ['$resource', function ($resource) {
+angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
+.factory('SharedData', ['$resource', '$http', function ($resource, $http) {
     var experience = [];
     return {
       getSharedData: function() {
@@ -27,7 +27,7 @@ angular.module('JesusEspejoACVServices', ['ngResource'])
         return objects;
       },
       getEmployersLastDate: function(allExperience) {
-        console.log("executing employersLastDate");
+        console.log('executing employersLastDate');
         var employers = [];
         var auxExperience;
         for (var i in allExperience) {

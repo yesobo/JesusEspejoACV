@@ -17,7 +17,4 @@ angular.module('JesusEspejoACVApp')
         $scope.experience =
             SharedData.filterJSON(allExperiences, 'start', $routeParams.start)[0];
       });
-      $scope.showTaskDetails = function(task){
-        alert('no details available for ' + task.description);
-      };
     }]);
