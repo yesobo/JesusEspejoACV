@@ -3,7 +3,7 @@
 describe('Controller: ExperienceDetailCtrl', function () {
 
   // creating a mock service
-  beforeEach(module('MockServices', function($provide) {
+  beforeEach(module(function($provide) {
     $provide.factory('mockSharedData', function() {
       var getSharedData = function(callBack){
         return callBack([

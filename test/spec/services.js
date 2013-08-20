@@ -55,7 +55,6 @@ describe('Service', function() {
 
 			it('should return the expectedResult', function() {
 				var allExperience = sharedData.getSharedData().query();
-				debugger;
 				$httpBackend.flush();
 				var data = sharedData.getEmployersLastDate(allExperience);
 				expect(data.Employer1).toBeDefined();

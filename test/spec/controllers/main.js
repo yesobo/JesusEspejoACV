@@ -1,4 +1,4 @@
-/* global describe, beforeEach, it, expect, inject:false */
+/* global describe, beforeEach, it, expect, inject, jasmine:false */
 'use strict';
 
 describe('Controller: ExperienceCtrl', function () {
@@ -7,51 +7,62 @@ describe('Controller: ExperienceCtrl', function () {
   beforeEach(module('JesusEspejoACVApp'));
 
   var MainCtrl,
-    scope;
+    scope, mockSharedDataResource;
 
-  // creating a mock service
+   beforeEach(function() {
+    // creating a mock service
+    mockSharedDataResource = {
+      query: function() {}
+    };
+    
+    spyOn(mockSharedDataResource, 'query').andCallFake( function(callback) {
+        debugger;
+        var employments = [
+          {
+            employer: 'Employer1',
+            start: '2009-06-01 00:00:00 UTC',
+            end: '2009-10-01 00:00:00 UTC'
+          },
+          {
+            employer: 'Employer1',
+            start: '2010-04-01 00:00:00 UTC',
+            end: '2011-04-01 00:00:00 UTC'
+          },
+          {
+            employer: 'Employer2',
+            start: '2011-04-01 00:00:00 UTC',
+            end: '2012-06-01 00:00:00 UTC'
+          },
+          {
+            employer: 'Employer2',
+            start: '2012-10-01 00:00:00 UTC',
+            end: '2013-07-16 07:27:05 UTC'
+          }
+        ];
+        callback();
+        return employments;
+      });
+  })
+
   beforeEach(module(function($provide) {
     $provide.factory('mockSharedData', function() {
-      var getSharedData = function() {
-        
-        return {
-          query:function(callBack){
-            return callBack([
-              {
-                'client': {
-                  'name': 'Metro de Madrid S.A.',
-                  'imageUrl': 'img/client/metro_madrid_logo.png'
-                }
-              },
-              {
-                'client': {
-                  'name': 'Bankia',
-                  'imageUrl': 'img/client/bankia_logo.png'
-                }
-              }
-            ]);
-          }
-        };
-      };
-
-      var getEmployersLastDate = function() {
-        var expectedResult = [];
-        expectedResult.Employer1 = {
-          start: '2009-06-01 00:00:00 UTC',
-          end: '2011-04-01 00:00:00 UTC'
-        };
-        
-        expectedResult.Employer2 = {
-          start: '2009-06-01 00:00:00 UTC',
-          end: '2011-04-01 00:00:00 UTC'
-        };
-
-        return expectedResult;
-      };
-
       return {
-        getSharedData: getSharedData,
-        getEmployersLastDate: getEmployersLastDate
+        getSharedData: function() {
+          return mockSharedDataResource;
+        },
+        getEmployersLastDate: function() {
+          var expectedResult = [];
+          expectedResult.Employer1 = {
+            start: '2009-06-01 00:00:00 UTC',
+            end: '2011-04-01 00:00:00 UTC'
+          };
+          
+          expectedResult.Employer2 = {
+            start: '2009-06-01 00:00:00 UTC',
+            end: '2011-04-01 00:00:00 UTC'
+          };
+          return expectedResult;
+        }
       };
     });
   }));
@@ -63,19 +74,11 @@ describe('Controller: ExperienceCtrl', function () {
   }));
 
   it('should create "employment" model with 2 employments fetched from xhr', function() {
-    expect(scope.employments).toEqual([
-        {
-          'client': {
-            'name': 'Metro de Madrid S.A.',
-            'imageUrl': 'img/client/metro_madrid_logo.png'
-          }
-        },
-        {
-          'client': {
-            'name': 'Bankia',
-            'imageUrl': 'img/client/bankia_logo.png'
-          }
-        }
-      ]);
+    expect(mockSharedDataResource.query).toHaveBeenCalled();
+    debugger;
+    expect(scope.employments.length).toBe(4);
+    expect(scope.employments[1].employer).toBe('Employer1');
+    expect(scope.employersDates.Employer1.start).toBe('2009-06-01 00:00:00 UTC');
+    expect(scope.employersDates.Employer2.end).toBe('2011-04-01 00:00:00 UTC');
   });
 });

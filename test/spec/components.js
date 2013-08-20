@@ -22,7 +22,6 @@ describe('Directive', function() {
 
 	describe('navmenu', function() {
 		it('should set the language image to spanish by default', function() {
-			debugger;
 			expect($('#ul-lang > li > img', element).attr('src')).toBe('img/lang_spanish.png');
 			expect(true).toBe(true);
 		});
