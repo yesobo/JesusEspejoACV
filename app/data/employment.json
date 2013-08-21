@@ -3,7 +3,7 @@
         "_id": {
             "$oid": "51bc524de840a529c200009a"
         },
-        "position": "Desarrollador front y back end",
+        "position": "Analista programador Web J2EE/EJB/Front-end/Reporting",
         "client": {
             "name": "Metro de Madrid S.A.",
             "imageUrl": "img/client/metro_madrid_logo.png"
@@ -67,7 +67,7 @@
         "_id": {
             "$oid": "51bc3f3e494f44cf7b00003d"
         },
-        "position": "Analista/Desarrollador front y back-end",
+        "position": "Analista programador Web J2EE/Java/Front-end",
         "client": {
             "name": "IECISA/ Viajes El Corte Inglés",
             "imageUrl": "img/client/viajes_ECI_logo.png"
@@ -115,14 +115,14 @@
         "_id": {
             "$oid": "51bb66a98c523b196aca5340"
         },
-        "position": "Desarrollador front y back-end",
+        "position": "Analista programador Web J2EE/WebSphere/Front-end",
         "client": {
             "name": "Bankia",
             "imageUrl": "img/client/bankia_logo.png"
         },
         "employer": {
             "name": "AT Sistemas",
-            "imageUrl": "img/employer/atsistemas_logo.jpg"
+            "imageUrl": "img/employer/atsistemas_logo.png"
         },
         "full-time": "true",
         "tasks": [
@@ -169,7 +169,7 @@
         "_id": {
             "$oid": "51c0a366a28303b9ad86ac14"
         },
-        "position": "Desarrollador C++",
+        "position": "Programador C++/Delphi/Paradox",
         "client": {
             "name": "Seres",
             "imageUrl": "img/client/seres_logo.jpg"
@@ -206,7 +206,7 @@
         "_id": {
             "$oid": "51c1597b22a466afa4000341"
         },
-        "position": "Analisis y Desarrollo VBA",
+        "position": "Analista programador VBA/SQL-Server",
         "client": {
             "name": "Liberty Seguros",
             "imageUrl": "img/client/liberty_seguros_logo.png"
@@ -250,7 +250,7 @@
         "_id": {
             "$oid": "51c15cce8644157f2c0002e7"
         },
-        "position": "Desarrollador J2EE",
+        "position": "Programador Web J2EE/EJB/JSF",
         "client": {
             "name": "Sanitas",
             "imageUrl": "img/client/sanitas_logo.png"
@@ -314,7 +314,7 @@
         "_id": {
             "$oid": "51c15edec5686a7f800000d0"
         },
-        "position": "Desarrollador J2EE",
+        "position": "Programador Web Junior J2EE/Spring/JSF",
         "client": {
             "name": "Mapfre",
             "imageUrl": "img/client/mapfre_logo.png"
