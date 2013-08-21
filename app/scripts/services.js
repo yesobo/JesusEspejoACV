@@ -33,16 +33,16 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
         for (var i in allExperience) {
           auxExperience = allExperience[i];
           // If i've already stored the employer I check the dates
-          if (employers[auxExperience.employer]) {
-            if(employers[auxExperience.employer].start > auxExperience.start) {
-              employers[auxExperience.employer].start = auxExperience.start;
+          if (employers[auxExperience.employer.name]) {
+            if(employers[auxExperience.employer.name].start > auxExperience.start) {
+              employers[auxExperience.employer.name].start = auxExperience.start;
             }
-            if(employers[auxExperience.employer].end < auxExperience.end) {
-              employers[auxExperience.employer].end = auxExperience.end;
+            if(employers[auxExperience.employer.name].end < auxExperience.end) {
+              employers[auxExperience.employer.name].end = auxExperience.end;
             }
           // Store the employer and dates
           } else {
-            employers[auxExperience.employer] = {
+            employers[auxExperience.employer.name] = {
               start: auxExperience.start,
               end: auxExperience.end
             };

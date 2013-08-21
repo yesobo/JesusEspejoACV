@@ -8,7 +8,10 @@
             "name": "Metro de Madrid S.A.",
             "imageUrl": "img/client/metro_madrid_logo.png"
         },
-        "employer": "Bull-SICONET",
+        "employer": {
+            "name": "Bull-SICONET",
+            "imageUrl": "img/employer/bull_logo.png"
+        },
         "full-time": "true",
         "tasks": [
             {
@@ -69,7 +72,10 @@
             "name": "IECISA/ Viajes El Corte Inglés",
             "imageUrl": "img/client/viajes_ECI_logo.png"
         },
-        "employer": "AT Sistemas",
+        "employer": {
+            "name": "AT Sistemas",
+            "imageUrl": "img/employer/atsistemas_logo.jpg"
+        },
         "full-time": "true",
         "tasks": [
             {
@@ -114,7 +120,10 @@
             "name": "Bankia",
             "imageUrl": "img/client/bankia_logo.png"
         },
-        "employer": "AT Sistemas",
+        "employer": {
+            "name": "AT Sistemas",
+            "imageUrl": "img/employer/atsistemas_logo.jpg"
+        },
         "full-time": "true",
         "tasks": [
             {
@@ -165,7 +174,10 @@
             "name": "Seres",
             "imageUrl": "img/client/seres_logo.jpg"
         },
-        "employer": "Bull-SICONET",
+        "employer": {
+            "name": "Bull-SICONET",
+            "imageUrl": "img/employer/bull_logo.png"
+        },
         "full-time": "true",
         "tasks": [
             {
@@ -199,7 +211,10 @@
             "name": "Liberty Seguros",
             "imageUrl": "img/client/liberty_seguros_logo.png"
         },
-        "employer": "Bull-SICONET",
+        "employer": {
+            "name": "Bull-SICONET",
+            "imageUrl": "img/employer/bull_logo.png"
+        },
         "full-time": "true",
         "tasks": [
             {
@@ -240,7 +255,10 @@
             "name": "Sanitas",
             "imageUrl": "img/client/sanitas_logo.png"
         },
-        "employer": "Bull-SICONET",
+        "employer": {
+            "name": "Bull-SICONET",
+            "imageUrl": "img/employer/bull_logo.png"
+        },
         "full-time": "true",
         "tasks": [
             {
@@ -301,7 +319,10 @@
             "name": "Mapfre",
             "imageUrl": "img/client/mapfre_logo.png"
         },
-        "employer": "Bull-SICONET",
+        "employer": {
+            "name": "Bull-SICONET",
+            "imageUrl": "img/employer/bull_logo.png"
+        },
         "full-time": "true",
         "tasks": [
             {

@@ -7,17 +7,16 @@
   <div class="span9 main">
     <div class="row-fluid" ng-repeat="employment in employments | filter:query | orderBy: '-start' | limitTo: 5">
       <article class="employment">
-        <div class="span2 periodColumn" ng-switch on="employment.end == employersDates[employment.employer].end">
+        <div class="span2 periodColumn" ng-switch on="employment.end == employersDates[employment.employer.name].end">
           <div ng-switch-when="true" class="label label-info period">
-            
-            <span>{{employersDates[employment.employer].start | myDate}} - </span>
-            <span>{{employersDates[employment.employer].end | myDate}} </span>
+            <span>{{employersDates[employment.employer.name].start | myDate}} - </span>
+            <span>{{employersDates[employment.employer.name].end | myDate}} </span>
           </div>
         </div> 
         <div class="span9 mainColumn">
           <header>
-            <span  ng-switch on="employment.end == employersDates[employment.employer].end">
-               <h3 ng-switch-when="true">{{employment.employer}}</h3>
+            <span  ng-switch on="employment.end == employersDates[employment.employer.name].end">
+               <h3 ng-switch-when="true">{{employment.employer.name}}</h3><img ng-src="{{employment.employer.imageUrl}}"/>
             </span>
             <span class="label">
               {{employment.start | myDate}} - {{employment.end | myDate}}
