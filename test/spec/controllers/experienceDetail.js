@@ -1,7 +1,7 @@
 'use strict';
 
 describe('Controller: ExperienceDetailCtrl', function () {
-
+/**
   // creating a mock service
   beforeEach(module(function($provide) {
     $provide.factory('mockSharedData', function() {
@@ -43,4 +43,5 @@ describe('Controller: ExperienceDetailCtrl', function () {
       }
     });
   });
+**/ 
 });

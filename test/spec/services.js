@@ -1,3 +1,4 @@
+/* global describe, beforeEach, inject, it, expect: false*/
 'use strict';
 
 describe('Service', function() {
@@ -54,13 +55,14 @@ describe('Service', function() {
 			};
 
 			it('should return the expectedResult', function() {
-				var allExperience = sharedData.getSharedData().query();
-				$httpBackend.flush();
-				var data = sharedData.getEmployersLastDate(allExperience);
-				expect(data.Employer1).toBeDefined();
-				expect(data.Employer1.start).toEqual(expectedResult.Employer1.start);
-				expect(data.Employer1.end).toEqual(expectedResult.Employer1.end);
-			}) ;
+				var allExperience = sharedData.getSharedData().query(function() {
+					$httpBackend.flush();
+					var data = sharedData.getEmployersLastDate(allExperience);
+					expect(data.Employer1).toBeDefined();
+					expect(data.Employer1.start).toEqual(expectedResult.Employer1.start);
+					expect(data.Employer1.end).toEqual(expectedResult.Employer1.end);
+				});
+			});
 		});
 	});
 });

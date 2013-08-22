@@ -1,4 +1,4 @@
-/* global describe, beforeEach, it, expect, inject, jasmine:false */
+/* global describe, beforeEach, it, expect, inject, spyOn: false */
 'use strict';
 
 describe('Controller: ExperienceCtrl', function () {
@@ -9,14 +9,13 @@ describe('Controller: ExperienceCtrl', function () {
   var MainCtrl,
     scope, mockSharedDataResource;
 
-   beforeEach(function() {
+  beforeEach(function() {
     // creating a mock service
     mockSharedDataResource = {
       query: function() {}
     };
     
     spyOn(mockSharedDataResource, 'query').andCallFake( function(callback) {
-        debugger;
         var employments = [
           {
             employer: 'Employer1',
@@ -42,7 +41,7 @@ describe('Controller: ExperienceCtrl', function () {
         callback();
         return employments;
       });
-  })
+  });
 
   beforeEach(module(function($provide) {
     $provide.factory('mockSharedData', function() {
@@ -75,7 +74,6 @@ describe('Controller: ExperienceCtrl', function () {
 
   it('should create "employment" model with 2 employments fetched from xhr', function() {
     expect(mockSharedDataResource.query).toHaveBeenCalled();
-    debugger;
     expect(scope.employments.length).toBe(4);
     expect(scope.employments[1].employer).toBe('Employer1');
     expect(scope.employersDates.Employer1.start).toBe('2009-06-01 00:00:00 UTC');

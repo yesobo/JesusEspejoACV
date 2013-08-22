@@ -4,8 +4,10 @@ angular.module('JesusEspejoACVApp')
   .controller('ExperienceCtrl',
     ['$scope', 'SharedData',
     function ($scope, SharedData) {
-      var employments = $scope.employments = SharedData.getSharedData().query(function() {
-        $scope.employersDates = SharedData.getEmployersLastDate(employments);
+      var employments = $scope.employments =
+        SharedData.getSharedData().query(function() {
+        $scope.employersDates =
+          SharedData.getEmployersLastDate(employments);
       });
     }])
   .controller('ExperienceDetailCtrl',
