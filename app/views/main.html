@@ -20,11 +20,11 @@
         <div class="span9 mainColumn">
           <header>
             <div style="row-fluid" ng-switch on="employment.end == employersDates[employment.employer.name].end">
-              <div class="span12" ng-switch-when="true">
-                <div class="span9" style="">
+              <div class="span12 employerWrapper" ng-switch-when="true">
+                <div class="span9 employerNameWrapper" style="">
                   <h3>{{employment.employer.name}}</h3>
                 </div>
-                <div class="span3" style="">
+                <div class="span3 employerLogoWrapper" style="">
                  <img class="employerLogo" ng-src="{{employment.employer.imageUrl}}"/>
                 </div>
               </div>

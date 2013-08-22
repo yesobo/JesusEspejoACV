@@ -114,6 +114,29 @@ body {
         display: none;
     }
 
+    .employerWrapper {
+        display: inline-block !important;
+    }
+    .employerNameWrapper {
+        display: inline-block !important;
+        float: left !important;
+        width: auto !important;
+    }
+    .employerLogoWrapper {
+        display: inline-block !important;
+        width: auto !important;
+    }
+    body {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .employerLogo {
+        max-width: 90px !important;
+    }
+
 }
 
 @media (min-width: 480px) {
@@ -176,7 +199,15 @@ body {
 
     .navbar .brand {
         padding-right: 0px;
-        padding-left: 5px;
+        padding-left: 10px;
+    }
+
+    h3 {
+        font-size: 20px !important;
+    }
+
+    h4 {
+        font-size: 16px !important;
     }
 }
 
@@ -250,6 +281,22 @@ body {
 
 .container-fluid {
     padding-top: 20px;
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .employerWrapper {
+        float: left !important;
+    }
+    .employerNameWrapper {
+        float: left !important;
+        width: 74% !important;
+    }
+    .employerLogoWrapper {
+        float: left !important;
+        width: 22% !important;
+        margin-left: 2% !important;
+    }
 }
 
 @media (max-width: 767px) {

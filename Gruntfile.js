@@ -93,6 +93,7 @@ module.exports = function (grunt) {
     open: {
       server: {
         url: 'http://localhost:<%= connect.options.port %>'
+        ,app: 'C:/\Documents and Settings/\jespejo.ATSISTEMAS/\Configuración local/\Datos de programa/\Google/\Chrome/\Application/\chrome.exe'
       }
     },
     clean: {
