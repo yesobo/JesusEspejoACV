@@ -3,6 +3,16 @@
 angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
 .factory('SharedData', ['$resource', '$http', function ($resource, $http) {
     var experience = [];
+    var searchObject = function(collection, firstLevelKey, value) {
+      var foundObject = null;
+      for (var i = 0, len = collection.length; i < len; i++) {
+        if(collection[i][firstLevelKey] === value) {
+          foundObject = collection[i];
+          break;
+        }
+      }
+      return foundObject;
+    };
     return {
       getSharedData: function() {
         return $resource('data/employment.json', {});
@@ -18,7 +28,6 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
       },
       filterJSON: function(obj, key, val) {
         var objects = [];
-        console.log('finding between the objects ' + obj);
         for (var i in obj) {
           if (obj[i][key] === val) {
             objects.push(obj[i]);
@@ -27,27 +36,30 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
         return objects;
       },
       getEmployersLastDate: function(allExperience) {
-        console.log('executing employersLastDate');
         var employers = [];
         var auxExperience;
+        var auxObj = {};
         for (var i in allExperience) {
           auxExperience = allExperience[i];
           // If i've already stored the employer I check the dates
-          if (employers[auxExperience.employer.name]) {
-            if(employers[auxExperience.employer.name].start > auxExperience.start) {
-              employers[auxExperience.employer.name].start = auxExperience.start;
+          var auxObj = searchObject(employers, "employerName", auxExperience.employer.name);
+          if( auxObj ){
+            if(auxObj.start > auxExperience.start) {
+              auxObj.start = auxExperience.start;
             }
-            if(employers[auxExperience.employer.name].end < auxExperience.end) {
-              employers[auxExperience.employer.name].end = auxExperience.end;
+            if(auxObj.end < auxExperience.end) {
+              auxObj.end = auxExperience.end;
             }
-          // Store the employer and dates
           } else {
-            employers[auxExperience.employer.name] = {
+            auxObj = {
+              employerName: auxExperience.employer.name,
+              webSite: auxExperience.employer.webSite,
+              imageUrl: auxExperience.employer.imageUrl,
               start: auxExperience.start,
               end: auxExperience.end
             };
+            employers.push(auxObj);
           }
-
         }
         return employers;
       }
