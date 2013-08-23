@@ -5,7 +5,7 @@
     <input class="input-medium search-query" ng-model="query" placeholder="search in my experience">
   </aside>
   <div class="span9 main">
-    <div class="row-fluid" ng-repeat="employment in employments | filter:query | orderBy: '-start' | limitTo: 5">
+    <div class="row-fluid" ng-repeat="employment in employments | filter:query | orderBy: '-start' | limitTo: 10">
       <article class="employment">
         <div class="span2 periodColumn" ng-switch on="employment.end == employersDates[employment.employer.name].end">
           <div ng-switch-when="true" class="label label-info period">
@@ -22,17 +22,17 @@
             <div style="row-fluid" ng-switch on="employment.end == employersDates[employment.employer.name].end">
               <div class="span12 employerWrapper" ng-switch-when="true">
                 <div class="span9 employerNameWrapper" style="">
-                  <h3>{{employment.employer.name}}</h3>
+                  <h3 class="employerName">{{employment.employer.name}}</h3>
                 </div>
                 <div class="span3 employerLogoWrapper" style="">
-                 <img class="employerLogo" ng-src="{{employment.employer.imageUrl}}"/>
+                 <a target="_blank" href="{{employment.employer.webSite}}"><img class="employerLogo" ng-src="{{employment.employer.imageUrl}}"/></a>
                 </div>
               </div>
             </div>
             <span class="label">
               {{employment.start | myDate}} - {{employment.end | myDate}}
             </span>
-            <h4>{{employment.position}} {{'AT' | translate}} {{employment.client.name}}</h4>
+            <h4 class="positionTitle">{{employment.position}} {{'AT' | translate}} <a target="_blank" href="{{employment.client.webSite}}">{{employment.client.name}}</a></h4>
           </header>
           <p></p>
           <p></p>

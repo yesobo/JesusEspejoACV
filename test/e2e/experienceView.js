@@ -10,12 +10,7 @@ function appAngular() {
 describe('Experience View', function() {
 
   beforeEach(function() {
-    browser().navigateTo('/');
-  });
-
-  it('should redirect index.html to /', function() {
-    browser().navigateTo('/index.html');
-    expect(browser().location().url()).toBe('/');
+    browser().navigateTo('/#/experience');
   });
 
   it('should filter the employments list as user types into the search box', function() {
@@ -29,7 +24,7 @@ describe('Experience View', function() {
   });
 
   it('should order the employments list by descending starting date', function() {
-    expect(element('.employment:first h2').text()).toBe("Bankia");
+    expect(element('.employment:first .positionTitle').text()).toContain("Bankia");
   });
 
   it('should render employment specific links', function() {
@@ -41,11 +36,4 @@ describe('Experience View', function() {
 
 describe('Experience detail view', function() {
  
-    beforeEach(function() {
-      browser().navigateTo('/index.html#/experience/Bankia');
-    });
- 
-    it('should display placeholder page with clientName', function() {
-      expect(binding('experience.client.name')).toBe('Bankia');
-    });
- });
+});
