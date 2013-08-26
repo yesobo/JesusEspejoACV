@@ -23,12 +23,4 @@ describe('Experience View', function() {
     input('query').enter('2012');
     expect(repeater('.employment').count()).toBe(2);
   });
-
-  it('should order the employments list by descending starting date', function() {
-    expect(element('.employment:first .positionTitle').text()).toContain("Bankia");
-  });
-});
-
-describe('Experience detail view', function() {
- 
 });
