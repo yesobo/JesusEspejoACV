@@ -310,3 +310,17 @@ body {
 .employerLogo {
     max-width: 120px;
 }
+
+.employerName { 
+    position:relative; 
+} 
+
+.employerName:after { 
+    content: ''; 
+    display: block; 
+    position: absolute; 
+    bottom: 0; width: 100%; 
+    height:1px; 
+    background: -moz-linear-gradient(left, #3a87ad, transparent); 
+    background: -webkit-linear-gradient(left, #3a87ad, transparent); 
+}

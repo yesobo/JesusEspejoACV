@@ -44,23 +44,28 @@ describe('Service', function() {
 		describe('getEmployersLastDate', function() {
 
 			var expectedResult = [];
-			expectedResult.Employer1 = {
+			var expectedEmployer1 = {
+				employerName: 'Employer1',
 				start: '2009-06-01 00:00:00 UTC',
 				end: '2011-04-01 00:00:00 UTC'
 			};
 			
-			expectedResult.Employer2 = {
+			var expectedEmployer2 = {
+				employerName: 'Employer2',
 				start: '2009-06-01 00:00:00 UTC',
 				end: '2011-04-01 00:00:00 UTC'
 			};
+
+			expectedResult.push(expectedEmployer1);
+			expectedResult.push(expectedEmployer2);
 
 			it('should return the expectedResult', function() {
 				var allExperience = sharedData.getSharedData().query(function() {
 					$httpBackend.flush();
 					var data = sharedData.getEmployersLastDate(allExperience);
-					expect(data.Employer1).toBeDefined();
-					expect(data.Employer1.start).toEqual(expectedResult.Employer1.start);
-					expect(data.Employer1.end).toEqual(expectedResult.Employer1.end);
+					expect(data.length).toBe(2);
+					expect(data[0].start).toEqual(expectedEmployer1.start);
+					expect(data[1].end).toEqual(expectedEmployer2.end);
 				});
 			});
 		});

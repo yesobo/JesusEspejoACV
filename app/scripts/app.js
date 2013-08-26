@@ -8,7 +8,7 @@ angular.module('JesusEspejoACVApp',
         templateUrl: 'views/aboutme.html',
       })
       .when('/experience', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/experience.html',
         controller: 'ExperienceCtrl'
       })
       .when('/experience/:start', {
