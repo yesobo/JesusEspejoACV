@@ -35,6 +35,14 @@
                       {{employment.start | myDate}} - {{employment.end | myDate}}
                     </span>
                     <h4 class="positionTitle">{{employment.position}} {{'AT' | translate}} <a target="_blank" href="{{employment.client.webSite}}">{{employment.client.name}}</a></h4>
+                    <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#positionDetails-{{employment.locator}}">
+                      detalles
+                    </button>
+                    <div id="positionDetails-{{employment.locator}}" class="collapse">
+                      <ul>
+                        <li ng-repeat="task in employment.tasks">{{task.description}}</li>
+                      </ul>
+                    </div>
                 </div>
               </header>
               <p></p>

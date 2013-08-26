@@ -3,6 +3,7 @@
         "_id": {
             "$oid": "51bc524de840a529c200009a"
         },
+        "locator": "APMetro",
         "position": "Analista programador Web J2EE/EJB/Front-end/Reporting",
         "client": {
             "name": "Metro de Madrid S.A.",
@@ -17,15 +18,15 @@
         "full-time": "true",
         "tasks": [
             {
-                "description": "Desarrollo y Diseño de interfaces web",
-                "tech": "JSF 2.0, RichFaces, Javascritp, ChartDirector, CSS"
+                "description": "Diseño e implementación de interfaces web a partir de maquetas estáticas",
+                "tech": "JSF 2.0, RichFaces, Javascript, ChartDirector, CSS"
             },
             {
-                "description": "Desarrollo J2EE",
+                "description": "Desarrollo de EJB's y Entity Beans",
                 "tech": "EJB 3.0, JPA 1.0, Maven, Oracle SQL"
             },
             {
-                "description": "Diseño y desarrollo de informes",
+                "description": "Diseño y desarrollo de informes con gráficos",
                 "tech": "JasperResport, iReport"
             },
             {
@@ -69,6 +70,7 @@
         "_id": {
             "$oid": "51bc3f3e494f44cf7b00003d"
         },
+        "locator": "APVIECI",
         "position": "Analista programador Web J2EE/Java/Front-end",
         "client": {
             "name": "IECISA/ Viajes El Corte Inglés",
@@ -119,6 +121,7 @@
         "_id": {
             "$oid": "51bb66a98c523b196aca5340"
         },
+        "locator": "APBankia",
         "position": "Analista programador Web J2EE/WebSphere/Front-end",
         "client": {
             "name": "Bankia",
@@ -175,6 +178,7 @@
         "_id": {
             "$oid": "51c0a366a28303b9ad86ac14"
         },
+        "locator": "PSeres",
         "position": "Programador C++/Delphi/Paradox",
         "client": {
             "name": "Seres",
@@ -215,6 +219,7 @@
         "_id": {
             "$oid": "51c1597b22a466afa4000341"
         },
+        "locator": "APLiberty",
         "position": "Analista programador VBA/SQL-Server",
         "client": {
             "name": "Liberty Seguros",
@@ -261,6 +266,7 @@
         "_id": {
             "$oid": "51c15cce8644157f2c0002e7"
         },
+        "locator": "PSanitas",
         "position": "Programador Web J2EE/EJB/JSF",
         "client": {
             "name": "Sanitas",
@@ -327,6 +333,7 @@
         "_id": {
             "$oid": "51c15edec5686a7f800000d0"
         },
+        "locator": "PJrMapfre",
         "position": "Programador Web Junior J2EE/Spring/JSF",
         "client": {
             "name": "Mapfre",
