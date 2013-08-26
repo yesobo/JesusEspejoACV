@@ -6,11 +6,13 @@
         "position": "Analista programador Web J2EE/EJB/Front-end/Reporting",
         "client": {
             "name": "Metro de Madrid S.A.",
-            "imageUrl": "img/client/metro_madrid_logo.png"
+            "imageUrl": "img/client/metro_madrid_logo.png",
+            "webSite": "http://www.metromadrid.es/es/index.html"
         },
         "employer": {
             "name": "Bull-SICONET",
-            "imageUrl": "img/employer/bull_logo.png"
+            "imageUrl": "img/employer/bull_logo.png",
+            "webSite": "http://www.bull.es/"
         },
         "full-time": "true",
         "tasks": [
@@ -70,11 +72,13 @@
         "position": "Analista programador Web J2EE/Java/Front-end",
         "client": {
             "name": "IECISA/ Viajes El Corte Inglés",
-            "imageUrl": "img/client/viajes_ECI_logo.png"
+            "imageUrl": "img/client/viajes_ECI_logo.png",
+            "webSite": "http://www.viajeselcorteingles.es/"
         },
         "employer": {
             "name": "AT Sistemas",
-            "imageUrl": "img/employer/atsistemas_logo.jpg"
+            "imageUrl": "img/employer/atsistemas_logo.png",
+            "webSite": "http://atsistemas.com/es/"
         },
         "full-time": "true",
         "tasks": [
@@ -118,11 +122,13 @@
         "position": "Analista programador Web J2EE/WebSphere/Front-end",
         "client": {
             "name": "Bankia",
-            "imageUrl": "img/client/bankia_logo.png"
+            "imageUrl": "img/client/bankia_logo.png",
+            "webSite": "http://www.bankia.es/"
         },
         "employer": {
             "name": "AT Sistemas",
-            "imageUrl": "img/employer/atsistemas_logo.png"
+            "imageUrl": "img/employer/atsistemas_logo.png",
+            "webSite": "http://atsistemas.com/es/"
         },
         "full-time": "true",
         "tasks": [
@@ -172,11 +178,14 @@
         "position": "Programador C++/Delphi/Paradox",
         "client": {
             "name": "Seres",
-            "imageUrl": "img/client/seres_logo.jpg"
+            "imageUrl": "img/client/seres_logo.jpg",
+            "webSite": "http://es.groupseres.com/"
         },
         "employer": {
             "name": "Bull-SICONET",
-            "imageUrl": "img/employer/bull_logo.png"
+            "imageUrl": "img/employer/bull_logo.png",
+            "webSite": "http://www.bull.es/"
+
         },
         "full-time": "true",
         "tasks": [
@@ -209,11 +218,13 @@
         "position": "Analista programador VBA/SQL-Server",
         "client": {
             "name": "Liberty Seguros",
-            "imageUrl": "img/client/liberty_seguros_logo.png"
+            "imageUrl": "img/client/liberty_seguros_logo.png",
+            "webSite": "http://www.libertyseguros.es/"
         },
         "employer": {
             "name": "Bull-SICONET",
-            "imageUrl": "img/employer/bull_logo.png"
+            "imageUrl": "img/employer/bull_logo.png",
+            "webSite": "http://www.bull.es/"
         },
         "full-time": "true",
         "tasks": [
@@ -253,11 +264,13 @@
         "position": "Programador Web J2EE/EJB/JSF",
         "client": {
             "name": "Sanitas",
-            "imageUrl": "img/client/sanitas_logo.png"
+            "imageUrl": "img/client/sanitas_logo.png",
+            "webSite": "http://www.sanitas.es/"
         },
         "employer": {
             "name": "Bull-SICONET",
-            "imageUrl": "img/employer/bull_logo.png"
+            "imageUrl": "img/employer/bull_logo.png",
+            "webSite": "http://www.bull.es/"
         },
         "full-time": "true",
         "tasks": [
@@ -317,11 +330,13 @@
         "position": "Programador Web Junior J2EE/Spring/JSF",
         "client": {
             "name": "Mapfre",
-            "imageUrl": "img/client/mapfre_logo.png"
+            "imageUrl": "img/client/mapfre_logo.png",
+            "webSite": "http://www.mapfre.com/"
         },
         "employer": {
             "name": "Bull-SICONET",
-            "imageUrl": "img/employer/bull_logo.png"
+            "imageUrl": "img/employer/bull_logo.png",
+            "webSite": "http://www.bull.es/"
         },
         "full-time": "true",
         "tasks": [
