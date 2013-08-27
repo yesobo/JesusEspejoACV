@@ -42,7 +42,7 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
         for (var i in allExperience) {
           auxExperience = allExperience[i];
           // If i've already stored the employer I check the dates
-          var auxObj = searchObject(employers, "employerName", auxExperience.employer.name);
+          auxObj = searchObject(employers, 'employerName', auxExperience.employer.name);
           if( auxObj ){
             if(auxObj.start > auxExperience.start) {
               auxObj.start = auxExperience.start;

@@ -4,34 +4,34 @@
             "$oid": "51bc524de840a529c200009a"
         },
         "locator": "APMetro",
-        "position": "Analista programador Web J2EE/EJB/Front-end/Reporting",
+        "position": "Programador Web J2EE/EJB/Front-end/Reporting",
         "client": {
             "name": "Metro de Madrid S.A.",
-            "imageUrl": "img/client/metro_madrid_logo.png",
+            "imageUrl": "images/client/metro_madrid_logo.png",
             "webSite": "http://www.metromadrid.es/es/index.html"
         },
         "employer": {
             "name": "Bull-SICONET",
-            "imageUrl": "img/employer/bull_logo.png",
+            "imageUrl": "images/employer/bull_logo.png",
             "webSite": "http://www.bull.es/"
         },
         "full-time": "true",
         "tasks": [
             {
-                "description": "Diseño e implementación de interfaces web a partir de maquetas estáticas",
+                "description": "Diseño e implementación de interfaces web a partir de maquetas",
                 "tech": "JSF 2.0, RichFaces, Javascript, ChartDirector, CSS"
             },
             {
-                "description": "Desarrollo de EJB's y Entity Beans",
+                "description": "Desarrollo de lógica de negocio e implementación de Session y Entity Beans",
                 "tech": "EJB 3.0, JPA 1.0, Maven, Oracle SQL"
             },
             {
-                "description": "Diseño y desarrollo de informes con gráficos",
+                "description": "Diseño e implementación de informes pdf con contenido gráfico",
                 "tech": "JasperResport, iReport"
             },
             {
-                "description": "Desarrollo de pruebas unitarias",
-                "tech": "JUnit"
+                "description": "Desarrollo de pruebas unitarias y funcionales",
+                "tech": "JUnit, Selenium"
             }
         ],
         "tools": [
@@ -74,18 +74,18 @@
         "position": "Analista programador Web J2EE/Java/Front-end",
         "client": {
             "name": "IECISA/ Viajes El Corte Inglés",
-            "imageUrl": "img/client/viajes_ECI_logo.png",
+            "imageUrl": "images/client/viajes_ECI_logo.png",
             "webSite": "http://www.viajeselcorteingles.es/"
         },
         "employer": {
             "name": "AT Sistemas",
-            "imageUrl": "img/employer/atsistemas_logo.png",
+            "imageUrl": "images/employer/atsistemas_logo.png",
             "webSite": "http://atsistemas.com/es/"
         },
         "full-time": "true",
         "tasks": [
             {
-                "description": "Desarrollo de interfaces web",
+                "description": "Desarrollo de interfaces web a partir de esquemas de página",
                 "tech": "JQuery, Javascript, HTML5, CSS3, Modernizr, polyfills"
             },
             {
@@ -125,12 +125,12 @@
         "position": "Analista programador Web J2EE/WebSphere/Front-end",
         "client": {
             "name": "Bankia",
-            "imageUrl": "img/client/bankia_logo.png",
+            "imageUrl": "images/client/bankia_logo.png",
             "webSite": "http://www.bankia.es/"
         },
         "employer": {
             "name": "AT Sistemas",
-            "imageUrl": "img/employer/atsistemas_logo.png",
+            "imageUrl": "images/employer/atsistemas_logo.png",
             "webSite": "http://atsistemas.com/es/"
         },
         "full-time": "true",
@@ -182,12 +182,12 @@
         "position": "Programador C++/Delphi/Paradox",
         "client": {
             "name": "Seres",
-            "imageUrl": "img/client/seres_logo.jpg",
+            "imageUrl": "images/client/seres_logo.jpg",
             "webSite": "http://es.groupseres.com/"
         },
         "employer": {
             "name": "Bull-SICONET",
-            "imageUrl": "img/employer/bull_logo.png",
+            "imageUrl": "images/employer/bull_logo.png",
             "webSite": "http://www.bull.es/"
 
         },
@@ -223,12 +223,12 @@
         "position": "Analista programador VBA/SQL-Server",
         "client": {
             "name": "Liberty Seguros",
-            "imageUrl": "img/client/liberty_seguros_logo.png",
+            "imageUrl": "images/client/liberty_seguros_logo.png",
             "webSite": "http://www.libertyseguros.es/"
         },
         "employer": {
             "name": "Bull-SICONET",
-            "imageUrl": "img/employer/bull_logo.png",
+            "imageUrl": "images/employer/bull_logo.png",
             "webSite": "http://www.bull.es/"
         },
         "full-time": "true",
@@ -270,12 +270,12 @@
         "position": "Programador Web J2EE/EJB/JSF",
         "client": {
             "name": "Sanitas",
-            "imageUrl": "img/client/sanitas_logo.png",
+            "imageUrl": "images/client/sanitas_logo.png",
             "webSite": "http://www.sanitas.es/"
         },
         "employer": {
             "name": "Bull-SICONET",
-            "imageUrl": "img/employer/bull_logo.png",
+            "imageUrl": "images/employer/bull_logo.png",
             "webSite": "http://www.bull.es/"
         },
         "full-time": "true",
@@ -337,12 +337,12 @@
         "position": "Programador Web Junior J2EE/Spring/JSF",
         "client": {
             "name": "Mapfre",
-            "imageUrl": "img/client/mapfre_logo.png",
+            "imageUrl": "images/client/mapfre_logo.png",
             "webSite": "http://www.mapfre.com/"
         },
         "employer": {
             "name": "Bull-SICONET",
-            "imageUrl": "img/employer/bull_logo.png",
+            "imageUrl": "images/employer/bull_logo.png",
             "webSite": "http://www.bull.es/"
         },
         "full-time": "true",

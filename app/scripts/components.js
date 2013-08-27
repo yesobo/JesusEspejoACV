@@ -15,7 +15,7 @@ angular.module('JesusEspejoACVDirectives', ['pascalprecht.translate'])
 				$('#resp-menu-btn').click();
 			});
 
-			$scope.langSwitchImg = 'img/lang_spanish.png';
+			$scope.langSwitchImg = 'images/lang_spanish.png';
 			$scope.changeLanguage = function(langKey) {
 				$translate.uses(langKey);
 			};
@@ -23,10 +23,10 @@ angular.module('JesusEspejoACVDirectives', ['pascalprecht.translate'])
 			$scope.switchLanguage = function() {
 				if($translate.uses() === 'en') {
 					$translate.uses('es');
-					$scope.langSwitchImg = 'img/lang_english.png';
+					$scope.langSwitchImg = 'images/lang_english.png';
 				} else {
 					$translate.uses('en');
-					$scope.langSwitchImg = 'img/lang_spanish.png';
+					$scope.langSwitchImg = 'images/lang_spanish.png';
 				}
 			};
 		},
