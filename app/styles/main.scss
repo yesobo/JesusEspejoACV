@@ -150,7 +150,10 @@ body {
 }
  
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) {
+    .md-lg-hidden {
+        display: none;
+    }
 }
 
 @media (min-width: 321px) {
@@ -222,10 +225,6 @@ body {
     padding-bottom: 0px;
 }
 
-.lang_wrapper ul {
-    margin: 0px;
-}
-
 .navbar img {
     max-height: 100%;
     max-width: 100%;
@@ -238,10 +237,6 @@ body {
 
 .navbar .brand {
     color: white;
-}
-
-#ul-lang {
-    margin: 0px;
 }
 
 .period {
