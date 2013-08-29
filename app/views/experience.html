@@ -37,7 +37,7 @@
                  </div>
                </div>
                <div class="employment" ng-repeat="employment in employments | filter: query | filter: employer.employerName | orderBy: '-start'">
-                <span class="label">
+                <span class="label label-default">
                   {{employment.start | myDate}} - {{employment.end | myDate}}
                 </span>
                 <h4 class="positionTitle">{{employment.position}} {{'AT' | translate}} <a target="_blank" href="{{employment.client.webSite}}">{{employment.client.name}}</a></h4>
