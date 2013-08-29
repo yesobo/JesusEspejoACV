@@ -233,7 +233,11 @@ body {
         display: none!important;
     }
 
-    input[type:search] {
+    input[type=search] {
+        min-width: 20px;
+    }
+
+    input[type=search]:focus {
     
     }
 }
@@ -359,13 +363,18 @@ body {
 }
 
 @media (max-width: 991px) {
-    .main-left > h2, 
-    .main-left > h5 {
+    .sectionTitleWrapper > h2, 
+    .sectionTitleWrapper > h5 {
         display: inline-block
     }
 
-    .main-left > input {
-        margin-left: 20px;
+    #searchWrapper > input {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    #searchWrapper {
+        overflow: hidden;
     }
 
     .main-left:after {
@@ -382,4 +391,20 @@ body {
     .main {
         border-left: none;
     }
+
+    .sectionTitleWrapper {
+        width: 300px;
+        float: left;
+    }
+
+    .main-left {
+        overflow: hidden;
+    }
+
+    .main-left div {
+        height: 88px;
+        min-width: 33px;
+    }
+
+
 }
