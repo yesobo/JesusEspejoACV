@@ -2,7 +2,7 @@
 'use strict';
 
 angular.module('JesusEspejoACVDirectives', ['pascalprecht.translate'])
-.directive('navmenu', function() {
+.directive('navMenu', function() {
 	return {
 		restrict: 'E',
 		transclude: true,
@@ -33,4 +33,17 @@ angular.module('JesusEspejoACVDirectives', ['pascalprecht.translate'])
 		templateUrl: 'views/templates/navmenu.html',
 		replace: true
 	};
-});
+}).directive('searchButton', function($rootScope) {
+	return {
+		restrict: 'E',
+		transclude: true,
+		scope: {
+			query: "hola que tal"
+		},
+		controller: function($scope) {
+			$scope.query = myQuery;
+		},
+		templateUrl: 'views/templates/search-button.html',
+		replace: true
+	};
+});;

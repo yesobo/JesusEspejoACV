@@ -139,12 +139,19 @@ module.exports = function (grunt) {
     },
     compass: {
       options: {
+        //The source directory where you keep your Sass stylesheets.
         sassDir: '<%= yeoman.app %>/styles',
+        //The target directory where you keep your CSS stylesheets.
         cssDir: '.tmp/styles',
+        //The directory where generated images are kept. It is relative to the projectPath.
         generatedImagesDir: '.tmp/images/generated',
+        //The directory where you keep your images.
         imagesDir: '<%= yeoman.app %>/images',
+        //The directory where you keep your JavaScript files.
         javascriptsDir: '<%= yeoman.app %>/scripts',
+        //The directory where you keep your fonts.
         fontsDir: '<%= yeoman.app %>/styles/fonts',
+        //Makes files under the specified folder findable by Sass's @import directive.
         importPath: '<%= yeoman.app %>/bower_components',
         httpImagesPath: '/images',
         httpGeneratedImagesPath: '/images/generated',
