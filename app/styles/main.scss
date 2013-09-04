@@ -29,6 +29,14 @@ body {
   }
 }
 
+.row-fluid [class*="span"] {
+  min-height: 0px;
+}
+
+.container-fluid {
+  padding-top: 20px;
+}
+
 .navbar-inverse .nav .active > a {
   color: white;
   background-color: #111111;
@@ -61,6 +69,60 @@ body {
   color: white;
 }
 
+.main-left {
+  height: 65px;  
+}
+
+button.search {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+$sizes: 22px;
+.searchButtonContainer {
+    border: 1px solid black;
+    margin-top: 24px;
+    height: $sizes;
+    padding-left: $sizes;
+    padding-right: $sizes;
+    background-color: white;
+    input{
+        border: none;
+        width: 100%;
+    }
+    input:focus {
+        //width: 80%;
+        outline: none;
+    }
+     * {
+      float: left;
+      height: 20px;
+    }
+    span {
+      position: relative;
+      width: $sizes - 4;
+      margin-left: -$sizes + 4;
+    } 
+    button {
+      position: relative;
+      width: $sizes;
+      margin-right: -$sizes;
+    }
+}
+
+.main {
+  border-left: 1px solid #3a87ad;
+  padding-left: 1.5em;
+  margin-top: 10px;
+}
+
+.mainColumn {
+  margin-left: 10px!important;
+}
+
 .period {
   margin-top: 10px;
 }
@@ -71,31 +133,9 @@ body {
   margin-top: 10px;
 }
 
-.main {
-  border-left: 1px solid #3a87ad;
-  padding-left: 1.5em;
-  margin-top: 10px;
-}
-
 .asideExperience {
   min-width: 165px;
 }
-
-
-
-.row-fluid [class*="span"] {
-  min-height: 0px;
-}
-
-.mainColumn {
-  margin-left: 10px!important;
-}
-
-.container-fluid {
-  padding-top: 20px;
-}
-
-
 
 .employerLogo {
   max-width: 120px;
@@ -117,27 +157,6 @@ body {
 
 .sectionTitleWrapper {
   margin-right: 20px;
-}
-
-button.search {
-    padding: 0;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    -webkit-appearance: none;
-}
-
-.searchButtonContainer {
-    border: 1px solid black;
-    background-color: white;
-    input{
-        border: none;
-        width: 80%;
-    }
-    input:focus {
-        width: 80%;
-        outline: none;
-    }
 }
 
 /************************** Phones *****************************/
@@ -179,6 +198,21 @@ button.search {
   }
   .navbar .nav {
     margin: 0px;
+  }
+
+  .searchButtonContainer {
+    > input, button {
+      display: none;
+    }
+    > span {
+      position: relative;
+      width: auto;
+      margin: none;
+      font-size: 2em;
+      text-align: center;
+    }
+    height: 40px;
+    padding-left: none;
   }
 }
 
@@ -236,21 +270,7 @@ button.search {
   }
 
   .main-left div {
-    height: auto!important;
     min-width: 33px;
-  }
-
-  .sectionTitleWrapper {
-    > h5 {
-        display: block!important;
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-    > h2 {
-        margin-bottom: 0px;
-    }
-    width: auto!important;
-    height: auto!important;
   }
 
   aside {
@@ -268,6 +288,24 @@ button.search {
     margin-right: 15px;
   }
 
+  .searchButtonContainer {
+    > input, button {
+      display: none;
+    }
+    > span {
+      position: relative;
+      width: auto;
+      margin: none;
+      font-size: 2em;
+      text-align: center;
+    }
+    height: 40px;
+    padding-left: none;
+    max-width: 10px;
+    float: right;
+    margin-right: 10px;
+  }
+
 }
 
 /************************** Phone to tablet *********************/
@@ -279,6 +317,23 @@ button.search {
   }
   .xs-sm-hidden {
     display: none;
+  }
+
+  .main-left {
+    height: 70px;  
+  }
+
+  .sectionTitleWrapper {
+    > h5 {
+        display: block!important;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    > h2 {
+        margin-bottom: 0px;
+    }
+    width: auto!important;
+    height: auto!important;
   }
 }
 

@@ -38,10 +38,7 @@ angular.module('JesusEspejoACVDirectives', ['pascalprecht.translate'])
 		restrict: 'E',
 		transclude: true,
 		scope: {
-			query: "hola que tal"
-		},
-		controller: function($scope) {
-			$scope.query = myQuery;
+			searchQuery: "="
 		},
 		templateUrl: 'views/templates/search-button.html',
 		replace: true
