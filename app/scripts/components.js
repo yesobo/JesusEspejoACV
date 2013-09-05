@@ -38,7 +38,8 @@ angular.module('JesusEspejoACVDirectives', ['pascalprecht.translate'])
 		restrict: 'E',
 		transclude: true,
 		scope: {
-			searchQuery: "="
+			searchQuery: "=",
+			eventHandler: '&customClick'
 		},
 		templateUrl: 'views/templates/search-button.html',
 		replace: true
