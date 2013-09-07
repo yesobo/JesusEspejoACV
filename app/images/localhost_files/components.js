@@ -39,13 +39,7 @@ angular.module('JesusEspejoACVDirectives', ['pascalprecht.translate'])
 		transclude: true,
 		scope: {
 			searchQuery: "=",
-			eventHandler: '&customClick',
-			blurHandler: '&customBlur'
-		},
-		controller: function($scope, $element) {
-			$scope.clear = function() {
-				$scope.searchQuery = "";
-			}
+			eventHandler: '&customClick'
 		},
 		templateUrl: 'views/templates/search-button.html',
 		replace: true

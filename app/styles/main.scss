@@ -199,21 +199,6 @@ $sizes: 22px;
   .navbar .nav {
     margin: 0px;
   }
-
-  .searchButtonContainer {
-    > input, button {
-      display: none;
-    }
-    > span {
-      position: relative;
-      width: auto;
-      margin: none;
-      font-size: 2em;
-      text-align: center;
-    }
-    height: 40px;
-    padding-left: none;
-  }
 }
 
 /******************* Phone and Wide Phone *******************/
@@ -310,6 +295,26 @@ $sizes: 22px;
     cursor: pointer;
   }
 
+  div.mobSearchMode {
+    span {
+      margin-left: -37px!important;
+    }
+    input {
+      display: block;
+      height: 100%;
+      font-size: 2em;
+    }
+    button {
+      display: block!important;
+      font-size: 2em!important;
+      height: 100%!important;
+    }
+    float: none;
+    max-width: none;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
 /************************** Phone to tablet *********************/

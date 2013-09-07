@@ -11,19 +11,18 @@ angular.module('JesusEspejoACVApp')
           SharedData.getEmployersLastDate(employments);
       });
 
-      sc.activateSearchButton = true;
-      sc.hideAndExpand = function() {
-        if(sc.activateSearchButton) {
-          $('.sectionTitleWrapper').toggle('15');
-          $('.searchButtonContainer').toggleClass('mobSearchMode');
-          sc.activateSearchButton = false;
-        }
-      }
+      sc.expanded = false;
+      sc.hideAndExpand = function(selector, caller) {
+        if(!sc.expanded) {
+          $(selector).toggle('15');
+          sc.expanded = true;
 
-      sc.exitSearchMode = function() {
-        sc.activateSearchButton = true;
-        sc.hideAndExpand();
-        sc.activateSearchButton = true;
+          $(caller).addClass('mobSearchMode');
+          var nextSiblingSelector = caller + ' > span';
+          $(nextSiblingSelector).addClass('mobSearchMode');
+          nextSiblingSelector = caller + ' > input';
+          $(nextSiblingSelector).addClass('mobSearchMode');
+        }
       }
 
     }])

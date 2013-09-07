@@ -1,12 +1,12 @@
 <section id="experience" class="row-fluid">
   <aside class="col-lg-3 col-md-3">
     <div class="main-left">
-      <div  class="sectionTitleWrapper" ng-show="showTitle"> 
+      <div  class="sectionTitleWrapper"> 
           <h2>Experience</h2>
           <h5 class="text-primary">Where I worked</h5>
       </div>
       <div id="searchWrapper">
-        <search-button search-query="query" custom-click="hide('.sectionTitleWrapper')"></search-button>
+        <search-button search-query="query" custom-click="hideAndExpand()" custom-blur="exitSearchMode()"></search-button>
       </div>
     </div>
     </aside>
