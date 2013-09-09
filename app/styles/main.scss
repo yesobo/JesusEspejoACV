@@ -476,6 +476,9 @@ $sizes: 22px;
 
 /************************** Tablets *********************/
 @media (min-width: 481px) and (max-width: 767px) {
+  .searchButtonContainer {  
+    margin-top: 30px;
+  }
 }
 /************************** Wide tablets *********************/
 @media (max-width: 979px) and (min-width: 768px) {
