@@ -137,8 +137,13 @@ $sizes: 22px;
   min-width: 165px;
 }
 
-.employerLogo {
-  max-width: 120px;
+.employerLine {
+  height: 67px;
+  padding-left: 0px;
+}
+
+.employerNameWrapper {
+  padding-left: 0px;  
 }
 
 .employerName {
@@ -155,8 +160,17 @@ $sizes: 22px;
   }
 }
 
+.employerLogo {
+  max-width: 120px;
+}
+
 .sectionTitleWrapper {
   margin-right: 20px;
+}
+
+.positionTitle {
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 /************************** Phones *****************************/
@@ -388,6 +402,11 @@ $sizes: 22px;
 
 /************************** Phone to wide tablet ************************/
 @media (max-width: 991px) {
+  
+  aside {
+    padding-left: 0px!important;
+  }
+
   .sectionTitleWrapper > {
     h2, h5 {
       display: inline-block;
@@ -418,6 +437,7 @@ $sizes: 22px;
   }
 
   .periodColumn {
+    line-height: 20px;
     padding-left: 0px;
   }
 
@@ -497,6 +517,9 @@ $sizes: 22px;
   }
   .md-lg-hidden {
     display: none;
+  }
+  .periodColumn {
+    padding-left: 0px;
   }
 }
 
