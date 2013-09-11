@@ -125,11 +125,17 @@ $sizes: 22px;
 
 .period {
   margin-top: 10px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #428bca;
+  font-weight: bold;
+  height: 44px;
+  padding: 0px;
 }
 
 .periodColumn {
-  width: 8em!important;
-  line-height: 40px;
+  width: 10em!important;
+  line-height: 22px;
   margin-top: 10px;
 }
 
@@ -439,6 +445,14 @@ $sizes: 22px;
   .periodColumn {
     line-height: 20px;
     padding-left: 0px;
+    width: 20em !important;
+  }
+
+  .period {
+    > div {
+      padding: 0px;
+    }
+    height: 21px;
   }
 
   .mainColumn {
@@ -519,7 +533,7 @@ $sizes: 22px;
     display: none;
   }
   .periodColumn {
-    padding-left: 0px;
+    padding: 0px;
   }
 }
 
