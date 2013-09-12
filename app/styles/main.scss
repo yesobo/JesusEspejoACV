@@ -2,6 +2,24 @@
 
 /* Put your CSS here */
 
+.primary {
+  background-color: #428bca;
+  color: #ffffff;
+}
+
+.primary-inverse {
+  color: #428bca;
+}
+
+.default {
+  background-color: #999999;
+  color: #ffffff;
+}
+
+.default-inverse {
+  color: #999999;
+}
+
 html {
   margin: 20px;
 }
@@ -127,11 +145,34 @@ $sizes: 22px;
   margin-top: 10px;
   text-align: center;
   color: #ffffff;
-  background-color: #428bca;
   font-weight: bold;
-  height: 44px;
+  height: 46px;
+  padding: 0px;
+  border: solid 1px #428bca;
+}
+
+.period-mini {
+  font-size: 13px;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0px;
+  border: solid 1px #999999;
+  width: 20em;
+   .periodCount {
+    display:inline;
+  }
+}
+
+.periodInterval {
   padding: 0px;
 }
+
+.periodInterval-mini {
+  width: 130px;
+  float: left;
+}
+
 
 .periodColumn {
   width: 10em!important;
@@ -268,10 +309,10 @@ $sizes: 22px;
   }
 
   body {
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    padding-left: 0;
+    padding-right: 0px;
+    margin-right: 0px;
+    margin-left: 0;
   }
 
   .main-left div {
@@ -281,10 +322,6 @@ $sizes: 22px;
   aside {
     margin-left: 0;
     padding-left: 0!important;
-  }
-  body {
-    margin-left: 0;
-    padding-left: 0;
   }
   .container {
     padding: 0;
@@ -342,6 +379,7 @@ $sizes: 22px;
   .main {
     border-left: none;
     padding-left: 0;
+    padding-right: 0;
     margin-top: 0;
   }
   .xs-sm-hidden {
@@ -453,6 +491,19 @@ $sizes: 22px;
       padding: 0px;
     }
     height: 21px;
+  }
+
+  .period-mini {
+    width: 18em!important;
+  }
+
+  .periodInterval {
+    width: 130px;
+    float: left;
+  }
+
+  .periodCount {
+    display: inline;
   }
 
   .mainColumn {
