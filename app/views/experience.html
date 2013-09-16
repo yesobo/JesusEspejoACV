@@ -25,7 +25,7 @@
                   </span>
                 </div>
                 <div class="periodCount primary-inverse col-lg-12 col-md-12">  
-                  <span>42 meses</span>
+                  <span>{{[employer.start, employer.end] | datesDiff}}</span>
                 </div>
               </div>
             </div> 
@@ -52,7 +52,7 @@
                         </span>
                       </div>
                       <div class="periodCount default-inverse">  
-                        <span>42 meses</span>
+                        <span>{{[employment.start, employment.end] | datesDiff}}</span>
                       </div>
                     </div>
                     <h4 class="positionTitle panel-title">

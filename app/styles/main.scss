@@ -173,9 +173,15 @@ $sizes: 22px;
   float: left;
 }
 
+.periodCount {
+  padding-left: 1px;
+  padding-right: 1px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
 
 .periodColumn {
-  width: 10em!important;
+  width: 10.2em!important;
   line-height: 22px;
   margin-top: 10px;
 }
