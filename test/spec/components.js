@@ -1,3 +1,4 @@
+/* global describe, beforeEach, inject, it, expect, $: true */
 'use strict';
 
 describe('Directive', function() {
@@ -13,7 +14,7 @@ describe('Directive', function() {
 		
 		template = $templateCache.get('app/views/templates/navmenu.html');
 		$templateCache.put('views/templates/navmenu.html', template);
-		var elem = angular.element('<navmenu></navmenu>');
+		var elem = angular.element('<nav-menu></nav-menu>');
 
 		scope = _$rootScope_;
 		element = _$compile_(elem)(scope);
@@ -22,7 +23,9 @@ describe('Directive', function() {
 
 	describe('navmenu', function() {
 		it('should set the language image to spanish by default', function() {
-			expect($('#ul-lang > li > img', element).attr('src')).toBe('img/lang_spanish.png');
+			// .find() is limited to tag name 
+			expect($(element.find('ul')[1]).find('li>img').attr('src'))
+				.toBe('images/lang_spanish.png');
 			expect(true).toBe(true);
 		});
 	});

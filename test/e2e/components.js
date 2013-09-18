@@ -8,6 +8,6 @@ describe('Navmenu', function() {
 
 	it('should change the language icon as user clicks on it', function() {
 		element('#ul-lang img').click();
-		expect(element('#ul-lang img').attr('src')).toBe('img/lang_english.png');
+		expect(element('#ul-lang img').attr('src')).toBe('images/lang_english.png');
 	});
 });

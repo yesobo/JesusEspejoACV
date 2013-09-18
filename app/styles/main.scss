@@ -226,6 +226,19 @@ $sizes: 22px;
   margin-left: 10px;
 }
 
+.panel-footer-arrow {
+  padding: 0px 0px;
+  text-align: center;
+  > a {
+    width: 100%;
+  }
+}
+
+.panel-footer-arrow:hover {
+  cursor: pointer;
+}
+
+
 /************************** Phones *****************************/
 @media (max-width: 321px) {
   .nav-collapse320 {
@@ -266,6 +279,7 @@ $sizes: 22px;
   .navbar .nav {
     margin: 0px;
   }
+
 }
 
 /******************* Phone and Wide Phone *******************/
