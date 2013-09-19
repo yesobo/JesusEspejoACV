@@ -231,11 +231,26 @@ $sizes: 22px;
   text-align: center;
   > a {
     width: 100%;
+    display: block;
   }
 }
 
 .panel-footer-arrow:hover {
   cursor: pointer;
+}
+
+.my-accordion {
+  >span {
+    @extend .glyphicon;
+    @extend .glyphicon-chevron-up;
+  }
+}
+
+.my-accordion.collapsed {
+  >span {
+    @extend .glyphicon;
+    @extend .glyphicon-chevron-down;
+  }
 }
 
 

@@ -39,7 +39,6 @@ angular.module('JesusEspejoACVApp')
           }
         }
       }
-
     }])
   .controller('ExperienceDetailCtrl',
     ['$scope', '$routeParams', 'SharedData',
