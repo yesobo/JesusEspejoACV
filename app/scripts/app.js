@@ -36,7 +36,11 @@ angular.module('JesusEspejoACVApp',
 
       /* Experience */
       'AT': 'at',
-      'PRESENT': 'Present'
+      'PRESENT': 'Present',
+      'YEAR': 'year',
+      'YEARS': 'years',
+      'MONTH': 'month',
+      'MONTHS': 'months'
     });
     
     $translateProvider.translations('es', {
@@ -56,8 +60,11 @@ angular.module('JesusEspejoACVApp',
 
       /* Experience */
       'AT': 'en',
-      'PRESENT': 'Hoy'
-
+      'PRESENT': 'Hoy',
+      'YEAR': 'año',
+      'YEARS': 'años',
+      'MONTH': 'mes',
+      'MONTHS': 'meses'
     });
 
     $translateProvider.preferredLanguage('en');

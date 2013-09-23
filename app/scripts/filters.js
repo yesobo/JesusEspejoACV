@@ -10,30 +10,34 @@ angular.module('JesusEspejoACVApp')
 			}
 			return angularDateFilter(d.getTime(), 'MM-yyyy');
     };
-})
-.filter('datesDiff', function($filter) {
+	})
+.filter('datesDiff', function($filter, $translate) {
 
 	return function(datesObj) {
 		var dStart = new Date(datesObj[0]);
 		var dEnd = new Date(datesObj[1]);
-		var month_diff = (dEnd.getFullYear() - 
+		var monthDiff = (dEnd.getFullYear() -
 			dStart.getFullYear()) * 12 + dEnd.getMonth() - dStart.getMonth();
-		var years = Math.floor(month_diff / 12);
-		var months = month_diff % 12;
-		var result = "";
+		var years = Math.floor(monthDiff / 12);
+		var months = monthDiff % 12;
+		var result = '';
 		if ( years > 0 ) {
-			result += years + ' year';
+			result += years + ' ';
 			if ( years > 1) {
-				result += 's';
+				result += $translate('YEARS');
+			} else {
+				result += $translate('YEAR');
 			}
 			if ( months > 0) {
 				result += ' ';
 			}
 		}
 		if ( months > 0 ) {
-			result += months + ' month';
+			result += months + ' ';
 			if (months > 1) {
-				result += 's';
+				result += $translate('MONTHS');
+			} else {
+				result += $translate('MONTH');
 			}
 		}
 		return result;
