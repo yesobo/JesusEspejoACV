@@ -39,6 +39,10 @@ angular.module('JesusEspejoACVApp')
           }
         }
       }
+
+      sc.translateUses = function() {
+        return 'en';
+      }
     }])
   .controller('ExperienceDetailCtrl',
     ['$scope', '$routeParams', 'SharedData',

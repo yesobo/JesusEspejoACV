@@ -40,7 +40,10 @@ angular.module('JesusEspejoACVApp',
       'YEAR': 'year',
       'YEARS': 'years',
       'MONTH': 'month',
-      'MONTHS': 'months'
+      'MONTHS': 'months',
+
+      /* Select data field */
+      'employment.position': 'employment.position_en'
     });
     
     $translateProvider.translations('es', {

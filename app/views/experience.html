@@ -56,7 +56,10 @@
                       </div>
                     </div>
                     <h4 class="positionTitle panel-title">
-                      {{employment.position}}
+                      <span ng-switch on="translateUses()">
+                        <span ng-switch-when="en">{{employment.position_en}}</span>
+                        <span ng-switch-when="es">{{employment.position_es}}</span>
+                      </span>
                       {{'AT' | translate}} <a target="_blank" href="{{employment.client.webSite}}">{{employment.client.name}}</a>
                     </h4>
                   </div>
