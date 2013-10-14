@@ -26,6 +26,10 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
       setSharedData: function(data) {
         angular.copy(data, experience);
       },
+      getPositions: function() {
+        console.log('executing getPositions');
+        return $resource('data/position_en.json', {});
+      },
       filterJSON: function(obj, key, val) {
         var objects = [];
         for (var i in obj) {

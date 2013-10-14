@@ -1,0 +1,60 @@
+{
+	"APMetro": {
+		"position": "J2EE/EJB/Front-end/Reporting Web Developer",
+		"task": [
+			{"description": "Web Design and Development based on mockups"},
+            {"description": "Business Logic Implementation (Session and Entity Beans)"},
+            {"description": "PDF with graphic content Report Development based on mockups"},
+            {"description": "Unit and Functional Testing"}
+		]
+
+	},
+	"PJrMapfre": {
+		"position": "J2EE/Spring/JSF Jr Web Developer",
+		"task": [
+			{"description": "Web Design and Develpment based on mockups"},
+            {"description": "J2EE development based on sequence diagrams"}
+		]
+
+	},
+	"PSanitas": {
+		"position": "J2EE/EJB/JSF Web Developer",
+		"task" : [
+			{"description": "Web Design and Development based on mockups"},
+            {"description": "J2EE Develpment based on sequence and flow diagrams"},
+            {"description": "JUnit Test Development"}
+		]
+
+	},
+	"APLiberty": {
+		"position": "VBA/SQL-Server Software Engineer",
+        "task": [
+
+            {"description": "MS Office Functional And Technical Requirements Definition and Analysis."},
+            {"description": "VBA MS Access and MS Excel Development using Graphics, Forms, Macros and SQL-Server connection"}
+        ]
+	},
+	"PSeres": {
+		"position": "C++/Delphi/Paradox Software Developer",
+		"task": [
+           {"description": "C++ Desktop Application Design and Development."}
+		]
+
+	},
+	"APBankia": {
+		"position": "J2EE/WebSphere/Front-end Web Developer",
+        "task": [
+	        {"description": "Web Design and Development based on mockups"},
+            {"description": "J2EE Develpment"}
+        ]
+	},
+	"APVIECI": {
+		"position": "J2EE/Java/Front-end Web Developer",
+        "task": [
+        	{"description": "Web Design and Development based on mockups"},
+            {"description": "J2EE Development"},
+            {"description": "Business Logic Analysis based on source code reverse engeneering"},
+            {"description": "Hotel Bookings Software Technical Design"}
+        ]
+	}
+}

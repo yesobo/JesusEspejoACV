@@ -2,8 +2,8 @@
 
 angular.module('JesusEspejoACVApp')
   .controller('ExperienceCtrl',
-    ['$scope', 'SharedData',
-    function (sc, SharedData) {
+    ['$scope', 'SharedData', '$translate',
+    function (sc, SharedData, translate) {
       
       var NO_FOCUS_SEARCH = 0;
 
@@ -12,6 +12,11 @@ angular.module('JesusEspejoACVApp')
         sc.employersDates =
           SharedData.getEmployersLastDate(employments);
       });
+
+      var positions = sc.positions =
+        SharedData.getPositions().get({isArray:false});
+
+      console.log(positions);
 
       sc.activateSearchButton = true;
       sc.hideAndExpand = function(mode) {
@@ -40,9 +45,8 @@ angular.module('JesusEspejoACVApp')
         }
       }
 
-      sc.translateUses = function() {
-        return 'en';
-      }
+      sc.translateUses = translate.uses();
+
     }])
   .controller('ExperienceDetailCtrl',
     ['$scope', '$routeParams', 'SharedData',

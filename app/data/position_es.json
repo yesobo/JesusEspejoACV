@@ -1,0 +1,59 @@
+{
+	"APMetro": {
+		"position" : "Programador Web J2EE/EJB/Front-end/Reporting",
+		"task": [
+			{"description": "Diseño y Desarrollo web a partir de maquetas"},
+            {"description": "Implementación de lógica de negocio (Session y Entity Beans)"},
+            {"description": "Desarrollo de informes pdf con contenido gráfico a partir de maquetas"},
+            {"description": "Desarrollo de pruebas unitarias y funcionales"}
+		]
+
+	},
+	"PJrMapfre": {
+		"postion": "Programador Web Junior J2EE/Spring/JSF",
+		"task": [
+			{"description": "Desarrollo de interfaces web a partir de maquetas"},
+            {"description": "Desarrollo J2EE a partir de diagramas de secuencia"}
+		]
+
+	},
+	"PSanitas": {
+		"position": "Programador Web J2EE/EJB/JSF",
+		"task" : [
+			{"description_en": "Desarrollo y Diseño de interfaces web a partir de maquetas"},
+            {"description_en": "Desarrollo J2EE a partir de diagramas de secuencia y de flujo"},
+            {"description_en": "Desarrollo de pruebas unitarias"}
+		]
+
+	},
+	"APLiberty": {
+		"position": "Analista programador VBA/SQL-Server",
+        "task": [
+            {"description": "Toma y Análisis de requisitos funcionales y técnicos de aplicación MS Office"},
+            {"description": "Desarrollo VBA Access y Excel utilizando gráficos, formularios, Automatización y conexión a SQL-Server"}
+        ]
+	},
+	"PSeres": {
+		"position": "Programador C++/Delphi/Paradox",
+		"task": [
+           {"description": "Desarrollo y diseño de aplicaciones de escritorio con C++"}
+		]
+
+	},
+	"APBankia": {
+		"position": "Analista programador Web J2EE/WebSphere/Front-end",
+        "task": [
+	        {"description": "Desarrollo de interfaces web a partir de maquetas"},
+            {"description": "Desarrollo J2EE"}
+        ]
+	},
+	"APVIECI": {
+		"position": "Analista programador Web J2EE/Java/Front-end",
+        "task": [
+        	{"description": "Desarrollo de interfaces web a partir de esquemas de página"},
+            {"description": "Desarrollo J2EE"},
+            {"description": "Análisis de lógica de negocio a partir de código fuente"},
+            {"description": "Diseño técnico de aplicación de reservas hoteleras"}
+        ]
+	}
+}

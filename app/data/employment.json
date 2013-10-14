@@ -4,10 +4,6 @@
             "$oid": "51bc524de840a529c200009a"
         },
         "locator": "APMetro",
-        "position": {
-            "es": "Programador Web J2EE/EJB/Front-end/Reporting",
-            "en": "J2EE/EJB/Front-end/Reporting Web Developer"
-        },
         "client": {
             "name": "Metro de Madrid S.A.",
             "imageUrl": "images/client/metro_madrid_logo.png",
@@ -21,23 +17,15 @@
         "full-time": "true",
         "tasks": [
             {
-                "description_es": "Diseño y Desarrollo web a partir de maquetas",
-                "description_en": "Web Design and Development based on mockups",
                 "tech": "JSF 2.0, RichFaces, Javascript, ChartDirector, CSS"
             },
             {
-                "description_es": "Implementación de lógica de negocio (Session y Entity Beans)",
-                "description_en": "Business Logic Implementation (Session and Entity Beans)",
                 "tech": "EJB 3.0, JPA 1.0, Maven, Oracle SQL"
             },
             {
-                "description_es": "Desarrollo de informes pdf con contenido gráfico a partir de maquetas",
-                "description_en": "PDF with graphic content Report Development based on mockups",
                 "tech": "JasperResport, iReport"
             },
             {
-                "description_es": "Desarrollo de pruebas unitarias y funcionales",
-                "description_en": "Unit and Functional Testing",
                 "tech": "JUnit, Selenium"
             }
         ],
@@ -78,10 +66,6 @@
             "$oid": "51bc3f3e494f44cf7b00003d"
         },
         "locator": "APVIECI",
-        "position": {
-            "es": "Analista programador Web J2EE/Java/Front-end",
-            "en": "J2EE/Java/Front-end Web Developer"
-        },
         "client": {
             "name": "IECISA/ Viajes El Corte Inglés",
             "imageUrl": "images/client/viajes_ECI_logo.png",
@@ -95,23 +79,15 @@
         "full-time": "true",
         "tasks": [
             {
-                "description_es": "Desarrollo de interfaces web a partir de esquemas de página",
-                "description_en": "Web Design and Development based on mockups",
                 "tech": "JQuery, Javascript, HTML5, CSS3, Modernizr, polyfills"
             },
             {
-                "description_es": "Desarrollo J2EE",
-                "description_en": "J2EE Development",
                 "tech": "Java 1.6, JSP, Java Servlets, XML, JAX, WS, CICS, JUnit"
             },
             {
-                "description_es": "Análisis de lógica de negocio a partir de código fuente",
-                "description_en": "Business Logic Analysis based on source code reverse engeneering",
                 "tech": "VB6, ASP, CICS, WS SOA, JSF, JEE, XML"
             },
             {
-                "description_es": "Diseño técnico de aplicación de reservas hoteleras",
-                "description_en": "Hotel Bookings Software Technical Design",
                 "tech": "WS SOA, JSF, JEE, XML"
             }
         ],
@@ -140,10 +116,6 @@
             "$oid": "51bb66a98c523b196aca5340"
         },
         "locator": "APBankia",
-        "position": {
-            "es": "Analista programador Web J2EE/WebSphere/Front-end",
-            "en": "J2EE/WebSphere/Front-end Web Developer"
-        },
         "client": {
             "name": "Bankia",
             "imageUrl": "images/client/bankia_logo.png",
@@ -157,13 +129,9 @@
         "full-time": "true",
         "tasks": [
             {
-                "description_es": "Desarrollo de interfaces web a partir de maquetas",
-                "description_en": "Web Design and Development based on mockups",
                 "tech": "JQuery, Javascript, JSP, HTML5, CSS3, Modernizr, polyfills"
             },
             {
-                "description": "Desarrollo J2EE",
-                "description": "J2EE Develpment",
                 "tech": "Java 1.4, IBM WebSphere Business Component Composer V4.2, Oracle SQL,  HOST"
             }
         ],
@@ -202,11 +170,6 @@
             "$oid": "51c0a366a28303b9ad86ac14"
         },
         "locator": "PSeres",
-        "position": {
-            "es": "Programador C++/Delphi/Paradox",
-            "en": "C++/Delphi/Paradox Software Developer"
-        },
-        "position": "Programador C++/Delphi/Paradox",
         "client": {
             "name": "Seres",
             "imageUrl": "images/client/seres_logo.jpg",
@@ -221,8 +184,6 @@
         "full-time": "true",
         "tasks": [
             {
-                "description_es": "Desarrollo y diseño de aplicaciones de escritorio con C++",
-                "description_en": "C++ Desktop Application Design and Development.",
                 "tech": "C++, C++ Builder, Paradox"
             }
         ],
@@ -248,10 +209,6 @@
             "$oid": "51c1597b22a466afa4000341"
         },
         "locator": "APLiberty",
-        "position": {
-            "es": "Analista programador VBA/SQL-Server",
-            "en": "VBA/SQL-Server Software Engineer"
-        },
         "client": {
             "name": "Liberty Seguros",
             "imageUrl": "images/client/liberty_seguros_logo.png",
@@ -265,13 +222,9 @@
         "full-time": "true",
         "tasks": [
             {
-                "description_es": "Toma y Análisis de requisitos funcionales y técnicos de aplicación MS Office.",
-                "description_en": "MS Office Functional And Technical Requirements Definition and Analysis.",
                 "tech": "MS Office"
             },
             {
-                "description_es": "Desarrollo VBA Access y Excel utilizando gráficos, formularios, Automatización y conexión a SQL-Server",
-                "description_en": "VBA MS Access and MS Excel Development using Graphics, Forms, Macros and SQL-Server connection",
                 "tech": "VBA, Access, Excel, SQL-Server 2010"
             }
         ],
@@ -300,10 +253,6 @@
             "$oid": "51c15cce8644157f2c0002e7"
         },
         "locator": "PSanitas",
-        "position": {
-            "es": "Programador Web J2EE/EJB/JSF",
-            "en": "J2EE/EJB/JSF Web Developer"
-        },
         "client": {
             "name": "Sanitas",
             "imageUrl": "images/client/sanitas_logo.png",
@@ -317,18 +266,12 @@
         "full-time": "true",
         "tasks": [
             {
-                "description_es": "Desarrollo y Diseño de interfaces web a partir de maquetas",
-                "description_en": "Web Design and Development based on mockups",
                 "tech": "JSF 1.2, IceFaces, Javascript, CSS, Facelets"
             },
             {
-                "description_es": "Desarrollo J2EE a partir de diagramas de secuencia y de flujo",
-                "description_en": "J2EE Develpment based on sequence and flow diagrams",
                 "tech": "EJB 3.0, Maven, Oracle SQL, Weblogic 9.2"
             },
             {
-                "description_es": "Desarrollo de pruebas unitarias",
-                "description_en": "JUnit Tests Development",
                 "tech": "JUnit"
             }
         ],
@@ -373,10 +316,6 @@
             "$oid": "51c15edec5686a7f800000d0"
         },
         "locator": "PJrMapfre",
-        "position": {
-            "es": "Programador Web Junior J2EE/Spring/JSF",
-            "en": "J2EE/Spring/JSF Jr Web Developer"
-        },
         "client": {
             "name": "Mapfre",
             "imageUrl": "images/client/mapfre_logo.png",
@@ -390,13 +329,9 @@
         "full-time": "true",
         "tasks": [
             {
-                "description_es": "Desarrollo de interfaces web a partir de maquetas",
-                "description_en": "Web Design and Develpment based on mockups",
                 "tech": "JSF 1.2, HTML, Javascript, CSS, Facelets"
             },
             {
-                "description_es": "Desarrollo J2EE a partir de diagramas de secuencia",
-                "description_en": "J2EE development based on sequence diagrams",
                 "tech": "Spring Framework 2.5, Hibernate, JBoss, Oracle"
             }
         ],
