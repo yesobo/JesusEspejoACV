@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('JesusEspejoACVApp',
-  ['JesusEspejoACVServices', 'JesusEspejoACVDirectives', 'pascalprecht.translate'])
+  ['JesusEspejoACVServices', 'JesusEspejoACVDirectives', 
+    'JesusEspejoACVControllers', 'JesusEspejoACVFilters',
+    'pascalprecht.translate'])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -19,34 +21,8 @@ angular.module('JesusEspejoACVApp',
         redirectTo: '/'
       });
   }]).config(['$translateProvider', function ($translateProvider) {
-    $translateProvider.translations('en', {
-      /* Nav menu */
-      'WHO_I_AM': 'Who I Am',
-      'ABOUT_ME': 'About Me',
-      'TECHNICAL_SKILLS': 'Technical Skills',
-      'EXPERTISE': 'Expertise',
-      'EXPERIENCE': 'Experience',
-      'EDUCATION': 'Education',
-      'TRAINING': 'Training',
 
-      /* About me */
-      'ABOUT_ME_EXPL': 'Proffesional profile & Contact Info',
-      'ABOUT_ME_P1': 'Hello, I’m Jesus, web developer and new technologies enthusiast.',
-      'ABOUT_ME_P2': 'As you will see, I\'ve spent the last years building websites and enjoying web technologies in my job and spare time. I would love to share my knowledge with you, so please don\'t hesitate in contacting with me if you\'re interested.',
-
-      /* Experience */
-      'AT': 'at',
-      'PRESENT': 'Present',
-      'YEAR': 'year',
-      'YEARS': 'years',
-      'MONTH': 'month',
-      'MONTHS': 'months',
-
-      /* Select data field */
-      'employment.position': 'employment.position_en'
-    });
-    
-    $translateProvider.translations('es', {
+    $translateProvider.translations('test', {
       /* Nav menu */
       'WHO_I_AM': 'Quien soy',
       'ABOUT_ME': 'Sobre mí',
@@ -70,5 +46,10 @@ angular.module('JesusEspejoACVApp',
       'MONTHS': 'meses'
     });
 
+    $translateProvider.useStaticFilesLoader({
+          prefix: '/data/position_',
+          suffix: '.json'
+    });
+
     $translateProvider.preferredLanguage('en');
-  }]);
+ }]);

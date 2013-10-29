@@ -26,7 +26,7 @@ describe('Experience View', function() {
 
     expect(element('#ul-lang img').attr('src')).toBe('images/lang_spanish.png');
 
-    var elem = element('.periodCount:first > span');
+    var elem = element('.periodCount:first > span').text();
 
     expect(elem).toContain("year");
     expect(elem).toContain("month");
