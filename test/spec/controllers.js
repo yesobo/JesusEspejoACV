@@ -80,7 +80,7 @@ describe('Controller: ExperienceCtrl', function () {
       {$scope: scope, SharedData: mockSharedData});
   }));
 
-  it('should create "employment" model with 2 employments fetched from xhr', 
+  it('should create "employments" model with 2 employments fetched from xhr', 
       function () {
     expect(mockSharedDataResource.query).toHaveBeenCalled();
     expect(scope.employments.length).toBe(4);
@@ -97,7 +97,7 @@ describe('Controller: ExperienceCtrl', function () {
   it('should provide hideAndExpand function', function() {
     expect(scope.hideAndExpand).toBeDefined();
   })
-  
+
   it('should provide exitSearchMode function', function() {
     expect(scope.exitSearchMode).toBeDefined();
   })

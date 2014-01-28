@@ -38,7 +38,7 @@ angular.module('JesusEspejoACVDirectives', ['pascalprecht.translate'])
 		restrict: 'E',
 		transclude: true,
 		scope: {
-			searchQuery: "=",
+			searchQuery: '=',
 			eventHandler: '&customClick',
 			blurHandler: '&customBlur'
 		},
@@ -46,6 +46,10 @@ angular.module('JesusEspejoACVDirectives', ['pascalprecht.translate'])
 			$scope.clear = function() {
 				$scope.searchQuery = "";
 				$('.searchButtonContainer > input').focus();
+			};
+
+			$scope.showInput = function() {
+				$('.searchButtonContainer').toggleClass('mobSearchMode', 'slow', 'linear');
 			}
 		},
 		templateUrl: 'views/templates/search-button.html',

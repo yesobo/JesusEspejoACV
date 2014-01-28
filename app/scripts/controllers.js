@@ -2,8 +2,8 @@
 
 angular.module('JesusEspejoACVControllers', [])
   .controller('ExperienceCtrl',
-    ['$scope', 'SharedData',
-    function (sc, SharedData) {
+    ['$scope', '$window', 'SharedData',
+    function (sc, window, SharedData) {
       
       var NO_FOCUS_SEARCH = 0;
 
@@ -14,25 +14,27 @@ angular.module('JesusEspejoACVControllers', [])
       });
 
       sc.activateSearchButton = true;
+
+      sc.buttonContainerClass = '';
+      sc.sectionTitleWrapperVisible = 'true';
+      sc.searchButtonInputFocus = 'false'; 
+
       sc.hideAndExpand = function(mode) {
-        if($(window).width() <= 480 ) {
+        if(window.innerWidth <= 480 ) {
           if(sc.activateSearchButton) {
             sc.activateSearchButton = false;
-            $('.searchButtonContainer')
-              .toggleClass('mobSearchMode', 'slow', 'linear');
             if(mode === NO_FOCUS_SEARCH) {
-              $('.sectionTitleWrapper').toggle();
+              sc.sectionTitleWrapperVisible = 'true';
             } else {
-              $('.sectionTitleWrapper').toggle(1, function() {
-                $('.searchButtonContainer > input').focus();
-              });
+              sc.sectionTitleWrapperVisible = 'false';
+              sc.searchButtonInputFocus = 'true';
             }
           }
         }
       }
 
       sc.exitSearchMode = function() {
-        if($(window).width() <= 480 ) {
+        if(window.innerWidth <= 480 ) {
           if(!sc.query || sc.query === "") {
             sc.activateSearchButton = true;
             sc.hideAndExpand(NO_FOCUS_SEARCH);
