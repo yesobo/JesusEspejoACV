@@ -1,7 +1,7 @@
-<div class="searchButtonContainer" ng-click="eventHandler();showInput();">
+<div class="searchButtonContainer" ng-click="expand()">
 	<span class="glyphicon glyphicon-search"></span>
 	<input class="" type="search" ng-model="searchQuery" 
-		placeholder="search" ng-blur="blurHandler()">
+		ng-blur="blur()">
 	</input>
 	<button type="button" class="close" ng-click="clear()">
 	  &times;

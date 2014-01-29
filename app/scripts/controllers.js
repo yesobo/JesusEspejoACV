@@ -22,10 +22,13 @@ angular.module('JesusEspejoACVControllers', [])
       sc.hideAndExpand = function(mode) {
         if(window.innerWidth <= 480 ) {
           if(sc.activateSearchButton) {
+            console.log('1');
             sc.activateSearchButton = false;
             if(mode === NO_FOCUS_SEARCH) {
+              console.log('2.1');
               sc.sectionTitleWrapperVisible = 'true';
             } else {
+              console.log('2.2');
               sc.sectionTitleWrapperVisible = 'false';
               sc.searchButtonInputFocus = 'true';
             }
@@ -36,8 +39,7 @@ angular.module('JesusEspejoACVControllers', [])
       sc.exitSearchMode = function() {
         if(window.innerWidth <= 480 ) {
           if(!sc.query || sc.query === "") {
-            sc.activateSearchButton = true;
-            sc.hideAndExpand(NO_FOCUS_SEARCH);
+            sc.sectionTitleWrapperVisible = 'true';
             sc.activateSearchButton = true;
           }
         }

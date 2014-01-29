@@ -39,17 +39,51 @@ angular.module('JesusEspejoACVDirectives', ['pascalprecht.translate'])
 		transclude: true,
 		scope: {
 			searchQuery: '=',
-			eventHandler: '&customClick',
-			blurHandler: '&customBlur'
+			eventHandler: '&onExpand',
+			blurHandler: '&customBlur',
+			customPlaceholder: '='
 		},
 		controller: function($scope, $element) {
+			$scope.isCollapsed = true;
+			
+			//onload
+			$(function() {
+				console.log($scope.customPlaceholder);
+				$('.searchButtonContainer > input').attr('placeholder', $scope.customPlaceholder);
+			});
+			
 			$scope.clear = function() {
 				$scope.searchQuery = "";
 				$('.searchButtonContainer > input').focus();
 			};
 
 			$scope.showInput = function() {
-				$('.searchButtonContainer').toggleClass('mobSearchMode', 'slow', 'linear');
+				if($scope.isCollapsed) {
+					$('.searchButtonContainer').toggleClass('mobSearchMode', 'slow', 'linear');
+					$scope.isCollapsed = false;
+				}
+			};
+
+			$scope.hideInput = function() {
+		        if(window.innerWidth <= 480 ) {
+		          if(!$scope.searchQuery || $scope.searchQuery === "") {
+					$('.searchButtonContainer').toggleClass('mobSearchMode', 'slow', 'linear');
+					$scope.isCollapsed = true;
+		          }
+		        }
+			}
+
+			$scope.expand = function() {
+				if($scope.isCollapsed) {
+					$scope.eventHandler();
+					$scope.showInput();
+					$('.searchButtonContainer > input').focus();
+				}
+			}
+
+			$scope.blur = function() {
+				$scope.hideInput();
+				$scope.blurHandler();
 			}
 		},
 		templateUrl: 'views/templates/search-button.html',
