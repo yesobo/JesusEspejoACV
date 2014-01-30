@@ -2,8 +2,8 @@
 
 angular.module('JesusEspejoACVControllers', [])
   .controller('ExperienceCtrl',
-    ['$scope', '$window', 'SharedData',
-    function (sc, window, SharedData) {
+    ['$scope', '$window', 'SharedData', '$translate',
+    function (sc, window, SharedData, translate) {
       
       var NO_FOCUS_SEARCH = 0;
 
@@ -19,16 +19,15 @@ angular.module('JesusEspejoACVControllers', [])
       sc.sectionTitleWrapperVisible = 'true';
       sc.searchButtonInputFocus = 'false'; 
 
+      sc.searchButtonPlaceholder = translate('SEARCH');
+
       sc.hideAndExpand = function(mode) {
         if(window.innerWidth <= 480 ) {
           if(sc.activateSearchButton) {
-            console.log('1');
             sc.activateSearchButton = false;
             if(mode === NO_FOCUS_SEARCH) {
-              console.log('2.1');
               sc.sectionTitleWrapperVisible = 'true';
             } else {
-              console.log('2.2');
               sc.sectionTitleWrapperVisible = 'false';
               sc.searchButtonInputFocus = 'true';
             }

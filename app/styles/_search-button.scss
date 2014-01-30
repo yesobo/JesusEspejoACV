@@ -1,0 +1,97 @@
+$sizes: 22px;
+.searchButtonContainer {
+    border: 1px solid black;
+    margin-top: 24px;
+    height: $sizes;
+    padding-left: $sizes;
+    padding-right: $sizes;
+    background-color: white;
+    input{
+        border: none;
+        width: 100%;
+    }
+    input:focus {
+        //width: 80%;
+        outline: none;
+    }
+     * {
+      float: left;
+      height: 20px;
+    }
+    span {
+      position: relative;
+      width: $sizes - 4;
+      margin-left: -$sizes + 4;
+    } 
+    button {
+      position: relative;
+      width: $sizes;
+      margin-right: -$sizes;
+    }
+}
+
+/******************* Phone and Wide Phone *******************/
+@media (max-width: 480px) {
+
+  .searchButtonContainer {
+    > input, button {
+      display: none;
+    }
+    > span {
+      position: relative;
+      width: auto;
+      margin: none;
+      font-size: 2em;
+      text-align: center;
+    }
+    height: 40px;
+    padding-left: none;
+    max-width: 10px;
+    float: right;
+    margin-right: 10px;
+  }
+
+  .searchButtonContainer:hover {
+    cursor: pointer;
+  }
+
+  div.mobSearchMode {
+    span {
+      margin-left: -37px!important;
+    }
+    input {
+      display: block;
+      height: 100%;
+      font-size: 2em;
+    }
+    button {
+      display: block!important;
+      font-size: 2em!important;
+      height: 100%!important;
+    }
+    float: none;
+    max-width: none;
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/************************** Tablets *********************/
+@media (min-width: 481px) and (max-width: 767px) {
+  .searchButtonContainer {  
+    margin-top: 30px;
+  }
+}
+
+/************************** Phone to wide tablet ************************/
+@media (max-width: 991px) {
+  #searchWrapper {
+    > .searchbuttonContainer {
+      margin-top: 30px;
+      width: 80%;
+    }
+    overflow: hidden;
+  }
+
+}

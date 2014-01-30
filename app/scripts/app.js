@@ -43,7 +43,8 @@ angular.module('JesusEspejoACVApp',
       'YEAR': 'año',
       'YEARS': 'años',
       'MONTH': 'mes',
-      'MONTHS': 'meses'
+      'MONTHS': 'meses',
+      'SEARCH': 'buscar'
     });
 
     $translateProvider.useStaticFilesLoader({

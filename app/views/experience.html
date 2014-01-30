@@ -2,11 +2,11 @@
   <aside class="col-lg-3 col-md-3">
     <div class="main-left">
       <div class="sectionTitleWrapper" ng-show="sectionTitleWrapperVisible"> 
-          <h2>Experience</h2>
-          <h5 class="text-primary">Where I worked</h5>
+          <h2>{{'EXPERIENCE' | translate}}</h2>
+          <h5 class="text-primary">{{'WHERE_I_WORKED' | translate}}</h5>
       </div>
       <div id="searchWrapper">
-        <search-button search-query="query" on-expand="hideAndExpand()" custom-blur="exitSearchMode()" custom-placeholder="buscar"></search-button>
+        <search-button search-query="query" on-expand="hideAndExpand()" custom-blur="exitSearchMode()" custom-placeholder="'SEARCH' | translate"></search-button>
       </div>
     </div>
     </aside>

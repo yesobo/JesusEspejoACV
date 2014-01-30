@@ -46,12 +46,6 @@ angular.module('JesusEspejoACVDirectives', ['pascalprecht.translate'])
 		controller: function($scope, $element) {
 			$scope.isCollapsed = true;
 			
-			//onload
-			$(function() {
-				console.log($scope.customPlaceholder);
-				$('.searchButtonContainer > input').attr('placeholder', $scope.customPlaceholder);
-			});
-			
 			$scope.clear = function() {
 				$scope.searchQuery = "";
 				$('.searchButtonContainer > input').focus();
