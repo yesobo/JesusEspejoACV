@@ -155,6 +155,10 @@ button.search {
   margin-top: 10px;
 }
 
+aside {
+  position: fixed;
+}
+
 .asideExperience {
   min-width: 165px;
 }
@@ -410,6 +414,7 @@ button.search {
   
   aside {
     padding-left: 0px!important;
+    position: relative;
   }
 
   .sectionTitleWrapper > {

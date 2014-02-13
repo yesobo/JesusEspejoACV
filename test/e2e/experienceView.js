@@ -37,5 +37,19 @@ describe('Experience View', function() {
     
     expect(elem).toContain("año");
     expect(elem).toContain("mes");
-  }) 
+  });
+
+  it('on desktops (991px), should keep the aside content fixed', function() {
+    element(':first').query(function(first, done) {
+      if(first.outerWidth(true) + 15 > 991) {
+        expect(element('.main', 'DESKTOP TESTING')
+          .css('float')).toBe('left');
+        done();
+      } else {
+        expect(element('.main', 'PHONE TO WIDE TABLET TESTING')
+          .css('float')).not().toBe('left');
+        done();
+      }
+    });
+  })
 });

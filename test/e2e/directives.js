@@ -13,34 +13,52 @@ describe('Directives', function() {
 		});
 	});
 
-	ddescribe('seachButton', function() {
+	describe('seachButton', function() {
 		
 		beforeEach(function() {
 			browser().navigateTo('/#/experience');
 		});
 		
-		it('allows user to search responsively', function() {
-			element(':first').query(function(first, done) {
-				// adding 15 px for the scrollbar
-				if(first.outerWidth(true) + 15 > 480) {
-					expect(element('.searchButtonContainer > input').css('display')).toBe('block');
-					done();
-				} else {
-					var searchInput = element('.searchButtonContainer > input');
-					expect(searchInput.css('display')).toBe('none');
-					searchInput.click();
-					expect(searchInput.css('display')).toBe('block');
-					// deletes the input value on close button click
-					input('searchQuery').enter('at sistemas');
-					element('.searchButtonContainer > button').click();
-					expect(input('searchQuery').val()).toBe("");
-					// hides the input on blur
-					element('.employerNameWrapper').click();
-					//pause();
-					done();
-				}
+		describe('allows user to search responsively', function() {
+
+			var isMobile = false;
+
+			var setMobile = function(value) {
+				isMobile = value;
+			}
+
+			beforeEach(function() {
+				element(':first').query(function(first, done) {
+					if(first.outerWidth(true) + 15 > 480) {
+						setMobile(false);
+						done();
+					} else {
+						setMobile(true);
+						done();
+					}
+				});
 			});
-		});
+
+			it('search button works responsively', function() {
+				element(':first').query(function(first, done) {
+					if(isMobile) {
+						var searchInput = element('.searchButtonContainer > input', 'MOBILE TESTING');
+						expect(searchInput.css('display')).toBe('none');
+						// deletes the input value on close button click
+						input('searchQuery').enter('at sistemas');
+						element('.searchButtonContainer > button', 'HOLA QUE TAL').click();
+						expect(input('searchQuery').val()).toBe("");
+						// hides the input on blur CANNOT BE TESTED WITH KARMA E2E
+						done();
+					} else {
+						expect(element('.searchButtonContainer > input', 'TABLET/DESKTOP TESTING')
+							.css('display')).toBe('block');
+						done();
+					}
+				});
+			});
+
+		})
 	})	
 })
 
