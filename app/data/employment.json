@@ -129,7 +129,7 @@
         "full-time": "true",
         "tasks": [
             {
-                "tech": "JQuery, Javascript, JSP, HTML5, CSS3, Modernizr, polyfills"
+                "tech": "JQuery, Javascript, JSP, HTML5, CSS3, Modernizr, polyfills, Google Maps API + Infobox.js"
             },
             {
                 "tech": "Java 1.4, IBM WebSphere Business Component Composer V4.2, Oracle SQL,  HOST"
