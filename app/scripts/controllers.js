@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('JesusEspejoACVControllers', [])
+angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
   .controller('ExperienceCtrl',
     ['$scope', '$window', 'SharedData', '$translate',
     function (sc, window, SharedData, translate) {

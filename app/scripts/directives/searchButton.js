@@ -1,8 +1,7 @@
 /*global $:false */
 'use strict';
 
-// Inline brackets notation because the directives for one module are in different js files
-angular.module('JesusEspejoACVDirectives')
+angular.module('SearchButtonDirective', [])
 .directive('searchButton', function() {
   return {
     restrict: 'E',

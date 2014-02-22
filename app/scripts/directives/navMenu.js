@@ -1,7 +1,7 @@
 /*global $:false */
 'use strict';
 
-angular.module('JesusEspejoACVDirectives',
+angular.module('NavMenuDirective',
   ['pascalprecht.translate'])
 .directive('navMenu', function() {
   return {
