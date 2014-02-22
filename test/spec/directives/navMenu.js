@@ -1,7 +1,7 @@
 /* global describe, ddescribe, beforeEach, inject, it, expect, $: true */
 'use strict';
 
-ddescribe('navMenuDirective', function() {
+describe('navMenuDirective', function() {
 
   beforeEach(module('NavMenuDirective'));
   
