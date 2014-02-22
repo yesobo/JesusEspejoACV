@@ -42,12 +42,12 @@ describe('Experience View', function() {
   it('on desktops (991px), should keep the aside content fixed', function() {
     element(':first').query(function(first, done) {
       if(first.outerWidth(true) + 15 > 991) {
-        expect(element('.main', 'DESKTOP TESTING')
-          .css('float')).toBe('left');
+        expect(element('.main-left', 'DESKTOP TESTING')
+          .css('position')).toBe('fixed');
         done();
       } else {
-        expect(element('.main', 'PHONE TO WIDE TABLET TESTING')
-          .css('float')).not().toBe('left');
+        expect(element('.main-left', 'PHONE TO WIDE TABLET TESTING')
+          .css('position')).not().toBe('fixed');
         done();
       }
     });
