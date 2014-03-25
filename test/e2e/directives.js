@@ -57,8 +57,7 @@ describe('Directives', function() {
 					}
 				});
 			});
-
 		})
-	})	
+	});
 })
 

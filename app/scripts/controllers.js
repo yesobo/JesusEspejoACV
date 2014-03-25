@@ -2,15 +2,15 @@
 
 angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
   .controller('ExperienceCtrl',
-    ['$scope', '$window', 'SharedData', '$translate',
-    function (sc, window, SharedData, translate) {
+    ['$scope', '$window', 'SharedData', '$translate', '$parse',
+    function (sc, window, SharedData, translate, toJSON) {
       
       var NO_FOCUS_SEARCH = 0;
 
       var employments = sc.employments =
-        SharedData.getSharedData().query(function() {
+        SharedData.getSharedDataResource().query(function() {
         sc.employersDates =
-          SharedData.getEmployersLastDate(employments);
+          SharedData.getEmployersPeriods(employments);
       });
 
       sc.activateSearchButton = true;

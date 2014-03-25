@@ -62,7 +62,9 @@
                   </div>
                   <div id="positionDetails-{{employment.locator}}" class="panel-collapse collapse">
                     <ul class="panel-body">
-                      <li ng-repeat="task in employment.tasks">{{task.description}}</li>
+                      <experience-details details-obj="employment">
+                        <div>{{ detailsObjAttr.locator + '.tasks.' + $index + '.description' | translate }}</div>
+                      </experience-details>
                     </ul>
                   </div>
                   <div class="panel-footer panel-footer-arrow">

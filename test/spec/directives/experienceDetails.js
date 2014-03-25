@@ -1,7 +1,7 @@
 /* global describe, ddescribe, beforeEach, inject, it, expect, $: true */
 'use strict';
 
-ddescribe('experienceDetailsDirective', function() {
+describe('experienceDetailsDirective', function() {
 
   beforeEach(module('ExperienceDetailsDirective'));
   
@@ -9,35 +9,99 @@ ddescribe('experienceDetailsDirective', function() {
   beforeEach(module('app/views/templates/experienceDetails.html'));
   // tip: could load the template in a module declared at karma.conf with ngHtml2JsPreprocessor
   
-  var element;
+  var $compile, $rootScope, template, element;
+  var experienceDetailObj = {
+    position : "Programador Web J2EE/EJB/Front-end/Reporting",
+    tasks: [
+      {
+        techs: [
+          {name: "tech1"}
+        ],
+        description: "description1"
+      },
+      {
+        techs: [
+          {name: "tech2"}
+        ],
+        description: "description2"
+      },
+      {
+        techs: [
+          {name: "tech3"}
+        ],
+        description: "description3"
+      },
+      {
+        techs: [
+          {name: "tech4"}
+        ],
+        description: "description4"
+      }
+    ]
+  };
+
+  var experienceDetailJSON = {
+    "position" : "Programador Web J2EE/EJB/Front-end/Reporting",
+    "tasks": [
+      {
+        "techs": [
+          {"name": "tech1"}
+        ],
+        "description": "description1"
+      },
+      {
+        "techs": [
+          {"name": "tech2"}
+        ],
+        "description": "description2"
+      },
+      {
+        "techs": [
+          {"name": "tech3"}
+        ],
+        "description": "description3"
+      },
+      {
+        "techs": [
+          {"name": "tech4"}
+        ],
+        "description": "description4"
+      }
+    ]
+  };
 
   beforeEach(inject(function($templateCache, _$compile_, _$rootScope_) {
     
-    var experienceDetailObj = {
-      "position" : "Programador Web J2EE/EJB/Front-end/Reporting",
-      "task": [
-        {"description": "Diseño y Desarrollo web a partir de maquetas"},
-        {"description": "Implementación de lógica de negocio (Session y Entity Beans)"},
-        {"description": "Desarrollo de informes pdf con contenido gráfico a partir de maquetas"},
-        {"description": "Desarrollo de pruebas unitarias y funcionales"}
-      ]
-    }
-
     var template = $templateCache.get('app/views/templates/experienceDetails.html');
     $templateCache.put('views/templates/experienceDetails.html', template);
-    var elem = angular.element('<experience-details experience="{{experienceDetailObj}}"></experience-details>');
+    
+    $compile = _$compile_;
+    $rootScope = _$rootScope_;
 
-    var scope = _$rootScope_;
-    scope.experienceDetailObj = experienceDetailObj;
-
-    element = _$compile_(elem)(scope);
-    scope.$digest();
+    $rootScope.experienceDetailObj = experienceDetailJSON;
+    
+    var htmlString = '' +
+      '<experience-details details-obj="experienceDetailObj">' + experienceDetailJSON.tasks[0].description + '</experience-details>';
+    var elem = angular.element(htmlString);
+    element = $compile(elem)($rootScope);
+    
+    $rootScope.$digest();
   }));
 
-  describe('experienceDetails', function() {
-    it('should list the experience tasks', function() {
-      // .find() is limited to tag name 
-      expect($(element.find('ul')[1]).find('li').length).toBe("4");
-    });
+  it('should list the tasks techs of the experience\'s inserted as parameter', function() {
+
+    // .find() is limited to tag name
+    var taskTech = element.find('ul').find('li').find('ul').find('li').find('span')[0].innerHTML;
+    var numberOfLi = element.children().children().children().length;
+    expect(numberOfLi).toBe(experienceDetailObj.tasks.length);
+    expect(taskTech).toBe(experienceDetailObj.tasks[0].techs[0].name);
   });
+
+  it('should list the experience\'s tasks descriptions inserted as transcluded content', function() {
+
+    // .find() is limited to tag name
+    var transcludeElement = element.find('ul').find('li').find('span').find('span')[0].innerHTML;
+    expect(transcludeElement).toBe(experienceDetailObj.tasks[0].description);
+  });
+
 });

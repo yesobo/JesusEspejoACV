@@ -1,81 +1,109 @@
 {
-	"WHO_I_AM": "Who I Am",
-	"ABOUT_ME": "About Me",
-	"TECHNICAL_SKILLS": "Technical Skills",
-	"EXPERTISE": "Expertise",
-	"EXPERIENCE": "Experience",
-	"EDUCATION": "Education",
-	"TRAINING": "Training",
-
-	"ABOUT_ME_EXPL": "Proffesional profile & Contact Info",
-	"ABOUT_ME_P1": "Hello, I’m Jesus, web developer and new technologies enthusiast.",
-	"ABOUT_ME_P2": "As you will see, I've spent the last years building websites and enjoying web technologies in my job and spare time. I would love to share my knowledge with you, so please don't hesitate in contacting with me if you're interested.",
-
-	"AT": "at",
-	"PRESENT": "Present",
-	"YEAR": "year",
-	"YEARS": "years",
-	"MONTH": "month",
-	"MONTHS": "months",
-	"SEARCH": "search",
-	"WHERE_I_WORKED": "Where I worked",
-
-	"APMetro": {
-		"position": "J2EE/EJB/Front-end/Reporting Web Developer",
-		"task": [
-			{"description": "Web Design and Development based on mockups"},
-            {"description": "Business Logic Implementation (Session and Entity Beans)"},
-            {"description": "PDF with graphic content Report Development based on mockups"},
-            {"description": "Unit and Functional Testing"}
-		]
-
-	},
-	"PJrMapfre": {
-		"position": "J2EE/Spring/JSF Jr Web Developer",
-		"task": [
-			{"description": "Web Design and Develpment based on mockups"},
-            {"description": "J2EE development based on sequence diagrams"}
-		]
-
-	},
-	"PSanitas": {
-		"position": "J2EE/EJB/JSF Web Developer",
-		"task" : [
-			{"description": "Web Design and Development based on mockups"},
-            {"description": "J2EE Develpment based on sequence and flow diagrams"},
-            {"description": "JUnit Test Development"}
-		]
-
-	},
-	"APLiberty": {
-		"position": "VBA/SQL-Server Software Engineer",
-        "task": [
-
-            {"description": "MS Office Functional And Technical Requirements Definition and Analysis."},
-            {"description": "VBA MS Access and MS Excel Development using Graphics, Forms, Macros and SQL-Server connection"}
-        ]
-	},
-	"PSeres": {
-		"position": "C++/Delphi/Paradox Software Developer",
-		"task": [
-           {"description": "C++ Desktop Application Design and Development."}
-		]
-
-	},
-	"APBankia": {
-		"position": "J2EE/WebSphere/Front-end Web Developer",
-        "task": [
-	        {"description": "Web Design and Development based on mockups"},
-            {"description": "J2EE Develpment"}
-        ]
-	},
-	"APVIECI": {
-		"position": "J2EE/Java/Front-end Web Developer",
-        "task": [
-        	{"description": "Web Design and Development based on mockups"},
-            {"description": "J2EE Development"},
-            {"description": "Business Logic Analysis based on source code reverse engeneering"},
-            {"description": "Hotel Bookings Software Technical Design"}
-        ]
-	}
+  "WHO_I_AM": "Who I Am",
+  "ABOUT_ME": "About Me",
+  "TECHNICAL_SKILLS": "Technical Skills",
+  "EXPERTISE": "Expertise",
+  "EXPERIENCE": "Experience",
+  "EDUCATION": "Education",
+  "TRAINING": "Training",
+  "ABOUT_ME_EXPL": "Proffesional profile & Contact Info",
+  "ABOUT_ME_P1": "Hello, I’m Jesus, web developer and new technologies enthusiast.",
+  "ABOUT_ME_P2": "As you will see, I've spent the last years building websites and enjoying web technologies in my job and spare time. I would love to share my knowledge with you, so please don't hesitate in contacting with me if you're interested.",
+  "AT": "at",
+  "PRESENT": "Present",
+  "YEAR": "year",
+  "YEARS": "years",
+  "MONTH": "month",
+  "MONTHS": "months",
+  "SEARCH": "search",
+  "WHERE_I_WORKED": "Where I worked",
+  "APMetro": {
+    "position": "J2EE/EJB/Front-end/Reporting Web Developer",
+    "tasks": [
+      {
+        "description": "Web Design and Development based on mockups"
+      },
+      {
+        "description": "Business Logic Implementation (Session and Entity Beans)"
+      },
+      {
+        "description": "PDF with graphic content Report Development based on mockups"
+      },
+      {
+        "description": "Unit and Functional Testing"
+      }
+    ]
+  },
+  "PJrMapfre": {
+    "position": "J2EE/Spring/JSF Jr Web Developer",
+    "tasks": [
+      {
+        "description": "Web Design and Develpment based on mockups"
+      },
+      {
+        "description": "J2EE development based on sequence diagrams"
+      }
+    ]
+  },
+  "PSanitas": {
+    "position": "J2EE/EJB/JSF Web Developer",
+    "tasks": [
+      {
+        "description": "Web Design and Development based on mockups"
+      },
+      {
+        "description": "J2EE Develpment based on sequence and flow diagrams"
+      },
+      {
+        "description": "JUnit Test Development"
+      }
+    ]
+  },
+  "APLiberty": {
+    "position": "VBA/SQL-Server Software Engineer",
+    "tasks": [
+      {
+        "description": "MS Office Functional And Technical Requirements Definition and Analysis."
+      },
+      {
+        "description": "VBA MS Access and MS Excel Development using Graphics, Forms, Macros and SQL-Server connection"
+      }
+    ]
+  },
+  "PSeres": {
+    "position": "C++/Delphi/Paradox Software Developer",
+    "tasks": [
+      {
+        "description": "C++ Desktop Application Design and Development."
+      }
+    ]
+  },
+  "APBankia": {
+    "position": "J2EE/WebSphere/Front-end Web Developer",
+    "tasks": [
+      {
+        "description": "Web Design and Development based on mockups"
+      },
+      {
+        "description": "J2EE Development"
+      }
+    ]
+  },
+  "APVIECI": {
+    "position": "J2EE/Java/Front-end Web Developer",
+    "tasks": [
+      {
+        "description": "Web Design and Development based on mockups"
+      },
+      {
+        "description": "J2EE Development"
+      },
+      {
+        "description": "Business Logic Analysis based on source code reverse engeneering"
+      },
+      {
+        "description": "Hotel Bookings Software Technical Design"
+      }
+    ]
+  }
 }

@@ -1,377 +1,470 @@
 [
-    {
-        "_id": {
-            "$oid": "51bc524de840a529c200009a"
-        },
-        "locator": "APMetro",
-        "client": {
-            "name": "Metro de Madrid S.A.",
-            "imageUrl": "images/client/metro_madrid_logo.png",
-            "webSite": "http://www.metromadrid.es/es/index.html"
-        },
-        "employer": {
-            "name": "Bull-SICONET",
-            "imageUrl": "images/employer/bull_logo.png",
-            "webSite": "http://www.bull.es/"
-        },
-        "full-time": "true",
-        "tasks": [
-            {
-                "tech": "JSF 2.0, RichFaces, Javascript, ChartDirector, CSS"
-            },
-            {
-                "tech": "EJB 3.0, JPA 1.0, Maven, Oracle SQL"
-            },
-            {
-                "tech": "JasperResport, iReport"
-            },
-            {
-                "tech": "JUnit, Selenium"
-            }
-        ],
-        "tools": [
-            {
-                "name": "Sonar"
-            },
-            {
-                "name": "Hudson"
-            },
-            {
-                "name": "Gimp"
-            },
-            {
-                "name": "SVN"
-            }
-        ],
-        "start": "2010-04-01T00:00:00",
-        "end": "2011-04-01T00:00:00",
-        "project": "Migración Reservas Hoteleras Tourmundial",
-        "team": [
-            {
-                "position": "jefe de proyecto"
-            },
-            {
-                "position": "Analista"
-            },
-            {
-                "position": "Arquitecto"
-            },
-            {
-                "position": "me"
-            }
-        ]
+  {
+    "_id": {
+      "$oid": "51bc524de840a529c200009a"
     },
-    {
-        "_id": {
-            "$oid": "51bc3f3e494f44cf7b00003d"
-        },
-        "locator": "APVIECI",
-        "client": {
-            "name": "IECISA/ Viajes El Corte Inglés",
-            "imageUrl": "images/client/viajes_ECI_logo.png",
-            "webSite": "http://www.viajeselcorteingles.es/"
-        },
-        "employer": {
-            "name": "AT Sistemas",
-            "imageUrl": "images/employer/atsistemas_logo.png",
-            "webSite": "http://atsistemas.com/es/"
-        },
-        "full-time": "true",
-        "tasks": [
-            {
-                "tech": "JQuery, Javascript, HTML5, CSS3, Modernizr, polyfills"
-            },
-            {
-                "tech": "Java 1.6, JSP, Java Servlets, XML, JAX, WS, CICS, JUnit"
-            },
-            {
-                "tech": "VB6, ASP, CICS, WS SOA, JSF, JEE, XML"
-            },
-            {
-                "tech": "WS SOA, JSF, JEE, XML"
-            }
-        ],
-        "tools": [
-            {
-                "name": "Git"
-            },
-            {
-                "name": "ClearCase"
-            }
-        ],
-        "start": "2011-04-01T00:00:00",
-        "end": "2012-06-01T00:00:00",
-        "project": "Migración Reservas Hoteleras Tourmundial",
-        "team": [
-            {
-                "position": "jefe de proyecto"
-            },
-            {
-                "position": "me"
-            }
-        ]
+    "locator": "APMetro",
+    "client": {
+      "name": "Metro de Madrid S.A.",
+      "imageUrl": "images/client/metro_madrid_logo.png",
+      "webSite": "http://www.metromadrid.es/es/index.html"
     },
-    {
-        "_id": {
-            "$oid": "51bb66a98c523b196aca5340"
-        },
-        "locator": "APBankia",
-        "client": {
-            "name": "Bankia",
-            "imageUrl": "images/client/bankia_logo.png",
-            "webSite": "http://www.bankia.es/"
-        },
-        "employer": {
-            "name": "AT Sistemas",
-            "imageUrl": "images/employer/atsistemas_logo.png",
-            "webSite": "http://atsistemas.com/es/"
-        },
-        "full-time": "true",
-        "tasks": [
-            {
-                "tech": "JQuery, Javascript, JSP, HTML5, CSS3, Modernizr, polyfills, Google Maps API + Infobox.js"
-            },
-            {
-                "tech": "Java 1.4, IBM WebSphere Business Component Composer V4.2, Oracle SQL,  HOST"
-            }
-        ],
-        "tools": [
-            {
-                "name": "JIRA"
-            },
-            {
-                "name": "SVN"
-            }
-        ],
-        "start": "2012-10-01T00:00:00",
-        "end": "2013-07-16T07:27:05",
-        "project": "Mantenimiento OIE (Oficina Internet Empresas)",
-        "team": [
-            {
-                "position": "Jefe de Proyecto"
-            },
-            {
-                "position": "Administrador Base de Datos"
-            },
-            {
-                "position": "Arquitecto"
-            },
-            {
-                "position": "Desarrollador front y back end",
-                "number": "2"
-            },
-            {
-                "position": "me"
-            }
-        ]
+    "employer": {
+      "name": "Bull-SICONET",
+      "imageUrl": "images/employer/bull_logo.png",
+      "webSite": "http://www.bull.es/"
     },
-    {
-        "_id": {
-            "$oid": "51c0a366a28303b9ad86ac14"
-        },
-        "locator": "PSeres",
-        "client": {
-            "name": "Seres",
-            "imageUrl": "images/client/seres_logo.jpg",
-            "webSite": "http://es.groupseres.com/"
-        },
-        "employer": {
-            "name": "Bull-SICONET",
-            "imageUrl": "images/employer/bull_logo.png",
-            "webSite": "http://www.bull.es/"
-
-        },
-        "full-time": "true",
-        "tasks": [
-            {
-                "tech": "C++, C++ Builder, Paradox"
-            }
-        ],
-        "tools": [
-            {
-                "name": "Borland C++ Builder"
-            }
-        ],
-        "start": "2010-03-01T00:00:00",
-        "end": "2010-04-01T00:00:00",
-        "project": "Prototipo de aplicativo de generación de códigos y ficheros de embarque de mercancías marítimas para Liverpool (México).",
-        "team": [
-            {
-                "position": "jefe de proyecto/Analista"
-            },
-            {
-                "position": "me"
-            }
-        ]
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [            
+            {"name": "JSF 2.0"},
+            {"name": "RichFaces"},
+            {"name": "Javascript"},
+            {"name": "ChartDirector"},
+            {"name": "CSS"}
+       ]
+      },
+      {
+        "techs": [            
+            {"name": "EJB 3.0"},
+            {"name": "JPA 1.0"},
+            {"name": "Maven"},
+            {"name": "Oracle SQL"}
+       ]
+      },
+      {
+        "techs": [            
+            {"name": "JasperResport"},
+            {"name": "iReport"}
+       ]
+      },
+      {
+        "techs": [            
+            {"name": "JUnit"},
+            {"name": "Selenium"}
+       ]
+      }
+    ],
+    "tools": [
+      {
+        "name": "Sonar"
+      },
+      {
+        "name": "Hudson"
+      },
+      {
+        "name": "Gimp"
+      },
+      {
+        "name": "SVN"
+      }
+    ],
+    "start": "2010-04-01T00:00:00",
+    "end": "2011-04-01T00:00:00",
+    "project": "Migración Reservas Hoteleras Tourmundial",
+    "team": [
+      {
+        "position": "jefe de proyecto"
+      },
+      {
+        "position": "Analista"
+      },
+      {
+        "position": "Arquitecto"
+      },
+      {
+        "position": "me"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "51bc3f3e494f44cf7b00003d"
     },
-    {
-        "_id": {
-            "$oid": "51c1597b22a466afa4000341"
-        },
-        "locator": "APLiberty",
-        "client": {
-            "name": "Liberty Seguros",
-            "imageUrl": "images/client/liberty_seguros_logo.png",
-            "webSite": "http://www.libertyseguros.es/"
-        },
-        "employer": {
-            "name": "Bull-SICONET",
-            "imageUrl": "images/employer/bull_logo.png",
-            "webSite": "http://www.bull.es/"
-        },
-        "full-time": "true",
-        "tasks": [
-            {
-                "tech": "MS Office"
-            },
-            {
-                "tech": "VBA, Access, Excel, SQL-Server 2010"
-            }
-        ],
-        "tools": [
-            {
-                "name": "MS Office"
-            },
-            {
-                "name": "Visual Studio"
-            }
-        ],
-        "start": "2010-01-01T00:00:00",
-        "end": "2010-03-01T00:00:00",
-        "project": "Cuadro de Mandos para Single Sign-On de intranet de Liberty Seguros",
-        "team": [
-            {
-                "position": "jefe de proyecto/Analista"
-            },
-            {
-                "position": "me"
-            }
-        ]
+    "locator": "APVIECI",
+    "client": {
+      "name": "IECISA/ Viajes El Corte Inglés",
+      "imageUrl": "images/client/viajes_ECI_logo.png",
+      "webSite": "http://www.viajeselcorteingles.es/"
     },
-    {
-        "_id": {
-            "$oid": "51c15cce8644157f2c0002e7"
-        },
-        "locator": "PSanitas",
-        "client": {
-            "name": "Sanitas",
-            "imageUrl": "images/client/sanitas_logo.png",
-            "webSite": "http://www.sanitas.es/"
-        },
-        "employer": {
-            "name": "Bull-SICONET",
-            "imageUrl": "images/employer/bull_logo.png",
-            "webSite": "http://www.bull.es/"
-        },
-        "full-time": "true",
-        "tasks": [
-            {
-                "tech": "JSF 1.2, IceFaces, Javascript, CSS, Facelets"
-            },
-            {
-                "tech": "EJB 3.0, Maven, Oracle SQL, Weblogic 9.2"
-            },
-            {
-                "tech": "JUnit"
-            }
-        ],
-        "tools": [
-            {
-                "name": "Maven"
-            },
-            {
-                "name": "SVN"
-            },
-            {
-                "name": "JDeveloper"
-            },
-            {
-                "name": "Toad"
-            }
-        ],
-        "start": "2009-09-01T00:00:00",
-        "end": "2010-01-01T00:00:00",
-        "project": "Contratación Sanitas",
-        "team": [
-            {
-                "position": "jefe de proyecto"
-            },
-            {
-                "position": "Analista"
-            },
-            {
-                "position": "Administrador DB"
-            },
-            {
-                "position": "Desarrollador",
-                "number": "5"
-            },
-            {
-                "position": "me"
-            }
-        ]
+    "employer": {
+      "name": "AT Sistemas",
+      "imageUrl": "images/employer/atsistemas_logo.png",
+      "webSite": "http://atsistemas.com/es/"
     },
-    {
-        "_id": {
-            "$oid": "51c15edec5686a7f800000d0"
-        },
-        "locator": "PJrMapfre",
-        "client": {
-            "name": "Mapfre",
-            "imageUrl": "images/client/mapfre_logo.png",
-            "webSite": "http://www.mapfre.com/"
-        },
-        "employer": {
-            "name": "Bull-SICONET",
-            "imageUrl": "images/employer/bull_logo.png",
-            "webSite": "http://www.bull.es/"
-        },
-        "full-time": "true",
-        "tasks": [
-            {
-                "tech": "JSF 1.2, HTML, Javascript, CSS, Facelets"
-            },
-            {
-                "tech": "Spring Framework 2.5, Hibernate, JBoss, Oracle"
-            }
-        ],
-        "tools": [
-            {
-                "name": "Ant"
-            },
-            {
-                "name": "Eclipse"
-            },
-            {
-                "name": "CVS"
-            },
-            {
-                "name": "Diagramas de secuencia"
-            },
-            {
-                "name": "Maquetas"
-            }
-        ],
-        "start": "2009-06-01T00:00:00",
-        "end": "2009-10-01T00:00:00",
-        "project": "Contratación Sanitas",
-        "team": [
-            {
-                "position": "jefe de proyecto"
-            },
-            {
-                "position": "Analista"
-            },
-            {
-                "position": "Administrador DB"
-            },
-            {
-                "position": "Desarrollador",
-                "number": "6"
-            },
-            {
-                "position": "me"
-            }
-        ]
-    }
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [            
+            {"name": "JQuery"},
+            {"name": "Javascript"},
+            {"name": "HTML5"},
+            {"name": "CSS3"},
+            {"name": "Modernizr"},
+            {"name": "polyfills"}
+       ]
+      },
+      {
+        "techs": [            
+            {"name": "Java 1.6"},
+            {"name": "JSP"},
+            {"name": "Java Servlets"},
+            {"name": "XML"},
+            {"name": "JAX"},
+            {"name": "WS"},
+            {"name": "CICS"},
+            {"name": "JUnit"}
+       ]
+      },
+      {
+        "techs": [            
+            {"name": "VB6"},
+            {"name": "ASP"},
+            {"name": "CICS"},
+            {"name": "WS SOA"},
+            {"name": "JSF"},
+            {"name": "JEE"},
+            {"name": "XML"}
+       ]
+      },
+      {
+        "techs": [            
+            {"name": "WS SOA"},
+            {"name": "JSF"},
+            {"name": "JEE"},
+            {"name": "XML"}
+       ]
+      }
+    ],
+    "tools": [
+      {
+        "name": "Git"
+      },
+      {
+        "name": "ClearCase"
+      }
+    ],
+    "start": "2011-04-01T00:00:00",
+    "end": "2012-06-01T00:00:00",
+    "project": "Migración Reservas Hoteleras Tourmundial",
+    "team": [
+      {
+        "position": "jefe de proyecto"
+      },
+      {
+        "position": "me"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "51bb66a98c523b196aca5340"
+    },
+    "locator": "APBankia",
+    "client": {
+      "name": "Bankia",
+      "imageUrl": "images/client/bankia_logo.png",
+      "webSite": "http://www.bankia.es/"
+    },
+    "employer": {
+      "name": "AT Sistemas",
+      "imageUrl": "images/employer/atsistemas_logo.png",
+      "webSite": "http://atsistemas.com/es/"
+    },
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [            
+            {"name": "JQuery"},
+            {"name": "Javascript"},
+            {"name": "JSP"},
+            {"name": "HTML5"},
+            {"name": "CSS3"},
+            {"name": "Modernizr"},
+            {"name": "polyfills"},
+            {"name": "Google Maps API + Infobox.js"}
+       ]
+      },
+      {
+        "techs": [            
+            {"name": "Java 1.4"},
+            {"name": "IBM WebSphere Business Component Composer V4.2"},
+            {"name": "Oracle SQL"},
+            {"name": "HOST"}
+       ]
+      }
+    ],
+    "tools": [
+      {
+        "name": "JIRA"
+      },
+      {
+        "name": "SVN"
+      }
+    ],
+    "start": "2012-10-01T00:00:00",
+    "end": "2013-07-16T07:27:05",
+    "project": "Mantenimiento OIE (Oficina Internet Empresas)",
+    "team": [
+      {
+        "position": "Jefe de Proyecto"
+      },
+      {
+        "position": "Administrador Base de Datos"
+      },
+      {
+        "position": "Arquitecto"
+      },
+      {
+        "position": "Desarrollador front y back end",
+        "number": "2"
+      },
+      {
+        "position": "me"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "51c0a366a28303b9ad86ac14"
+    },
+    "locator": "PSeres",
+    "client": {
+      "name": "Seres",
+      "imageUrl": "images/client/seres_logo.jpg",
+      "webSite": "http://es.groupseres.com/"
+    },
+    "employer": {
+      "name": "Bull-SICONET",
+      "imageUrl": "images/employer/bull_logo.png",
+      "webSite": "http://www.bull.es/"
+    },
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [            
+            {"name": "C++ Builder"},
+            {"name": "Paradox"}
+       ]
+      }
+    ],
+    "tools": [
+      {
+        "name": "Borland C++ Builder"
+      }
+    ],
+    "start": "2010-03-01T00:00:00",
+    "end": "2010-04-01T00:00:00",
+    "project": "Prototipo de aplicativo de generación de códigos y ficheros de embarque de mercancías marítimas para Liverpool (México).",
+    "team": [
+      {
+        "position": "jefe de proyecto/Analista"
+      },
+      {
+        "position": "me"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "51c1597b22a466afa4000341"
+    },
+    "locator": "APLiberty",
+    "client": {
+      "name": "Liberty Seguros",
+      "imageUrl": "images/client/liberty_seguros_logo.png",
+      "webSite": "http://www.libertyseguros.es/"
+    },
+    "employer": {
+      "name": "Bull-SICONET",
+      "imageUrl": "images/employer/bull_logo.png",
+      "webSite": "http://www.bull.es/"
+    },
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [            
+            {"name": "MS Office"}
+       ]
+      },
+      {
+        "techs": [            
+            {"name": "VBA"},
+            {"name": "Access"},
+            {"name": "Excel"},
+            {"name": "SQL-Server 2010"}
+       ]
+      }
+    ],
+    "tools": [
+      {
+        "name": "MS Office"
+      },
+      {
+        "name": "Visual Studio"
+      }
+    ],
+    "start": "2010-01-01T00:00:00",
+    "end": "2010-03-01T00:00:00",
+    "project": "Cuadro de Mandos para Single Sign-On de intranet de Liberty Seguros",
+    "team": [
+      {
+        "position": "jefe de proyecto/Analista"
+      },
+      {
+        "position": "me"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "51c15cce8644157f2c0002e7"
+    },
+    "locator": "PSanitas",
+    "client": {
+      "name": "Sanitas",
+      "imageUrl": "images/client/sanitas_logo.png",
+      "webSite": "http://www.sanitas.es/"
+    },
+    "employer": {
+      "name": "Bull-SICONET",
+      "imageUrl": "images/employer/bull_logo.png",
+      "webSite": "http://www.bull.es/"
+    },
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [            
+            {"name": "JSF 1.2"},
+            {"name": "IceFaces"},
+            {"name": "Javascript"},
+            {"name": "CSS"},
+            {"name": "Facelets"}
+       ]
+      },
+      {
+        "techs": [            
+            {"name": "EJB 3.0"},
+            {"name": "Maven"},
+            {"name": "Oracle SQL"},
+            {"name": "Weblogic 9.2"}
+       ]
+      },
+      {
+        "techs": [            
+            {"name": "JUnit"}
+       ]
+      }
+    ],
+    "tools": [
+      {
+        "name": "Maven"
+      },
+      {
+        "name": "SVN"
+      },
+      {
+        "name": "JDeveloper"
+      },
+      {
+        "name": "Toad"
+      }
+    ],
+    "start": "2009-09-01T00:00:00",
+    "end": "2010-01-01T00:00:00",
+    "project": "Contratación Sanitas",
+    "team": [
+      {
+        "position": "jefe de proyecto"
+      },
+      {
+        "position": "Analista"
+      },
+      {
+        "position": "Administrador DB"
+      },
+      {
+        "position": "Desarrollador",
+        "number": "5"
+      },
+      {
+        "position": "me"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "51c15edec5686a7f800000d0"
+    },
+    "locator": "PJrMapfre",
+    "client": {
+      "name": "Mapfre",
+      "imageUrl": "images/client/mapfre_logo.png",
+      "webSite": "http://www.mapfre.com/"
+    },
+    "employer": {
+      "name": "Bull-SICONET",
+      "imageUrl": "images/employer/bull_logo.png",
+      "webSite": "http://www.bull.es/"
+    },
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [            
+            {"name": "JSF 1.2"},
+            {"name": "HTML"},
+            {"name": "Javascript"},
+            {"name": "CSS"},
+            {"name": "Facelets"}
+       ]
+      },
+      {
+        "techs": [            
+            {"name": "Spring Framework 2.5"},
+            {"name": "Hibernate"},
+            {"name": "JBoss"},
+            {"name": "Oracle"}
+       ]
+      }
+    ],
+    "tools": [
+      {
+        "name": "Ant"
+      },
+      {
+        "name": "Eclipse"
+      },
+      {
+        "name": "CVS"
+      },
+      {
+        "name": "Diagramas de secuencia"
+      },
+      {
+        "name": "Maquetas"
+      }
+    ],
+    "start": "2009-06-01T00:00:00",
+    "end": "2009-10-01T00:00:00",
+    "project": "Contratación Sanitas",
+    "team": [
+      {
+        "position": "jefe de proyecto"
+      },
+      {
+        "position": "Analista"
+      },
+      {
+        "position": "Administrador DB"
+      },
+      {
+        "position": "Desarrollador",
+        "number": "6"
+      },
+      {
+        "position": "me"
+      }
+    ]
+  }
 ]

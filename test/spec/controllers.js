@@ -50,10 +50,10 @@ describe('Controller: ExperienceCtrl', function () {
   beforeEach(module(function($provide) {
     $provide.factory('mockSharedData', function() {
       return {
-        getSharedData: function() {
+        getSharedDataResource: function() {
           return mockSharedDataResource;
         },
-        getEmployersLastDate: function() {
+        getEmployersPeriods: function() {
           var expectedResult = [];
           expectedResult.Employer1 = {
             start: '2009-06-01 00:00:00 UTC',

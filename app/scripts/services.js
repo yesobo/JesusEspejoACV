@@ -14,8 +14,15 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
       return foundObject;
     };
     return {
-      getSharedData: function() {
-        return $resource('data/employment.json', {});
+      getSharedDataResource: function() {
+        var actions = {
+          'query': {
+            method: 'GET',
+            isArray: true
+          }
+        };
+        return $resource('data/employment.json', {},
+          actions);
       },
       getSharedDataHttp: function(callBack) {
         $http.get('data/employment.json').success(function(data){
@@ -35,33 +42,44 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
         }
         return objects;
       },
-      getEmployersLastDate: function(allExperience) {
-        var employers = [];
+      /*
+        returned JS object example:
+            {
+              employerName: '',
+              webSite: '',
+              imageUrl: '',
+              start: '',
+              end: ''
+            };
+       */
+      getEmployersPeriods: function(allExperience) {
+        var resultArray = [];
         var auxExperience;
-        var auxObj = {};
+        var foundInEmployersArray = {};
+        var newResultEmployerObject = {};
         for (var i in allExperience) {
           auxExperience = allExperience[i];
           // If i've already stored the employer I check the dates
-          auxObj = searchObject(employers, 'employerName', auxExperience.employer.name);
-          if( auxObj ){
-            if(auxObj.start > auxExperience.start) {
-              auxObj.start = auxExperience.start;
+          foundInEmployersArray = searchObject(resultArray, 'employerName', auxExperience.employer.name);
+          if( foundInEmployersArray ){
+            if(foundInEmployersArray.start > auxExperience.start) {
+              foundInEmployersArray.start = auxExperience.start;
             }
-            if(auxObj.end < auxExperience.end) {
-              auxObj.end = auxExperience.end;
+            if(foundInEmployersArray.end < auxExperience.end) {
+              foundInEmployersArray.end = auxExperience.end;
             }
           } else {
-            auxObj = {
+            newResultEmployerObject = {
               employerName: auxExperience.employer.name,
               webSite: auxExperience.employer.webSite,
               imageUrl: auxExperience.employer.imageUrl,
               start: auxExperience.start,
               end: auxExperience.end
             };
-            employers.push(auxObj);
+            resultArray.push(newResultEmployerObject);
           }
         }
-        return employers;
+        return resultArray;
       }
     };
   }])
