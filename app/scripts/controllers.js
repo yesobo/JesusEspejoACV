@@ -3,8 +3,8 @@
 angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
   .controller('ExperienceCtrl',
     ['$scope', '$window', 'SharedData', '$translate', '$parse',
-    function (sc, window, SharedData, translate, toJSON) {
-      
+    function (sc, window, SharedData, translate) {
+
       var NO_FOCUS_SEARCH = 0;
 
       var employments = sc.employments =
@@ -17,7 +17,7 @@ angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
 
       sc.buttonContainerClass = '';
       sc.sectionTitleWrapperVisible = 'true';
-      sc.searchButtonInputFocus = 'false'; 
+      sc.searchButtonInputFocus = 'false';
 
       sc.searchButtonPlaceholder = translate('SEARCH');
 
@@ -33,16 +33,16 @@ angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
             }
           }
         }
-      }
+      };
 
       sc.exitSearchMode = function() {
         if(window.innerWidth <= 480 ) {
-          if(!sc.query || sc.query === "") {
+          if(!sc.query || sc.query === '') {
             sc.sectionTitleWrapperVisible = 'true';
             sc.activateSearchButton = true;
           }
         }
-      }
+      };
     }])
   .controller('ExperienceDetailCtrl',
     ['$scope', '$routeParams', 'SharedData',
@@ -50,7 +50,7 @@ angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
       var allExperiences = SharedData.getSharedData()
         .query( function() {
         $scope.experience =
-            SharedData.filterJSON(allExperiences, 'start', 
+            SharedData.filterJSON(allExperiences, 'start',
               $routeParams.start)[0];
       });
     }]);

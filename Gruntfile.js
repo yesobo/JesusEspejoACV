@@ -322,7 +322,7 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
-      'clean:server',
+      'clean:server' ,
       'concurrent:server',
       'connect:livereload',
       'open',
@@ -338,7 +338,7 @@ module.exports = function (grunt) {
     'karma'
   ]);
 */
-  // e2e tests workaround 
+  // e2e tests workaround
   grunt.registerTask('test', [
     'clean:server',
     'coffee',
@@ -346,7 +346,7 @@ module.exports = function (grunt) {
     'connect:livereload',
     'karma'
   ]);
-  
+
   grunt.registerTask('test:unit', [
     'clean:server',
     'coffee',

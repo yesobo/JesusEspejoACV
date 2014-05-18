@@ -17,47 +17,64 @@
     "full-time": "true",
     "tasks": [
       {
-        "techs": [            
-            {"name": "JSF 2.0"},
-            {"name": "RichFaces"},
-            {"name": "Javascript"},
-            {"name": "ChartDirector"},
-            {"name": "CSS"}
+        "techs": [
+            {"name": "JSF 2.0",
+             "image": "jsf.png"},
+            {"name": "RichFaces",
+             "image": "richfaces.gif"},
+            {"name": "Javascript",
+             "image": "javascript.png"},
+            {"name": "ChartDirector",
+             "image": "chartdirector.jpg"},
+            {"name": "CSS",
+             "image": "css.jpg"}
        ]
       },
       {
-        "techs": [            
-            {"name": "EJB 3.0"},
-            {"name": "JPA 1.0"},
-            {"name": "Maven"},
-            {"name": "Oracle SQL"}
+        "techs": [
+            {"name": "EJB 3.0",
+             "image": "ejb3.gif"},
+            {"name": "JPA 1.0",
+             "image": "openjpa.png"},
+            {"name": "Maven",
+             "image": "maven.gif"},
+            {"name": "Oracle SQL",
+             "image": "oracle.jpg"}
        ]
       },
       {
-        "techs": [            
-            {"name": "JasperResport"},
-            {"name": "iReport"}
+        "techs": [
+            {"name": "JasperReports",
+             "image": "jasperreports"},
+            {"name": "iReport",
+             "image": "ireport"}
        ]
       },
       {
-        "techs": [            
-            {"name": "JUnit"},
-            {"name": "Selenium"}
+        "techs": [
+            {"name": "JUnit",
+             "image": "junit.png"},
+            {"name": "Selenium",
+             "image": "selenium.png"}
        ]
       }
     ],
     "tools": [
       {
-        "name": "Sonar"
+        "name": "Sonar",
+        "image": "sonar.jpg"
       },
       {
-        "name": "Hudson"
+        "name": "Hudson",
+        "image": "hudson.jpg"
       },
       {
-        "name": "Gimp"
+        "name": "Gimp",
+        "image": "gimp.png"
       },
       {
-        "name": "SVN"
+        "name": "SVN",
+        "image": "svn.jpg"
       }
     ],
     "start": "2010-04-01T00:00:00",
@@ -96,44 +113,63 @@
     "full-time": "true",
     "tasks": [
       {
-        "techs": [            
-            {"name": "JQuery"},
-            {"name": "Javascript"},
-            {"name": "HTML5"},
-            {"name": "CSS3"},
-            {"name": "Modernizr"},
-            {"name": "polyfills"}
+        "techs": [
+            {"name": "JQuery",
+             "image": "jquery.png"},
+            {"name": "Javascript",
+             "image": "javascript.png"},
+            {"name": "HTML5",
+             "image": "html5.png"},
+            {"name": "CSS3",
+             "image": "css3.jpg"},
+            {"name": "Modernizr",
+             "image": "modernizr.png"},
+            {"name": "polyfills",
+             "image": "polyfills.jpg"}
        ]
       },
       {
-        "techs": [            
-            {"name": "Java 1.6"},
-            {"name": "JSP"},
-            {"name": "Java Servlets"},
-            {"name": "XML"},
-            {"name": "JAX"},
-            {"name": "WS"},
-            {"name": "CICS"},
-            {"name": "JUnit"}
+        "techs": [
+            {"name": "Java 1.6",
+             "image": "java.png"},
+            {"name": "JSP",
+             "image": "jsp.jpg"},
+            {"name": "Java Servlets",
+             "image": "java_servlets.png"},
+            {"name": "XML-JAX",
+             "image": "xml.jpeg"},
+            {"name": "WS",
+             "image": "soap.png"},
+            {"name": "JUnit",
+             "image": "junit.png"}
        ]
       },
       {
-        "techs": [            
-            {"name": "VB6"},
-            {"name": "ASP"},
-            {"name": "CICS"},
-            {"name": "WS SOA"},
-            {"name": "JSF"},
-            {"name": "JEE"},
-            {"name": "XML"}
+        "techs": [
+            {"name": "VB6",
+             "image": "vb6.jpg"},
+            {"name": "ASP",
+             "image": "asp.png"},
+            {"name": "WS SOA",
+             "image": "soap.png"},
+            {"name": "JSF",
+             "image": "jsf.png"},
+            {"name": "JEE",
+             "image": "jee.png"},
+            {"name": "XML",
+             "image": "xml.jpeg"}
        ]
       },
       {
-        "techs": [            
-            {"name": "WS SOA"},
-            {"name": "JSF"},
-            {"name": "JEE"},
-            {"name": "XML"}
+        "techs": [
+            {"name": "WS SOA",
+             "image": "soap.png"},
+            {"name": "JSF",
+             "image": "jsf.png"},
+            {"name": "JEE",
+             "image": "jee.png"},
+            {"name": "XML",
+             "image": "xml.jpeg"}
        ]
       }
     ],
@@ -175,32 +211,72 @@
     "full-time": "true",
     "tasks": [
       {
-        "techs": [            
-            {"name": "JQuery"},
-            {"name": "Javascript"},
-            {"name": "JSP"},
-            {"name": "HTML5"},
-            {"name": "CSS3"},
-            {"name": "Modernizr"},
-            {"name": "polyfills"},
-            {"name": "Google Maps API + Infobox.js"}
-       ]
+        "techs": [
+            {
+              "name": "JQuery",
+              "image": "jquery.png"
+            },
+            {
+              "name": "Javascript",
+              "image": "javascript.png"
+            },
+            {
+              "name": "JSP",
+              "image": "jsp.jpg"
+            },
+            {
+              "name": "HTML5",
+              "image": "html5.png"
+            },
+            {
+              "name": "CSS3",
+              "image": "css3.jpg"
+            },
+            {
+              "name": "Modernizr",
+              "image": "modernizr.png"
+            },
+            {
+              "name": "polyfills",
+              "image": "polyfills.jpg"
+            },
+            {
+              "name": "Google Maps",
+              "image": "google_maps.jpg"
+            },
+            {
+              "name": "Infobox.js",
+              "image": "infobox.jpg"
+            }
+         ]
       },
       {
-        "techs": [            
-            {"name": "Java 1.4"},
-            {"name": "IBM WebSphere Business Component Composer V4.2"},
-            {"name": "Oracle SQL"},
-            {"name": "HOST"}
-       ]
-      }
+        "techs": [
+            {
+              "name": "Java 1.4",
+              "image": "java.png"
+            },
+            {
+              "name": "IBM WBCC v4.2",
+              "image": "ibm_websphere.jpg"
+            },
+            {
+              "name": "Oracle SQL",
+              "image": "oracle.jpg"
+            },
+            {
+              "name": "HOST"
+            }
+          ]
+        }
     ],
     "tools": [
       {
         "name": "JIRA"
       },
       {
-        "name": "SVN"
+        "name": "SVN",
+        "image": "svn.jpg"
       }
     ],
     "start": "2012-10-01T00:00:00",
@@ -243,15 +319,18 @@
     "full-time": "true",
     "tasks": [
       {
-        "techs": [            
-            {"name": "C++ Builder"},
-            {"name": "Paradox"}
+        "techs": [
+            {"name": "C++ Builder",
+             "image": "c++Builder.png"},
+            {"name": "Paradox",
+             "image": "paradox.jpg"}
        ]
       }
     ],
     "tools": [
       {
-        "name": "Borland C++ Builder"
+        "name": "Borland C++ Builder",
+        "image": "c++Builder.png"
       }
     ],
     "start": "2010-03-01T00:00:00",
@@ -284,22 +363,28 @@
     "full-time": "true",
     "tasks": [
       {
-        "techs": [            
-            {"name": "MS Office"}
+        "techs": [
+            {"name": "MS Office",
+             "image": "msoffice.png"}
        ]
       },
       {
-        "techs": [            
-            {"name": "VBA"},
-            {"name": "Access"},
-            {"name": "Excel"},
-            {"name": "SQL-Server 2010"}
+        "techs": [
+            {"name": "VBA",
+             "image": "vba.png"},
+            {"name": "Access",
+             "image": "msaccess.png"},
+            {"name": "Excel",
+             "image": "excel2010.jpg"},
+            {"name": "SQL-Server 2010",
+             "image": "sqlserver.png"}
        ]
       }
     ],
     "tools": [
       {
-        "name": "MS Office"
+        "name": "MS Office",
+        "image": "msoffice.png"
       },
       {
         "name": "Visual Studio"
@@ -335,34 +420,65 @@
     "full-time": "true",
     "tasks": [
       {
-        "techs": [            
-            {"name": "JSF 1.2"},
-            {"name": "IceFaces"},
-            {"name": "Javascript"},
-            {"name": "CSS"},
-            {"name": "Facelets"}
-       ]
+        "techs": [
+            {
+              "name": "JSF 1.2",
+              "image": "jsf.png"
+            },
+            {
+              "name": "IceFaces",
+              "image": "icefaces.png"
+            },
+            {
+              "name": "Javascript",
+              "image": "javascript.png"
+            },
+            {
+              "name": "CSS",
+              "image": "css.jpg"
+            },
+            {
+              "name": "Facelets"
+            }
+        ]
       },
       {
-        "techs": [            
-            {"name": "EJB 3.0"},
-            {"name": "Maven"},
-            {"name": "Oracle SQL"},
-            {"name": "Weblogic 9.2"}
-       ]
+        "techs": [
+            {
+              "name": "EJB 3.0",
+              "image": "ejb3.gif"
+            },
+            {
+              "name": "Maven",
+              "image": "maven.gif"
+            },
+            {
+              "name": "Oracle SQL",
+              "image": "oracle.jpg"
+            },
+            {
+              "name": "Weblogic 9.2",
+              "image": "orable_weblogic_server.jpg"
+            }
+        ]
       },
       {
-        "techs": [            
-            {"name": "JUnit"}
-       ]
+        "techs": [
+            {
+              "name": "JUnit",
+              "image": "junit.png"
+            }
+        ]
       }
     ],
     "tools": [
       {
-        "name": "Maven"
+        "name": "Maven",
+        "image": "maven.gif"
       },
       {
-        "name": "SVN"
+        "name": "SVN",
+        "image": "svn.jpg"
       },
       {
         "name": "JDeveloper"
@@ -409,25 +525,7 @@
       "webSite": "http://www.bull.es/"
     },
     "full-time": "true",
-    "tasks": [
-      {
-        "techs": [            
-            {"name": "JSF 1.2"},
-            {"name": "HTML"},
-            {"name": "Javascript"},
-            {"name": "CSS"},
-            {"name": "Facelets"}
-       ]
-      },
-      {
-        "techs": [            
-            {"name": "Spring Framework 2.5"},
-            {"name": "Hibernate"},
-            {"name": "JBoss"},
-            {"name": "Oracle"}
-       ]
-      }
-    ],
+    
     "tools": [
       {
         "name": "Ant"
@@ -456,7 +554,7 @@
         "position": "Analista"
       },
       {
-        "position": "Administrador DB"
+        "position": "Administrador Bases de Datos"
       },
       {
         "position": "Desarrollador",

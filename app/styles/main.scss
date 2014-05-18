@@ -1,6 +1,6 @@
 @import "bootstrap-sass/lib/bootstrap";
 @import 'search-button';
-@import 'experience-details';
+@import 'experience-details-2';
 
 /* Put your CSS here */
 
@@ -90,7 +90,7 @@ body {
 }
 
 .main-left {
-  height: 65px;  
+  height: 65px;
 }
 
 button.search {
@@ -164,13 +164,17 @@ button.search {
   min-width: 165px;
 }
 
+.sectionTitleWrapper {
+  margin-right: 20px;
+}
+
 .employerLine {
   height: 67px;
   padding-left: 0px;
 }
 
 .employerNameWrapper {
-  padding-left: 0px;  
+  padding-left: 0px;
 }
 
 .employerName {
@@ -191,8 +195,8 @@ button.search {
   max-width: 120px;
 }
 
-.sectionTitleWrapper {
-  margin-right: 20px;
+.employment {
+  clear: left;
 }
 
 .positionTitle {
@@ -295,7 +299,7 @@ button.search {
     }
     clear: both;
   }
-  
+
   .navbar-brand {
     margin-left: 15px;
   }
@@ -353,7 +357,7 @@ button.search {
   }
 
   .main-left {
-    height: 70px;  
+    height: 70px;
   }
 
   .sectionTitleWrapper {
@@ -412,7 +416,7 @@ button.search {
 
 /************************** Phone to wide tablet ************************/
 @media (max-width: 991px) {
-  
+
   aside {
     padding-left: 0px!important;
     position: relative;
@@ -474,7 +478,7 @@ button.search {
   .mainColumn {
     padding: 0px;
   }
-  
+
   .employerWrapper {
     > div {
         padding: 0px;

@@ -1,7 +1,7 @@
 <section id="experience" class="row-fluid">
   <aside class="col-lg-3 col-md-3">
     <div class="main-left">
-      <div class="sectionTitleWrapper" ng-show="sectionTitleWrapperVisible"> 
+      <div class="sectionTitleWrapper" ng-show="sectionTitleWrapperVisible">
           <h2>{{'EXPERIENCE' | translate}}</h2>
           <h5 class="text-primary">{{'WHERE_I_WORKED' | translate}}</h5>
       </div>
@@ -18,17 +18,17 @@
               <div class="period col-lg-12 col-md-12 col-sm-12">
                 <div class="periodInterval primary col-lg-12 col-md-12">
                   <span>
-                    {{employer.start | myDate}} - 
+                    {{employer.start | myDate}} -
                   </span>
                   <span>
                     {{employer.end | myDate}}
                   </span>
                 </div>
-                <div class="periodCount primary-inverse col-lg-12 col-md-12">  
+                <div class="periodCount primary-inverse col-lg-12 col-md-12">
                   <span>{{[employer.start, employer.end] | datesDiff}}</span>
                 </div>
               </div>
-            </div> 
+            </div>
             <div class="col-lg-9 col-md-9 mainColumn">
                <div class="col-lg-12 col-md-12 row-fluid employerLine">
                   <div class="col-lg-12 col-md-12 employerWrapper">
@@ -51,7 +51,7 @@
                           {{employment.end | myDate}}
                         </span>
                       </div>
-                      <div class="periodCount default-inverse">  
+                      <div class="periodCount default-inverse">
                         <span>{{[employment.start, employment.end] | datesDiff}}</span>
                       </div>
                     </div>
@@ -68,8 +68,8 @@
                     </ul>
                   </div>
                   <div class="panel-footer panel-footer-arrow">
-                    <a  class="my-accordion accordion-toggle collapsed" 
-                        data-toggle="collapse" data-parent="#accordion" 
+                    <a  class="my-accordion accordion-toggle collapsed"
+                        data-toggle="collapse" data-parent="#accordion"
                         href="#positionDetails-{{employment.locator}}" >
                       <span class="glyphicon glyphicon-chevron-down"></span>
                     </a>

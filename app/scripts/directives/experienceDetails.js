@@ -1,4 +1,4 @@
-/*global $:false */
+
 'use strict';
 
 angular.module('ExperienceDetailsDirective', [])
@@ -11,7 +11,7 @@ angular.module('ExperienceDetailsDirective', [])
     scope: {
       detailsObjAttr: '=detailsObj'
     },
-    link: function(scope, element, attrs) {
+    link: function() {
     }
   };
 });

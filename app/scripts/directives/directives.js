@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('JesusEspejoACVDirectives',
-  ['NavMenuDirective'
-  ,'SearchButtonDirective'
-  ,'ExperienceDetailsDirective'
+  ['NavMenuDirective',
+  'SearchButtonDirective',
+  'ExperienceDetailsDirective'
   ]);

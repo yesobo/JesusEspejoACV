@@ -4,4 +4,39 @@
 
 .liTask {
   margin-top: 10px;
+  clear: both;
+}
+
+.taskTechList {
+  overflow: hidden;
+  border:1px solid black;  
+  padding: 0px;
+  
+  > li {
+    display: block;
+    float: left;
+    transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -webkit-transform: rotate(-800deg);
+    vertical-align: bottom;
+    margin-top: 80px;
+    width: 41px;
+    height: 41px;
+    padding: 5px;
+  }
+
+  div.techName {
+    width: 135px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-left: 10px;
+    margin-left: -10px;
+    height: 41px; 
+  }
+
+}
+
+
+span.taskDescription {
+  
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('JesusEspejoACVApp',
-  ['JesusEspejoACVServices', 'JesusEspejoACVDirectives', 
+  ['JesusEspejoACVServices', 'JesusEspejoACVDirectives',
     'JesusEspejoACVControllers', 'JesusEspejoACVFilters',
     'pascalprecht.translate'])
   .config(['$routeProvider', function ($routeProvider) {
@@ -48,9 +48,9 @@ angular.module('JesusEspejoACVApp',
     });
 
     $translateProvider.useStaticFilesLoader({
-          prefix: '/data/position_',
-          suffix: '.json'
+      prefix: '/data/position_',
+      suffix: '.json'
     });
 
     $translateProvider.preferredLanguage('en');
- }]);
+  }]);

@@ -4,10 +4,14 @@
         class="liTask">
       <span class="taskDescription" ng-transclude>
       </span>
-      with 
-      <ul class="taskTechList">
+      with
+      <ul class="techList">
         <li ng-repeat="tech in task.techs">
-          <span>{{tech.name}}</span>
+          <div class="imageWrapper">
+            <img ng-src="images/tech/original/{{tech.image}}"
+              alt="{{tech.name}}" title="{{tech.name}}">
+            </img>
+          </div>
         </li>
       </ul>
     </li>
