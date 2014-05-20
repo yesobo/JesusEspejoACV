@@ -45,9 +45,9 @@
       {
         "techs": [
             {"name": "JasperReports",
-             "image": "jasperreports"},
+             "image": "jasperreports.png"},
             {"name": "iReport",
-             "image": "ireport"}
+             "image": "ireport.jpg"}
        ]
       },
       {
@@ -101,7 +101,7 @@
     },
     "locator": "APVIECI",
     "client": {
-      "name": "IECISA/ Viajes El Corte Inglés",
+      "name": "Viajes El Corte Inglés",
       "imageUrl": "images/client/viajes_ECI_logo.png",
       "webSite": "http://www.viajeselcorteingles.es/"
     },
@@ -243,10 +243,6 @@
             {
               "name": "Google Maps",
               "image": "google_maps.jpg"
-            },
-            {
-              "name": "Infobox.js",
-              "image": "infobox.jpg"
             }
          ]
       },
@@ -263,11 +259,7 @@
             {
               "name": "Oracle SQL",
               "image": "oracle.jpg"
-            },
-            {
-              "name": "HOST"
-            }
-          ]
+            }          ]
         }
     ],
     "tools": [
@@ -280,7 +272,7 @@
       }
     ],
     "start": "2012-10-01T00:00:00",
-    "end": "2013-07-16T07:27:05",
+    "end": "2014-07-01T07:27:05",
     "project": "Mantenimiento OIE (Oficina Internet Empresas)",
     "team": [
       {
@@ -323,7 +315,7 @@
             {"name": "C++ Builder",
              "image": "c++Builder.png"},
             {"name": "Paradox",
-             "image": "paradox.jpg"}
+             "image": "paradox.png"}
        ]
       }
     ],
@@ -436,9 +428,6 @@
             {
               "name": "CSS",
               "image": "css.jpg"
-            },
-            {
-              "name": "Facelets"
             }
         ]
       },
@@ -458,7 +447,7 @@
             },
             {
               "name": "Weblogic 9.2",
-              "image": "orable_weblogic_server.jpg"
+              "image": "weblogic.png"
             }
         ]
       },
@@ -525,7 +514,49 @@
       "webSite": "http://www.bull.es/"
     },
     "full-time": "true",
-    
+    "tasks": [
+      {
+        "techs": [
+            {
+              "name": "JSF 1.2",
+              "image": "jsf.png"
+            },
+            {
+              "name": "HTML",
+              "image": "html.jpg"
+            },
+            {
+              "name": "Javascript",
+              "image": "javascript.png"
+            },
+            {
+              "name": "CSS",
+              "image": "css.jpg"
+            }
+        ]
+      },
+      {
+        "techs": [
+            {
+              "name": "Spring Framework 2.5",
+              "image": "spring.jpg"
+            },
+            {
+              "name": "Hibernate",
+              "image": "hibernate.png"
+            },
+            {
+              "name": "JBoss",
+              "image": "jboss.jpg"
+            },
+            {
+              "name": "Oracle",
+              "image": "oracle.jpg"
+            }
+       ]
+    }
+  ],
+
     "tools": [
       {
         "name": "Ant"
