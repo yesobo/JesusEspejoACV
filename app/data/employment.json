@@ -121,7 +121,7 @@
             {"name": "HTML5",
              "image": "html5.png"},
             {"name": "CSS3",
-             "image": "css3.jpg"},
+             "image": "css3.png"},
             {"name": "Modernizr",
              "image": "modernizr.png"},
             {"name": "polyfills",
@@ -230,7 +230,7 @@
             },
             {
               "name": "CSS3",
-              "image": "css3.jpg"
+              "image": "css3.png"
             },
             {
               "name": "Modernizr",
