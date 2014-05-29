@@ -4,11 +4,11 @@
 describe('experienceDetailsDirective', function() {
 
   beforeEach(module('ExperienceDetailsDirective'));
-  
+
   // load the templates
   beforeEach(module('app/views/templates/experienceDetails.html'));
   // tip: could load the template in a module declared at karma.conf with ngHtml2JsPreprocessor
-  
+
   var $compile, $rootScope, template, element;
   var experienceDetailObj = {
     position : "Programador Web J2EE/EJB/Front-end/Reporting",
@@ -71,27 +71,28 @@ describe('experienceDetailsDirective', function() {
   };
 
   beforeEach(inject(function($templateCache, _$compile_, _$rootScope_) {
-    
+
     var template = $templateCache.get('app/views/templates/experienceDetails.html');
     $templateCache.put('views/templates/experienceDetails.html', template);
-    
+
     $compile = _$compile_;
     $rootScope = _$rootScope_;
 
     $rootScope.experienceDetailObj = experienceDetailJSON;
-    
+
     var htmlString = '' +
       '<experience-details details-obj="experienceDetailObj">' + experienceDetailJSON.tasks[0].description + '</experience-details>';
     var elem = angular.element(htmlString);
     element = $compile(elem)($rootScope);
-    
+
     $rootScope.$digest();
   }));
 
   it('should list the tasks techs of the experience\'s inserted as parameter', function() {
 
     // .find() is limited to tag name
-    var taskTech = element.find('ul').find('li').find('ul').find('li').find('span')[0].innerHTML;
+    var taskTech = element.find('ul').find('li').find('ul')
+      .find('li').find('img')[0].title;
     var numberOfLi = element.children().children().children().length;
     expect(numberOfLi).toBe(experienceDetailObj.tasks.length);
     expect(taskTech).toBe(experienceDetailObj.tasks[0].techs[0].name);

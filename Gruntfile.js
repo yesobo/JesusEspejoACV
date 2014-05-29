@@ -237,8 +237,8 @@ module.exports = function (grunt) {
           src: [
             '*.html',
             'views/*.html',
-          'views/{,*/}*.html'
-            ],
+            'views/{,*/}*.html'
+          ],
           dest: '<%= yeoman.dist %>'
         }]
       }
