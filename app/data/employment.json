@@ -6,12 +6,12 @@
     "locator": "APMetro",
     "client": {
       "name": "Metro de Madrid S.A.",
-      "imageUrl": "images/client/metro_madrid_logo.png",
+      "imageUrl": "metro_madrid_logo.png",
       "webSite": "http://www.metromadrid.es/es/index.html"
     },
     "employer": {
       "name": "Bull-SICONET",
-      "imageUrl": "images/employer/bull_logo.png",
+      "imageUrl": "bull_logo.png",
       "webSite": "http://www.bull.es/"
     },
     "full-time": "true",
@@ -102,12 +102,12 @@
     "locator": "APVIECI",
     "client": {
       "name": "Viajes El Corte Inglés",
-      "imageUrl": "images/client/viajes_ECI_logo.png",
+      "imageUrl": "viajes_ECI_logo.png",
       "webSite": "http://www.viajeselcorteingles.es/"
     },
     "employer": {
       "name": "AT Sistemas",
-      "imageUrl": "images/employer/atsistemas_logo.png",
+      "imageUrl": "atsistemas_logo.png",
       "webSite": "http://atsistemas.com/es/"
     },
     "full-time": "true",
@@ -200,12 +200,12 @@
     "locator": "APBankia",
     "client": {
       "name": "Bankia",
-      "imageUrl": "images/client/bankia_logo.png",
+      "imageUrl": "bankia_logo.png",
       "webSite": "http://www.bankia.es/"
     },
     "employer": {
       "name": "AT Sistemas",
-      "imageUrl": "images/employer/atsistemas_logo.png",
+      "imageUrl": "atsistemas_logo.png",
       "webSite": "http://atsistemas.com/es/"
     },
     "full-time": "true",
@@ -300,12 +300,12 @@
     "locator": "PSeres",
     "client": {
       "name": "Seres",
-      "imageUrl": "images/client/seres_logo.jpg",
+      "imageUrl": "seres_logo.jpg",
       "webSite": "http://es.groupseres.com/"
     },
     "employer": {
       "name": "Bull-SICONET",
-      "imageUrl": "images/employer/bull_logo.png",
+      "imageUrl": "bull_logo.png",
       "webSite": "http://www.bull.es/"
     },
     "full-time": "true",
@@ -344,12 +344,12 @@
     "locator": "APLiberty",
     "client": {
       "name": "Liberty Seguros",
-      "imageUrl": "images/client/liberty_seguros_logo.png",
+      "imageUrl": "liberty_seguros_logo.png",
       "webSite": "http://www.libertyseguros.es/"
     },
     "employer": {
       "name": "Bull-SICONET",
-      "imageUrl": "images/employer/bull_logo.png",
+      "imageUrl": "bull_logo.png",
       "webSite": "http://www.bull.es/"
     },
     "full-time": "true",
@@ -401,12 +401,12 @@
     "locator": "PSanitas",
     "client": {
       "name": "Sanitas",
-      "imageUrl": "images/client/sanitas_logo.png",
+      "imageUrl": "sanitas_logo.png",
       "webSite": "http://www.sanitas.es/"
     },
     "employer": {
       "name": "Bull-SICONET",
-      "imageUrl": "images/employer/bull_logo.png",
+      "imageUrl": "bull_logo.png",
       "webSite": "http://www.bull.es/"
     },
     "full-time": "true",
@@ -505,12 +505,12 @@
     "locator": "PJrMapfre",
     "client": {
       "name": "Mapfre",
-      "imageUrl": "images/client/mapfre_logo.png",
+      "imageUrl": "mapfre_logo.png",
       "webSite": "http://www.mapfre.com/"
     },
     "employer": {
       "name": "Bull-SICONET",
-      "imageUrl": "images/employer/bull_logo.png",
+      "imageUrl": "bull_logo.png",
       "webSite": "http://www.bull.es/"
     },
     "full-time": "true",

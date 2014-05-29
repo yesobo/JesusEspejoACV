@@ -1,4 +1,7 @@
-@import "bootstrap-sass/lib/bootstrap";
+/* bootstrap-sass redefined variable */
+$icon-font-path: "fonts/";
+
+@import 'bootstrap-sass/lib/bootstrap';
 @import 'search-button';
 @import 'experience-details-2';
 
