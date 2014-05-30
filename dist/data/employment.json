@@ -1,0 +1,599 @@
+[
+  {
+    "_id": {
+      "$oid": "51bc524de840a529c200009a"
+    },
+    "locator": "APMetro",
+    "client": {
+      "name": "Metro de Madrid S.A.",
+      "imageUrl": "metro_madrid_logo.png",
+      "webSite": "http://www.metromadrid.es/es/index.html"
+    },
+    "employer": {
+      "name": "Bull-SICONET",
+      "imageUrl": "bull_logo.png",
+      "webSite": "http://www.bull.es/"
+    },
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [
+            {"name": "JSF 2.0",
+             "image": "jsf.png"},
+            {"name": "RichFaces",
+             "image": "richfaces.gif"},
+            {"name": "Javascript",
+             "image": "javascript.png"},
+            {"name": "ChartDirector",
+             "image": "chartdirector.jpg"},
+            {"name": "CSS",
+             "image": "css.jpg"}
+       ]
+      },
+      {
+        "techs": [
+            {"name": "EJB 3.0",
+             "image": "ejb3.gif"},
+            {"name": "JPA 1.0",
+             "image": "openjpa.png"},
+            {"name": "Maven",
+             "image": "maven.gif"},
+            {"name": "Oracle SQL",
+             "image": "oracle.jpg"}
+       ]
+      },
+      {
+        "techs": [
+            {"name": "JasperReports",
+             "image": "jasperreports.png"},
+            {"name": "iReport",
+             "image": "ireport.jpg"}
+       ]
+      },
+      {
+        "techs": [
+            {"name": "JUnit",
+             "image": "junit.png"},
+            {"name": "Selenium",
+             "image": "selenium.png"}
+       ]
+      }
+    ],
+    "tools": [
+      {
+        "name": "Sonar",
+        "image": "sonar.jpg"
+      },
+      {
+        "name": "Hudson",
+        "image": "hudson.jpg"
+      },
+      {
+        "name": "Gimp",
+        "image": "gimp.png"
+      },
+      {
+        "name": "SVN",
+        "image": "svn.jpg"
+      }
+    ],
+    "start": "2010-04-01T00:00:00",
+    "end": "2011-04-01T00:00:00",
+    "project": "Migración Reservas Hoteleras Tourmundial",
+    "team": [
+      {
+        "position": "jefe de proyecto"
+      },
+      {
+        "position": "Analista"
+      },
+      {
+        "position": "Arquitecto"
+      },
+      {
+        "position": "me"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "51bc3f3e494f44cf7b00003d"
+    },
+    "locator": "APVIECI",
+    "client": {
+      "name": "Viajes El Corte Inglés",
+      "imageUrl": "viajes_ECI_logo.png",
+      "webSite": "http://www.viajeselcorteingles.es/"
+    },
+    "employer": {
+      "name": "AT Sistemas",
+      "imageUrl": "atsistemas_logo.png",
+      "webSite": "http://atsistemas.com/es/"
+    },
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [
+            {"name": "JQuery",
+             "image": "jquery.png"},
+            {"name": "Javascript",
+             "image": "javascript.png"},
+            {"name": "HTML5",
+             "image": "html5.png"},
+            {"name": "CSS3",
+             "image": "css3.png"},
+            {"name": "Modernizr",
+             "image": "modernizr.png"},
+            {"name": "polyfills",
+             "image": "polyfills.jpg"}
+       ]
+      },
+      {
+        "techs": [
+            {"name": "Java 1.6",
+             "image": "java.png"},
+            {"name": "JSP",
+             "image": "jsp.jpg"},
+            {"name": "Java Servlets",
+             "image": "java_servlets.png"},
+            {"name": "XML-JAX",
+             "image": "xml.jpeg"},
+            {"name": "WS",
+             "image": "soap.png"},
+            {"name": "JUnit",
+             "image": "junit.png"}
+       ]
+      },
+      {
+        "techs": [
+            {"name": "VB6",
+             "image": "vb6.jpg"},
+            {"name": "ASP",
+             "image": "asp.png"},
+            {"name": "WS SOA",
+             "image": "soap.png"},
+            {"name": "JSF",
+             "image": "jsf.png"},
+            {"name": "JEE",
+             "image": "jee.png"},
+            {"name": "XML",
+             "image": "xml.jpeg"}
+       ]
+      },
+      {
+        "techs": [
+            {"name": "WS SOA",
+             "image": "soap.png"},
+            {"name": "JSF",
+             "image": "jsf.png"},
+            {"name": "JEE",
+             "image": "jee.png"},
+            {"name": "XML",
+             "image": "xml.jpeg"}
+       ]
+      }
+    ],
+    "tools": [
+      {
+        "name": "Git"
+      },
+      {
+        "name": "ClearCase"
+      }
+    ],
+    "start": "2011-04-01T00:00:00",
+    "end": "2012-06-01T00:00:00",
+    "project": "Migración Reservas Hoteleras Tourmundial",
+    "team": [
+      {
+        "position": "jefe de proyecto"
+      },
+      {
+        "position": "me"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "51bb66a98c523b196aca5340"
+    },
+    "locator": "APBankia",
+    "client": {
+      "name": "Bankia",
+      "imageUrl": "bankia_logo.png",
+      "webSite": "http://www.bankia.es/"
+    },
+    "employer": {
+      "name": "AT Sistemas",
+      "imageUrl": "atsistemas_logo.png",
+      "webSite": "http://atsistemas.com/es/"
+    },
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [
+            {
+              "name": "JQuery",
+              "image": "jquery.png"
+            },
+            {
+              "name": "Javascript",
+              "image": "javascript.png"
+            },
+            {
+              "name": "JSP",
+              "image": "jsp.jpg"
+            },
+            {
+              "name": "HTML5",
+              "image": "html5.png"
+            },
+            {
+              "name": "CSS3",
+              "image": "css3.png"
+            },
+            {
+              "name": "Modernizr",
+              "image": "modernizr.png"
+            },
+            {
+              "name": "polyfills",
+              "image": "polyfills.jpg"
+            },
+            {
+              "name": "Google Maps",
+              "image": "google_maps.jpg"
+            }
+         ]
+      },
+      {
+        "techs": [
+            {
+              "name": "Java 1.4",
+              "image": "java.png"
+            },
+            {
+              "name": "IBM WBCC v4.2",
+              "image": "ibm_websphere.jpg"
+            },
+            {
+              "name": "Oracle SQL",
+              "image": "oracle.jpg"
+            }          ]
+        }
+    ],
+    "tools": [
+      {
+        "name": "JIRA"
+      },
+      {
+        "name": "SVN",
+        "image": "svn.jpg"
+      }
+    ],
+    "start": "2012-10-01T00:00:00",
+    "end": "2014-07-01T07:27:05",
+    "project": "Mantenimiento OIE (Oficina Internet Empresas)",
+    "team": [
+      {
+        "position": "Jefe de Proyecto"
+      },
+      {
+        "position": "Administrador Base de Datos"
+      },
+      {
+        "position": "Arquitecto"
+      },
+      {
+        "position": "Desarrollador front y back end",
+        "number": "2"
+      },
+      {
+        "position": "me"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "51c0a366a28303b9ad86ac14"
+    },
+    "locator": "PSeres",
+    "client": {
+      "name": "Seres",
+      "imageUrl": "seres_logo.jpg",
+      "webSite": "http://es.groupseres.com/"
+    },
+    "employer": {
+      "name": "Bull-SICONET",
+      "imageUrl": "bull_logo.png",
+      "webSite": "http://www.bull.es/"
+    },
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [
+            {"name": "C++ Builder",
+             "image": "c++Builder.png"},
+            {"name": "Paradox",
+             "image": "paradox.png"}
+       ]
+      }
+    ],
+    "tools": [
+      {
+        "name": "Borland C++ Builder",
+        "image": "c++Builder.png"
+      }
+    ],
+    "start": "2010-03-01T00:00:00",
+    "end": "2010-04-01T00:00:00",
+    "project": "Prototipo de aplicativo de generación de códigos y ficheros de embarque de mercancías marítimas para Liverpool (México).",
+    "team": [
+      {
+        "position": "jefe de proyecto/Analista"
+      },
+      {
+        "position": "me"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "51c1597b22a466afa4000341"
+    },
+    "locator": "APLiberty",
+    "client": {
+      "name": "Liberty Seguros",
+      "imageUrl": "liberty_seguros_logo.png",
+      "webSite": "http://www.libertyseguros.es/"
+    },
+    "employer": {
+      "name": "Bull-SICONET",
+      "imageUrl": "bull_logo.png",
+      "webSite": "http://www.bull.es/"
+    },
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [
+            {"name": "MS Office",
+             "image": "msoffice.png"}
+       ]
+      },
+      {
+        "techs": [
+            {"name": "VBA",
+             "image": "vba.png"},
+            {"name": "Access",
+             "image": "msaccess.png"},
+            {"name": "Excel",
+             "image": "excel2010.jpg"},
+            {"name": "SQL-Server 2010",
+             "image": "sqlserver.png"}
+       ]
+      }
+    ],
+    "tools": [
+      {
+        "name": "MS Office",
+        "image": "msoffice.png"
+      },
+      {
+        "name": "Visual Studio"
+      }
+    ],
+    "start": "2010-01-01T00:00:00",
+    "end": "2010-03-01T00:00:00",
+    "project": "Cuadro de Mandos para Single Sign-On de intranet de Liberty Seguros",
+    "team": [
+      {
+        "position": "jefe de proyecto/Analista"
+      },
+      {
+        "position": "me"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "51c15cce8644157f2c0002e7"
+    },
+    "locator": "PSanitas",
+    "client": {
+      "name": "Sanitas",
+      "imageUrl": "sanitas_logo.png",
+      "webSite": "http://www.sanitas.es/"
+    },
+    "employer": {
+      "name": "Bull-SICONET",
+      "imageUrl": "bull_logo.png",
+      "webSite": "http://www.bull.es/"
+    },
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [
+            {
+              "name": "JSF 1.2",
+              "image": "jsf.png"
+            },
+            {
+              "name": "IceFaces",
+              "image": "icefaces.png"
+            },
+            {
+              "name": "Javascript",
+              "image": "javascript.png"
+            },
+            {
+              "name": "CSS",
+              "image": "css.jpg"
+            }
+        ]
+      },
+      {
+        "techs": [
+            {
+              "name": "EJB 3.0",
+              "image": "ejb3.gif"
+            },
+            {
+              "name": "Maven",
+              "image": "maven.gif"
+            },
+            {
+              "name": "Oracle SQL",
+              "image": "oracle.jpg"
+            },
+            {
+              "name": "Weblogic 9.2",
+              "image": "weblogic.png"
+            }
+        ]
+      },
+      {
+        "techs": [
+            {
+              "name": "JUnit",
+              "image": "junit.png"
+            }
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "name": "Maven",
+        "image": "maven.gif"
+      },
+      {
+        "name": "SVN",
+        "image": "svn.jpg"
+      },
+      {
+        "name": "JDeveloper"
+      },
+      {
+        "name": "Toad"
+      }
+    ],
+    "start": "2009-09-01T00:00:00",
+    "end": "2010-01-01T00:00:00",
+    "project": "Contratación Sanitas",
+    "team": [
+      {
+        "position": "jefe de proyecto"
+      },
+      {
+        "position": "Analista"
+      },
+      {
+        "position": "Administrador DB"
+      },
+      {
+        "position": "Desarrollador",
+        "number": "5"
+      },
+      {
+        "position": "me"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "51c15edec5686a7f800000d0"
+    },
+    "locator": "PJrMapfre",
+    "client": {
+      "name": "Mapfre",
+      "imageUrl": "mapfre_logo.png",
+      "webSite": "http://www.mapfre.com/"
+    },
+    "employer": {
+      "name": "Bull-SICONET",
+      "imageUrl": "bull_logo.png",
+      "webSite": "http://www.bull.es/"
+    },
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [
+            {
+              "name": "JSF 1.2",
+              "image": "jsf.png"
+            },
+            {
+              "name": "HTML",
+              "image": "html.jpg"
+            },
+            {
+              "name": "Javascript",
+              "image": "javascript.png"
+            },
+            {
+              "name": "CSS",
+              "image": "css.jpg"
+            }
+        ]
+      },
+      {
+        "techs": [
+            {
+              "name": "Spring Framework 2.5",
+              "image": "spring.jpg"
+            },
+            {
+              "name": "Hibernate",
+              "image": "hibernate.png"
+            },
+            {
+              "name": "JBoss",
+              "image": "jboss.jpg"
+            },
+            {
+              "name": "Oracle",
+              "image": "oracle.jpg"
+            }
+       ]
+    }
+  ],
+
+    "tools": [
+      {
+        "name": "Ant"
+      },
+      {
+        "name": "Eclipse"
+      },
+      {
+        "name": "CVS"
+      },
+      {
+        "name": "Diagramas de secuencia"
+      },
+      {
+        "name": "Maquetas"
+      }
+    ],
+    "start": "2009-06-01T00:00:00",
+    "end": "2009-10-01T00:00:00",
+    "project": "Contratación Sanitas",
+    "team": [
+      {
+        "position": "jefe de proyecto"
+      },
+      {
+        "position": "Analista"
+      },
+      {
+        "position": "Administrador Bases de Datos"
+      },
+      {
+        "position": "Desarrollador",
+        "number": "6"
+      },
+      {
+        "position": "me"
+      }
+    ]
+  }
+]

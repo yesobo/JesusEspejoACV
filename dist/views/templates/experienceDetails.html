@@ -1,0 +1,16 @@
+<div>
+  <ul class="tasksList">
+    <li ng-repeat="task in detailsObjAttr.tasks" class="liTask">
+      <span class="taskDescription" ng-transclude="">
+      </span>
+      <ul class="techList">
+        <li ng-repeat="tech in task.techs">
+          <div class="imageWrapper">
+            <img ng-src="images/{{tech.image}}" alt="{{tech.name}}" title="{{tech.name}}">
+            
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
