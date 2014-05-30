@@ -27,7 +27,7 @@
             {"name": "ChartDirector",
              "image": "chartdirector.jpg"},
             {"name": "CSS",
-             "image": "css.jpg"}
+             "image": "css.png"}
        ]
       },
       {
@@ -137,7 +137,7 @@
             {"name": "Java Servlets",
              "image": "java_servlets.png"},
             {"name": "XML-JAX",
-             "image": "xml.jpeg"},
+             "image": "xml.png"},
             {"name": "WS",
              "image": "soap.png"},
             {"name": "JUnit",
@@ -157,7 +157,7 @@
             {"name": "JEE",
              "image": "jee.png"},
             {"name": "XML",
-             "image": "xml.jpeg"}
+             "image": "xml.png"}
        ]
       },
       {
@@ -169,7 +169,7 @@
             {"name": "JEE",
              "image": "jee.png"},
             {"name": "XML",
-             "image": "xml.jpeg"}
+             "image": "xml.png"}
        ]
       }
     ],
@@ -313,7 +313,7 @@
       {
         "techs": [
             {"name": "C++ Builder",
-             "image": "c++Builder.png"},
+             "image": "cppbuilder.png"},
             {"name": "Paradox",
              "image": "paradox.png"}
        ]
@@ -322,7 +322,7 @@
     "tools": [
       {
         "name": "Borland C++ Builder",
-        "image": "c++Builder.png"
+        "image": "cppbuilder.png"
       }
     ],
     "start": "2010-03-01T00:00:00",
@@ -427,7 +427,7 @@
             },
             {
               "name": "CSS",
-              "image": "css.jpg"
+              "image": "css.png"
             }
         ]
       },
@@ -523,7 +523,7 @@
             },
             {
               "name": "HTML",
-              "image": "html.jpg"
+              "image": "html.png"
             },
             {
               "name": "Javascript",
@@ -531,7 +531,7 @@
             },
             {
               "name": "CSS",
-              "image": "css.jpg"
+              "image": "css.png"
             }
         ]
       },

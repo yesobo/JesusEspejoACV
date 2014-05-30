@@ -322,6 +322,57 @@ module.exports = function (grunt) {
     }
   });
 
+  // Find unused images
+  grunt.registerTask('unusedimages', function(){
+    var assets = [],
+        links = [];
+
+    // Get list of images
+    grunt.file.expand(
+      {
+        filter: 'isFile',
+        cwd: 'app/images/' // Change this to your images dir
+      },
+      ['*.{png,jpg,jpeg,gif,webp,svg}']
+    ).forEach(
+        function(file){
+          assets.push(file);
+        }
+    );
+
+    // Find images in content
+    grunt.file.expand(
+      {
+        filter: 'isFile',
+      },
+      [
+        'app/scripts/{,*/}*.js',
+        'app/data/{,*/}*.json',
+        'app/styles/{,*/}*.css',
+        'app/views/{,*/}*.html',
+      ]
+    ).forEach(
+        function(file){ // Change this to narrow down the search
+          var content = grunt.file.read(file);
+          assets.forEach(function(asset){
+            if(content.search(asset) !== -1){
+              links.push(asset);
+            }
+          });
+        }
+    );
+
+    // Output unused images
+    var unused = grunt.util._.difference(assets, links);
+    console.log('Found '+ links.length +' used images:');
+    console.log('Found '+ unused.length +' unused images:');
+    unused.forEach(
+      function(el){
+        console.log(el);
+      }
+    );
+  });
+
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
