@@ -319,6 +319,21 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: 'ftp.strato.com',
+          port: 21,
+          authKey: 'key1'
+        },
+        src: 'dist',
+        dest: '/',
+        exclusions: [
+          'dist/bower_components/**',
+          'dist/images/**'
+        ]
+      }
     }
   });
 
