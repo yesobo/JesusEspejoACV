@@ -1,27 +1,36 @@
-.liTask {
-  list-style-type: none;
-  clear: both;
-  padding-top: 20px;
-
-  .taskDescription {
-    font-size: 18px;
-  }
-
-  .techList {
+.tasksList {
+  padding: 10px;
+  .liTask {
     list-style-type: none;
-    margin-top: 10px;
-
-    .imageWrapper {
-      height: 100px;
-      width: 100px;
-      border: none;
-      line-height: 100px;
-      float: left;
+    clear: both;
+    padding-top: 30px;
+    .taskDescription {
+      font-size: 18px;
+      color: #8e8d8d;
+    }
+    .techList {
+      list-style-type: none;
+      margin: 10px 0px 0px 40px;
+      // wraps float children
       overflow: hidden;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      border-radius: 30px;
+      border: 1px solid #bbbbbb;
+      background-color: white;
 
-      img {
-        max-width: 100%;
-        vertical-align: middle;
+      .imageWrapper {
+        height: 100px;
+        width: 100px;
+        border: none;
+        line-height: 100px;
+        float: left;
+        overflow: hidden;
+
+        img {
+          max-width: 100%;
+          vertical-align: middle;
+        }
       }
     }
   }

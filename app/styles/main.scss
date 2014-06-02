@@ -1,6 +1,9 @@
 /* bootstrap-sass redefined variable */
 $icon-font-path: "fonts/";
 
+$light-color: #f7f7f9;
+$light-grey: #dddddd;
+
 @import 'bootstrap-sass/lib/bootstrap';
 @import 'search-button';
 @import 'experience-details-2';
@@ -198,12 +201,23 @@ button.search {
   max-width: 120px;
 }
 
+$panel-main-color: $light-color;
+$panel-inside-color: $light-color;
 .employment {
   clear: left;
-  background-color: #fafafa;
-
+  background-color: $panel-inside-color;
+  .panel-heading {
+    background-color: $light-color;
+  }
   .panel-collapse {
-    background-color: #ffffff;
+    background-color: $panel-main-color;
+    .panel-body {
+      margin-bottom-color: $panel-main-color;
+      padding-top: 0px;
+    }
+  }
+  .panel-footer {
+    background-color: $panel-inside-color;
   }
 }
 
