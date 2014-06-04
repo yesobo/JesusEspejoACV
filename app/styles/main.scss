@@ -1,7 +1,8 @@
 /* bootstrap-sass redefined variable */
 $icon-font-path: "fonts/";
 
-$light-color: #f7f7f9;
+$light-color: #c1dbf2;
+$very-light-color: #ddebf9;
 $light-grey: #dddddd;
 
 @import 'bootstrap-sass/lib/bootstrap';
@@ -202,7 +203,7 @@ button.search {
 }
 
 $panel-main-color: $light-color;
-$panel-inside-color: $light-color;
+$panel-inside-color: $very-light-color;
 .employment {
   clear: left;
   background-color: $panel-inside-color;
@@ -210,14 +211,14 @@ $panel-inside-color: $light-color;
     background-color: $light-color;
   }
   .panel-collapse {
-    background-color: $panel-main-color;
+    background-color: $panel-inside-color;
     .panel-body {
-      margin-bottom-color: $panel-main-color;
+      margin-bottom-color: $panel-inside-color;
       padding-top: 0px;
     }
   }
   .panel-footer {
-    background-color: $panel-inside-color;
+    background-color: $panel-main-color;
   }
 }
 
