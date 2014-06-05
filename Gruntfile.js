@@ -392,9 +392,9 @@ module.exports = function (grunt) {
 
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {
-      return grunt.task.run([ 'build', 
+      return grunt.task.run([ 'build',
                               // remove open for codio
-                              'open', 
+                              'open',
                               'connect:dist:keepalive'
                             ]);
     }
