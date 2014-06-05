@@ -56,8 +56,10 @@ module.exports = function (grunt) {
     connect: {
       options: {
         port: 9000,
+        // codio port 3000
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost'
+        // codio hostname: '0.0.0.0'
       },
       livereload: {
         options: {
@@ -390,7 +392,11 @@ module.exports = function (grunt) {
 
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
+      return grunt.task.run([ 'build', 
+                              // remove open for codio
+                              'open', 
+                              'connect:dist:keepalive'
+                            ]);
     }
 
     grunt.task.run([
