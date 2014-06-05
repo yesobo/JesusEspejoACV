@@ -112,6 +112,7 @@ button.search {
   border-left: 1px solid #3a87ad;
   padding-left: 1.5em;
   margin-top: 10px;
+  background-color: #fafafa;
 }
 
 .mainColumn {
@@ -163,6 +164,11 @@ button.search {
   margin-top: 10px;
 }
 
+.menu-section {
+    background-color: #428bca;
+    overflow: hidden;
+}
+
 .main-left {
   position: fixed;
 }
@@ -173,6 +179,7 @@ button.search {
 
 .sectionTitleWrapper {
   margin-right: 20px;
+  color: #ffffff;
 }
 
 .employerLine {
@@ -385,12 +392,12 @@ $panel-inside-color: $very-light-color;
   }
 
   .sectionTitleWrapper {
-    > h5 {
+    > .subtitle {
         display: block!important;
         margin-top: 0px;
         margin-bottom: 0px;
     }
-    > h2 {
+    > .title {
         margin-bottom: 0px;
     }
     width: auto!important;
@@ -447,7 +454,7 @@ $panel-inside-color: $very-light-color;
   }
 
   .sectionTitleWrapper > {
-    h2, h5 {
+    .title, .subtitle {
       display: inline-block;
     }
   }
