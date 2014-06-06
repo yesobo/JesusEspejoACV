@@ -74,7 +74,7 @@ body {
 }
 
 $top-menu-margin: 50px;
-section#experience {
+section.menu-section {
   margin-top: $top-menu-margin;
 }
 
@@ -178,7 +178,7 @@ button.search {
   margin-top: 10px;
 }
 
-.menu-section {
+.menu-section#experience {
     background-color: #428bca;
     overflow: hidden;
 }
