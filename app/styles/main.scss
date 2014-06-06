@@ -11,6 +11,7 @@ $light-grey: #dddddd;
 
 /* Put your CSS here */
 
+
 .primary {
   background-color: #428bca;
   color: #ffffff;
@@ -29,15 +30,23 @@ $light-grey: #dddddd;
   color: #999999;
 }
 
+$main-margin: 0px;
+
 html {
-  margin: 20px;
+  margin: $main-margin;
+  height: 100vh;
 }
 
 body {
-  margin: 20px;
+  height: 100vh;
+  margin: $main-margin;
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
+}
+
+.main-view {
+  min-height: 100vh;
 }
 
 .hero-unit {
@@ -62,6 +71,11 @@ body {
 
 .container-fluid {
   padding-top: 20px;
+}
+
+$top-menu-margin: 50px;
+section#experience {
+  margin-top: $top-menu-margin;
 }
 
 .navbar-inverse .nav .active > a {
@@ -109,9 +123,9 @@ button.search {
 }
 
 .main {
+  height: 100%;
   border-left: 1px solid #3a87ad;
   padding-left: 1.5em;
-  margin-top: 10px;
   background-color: #fafafa;
 }
 
@@ -263,117 +277,9 @@ $panel-inside-color: $very-light-color;
 }
 
 
-/************************** Phones *****************************/
-@media (max-width: 321px) {
-  .nav-collapse320 {
-    &.collapse {
-      overflow: hidden;
-      height: 0;
-    }
-    .nav {
-      float: none;
-      margin: 0 0 10px;
-      > li {
-        float: none;
-        > a {
-          padding: 9px 15px;
-          font-weight: bold;
-          color: #777777;
-          -webkit-border-radius: 3px;
-          -moz-border-radius: 3px;
-          border-radius: 3px;
-        }
-      }
-    }
-    clear: both;
-  }
-  .nav-collapse .dropdown-menu a {
-    padding: 9px 15px;
-    font-weight: bold;
-    color: #777777;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-  }
-  .navbar-inverse .nav-collapse320 {
-    .nav > li > a, .dropdown-menu a {
-      color: #999999;
-    }
-  }
-  .navbar .nav {
-    margin: 0px;
-  }
 
-}
 
-/******************* Phone and Wide Phone *******************/
-@media (max-width: 480px) {
-  .nav-collapse480 {
-    &.collapse {
-      overflow: visible !important;
-      height: auto !important;
-    }
-    .nav {
-      float: none;
-      margin: 0 0 10px;
-      > li {
-        float: none;
-        > a {
-          padding: 9px 15px;
-          font-weight: bold;
-          color: #777777;
-          -webkit-border-radius: 3px;
-          -moz-border-radius: 3px;
-          border-radius: 3px;
-        }
-      }
-    }
-    clear: both;
-  }
 
-  .navbar-brand {
-    margin-left: 15px;
-  }
-
-  .nav-collapse .dropdown-menu a {
-    padding: 9px 15px;
-    font-weight: bold;
-    color: #777777;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-  }
-  .navbar-inverse .nav-collapse480 {
-    .nav > li > a, .dropdown-menu a {
-      color: #999999;
-    }
-  }
-  .secondLastName {
-    display: none;
-  }
-
-  body {
-    padding-left: 0;
-    padding-right: 0px;
-    margin-right: 0px;
-    margin-left: 0;
-  }
-
-  .main-left div {
-    min-width: 33px;
-  }
-
-  aside {
-    margin-left: 0;
-    padding-left: 0!important;
-  }
-  .container {
-    padding: 0;
-  }
-  .pull-right {
-    margin-right: 15px;
-  }
-}
 
 /************************** Phone to tablet *********************/
 @media (max-width: 767px) {
@@ -383,7 +289,7 @@ $panel-inside-color: $very-light-color;
     padding-left: 0;
     padding-right: 0;
     padding-top: 10px;
-    padding-left:30px;
+    padding-left:5px;
   }
   .xs-sm-hidden {
     display: none;
@@ -560,15 +466,6 @@ html {
   }
 }
 
-/************************** Wide phone to desktop *************/
-@media (min-width: 480px) {
-  .nav-collapse480.collapse {
-    height: auto !important;
-    overflow: visible !important;
-  }
-}
-
-
 /************************** Tablet to Desktop *********************/
 @media (min-width: 321px) {
   .nav-collapse320.collapse {
@@ -611,11 +508,139 @@ html {
 }
 
 /************************* Wide table to Desktop ***************/
-@media (min-width: 852px) {
+@media (min-width: 991px) {
   .navbar .btn-navbar {
     display: none;
+  }
+
+  .full-height-column {
+    min-height: 94vh;
   }
 }
 
 /************************** Large dektop **************/
 @media (min-width: 1200px) {}
+
+/************************** Phones *****************************/
+@media (max-width: 321px) {
+  .nav-collapse320 {
+    &.collapse {
+      overflow: hidden;
+      height: 0;
+    }
+    .nav {
+      float: none;
+      margin: 0 0 10px;
+      > li {
+        float: none;
+        > a {
+          padding: 9px 15px;
+          font-weight: bold;
+          color: #777777;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+        }
+      }
+    }
+    clear: both;
+  }
+  .nav-collapse .dropdown-menu a {
+    padding: 9px 15px;
+    font-weight: bold;
+    color: #777777;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  .navbar-inverse .nav-collapse320 {
+    .nav > li > a, .dropdown-menu a {
+      color: #999999;
+    }
+  }
+  .navbar .nav {
+    margin: 0px;
+  }
+
+}
+
+/******************* Phone and Wide Phone *******************/
+@media (max-width: 480px) {
+  .nav-collapse480 {
+    &.collapse {
+      overflow: visible !important;
+      height: auto !important;
+    }
+    .nav {
+      float: none;
+      margin: 0 0 10px;
+      > li {
+        float: none;
+        > a {
+          padding: 9px 15px;
+          font-weight: bold;
+          color: #777777;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+        }
+      }
+    }
+    clear: both;
+  }
+
+  .navbar-brand {
+    margin-left: 15px;
+  }
+
+  .nav-collapse .dropdown-menu a {
+    padding: 9px 15px;
+    font-weight: bold;
+    color: #777777;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  .navbar-inverse .nav-collapse480 {
+    .nav > li > a, .dropdown-menu a {
+      color: #999999;
+    }
+  }
+  .secondLastName {
+    display: none;
+  }
+
+  body {
+    padding-left: 0;
+    padding-right: 0px;
+    margin-right: 0px;
+    margin-left: 0;
+  }
+
+  .main-left div {
+    min-width: 33px;
+  }
+
+  aside {
+    margin-left: 0;
+    padding-left: 0!important;
+  }
+  .container {
+    padding: 0;
+  }
+  .pull-right {
+    margin-right: 15px;
+  }
+
+  .employerNameWrapper {
+    width: 70%;
+  }
+}
+
+/************************** Wide phone to desktop *************/
+@media (min-width: 480px) {
+  .nav-collapse480.collapse {
+    height: auto !important;
+    overflow: visible !important;
+  }
+}

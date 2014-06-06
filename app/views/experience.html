@@ -1,5 +1,5 @@
 <section id="experience" class="row-fluid menu-section">
-  <aside class="col-lg-3 col-md-3">
+  <aside class="col-lg-3 col-md-3 full-height-column">
     <div class="main-left">
       <div class="sectionTitleWrapper" ng-show="sectionTitleWrapperVisible">
           <h2 class="title">{{'EXPERIENCE' | translate}}</h2>
@@ -10,7 +10,7 @@
       </div>
     </div>
     </aside>
-    <div class="col-lg-9 col-md-9 main">
+    <div class="col-lg-9 col-md-9 main full-height-column">
       <div class="row-fluid" ng-repeat="employer in employersDates | orderBy: '-start'">
         <div class="row-fluid" ng-show="(employments | filter:query | filter:employer.employerName).length">
           <article>
@@ -30,12 +30,12 @@
               </div>
             </div>
             <div class="col-lg-9 col-md-9 mainColumn">
-               <div class="col-lg-12 col-md-12 row-fluid employerLine">
-                  <div class="col-lg-12 col-md-12 employerWrapper">
-                    <div class="col-lg-9 col-md-9 employerNameWrapper" style="">
+               <div class="col-lg-12 col-md-12 col-sm-12 row-fluid employerLine">
+                  <div class="col-lg-12 col-md-12 col-sm-12 employerWrapper">
+                    <div class="col-lg-9 col-md-9 col-sm-7 employerNameWrapper" style="">
                       <h2 class="employerName">{{employer.employerName}}</h2>
                     </div>
-                    <div class="col-lg-3 col-md-3 employerLogoWrapper" style="">
+                    <div class="col-lg-3 col-md-3 col-sm 5 employerLogoWrapper" style="">
                      <a target="_blank" href="{{employer.webSite}}">
                        <img class="employerLogo" ng-src="images/{{employer.imageUrl}}"/></a>
                    </div>
