@@ -31,7 +31,7 @@
 
 	},
 	"PJrMapfre": {
-		"postion": "Programador Web Junior J2EE/Spring/JSF",
+		"position": "Programador Web Junior J2EE/Spring/JSF",
 		"tasks": [
 			{"description": "Desarrollo de interfaces web a partir de maquetas"},
             {"description": "Desarrollo J2EE a partir de diagramas de secuencia"}
