@@ -131,6 +131,7 @@ button.search {
 
 .mainColumn {
   margin-left: 10px!important;
+  margin-right: 10px!important;
 }
 
 .period {
@@ -468,6 +469,11 @@ html {
 
 /************************** Tablet to Desktop *********************/
 @media (min-width: 321px) {
+  .container > .navbar-header, .container > .navbar-collapse {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+
   .nav-collapse320.collapse {
     height: auto !important;
     overflow: visible !important;
@@ -566,6 +572,12 @@ html {
 
 /******************* Phone and Wide Phone *******************/
 @media (max-width: 480px) {
+
+  .container > .navbar-header, .container > .navbar-collapse {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
   .nav-collapse480 {
     &.collapse {
       overflow: visible !important;
@@ -587,10 +599,6 @@ html {
       }
     }
     clear: both;
-  }
-
-  .navbar-brand {
-    margin-left: 15px;
   }
 
   .nav-collapse .dropdown-menu a {
