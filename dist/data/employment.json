@@ -93,7 +93,9 @@
       {
         "position": "me"
       }
-    ]
+    ],
+    "keywords": ["J2EE", "JEE", "JavaEE", "EJB", "Front",
+      "Report", "pdf", "pruebas", "test", ""]
   },
   {
     "_id": {
@@ -191,7 +193,9 @@
       {
         "position": "me"
       }
-    ]
+    ],
+    "keywords": ["J2EE", "Java", "JEE", "JavaEE",
+      "front", "Analista", "hotel"]
   },
   {
     "_id": {
@@ -291,7 +295,9 @@
       {
         "position": "me"
       }
-    ]
+    ],
+    "keywords": ["J2EE", "Java", "JEE", "JavaEE",
+      "front", "Analista", "websphere"]
   },
   {
     "_id": {
@@ -335,7 +341,9 @@
       {
         "position": "me"
       }
-    ]
+    ],
+    "keywords": ["C++", "Delphi", "Paradox", "desktop",
+      "escritorio"]
   },
   {
     "_id": {
@@ -392,7 +400,10 @@
       {
         "position": "me"
       }
-    ]
+    ],
+    "keywords": ["analista", "VBA", "SQL", "Access",
+      "Excel"]
+
   },
   {
     "_id": {
@@ -496,7 +507,10 @@
       {
         "position": "me"
       }
-    ]
+    ],
+    "keywords": ["Java", "J2EE", "JavaEE", "JEE",
+      "EJB", "JSF", "diseño", "pruebas", "test"]
+
   },
   {
     "_id": {
@@ -553,10 +567,9 @@
               "name": "Oracle",
               "image": "oracle.jpg"
             }
-       ]
-    }
-  ],
-
+         ]
+      }
+    ],
     "tools": [
       {
         "name": "Ant"
@@ -576,7 +589,7 @@
     ],
     "start": "2009-06-01T00:00:00",
     "end": "2009-10-01T00:00:00",
-    "project": "Contratación Sanitas",
+    "project": "Auditmap",
     "team": [
       {
         "position": "jefe de proyecto"
@@ -594,6 +607,9 @@
       {
         "position": "me"
       }
-    ]
+    ],
+    "keywords": ["Java", "J2EE", "JavaEE", "JEE",
+      "web", "Spring", "JSF"]
+
   }
 ]
