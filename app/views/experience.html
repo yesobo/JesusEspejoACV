@@ -6,7 +6,10 @@
           <h5 class="subtitle">{{'WHERE_I_WORKED' | translate}}</h5>
       </div>
       <div id="searchWrapper">
-        <search-button search-query="query" on-expand="hideAndExpand()" custom-blur="exitSearchMode()" custom-placeholder="'SEARCH' | translate"></search-button>
+        <search-button search-query="query" on-expand="hideAndExpand()"
+          custom-blur="exitSearchMode()"
+          custom-placeholder="'SEARCH' | translate">
+        </search-button>
       </div>
     </div>
     </aside>
@@ -41,7 +44,8 @@
                    </div>
                  </div>
                </div>
-               <div class="employment panel panel-default" ng-repeat="employment in employments | filter: query | filter: employer.employerName | orderBy: '-start'">
+               <div class="employment panel panel-default"
+                   ng-repeat="employment in employments | filter: query | filter: employer.employerName | orderBy: '-start'">
                   <div class="panel-heading">
                     <div class="period-mini">
                       <div class="periodInterval-mini default">
