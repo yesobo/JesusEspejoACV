@@ -1,17 +1,20 @@
-<section class="menu-section">
-	<aside class="span4">
-		<h2>{{'WHO_I_AM' | translate}}</h2>
-		<h5>{{'ABOUT_ME_EXPL' | translate}}</h5>
+<section class="row-fluid menu-section">
+	<aside class="col-lg-3 col-md-3 full-height-column">
+		<div class="main-left">
+			<div class="sectionTitleWrapper">
+				<h2 class="title">{{'WHO_I_AM' | translate}}</h2>
+				<h5 class="subtitle">{{'ABOUT_ME_EXPL' | translate}}</h5>
+			</div>
+		</div>
 	</aside>
-	<article class="span6">
-		<span></span>
-		<p>
-			{{'ABOUT_ME_P1' | translate}}
-		</p>
-		<p>{{'ABOUT_ME_P2' | translate}}</p>
-	</article>
-	<div class="span2">
-		<div id="social"></div>
-		<div id="contact"></div>
+	<div class="col-lg-9 col-md-9 main full-height-column">
+		<article>
+			<p>
+				<span id="salutation">{{'HELLO' | translate}}</span>
+				{{'ABOUT_ME_P1' | translate}}
+				{{'ABOUT_ME_P2' | translate}}
+			</p>
+			<p></p>
+		</article>
 	</div>
 </section>

@@ -49,6 +49,10 @@ body {
   min-height: 100vh;
 }
 
+#salutation {
+  font-size: 6em;
+}
+
 .hero-unit {
   margin: 50px auto 0 auto;
   width: 300px;
@@ -110,10 +114,6 @@ section.menu-section {
   color: white;
 }
 
-.main-left {
-  height: 65px;
-}
-
 button.search {
     padding: 0;
     cursor: pointer;
@@ -126,6 +126,7 @@ button.search {
   height: 100%;
   border-left: 1px solid #3a87ad;
   padding-left: 1.5em;
+  padding-top: 10px;
   background-color: #fafafa;
 }
 
@@ -179,7 +180,7 @@ button.search {
   margin-top: 10px;
 }
 
-.menu-section#experience {
+.menu-section {
     background-color: #428bca;
     overflow: hidden;
 }
@@ -296,8 +297,8 @@ $panel-inside-color: $very-light-color;
     display: none;
   }
 
-  .main-left {
-    height: 70px;
+  aside {
+    padding-bottom: 10px;
   }
 
   .sectionTitleWrapper {
@@ -377,6 +378,7 @@ html {
 
         .main-left {
           margin-right: 20px;
+          overflow: auto;
         }
       }
     }
@@ -513,14 +515,17 @@ html {
   }
 }
 
-/************************* Wide table to Desktop ***************/
-@media (min-width: 991px) {
+/************************* Wide tablet to Desktop ***************/
+@media (min-width: 992px) {
   .navbar .btn-navbar {
     display: none;
   }
 
   .full-height-column {
     min-height: 94vh;
+  }
+  .subtitle {
+    max-width: 250px;
   }
 }
 
