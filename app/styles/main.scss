@@ -4,13 +4,13 @@ $icon-font-path: "fonts/";
 $light-color: #c1dbf2;
 $very-light-color: #ddebf9;
 $light-grey: #dddddd;
+$dark-blue: #428bca;
 
 @import 'bootstrap-sass/lib/bootstrap';
 @import 'search-button';
 @import 'experience-details-2';
 
 /* Put your CSS here */
-
 
 .primary {
   background-color: #428bca;
@@ -181,7 +181,7 @@ button.search {
 }
 
 .menu-section {
-    background-color: #428bca;
+    background-color: $dark-blue;
     overflow: hidden;
 }
 
@@ -357,6 +357,8 @@ $panel-inside-color: $very-light-color;
 
 /************************** Phone to wide tablet ************************/
 @media (max-width: 991px) {
+
+
 html {
   margin-left: 0px;
   margin-right: 0px;
@@ -374,7 +376,10 @@ html {
 
       aside {
         width: 100%;
-        margin-left: 20px;
+        padding-left: 20px;
+        position: relative;
+        background-color: $dark-blue;
+        z-index: 2;
 
         .main-left {
           margin-right: 20px;
@@ -384,11 +389,6 @@ html {
     }
   }
 }
-
-  aside {
-    padding-left: 0px!important;
-    position: relative;
-  }
 
   .sectionTitleWrapper > {
     .title, .subtitle {
@@ -635,8 +635,7 @@ html {
   }
 
   aside {
-    margin-left: 0;
-    padding-left: 0!important;
+    padding-left: 10px;
   }
   .container {
     padding: 0;
