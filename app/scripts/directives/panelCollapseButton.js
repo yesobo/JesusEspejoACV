@@ -17,13 +17,14 @@ angular.module('PanelCollapseButtonDirective', [])
     link: function(scope, elem) {
 
       var jPanel = $(elem[0].parentElement.parentElement);
-      var panelHeader = jPanel.children().first();
+      var stickyZone = jPanel.children('.stickyZone');
+      var panelHeader = stickyZone.children('.panel-heading');
       jPanel.on('shown.bs.collapse', function () {
-          makeSticky(panelHeader, jPanel);
+          makeSticky(panelHeader, stickyZone);
           $(document.body).trigger('sticky_kit:recalc');
         });
       jPanel.on('hidden.bs.collapse', function () {
-          panelHeader.trigger('sticky_kit:detach');
+          //panelHeader.trigger('sticky_kit:detach');
           $(document.body).trigger('sticky_kit:recalc');
         });
     }
