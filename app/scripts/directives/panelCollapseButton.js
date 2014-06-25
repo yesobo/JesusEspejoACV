@@ -18,21 +18,19 @@ angular.module('PanelCollapseButtonDirective', [])
 
       var sticked = false;
 
-      elem.bind('click', function() {
-        var jPanel = $(elem[0].parentElement.parentElement);
-        var panelHeader = jPanel.children().first();
-        jPanel.on('shown.bs.collapse', function () {
-            if(!sticked) {
-              sticked = true;
-              makeSticky(panelHeader, jPanel);
-            } else {
-              $(document.body).trigger('sticky_kit:recalc');
-            }
-          });
-        jPanel.on('hidden.bs.collapse', function () {
+      var jPanel = $(elem[0].parentElement.parentElement);
+      var panelHeader = jPanel.children().first();
+      jPanel.on('shown.bs.collapse', function () {
+          if(!sticked) {
+            sticked = true;
+            makeSticky(panelHeader, jPanel);
+          } else {
             $(document.body).trigger('sticky_kit:recalc');
-          });
-      });
+          }
+        });
+      jPanel.on('hidden.bs.collapse', function () {
+          $(document.body).trigger('sticky_kit:recalc');
+        });
     }
   };
 });
