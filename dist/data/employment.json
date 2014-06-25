@@ -21,11 +21,11 @@
             {"name": "JSF 2.0",
              "image": "jsf.png"},
             {"name": "RichFaces",
-             "image": "richfaces.gif"},
+             "image": "richfaces.png"},
             {"name": "Javascript",
              "image": "javascript.png"},
             {"name": "ChartDirector",
-             "image": "chartdirector.jpg"},
+             "image": "chartdirector.png"},
             {"name": "CSS",
              "image": "css.png"}
        ]
@@ -33,13 +33,13 @@
       {
         "techs": [
             {"name": "EJB 3.0",
-             "image": "ejb3.gif"},
+             "image": "ejb3.png"},
             {"name": "JPA 1.0",
              "image": "openjpa.png"},
             {"name": "Maven",
-             "image": "maven.gif"},
+             "image": "maven.png"},
             {"name": "Oracle SQL",
-             "image": "oracle.jpg"}
+             "image": "oracle.png"}
        ]
       },
       {
@@ -47,7 +47,7 @@
             {"name": "JasperReports",
              "image": "jasperreports.png"},
             {"name": "iReport",
-             "image": "ireport.jpg"}
+             "image": "ireport.png"}
        ]
       },
       {
@@ -62,11 +62,11 @@
     "tools": [
       {
         "name": "Sonar",
-        "image": "sonar.jpg"
+        "image": "sonar.png"
       },
       {
         "name": "Hudson",
-        "image": "hudson.jpg"
+        "image": "hudson.png"
       },
       {
         "name": "Gimp",
@@ -74,7 +74,7 @@
       },
       {
         "name": "SVN",
-        "image": "svn.jpg"
+        "image": "svn.png"
       }
     ],
     "start": "2010-04-01T00:00:00",
@@ -127,7 +127,7 @@
             {"name": "Modernizr",
              "image": "modernizr.png"},
             {"name": "polyfills",
-             "image": "polyfills.jpg"}
+             "image": "polyfills.png"}
        ]
       },
       {
@@ -135,7 +135,7 @@
             {"name": "Java 1.6",
              "image": "java.png"},
             {"name": "JSP",
-             "image": "jsp.jpg"},
+             "image": "jsp.png"},
             {"name": "Java Servlets",
              "image": "java_servlets.png"},
             {"name": "XML-JAX",
@@ -149,7 +149,7 @@
       {
         "techs": [
             {"name": "VB6",
-             "image": "vb6.jpg"},
+             "image": "vb6.png"},
             {"name": "ASP",
              "image": "asp.png"},
             {"name": "WS SOA",
@@ -226,7 +226,7 @@
             },
             {
               "name": "JSP",
-              "image": "jsp.jpg"
+              "image": "jsp.png"
             },
             {
               "name": "HTML5",
@@ -242,11 +242,11 @@
             },
             {
               "name": "polyfills",
-              "image": "polyfills.jpg"
+              "image": "polyfills.png"
             },
             {
               "name": "Google Maps",
-              "image": "google_maps.jpg"
+              "image": "google_maps.png"
             }
          ]
       },
@@ -258,11 +258,11 @@
             },
             {
               "name": "IBM WBCC v4.2",
-              "image": "ibm_websphere.jpg"
+              "image": "ibm_websphere.png"
             },
             {
               "name": "Oracle SQL",
-              "image": "oracle.jpg"
+              "image": "oracle.png"
             }          ]
         }
     ],
@@ -272,7 +272,7 @@
       },
       {
         "name": "SVN",
-        "image": "svn.jpg"
+        "image": "svn.png"
       }
     ],
     "start": "2012-10-01T00:00:00",
@@ -375,7 +375,7 @@
             {"name": "Access",
              "image": "msaccess.png"},
             {"name": "Excel",
-             "image": "excel2010.jpg"},
+             "image": "excel2010.png"},
             {"name": "SQL-Server 2010",
              "image": "sqlserver.png"}
        ]
@@ -446,15 +446,15 @@
         "techs": [
             {
               "name": "EJB 3.0",
-              "image": "ejb3.gif"
+              "image": "ejb3.png"
             },
             {
               "name": "Maven",
-              "image": "maven.gif"
+              "image": "maven.png"
             },
             {
               "name": "Oracle SQL",
-              "image": "oracle.jpg"
+              "image": "oracle.png"
             },
             {
               "name": "Weblogic 9.2",
@@ -474,11 +474,11 @@
     "tools": [
       {
         "name": "Maven",
-        "image": "maven.gif"
+        "image": "maven.png"
       },
       {
         "name": "SVN",
-        "image": "svn.jpg"
+        "image": "svn.png"
       },
       {
         "name": "JDeveloper"
@@ -553,7 +553,7 @@
         "techs": [
             {
               "name": "Spring Framework 2.5",
-              "image": "spring.jpg"
+              "image": "spring.png"
             },
             {
               "name": "Hibernate",
@@ -561,11 +561,11 @@
             },
             {
               "name": "JBoss",
-              "image": "jboss.jpg"
+              "image": "jboss.png"
             },
             {
               "name": "Oracle",
-              "image": "oracle.jpg"
+              "image": "oracle.png"
             }
          ]
       }
