@@ -25,7 +25,8 @@ angular.module('PanelCollapseButtonDirective', [])
         });
       jPanel.on('hidden.bs.collapse', function () {
           $(document.body).trigger('sticky_kit:recalc');
-          panelHeader.trigger('sticky_kit:detach');
+          // commented because of sticky-kit issue #23
+          //panelHeader.trigger('sticky_kit:detach');
         });
     }
   };
