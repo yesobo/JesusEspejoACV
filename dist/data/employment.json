@@ -237,10 +237,6 @@
               "image": "css3.png"
             },
             {
-              "name": "Modernizr",
-              "image": "modernizr.png"
-            },
-            {
               "name": "polyfills",
               "image": "polyfills.png"
             },
