@@ -10,7 +10,7 @@ angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
                 SharedData.getSharedDataResource().query(function() {
                     sc.employersDates =
                         SharedData.getEmployersPeriods(employments);
-                });
+                  });
 
             sc.activateSearchButton = true;
 
@@ -24,28 +24,28 @@ angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
 
             sc.hideAndExpand = function(mode) {
                 if (window.innerWidth <= 480) {
-                    if (sc.activateSearchButton) {
-                        sc.activateSearchButton = false;
-                        if (mode === NO_FOCUS_SEARCH) {
-                            sc.sectionTitleWrapperVisible = 'true';
-                        } else {
-                            sc.sectionTitleWrapperVisible = 'false';
-                            sc.searchButtonInputFocus = 'true';
-                        }
+                  if (sc.activateSearchButton) {
+                    sc.activateSearchButton = false;
+                    if (mode === NO_FOCUS_SEARCH) {
+                      sc.sectionTitleWrapperVisible = 'true';
+                    } else {
+                      sc.sectionTitleWrapperVisible = 'false';
+                      sc.searchButtonInputFocus = 'true';
                     }
+                  }
                 }
-            };
+              };
 
             sc.exitSearchMode = function() {
                 if (window.innerWidth <= 480) {
-                    if (!sc.query || sc.query === '') {
-                        sc.sectionTitleWrapperVisible = 'true';
-                        sc.activateSearchButton = true;
-                    }
+                  if (!sc.query || sc.query === '') {
+                    sc.sectionTitleWrapperVisible = 'true';
+                    sc.activateSearchButton = true;
+                  }
                 }
-            };
-        }
-    ])
+              };
+          }
+          ])
     .controller('ExperienceDetailCtrl', ['$scope', '$routeParams', 'SharedData',
         function($scope, $routeParams, SharedData) {
             var allExperiences = SharedData.getSharedData()
@@ -53,6 +53,6 @@ angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
                     $scope.experience =
                         SharedData.filterJSON(allExperiences, 'start',
                             $routeParams.start)[0];
-                });
-        }
+                  });
+          }
     ]);
