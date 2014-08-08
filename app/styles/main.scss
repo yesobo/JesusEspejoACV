@@ -193,6 +193,12 @@ button.search {
   position: fixed;
 }
 
+.title {
+  font-family: Pacifico;
+  text-shadow: 4px 4px 2px rgba(78, 80, 62, 1);  
+}
+
+
 .asideExperience {
   min-width: 165px;
 }
@@ -408,7 +414,16 @@ html {
 
         .main-left {
           margin-right: 20px;
-          overflow: auto;
+          overflow: hidden;
+
+          .title {
+            font-size: 30px;
+            margin-top: 4px;
+            padding-bottom: 4px;
+          }
+          .searchButtonContainer {
+            margin-top: 14px;
+          }
         }
       }
     }
@@ -540,6 +555,9 @@ html {
     height: auto !important;
     overflow: visible !important;
   }
+  .title {
+    font-size: 45px;
+  }
 }
 
 /************************* Wide tablet to Desktop ***************/
@@ -557,7 +575,11 @@ html {
 }
 
 /************************** Large dektop **************/
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+  .title {
+    font-size: 50px;
+  }
+}
 
 /************************** Phones *****************************/
 @media (max-width: 321px) {
