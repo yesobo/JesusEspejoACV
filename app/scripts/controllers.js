@@ -4,23 +4,21 @@ angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
     .controller('ExperienceCtrl', ['$scope', '$window', 'SharedData', '$translate', '$parse',
         function(sc, window, SharedData, translate) {
 
-            var NO_FOCUS_SEARCH = 0;
-
             var employments = sc.employments =
                 SharedData.getSharedDataResource().query(function() {
                     sc.employersDates =
                         SharedData.getEmployersPeriods(employments);
                   });
 
-            sc.activateSearchButton = true;
-
             sc.buttonContainerClass = '';
+
+            // moving to main-left directive controller
+            /*
+            var NO_FOCUS_SEARCH = 0;
+
             sc.sectionTitleWrapperVisible = 'true';
+            sc.activateSearchButton = true;
             sc.searchButtonInputFocus = 'false';
-
-            sc.collapseScrollTop = 0;
-
-            sc.searchButtonPlaceholder = translate('SEARCH');
 
             sc.hideAndExpand = function(mode) {
                 if (window.innerWidth <= 480) {
@@ -36,14 +34,9 @@ angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
                 }
               };
 
-            sc.exitSearchMode = function() {
-                if (window.innerWidth <= 480) {
-                  if (!sc.query || sc.query === '') {
-                    sc.sectionTitleWrapperVisible = 'true';
-                    sc.activateSearchButton = true;
-                  }
-                }
-              };
+            */
+
+            sc.collapseScrollTop = 0;
           }
           ])
     .controller('ExperienceDetailCtrl', ['$scope', '$routeParams', 'SharedData',

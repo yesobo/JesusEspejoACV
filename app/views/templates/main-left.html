@@ -1,0 +1,12 @@
+<div class="main-left">
+  <div class="sectionTitleWrapper" ng-show="sectionTitleWrapperVisible">
+    <h2 class="title">{{customTitle}}</h2>
+    <h5 class="subtitle">{{customSubtitle}}</h5>
+  </div>
+  <div id="searchWrapper">
+    <search-button search-query="customQuery" on-expand="hideAndExpand()"
+      custom-blur="exitSearchMode()"
+      custom-placeholder="'SEARCH' | translate">
+    </search-button>
+  </div>
+</div>

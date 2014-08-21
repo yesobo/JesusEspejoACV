@@ -49,7 +49,7 @@ body {
   min-height: 92vh;
 }
 
-#cover { 
+#cover {
   font-size: 1.5em;
 }
 
@@ -195,7 +195,7 @@ button.search {
 
 .title {
   font-family: Pacifico;
-  text-shadow: 4px 4px 2px rgba(78, 80, 62, 1);  
+  text-shadow: 4px 4px 2px rgba(78, 80, 62, 1);
 }
 
 
@@ -544,6 +544,9 @@ html {
   .md-lg-hidden {
     display: none;
   }
+  .main-left {
+    width: inherit;
+  }
   .periodColumn {
     padding: 0px;
   }
@@ -572,6 +575,7 @@ html {
   .subtitle {
     max-width: 250px;
   }
+
 }
 
 /************************** Large dektop **************/

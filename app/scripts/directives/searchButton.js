@@ -8,13 +8,13 @@ angular.module('SearchButtonDirective', [])
     transclude: true,
     scope: {
       searchQuery: '=',
-      eventHandler: '&onExpand',
+      expandHandler: '&onExpand',
       blurHandler: '&customBlur',
       customPlaceholder: '='
     },
     controller: function($scope) {
       $scope.isCollapsed = true;
-      
+
       $scope.clear = function() {
         $scope.searchQuery = '';
         $('.searchButtonContainer > input').focus();
@@ -38,7 +38,7 @@ angular.module('SearchButtonDirective', [])
 
       $scope.expand = function() {
         if($scope.isCollapsed) {
-          $scope.eventHandler();
+          $scope.expandHandler();
           $scope.showInput();
           $('.searchButtonContainer > input').focus();
         }

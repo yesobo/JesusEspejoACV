@@ -17,6 +17,10 @@ angular.module('JesusEspejoACVApp',
         templateUrl: 'views/experience-detail.html',
         controller: 'ExperienceDetailCtrl'
       })
+      .when('/projects', {
+        templateUrl: 'views/experience.html',
+        controller: 'ExperienceCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

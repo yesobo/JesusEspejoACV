@@ -1,17 +1,9 @@
 <section id="experience" class="row-fluid menu-section">
   <aside class="col-lg-3 col-md-3 full-height-column subHeader">
-    <div class="main-left">
-      <div class="sectionTitleWrapper" ng-show="sectionTitleWrapperVisible">
-        <h2 class="title">{{'EXPERIENCE' | translate}}</h2>
-        <h5 class="subtitle">{{'WHERE_I_WORKED' | translate}}</h5>
-      </div>
-      <div id="searchWrapper">
-        <search-button search-query="query" on-expand="hideAndExpand()"
-          custom-blur="exitSearchMode()"
-          custom-placeholder="'SEARCH' | translate">
-        </search-button>
-      </div>
-    </div>
+    <main-left custom-query="query"
+      custom-title="'PERSONAL_PROJECTS' | translate"
+      custom-subtitle="'WHERE_I_WORKED' | translate">
+    </main-left>
   </aside>
   <div class="col-lg-9 col-md-9 main full-height-column">
     <div class="row-fluid" ng-repeat="employer in employersDates | orderBy: '-start'">
