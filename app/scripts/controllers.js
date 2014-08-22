@@ -2,7 +2,7 @@
 
 angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
     .controller('ExperienceCtrl', ['$scope', '$window', 'SharedData', '$translate', '$parse',
-        function(sc, window, SharedData, translate) {
+        function(sc, window, SharedData) {
 
             var employments = sc.employments =
                 SharedData.getSharedDataResource().query(function() {
@@ -12,29 +12,25 @@ angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
 
             sc.buttonContainerClass = '';
 
-            // moving to main-left directive controller
-            /*
-            var NO_FOCUS_SEARCH = 0;
+            sc.rawTitle = 'EXPERIENCE';
+            sc.rawSubtitle = 'WHERE_I_WORKED';
 
-            sc.sectionTitleWrapperVisible = 'true';
-            sc.activateSearchButton = true;
-            sc.searchButtonInputFocus = 'false';
+            sc.collapseScrollTop = 0;
+          }
+          ])
+    .controller('ProjectsCtrl', ['$scope', '$window', 'SharedData', '$translate', '$parse',
+        function(sc, window, SharedData) {
 
-            sc.hideAndExpand = function(mode) {
-                if (window.innerWidth <= 480) {
-                  if (sc.activateSearchButton) {
-                    sc.activateSearchButton = false;
-                    if (mode === NO_FOCUS_SEARCH) {
-                      sc.sectionTitleWrapperVisible = 'true';
-                    } else {
-                      sc.sectionTitleWrapperVisible = 'false';
-                      sc.searchButtonInputFocus = 'true';
-                    }
-                  }
-                }
-              };
+            var employments = sc.employments =
+                SharedData.getSharedDataResource().query(function() {
+                    sc.employersDates =
+                        SharedData.getEmployersPeriods(employments);
+                  });
 
-            */
+            sc.buttonContainerClass = '';
+
+            sc.rawTitle = 'PERSONAL_PROJECTS';
+            sc.rawSubtitle = 'FOR_THE_LOVE_OF_ART';
 
             sc.collapseScrollTop = 0;
           }

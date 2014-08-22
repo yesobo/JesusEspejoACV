@@ -2,7 +2,7 @@ $sizes: 22px;
 .searchButtonContainer {
     border: 1px solid black;
     margin-top: 24px;
-    height: $sizes;
+    height: $sizes + 2px;
     padding-left: $sizes;
     padding-right: $sizes;
     background-color: white;
@@ -22,7 +22,8 @@ $sizes: 22px;
       position: relative;
       width: $sizes - 4;
       margin-left: -$sizes + 4;
-    } 
+      margin-top: 2px;
+    }
     button {
       position: relative;
       width: $sizes;
@@ -79,7 +80,7 @@ $sizes: 22px;
 
 /************************** Tablets *********************/
 @media (min-width: 481px) and (max-width: 767px) {
-  .searchButtonContainer {  
+  .searchButtonContainer {
     margin-top: 30px;
   }
 }
