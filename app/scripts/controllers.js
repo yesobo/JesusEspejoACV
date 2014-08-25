@@ -21,10 +21,10 @@ angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
     .controller('ProjectsCtrl', ['$scope', '$window', 'SharedData', '$translate', '$parse',
         function(sc, window, SharedData) {
 
-            var employments = sc.employments =
-                SharedData.getSharedDataResource().query(function() {
+            var projects = sc.employments =
+                SharedData.getProjectsResource().query(function() {
                     sc.employersDates =
-                        SharedData.getEmployersPeriods(employments);
+                        SharedData.getEmployersPeriods(projects);
                   });
 
             sc.buttonContainerClass = '';

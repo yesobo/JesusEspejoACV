@@ -17,7 +17,13 @@ angular.module('JesusEspejoACVFilters', [])
 
 		return function(datesObj) {
 			var dStart = new Date(datesObj[0]);
-			var dEnd = new Date(datesObj[1]);
+			var dEnd;
+			console.log(datesObj[1]);
+			if(datesObj[1] === "") {
+				dEnd = new Date();
+			} else {
+				dEnd = new Date(datesObj[1]);
+			}
 			var monthDiff = (dEnd.getFullYear() -
 				dStart.getFullYear()) * 12 + dEnd.getMonth() - dStart.getMonth();
 			var years = Math.floor(monthDiff / 12);

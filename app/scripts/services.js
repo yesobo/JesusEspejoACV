@@ -24,6 +24,16 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
         return $resource('data/employment.json', {},
           actions);
       },
+      getProjectsResource: function() {
+        var actions = {
+          'query': {
+            method: 'GET',
+            isArray: true
+          }
+        };
+        return $resource('data/projects.json', {},
+          actions);
+      },
       getSharedDataHttp: function(callBack) {
         $http.get('data/employment.json').success(function(data){
           experience = data;

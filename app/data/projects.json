@@ -1,0 +1,63 @@
+[
+  {
+    "_id": {
+      "$oid": "51bc524de840a529c200009a"
+    },
+    "locator": "JesusEspejoACV",
+    "client": {
+      "name": "www.jesusespejo.es",
+      "imageUrl": "www.jesusespejo.es",
+      "webSite": "http://www.jesusespejo.es"
+    },
+    "employer": {
+      "name": "Proyectos en desarrollo",
+      "imageUrl": "work_in_progress.png",
+      "webSite": ""
+    },
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [
+            {"name": "Angular JS",
+             "image": "angularJS.png"},
+            {"name": "Javascript",
+             "image": "javascript.png"},
+            {"name": "HTML5",
+             "image": "html5.png"},
+            {"name": "CSS3",
+             "image": "css3.png"},
+            {"name": "Yeoman",
+             "image": "yeoman.png"},
+            {"name": "Grunt",
+             "image": "grunt.png"},
+            {"name": "Bower",
+             "image": "bower.png"}
+       ]
+      }
+    ],
+    "tools": [
+      {
+        "name": "Git",
+        "image": "git.png"
+      },
+      {
+        "name": "Trello",
+        "image": "trello.png"
+      },
+      {
+        "name": "Gimp",
+        "image": "gimp.png"
+      }
+    ],
+    "start": "2013-09-19T00:00:00",
+    "end": "",
+    "project": "Curriculum online de Jesús Espejo",
+    "team": [
+      {
+        "position": "me"
+      }
+    ],
+    "keywords": ["Angular", "AngularJS", "Angular JS", "Git", "Yeoman",
+      "Grunt", "HTML5", "Css3"]
+  }
+]

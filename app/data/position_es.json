@@ -79,5 +79,13 @@
             {"description": "Análisis de lógica de negocio a partir de código fuente"},
             {"description": "Diseño técnico de aplicación de reservas hoteleras"}
         ]
+	},
+	"JesusEspejoACV": {
+		"position": "Mi Curriculum Vitae online",
+		"tasks": [
+			{
+				"description": "Diseño y desarrollo front-end utilizando TDD"
+			}
+		]
 	}
 }
