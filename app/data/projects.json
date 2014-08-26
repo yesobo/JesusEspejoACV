@@ -31,7 +31,9 @@
             {"name": "Grunt",
              "image": "grunt.png"},
             {"name": "Bower",
-             "image": "bower.png"}
+             "image": "bower.png"},
+            {"name": "Karma",
+             "image": "karma.png"}
        ]
       }
     ],
