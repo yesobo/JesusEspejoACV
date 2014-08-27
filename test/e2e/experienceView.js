@@ -1,9 +1,5 @@
-/* global describe, beforeEach, browser, it, expect, repeater, input, expect */
+/* global describe, beforeEach, browser, it, expect, repeater, input, expect, element */
 'use strict';
-
-function appWindow() {
-  return document.getElementsByTagName('iframe')[0].contentWindow;
-}
 
 describe('Experience View', function() {
 
@@ -28,15 +24,15 @@ describe('Experience View', function() {
 
     var elem = element('.periodCount:first > span').text();
 
-    expect(elem).toContain("year");
-    expect(elem).toContain("month");
+    expect(elem).toContain('year');
+    expect(elem).toContain('month');
 
     element('#ul-lang img').click();
 
     elem = element('.periodCount:first > span').text();
     
-    expect(elem).toContain("año");
-    expect(elem).toContain("mes");
+    expect(elem).toContain('año');
+    expect(elem).toContain('mes');
   });
 
   it('on desktops (991px), should keep the aside content fixed', function() {
@@ -51,5 +47,17 @@ describe('Experience View', function() {
         done();
       }
     });
-  })
+  });
+
+  it('should translate the employer.employerName (list group title)', function() {
+    browser().navigateTo('/#/projects');
+    expect(element('#ul-lang img').attr('src')).toBe('images/lang_spanish.png');
+    var elem = element('.employerName:first').text();
+    expect(elem).toContain('Current projects');
+  
+    element('#ul-lang img').click();
+
+    elem = element('.employerName:first').text();
+    expect(elem).toContain('Proyectos en desarrollo');
+  });
 });
