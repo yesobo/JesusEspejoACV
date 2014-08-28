@@ -14,7 +14,7 @@
       "imageUrl": "work_in_progress.png",
       "webSite": ""
     },
-    "full-time": "true",
+    "full-time": "false",
     "tasks": [
       {
         "techs": [
@@ -26,6 +26,8 @@
              "image": "html5.png"},
             {"name": "CSS3",
              "image": "css3.png"},
+            {"name": "Bootstrap",
+             "image": "bootstrap.png"},
             {"name": "Yeoman",
              "image": "yeoman.png"},
             {"name": "Grunt",
@@ -81,7 +83,7 @@
       "imageUrl": "work_in_progress.png",
       "webSite": ""
     },
-    "full-time": "true",
+    "full-time": "false",
     "tasks": [
       {
         "techs": [
@@ -102,7 +104,7 @@
       {
         "techs": [
             {"name": "Openshift",
-             "image": "openshift.png"} 
+             "image": "openshift.png"}
         ]
       }
     ],
@@ -125,6 +127,111 @@
       }
     ],
     "keywords": ["Node JS", "Node", "NodeJS", "Git", "Socket.IO",
-      "express", "Bitbucket"]
+      "express", "Mocha", "Bitbucket"]
+  },
+  {
+    "_id": {
+      "$oid": "51bc524de840a529c200009a"
+    },
+    "locator": "PatternsAPI",
+    "client": {
+      "name": "",
+      "imageUrl": "",
+      "webSite": ""
+    },
+    "employer": {
+      "name": "PREVIOUS_PROJECTS",
+      "imageUrl": "previous_projects.png",
+      "webSite": ""
+    },
+    "full-time": "false",
+    "tasks": [
+      {
+        "techs": [
+            {"name": "Node JS",
+             "image": "nodejs.png"},
+            {"name": "express",
+             "image": "express.png"},
+            {"name": "Sequelize",
+             "image": "sequelize.png"},
+            {"name": "Coffeescript",
+             "image": "coffeescript.png"},
+            {"name": "Git",
+             "image": "git.png"}
+       ]
+      },
+      {
+        "techs": [
+            {"name": "Vows",
+             "image": "vows.png"},
+            {"name": "qUnit",
+              "image": "qunit.png"}
+        ]
+      }
+    ],
+    "tools": [
+
+    ],
+    "start": "2012-09-26T00:00:00",
+    "end": "2013-01-05T00:00:00",
+    "project": "API REST para patrones de diseño con NodeJS/express",
+    "team": [
+      {
+        "position": "me"
+      }
+    ],
+    "keywords": ["Node JS", "Node", "NodeJS", "Git", "mocha",
+      "express", "vows", "qunit", "API", "REST"]
+  },
+  {
+    "_id": {
+      "$oid": "51bc524de840a529c200009a"
+    },
+    "locator": "KindleBueno",
+    "client": {
+      "name": "www.kindlebueno.es",
+      "imageUrl": "",
+      "webSite": "www.kindlebueno.es"
+    },
+    "employer": {
+      "name": "PREVIOUS_PROJECTS",
+      "imageUrl": "previous_projects.png",
+      "webSite": ""
+    },
+    "full-time": "false",
+    "tasks": [
+      {
+        "techs": [
+            {"name": "Wordpress",
+             "image": "wordpress.png"},
+            {"name": "PhpMyAdmin",
+             "image": "phpmyadmin.png"}
+       ]
+     },
+     {
+       "techs": [
+           {"name": "php",
+            "image": "php.png"},
+           {"name": "jquery",
+            "image": "jquery.png"},
+           {"name": "javascript",
+            "image": "javascript.png"},
+           {"name": "gimp",
+            "image": "gimp.png"}
+      ]
+     }
+    ],
+    "tools": [
+
+    ],
+    "start": "2012-07-10T00:00:00",
+    "end": "2014-08-31T00:00:00",
+    "project": "KindleBueno: Blog sobre Kindle Fire en Español",
+    "team": [
+      {
+        "position": "me"
+      }
+    ],
+    "keywords": ["PHP", "jQuery", "wordpress", "blog"]
   }
 ]

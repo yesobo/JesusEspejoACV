@@ -24,6 +24,7 @@
 	"FOR_THE_LOVE_OF_ART": "Por amor al arte",
 
 	"CURRENT_PROJECTS": "Proyectos en desarrollo",
+	"PREVIOUS_PROJECTS": "Proyectos anteriores",
 
 	"APMetro": {
 		"position" : "Programador Web J2EE/EJB/Front-end/Reporting",
@@ -94,5 +95,20 @@
       {"description": "Desarrollo back-end con NodeJS utilizando TDD"},
       {"description": "Administración de servidor y despliegues"}
     ]
-  }
+  },
+	"PatternsAPI": {
+		"position": "Desarrollo back-end con NodeJS para API REST de Patrones de Diseño",
+		"tasks": [
+			{"description": "Desarrollo con NodeJS y diseño de API REST utilizando TDD"},
+			{"description": "Desarrollo de pruebas unitarias con frameworks alternativos"}
+		]
+	},
+	"KindleBueno": {
+		"position": "Administración de blog wordpress y programación con php, jQuery y Javascript",
+		"tasks": [
+			{"description": "Administración de blog wordpress"},
+			{"description": "Desarrollo front/back-end con PHP, jQuery y Javascript"}
+		]
+	}
+
 }
