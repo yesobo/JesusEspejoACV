@@ -18,7 +18,7 @@ angular.module('JesusEspejoACVFilters', [])
 		return function(datesObj) {
 			var dStart = new Date(datesObj[0]);
 			var dEnd;
-			if(datesObj[1] === "") {
+			if(datesObj[1] === '') {
 				dEnd = new Date();
 			} else {
 				dEnd = new Date(datesObj[1]);
