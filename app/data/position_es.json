@@ -77,17 +77,22 @@
 		"position": "Analista programador Web J2EE/Java/Front-end",
         "tasks": [
         	{"description": "Desarrollo de interfaces web a partir de esquemas de página"},
-            {"description": "Desarrollo J2EE"},
-            {"description": "Análisis de lógica de negocio a partir de código fuente"},
-            {"description": "Diseño técnico de aplicación de reservas hoteleras"}
+          {"description": "Desarrollo J2EE"},
+          {"description": "Análisis de lógica de negocio a partir de código fuente"},
+          {"description": "Diseño técnico de aplicación de reservas hoteleras"}
         ]
 	},
 	"JesusEspejoACV": {
-		"position": "Mi Curriculum Vitae online",
+		"position": "Analista programador Web AngularJS",
 		"tasks": [
-			{
-				"description": "Diseño y desarrollo front-end utilizando TDD"
-			}
+			{"description": "Diseño y desarrollo front-end utilizando TDD"}
 		]
-	}
+	},
+  "CartasDe": {
+    "position": "Desarrollo back-end con NodeJS para Juego de cartas para móviles",
+    "tasks": [
+      {"description": "Desarrollo back-end con NodeJS utilizando TDD"},
+      {"description": "Administración de servidor y despliegues"}
+    ]
+  }
 }

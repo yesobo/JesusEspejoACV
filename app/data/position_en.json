@@ -114,11 +114,18 @@
     ]
   },
   "JesusEspejoACV": {
-    "position": "My resume website",
+    "position": "AngularJS Front-end Web Developer",
     "tasks": [
       {
         "description": "Front-end Web Design and Development using TDD"
       }
+    ]
+  },
+  "CartasDe": {
+    "position": "NodeJS back-end Development for Mobile card game API",
+    "tasks": [
+      {"description": "Backend-end NodeJS Development using TDD"},
+      {"description": "Server & Application Deployment Management"}
     ]
   }
 }

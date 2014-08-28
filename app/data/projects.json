@@ -33,7 +33,11 @@
             {"name": "Bower",
              "image": "bower.png"},
             {"name": "Karma",
-             "image": "karma.png"}
+             "image": "karma.png"},
+            {"name": "Gimp",
+             "image": "gimp.png"},
+            {"name": "Git",
+             "image": "git.png"}
        ]
       }
     ],
@@ -60,6 +64,67 @@
       }
     ],
     "keywords": ["Angular", "AngularJS", "Angular JS", "Git", "Yeoman",
-      "Grunt", "HTML5", "Css3"]
+      "Grunt", "HTML5", "Css3", "Gimp"]
+  },
+  {
+    "_id": {
+      "$oid": "51bc524de840a529c200009a"
+    },
+    "locator": "CartasDe",
+    "client": {
+      "name": "",
+      "imageUrl": "",
+      "webSite": ""
+    },
+    "employer": {
+      "name": "CURRENT_PROJECTS",
+      "imageUrl": "work_in_progress.png",
+      "webSite": ""
+    },
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [
+            {"name": "Node JS",
+             "image": "nodejs.png"},
+            {"name": "express",
+             "image": "express.png"},
+            {"name": "Socket.IO",
+             "image": "socketio.png"},
+            {"name": "Mocha",
+             "image": "mocha.png"},
+            {"name": "Gulp",
+             "image": "gulp.png"},
+            {"name": "Git",
+             "image": "git.png"}
+       ]
+      },
+      {
+        "techs": [
+            {"name": "Openshift",
+             "image": "openshift.png"} 
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "name": "Git",
+        "image": "git.png"
+      },
+      {
+        "name": "Trello",
+        "image": "trello.png"
+      }
+    ],
+    "start": "2014-06-10T00:00:00",
+    "end": "",
+    "project": "Juegos de cartas para dispositivos móviles",
+    "team": [
+      {
+        "position": "me"
+      }
+    ],
+    "keywords": ["Node JS", "Node", "NodeJS", "Git", "Socket.IO",
+      "express", "Bitbucket"]
   }
 ]

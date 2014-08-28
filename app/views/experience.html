@@ -55,7 +55,10 @@
                     </div>
                     <h3 class="positionTitle panel-title">
                       <span >{{ employment.locator + '.position' | translate }}</span>
-                      {{'AT' | translate}} <a target="_blank" href="{{employment.client.webSite}}">{{employment.client.name}}</a>
+                      <span ng-show="employment.client.name">
+                        {{'AT' | translate}} 
+                        <a target="_blank" href="{{employment.client.webSite}}">{{employment.client.name}}</a>
+                      </span>
                     </h3>
                   </div>
                   <div id="positionDetails-{{employment.locator}}" class="panel-collapse collapse">
