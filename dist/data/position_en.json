@@ -6,6 +6,7 @@
   "EXPERIENCE": "Experience",
   "EDUCATION": "Education",
   "TRAINING": "Training",
+  "PERSONAL_PROJECTS": "Personal Projects",
 
   "ABOUT_ME_EXPL": "Proffesional profile & Contact Info",
   "HELLO": "Hello",
@@ -19,6 +20,11 @@
   "MONTHS": "months",
   "SEARCH": "search",
   "WHERE_I_WORKED": "Where I worked",
+  "FOR_THE_LOVE_OF_ART": "For the love of art",
+
+  "CURRENT_PROJECTS": "Current projects",
+  "PREVIOUS_PROJECTS": "Previous projects",
+
   "APMetro": {
     "position": "J2EE/EJB/Front-end/Reporting Web Developer",
     "tasks": [
@@ -106,6 +112,35 @@
       {
         "description": "Hotel Bookings Software Technical Design"
       }
+    ]
+  },
+  "JesusEspejoACV": {
+    "position": "AngularJS Front-end Web Developer",
+    "tasks": [
+      {
+        "description": "Front-end Web Design and Development using TDD"
+      }
+    ]
+  },
+  "CartasDe": {
+    "position": "NodeJS back-end Development for Mobile card game API",
+    "tasks": [
+      {"description": "Backend-end NodeJS Development using TDD"},
+      {"description": "Server & Application Deployment Management"}
+    ]
+  },
+  "PatternsAPI": {
+    "position": "NodeJS back-end Development for Code Patterns REST API",
+    "tasks": [
+      {"description": "Backend-end NodeJS API Design & Development using TDD"},
+      {"description": "Alternative testing framework development"}
+    ]
+  },
+  "KindleBueno": {
+    "position": "Wordpress blog managing with jQuery, Javascript and PHP programming",
+    "tasks": [
+      {"description": "Wordpress blog management"},
+      {"description": "PHP, jQuery and Javascript development"}
     ]
   }
 }

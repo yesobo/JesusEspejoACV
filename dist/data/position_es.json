@@ -6,6 +6,7 @@
 	"EXPERIENCE": "Experiencia",
 	"EDUCATION": "Educación",
 	"TRAINING": "Cursos",
+	"PERSONAL_PROJECTS": "Proyectos personales",
 
 	"ABOUT_ME_EXPL": "Perfil profesional e Información de Contacto",
 	"HELLO":"Hola",
@@ -20,6 +21,10 @@
 	"MONTHS": "meses",
 	"SEARCH": "buscar",
 	"WHERE_I_WORKED": "Mis trabajos",
+	"FOR_THE_LOVE_OF_ART": "Por amor al arte",
+
+	"CURRENT_PROJECTS": "Proyectos en desarrollo",
+	"PREVIOUS_PROJECTS": "Proyectos anteriores",
 
 	"APMetro": {
 		"position" : "Programador Web J2EE/EJB/Front-end/Reporting",
@@ -73,9 +78,37 @@
 		"position": "Analista programador Web J2EE/Java/Front-end",
         "tasks": [
         	{"description": "Desarrollo de interfaces web a partir de esquemas de página"},
-            {"description": "Desarrollo J2EE"},
-            {"description": "Análisis de lógica de negocio a partir de código fuente"},
-            {"description": "Diseño técnico de aplicación de reservas hoteleras"}
+          {"description": "Desarrollo J2EE"},
+          {"description": "Análisis de lógica de negocio a partir de código fuente"},
+          {"description": "Diseño técnico de aplicación de reservas hoteleras"}
         ]
+	},
+	"JesusEspejoACV": {
+		"position": "Analista programador Web AngularJS",
+		"tasks": [
+			{"description": "Diseño y desarrollo front-end utilizando TDD"}
+		]
+	},
+  "CartasDe": {
+    "position": "Desarrollo back-end con NodeJS para Juego de cartas para móviles",
+    "tasks": [
+      {"description": "Desarrollo back-end con NodeJS utilizando TDD"},
+      {"description": "Administración de servidor y despliegues"}
+    ]
+  },
+	"PatternsAPI": {
+		"position": "Desarrollo back-end con NodeJS para API REST de Patrones de Diseño",
+		"tasks": [
+			{"description": "Desarrollo con NodeJS y diseño de API REST utilizando TDD"},
+			{"description": "Desarrollo de pruebas unitarias con frameworks alternativos"}
+		]
+	},
+	"KindleBueno": {
+		"position": "Administración de blog wordpress y programación con php, jQuery y Javascript",
+		"tasks": [
+			{"description": "Administración de blog wordpress"},
+			{"description": "Desarrollo front/back-end con PHP, jQuery y Javascript"}
+		]
 	}
+
 }

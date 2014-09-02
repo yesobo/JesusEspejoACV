@@ -12,12 +12,12 @@ describe('Controller: ExperienceCtrl', function () {
     $httpBackend;
 
   beforeEach(function() {
-    
+
     // creating a mock service
     mockSharedDataResource = {
       query: function() {}
     };
-    
+
     spyOn(mockSharedDataResource, 'query')
       .andCallFake( function(callback) {
         var employments = [
@@ -59,7 +59,7 @@ describe('Controller: ExperienceCtrl', function () {
             start: '2009-06-01 00:00:00 UTC',
             end: '2011-04-01 00:00:00 UTC'
           };
-          
+
           expectedResult.Employer2 = {
             start: '2009-06-01 00:00:00 UTC',
             end: '2011-04-01 00:00:00 UTC'
@@ -71,16 +71,16 @@ describe('Controller: ExperienceCtrl', function () {
   }));
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope, $injector, 
+  beforeEach(inject(function ($controller, $rootScope, $injector,
       mockSharedData) {
-    
+
     $httpBackend = $injector.get('$httpBackend');
     scope = $rootScope.$new();
-    MainCtrl = $controller('ExperienceCtrl', 
+    MainCtrl = $controller('ExperienceCtrl',
       {$scope: scope, SharedData: mockSharedData});
   }));
 
-  it('should create "employments" model with 2 employments fetched from xhr', 
+  it('should create "employments" model with 2 employments fetched from xhr',
       function () {
     expect(mockSharedDataResource.query).toHaveBeenCalled();
     expect(scope.employments.length).toBe(4);
@@ -88,17 +88,4 @@ describe('Controller: ExperienceCtrl', function () {
     expect(scope.employersDates.Employer1.start).toBe('2009-06-01 00:00:00 UTC');
     expect(scope.employersDates.Employer2.end).toBe('2011-04-01 00:00:00 UTC');
   });
-
-  it('should provide activateSearchButton set to true', function() {
-    expect(scope.activateSearchButton).toBeDefined();
-    expect(scope.activateSearchButton).toBe(true);
-  });
-
-  it('should provide hideAndExpand function', function() {
-    expect(scope.hideAndExpand).toBeDefined();
-  })
-
-  it('should provide exitSearchMode function', function() {
-    expect(scope.exitSearchMode).toBeDefined();
-  })
 });
