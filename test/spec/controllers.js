@@ -8,17 +8,17 @@ describe('Controller: ExperienceCtrl', function () {
 
   var MainCtrl,
     scope,
-    mockSharedDataResource,
+    mockEmploymentsResource,
     $httpBackend;
 
   beforeEach(function() {
 
     // creating a mock service
-    mockSharedDataResource = {
+    mockEmploymentsResource = {
       query: function() {}
     };
 
-    spyOn(mockSharedDataResource, 'query')
+    spyOn(mockEmploymentsResource, 'query')
       .andCallFake( function(callback) {
         var employments = [
           {
@@ -50,8 +50,8 @@ describe('Controller: ExperienceCtrl', function () {
   beforeEach(module(function($provide) {
     $provide.factory('mockSharedData', function() {
       return {
-        getSharedDataResource: function() {
-          return mockSharedDataResource;
+        getEmploymentsResource: function() {
+          return mockEmploymentsResource;
         },
         getEmployersPeriods: function() {
           var expectedResult = [];
@@ -82,7 +82,7 @@ describe('Controller: ExperienceCtrl', function () {
 
   it('should create "employments" model with 2 employments fetched from xhr',
       function () {
-    expect(mockSharedDataResource.query).toHaveBeenCalled();
+    expect(mockEmploymentsResource.query).toHaveBeenCalled();
     expect(scope.employments.length).toBe(4);
     expect(scope.employments[1].employer).toBe('Employer1');
     expect(scope.employersDates.Employer1.start).toBe('2009-06-01 00:00:00 UTC');

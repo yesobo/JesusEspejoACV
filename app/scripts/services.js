@@ -14,7 +14,7 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
       return foundObject;
     };
     return {
-      getSharedDataResource: function() {
+      getEmploymentsResource: function() {
         var actions = {
           'query': {
             method: 'GET',

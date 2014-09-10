@@ -83,7 +83,7 @@ describe('Service', function() {
 
 		expectedResult.push(expectedEmployer1);
 		expectedResult.push(expectedEmployer2);
-			
+
 		beforeEach(module('JesusEspejoACVServices'));
 
 		beforeEach(inject(function($injector) {
@@ -92,13 +92,13 @@ describe('Service', function() {
 			$httpBackend.whenGET('data/employment.json')
 				.respond(testResponseJSONArray);
 		}));
-	
-		describe('getSharedDataResource', function() {
+
+		describe('getEmploymentsResource', function() {
 
 			it('should return a resource with the query method to the test data',
 				function() {
-				
-				var data = sharedData.getSharedDataResource().query();
+
+				var data = sharedData.getEmploymentsResource().query();
 				$httpBackend.flush();
 				expect(data).toBeDefined();
 				expect(data.length).toBe(4);
@@ -106,15 +106,15 @@ describe('Service', function() {
 		});
 
 		describe('getEmployersPeriods', function() {
-			
+
 			it('returns all the employer\'s first and last dates of the given array',
 				function() {
-				
+
 				var allExperience = null;
 				var data = null;
-				
+
 				runs(function() {
-					allExperience = sharedData.getSharedDataResource().query(function() {
+					allExperience = sharedData.getEmploymentsResource().query(function() {
 						data = true;
 						data = sharedData.getEmployersPeriods(allExperience);
 					});

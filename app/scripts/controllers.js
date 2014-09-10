@@ -5,7 +5,7 @@ angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
         function(sc, window, SharedData) {
 
             var employments = sc.employments =
-                SharedData.getSharedDataResource().query(function() {
+                SharedData.getEmploymentsResource().query(function() {
                     sc.employersDates =
                         SharedData.getEmployersPeriods(employments);
                   });
