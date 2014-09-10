@@ -114,8 +114,18 @@ section.menu-section {
   }
 }
 
-.navbar .brand {
-  color: white;
+.navbar {
+  .brand {
+    color: white;
+  }
+
+  ul#ul-lang {
+    height: 100%;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
 }
 
 button.search {
@@ -226,6 +236,7 @@ $myPortrait_width: 10em;
 
   img {
     width: $myPortrait_width;
+    height: $myPortrait_width;
   }
 }
 
