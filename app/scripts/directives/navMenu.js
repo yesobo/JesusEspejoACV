@@ -8,7 +8,7 @@ angular.module('NavMenuDirective',
     restrict: 'E',
     transclude: true,
     scope: {},
-    controller: function($scope, $element, $translate) {
+    controller: function($scope, $element, $translate, $location) {
 
       $('.nav li').click(function() {
         $('.nav .active').toggleClass('active');

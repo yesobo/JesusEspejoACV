@@ -1,52 +1,55 @@
-<header class="navbar navbar-default navbar-fixed-top navbar-inverse">
-	<div class="container">
-		<div class="navbar-header">
-		  	<div class="pull-right md-lg-hidden">
-				<img ng-src="{{langSwitchImg}}" ng-click="switchLanguage()"></img>
-		  	</div>
-			<button type="button" class="navbar-toggle collapsed" id="resp-menu-btn"
-					data-target=".navbar-ex1-collapse" data-toggle="collapse">
-		    	<span class="sr-only">Toggle navigation</span>
-		    	<span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		    </button>
-		  	<a class="navbar-brand" href="#">
+
+<header class="">
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">
 		  		Jesús Espejo <span class="secondLastName">Arnas</span>
 		  	</a>
+	    </div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul id="ul-lang" class="nav navbar-nav">
+				  <li class="active">
+				   <a href="#">{{'WHO_I_AM' | translate}}</a>
+				  </li>
+	<!-- NOT YET AVAiLABLE
+				  <li>
+				   <a href="#">{{'EXPERTISE' | translate}}</a>
+				  </li>
+	-->
+				  <li>
+				   <a href="#/experience">{{'EXPERIENCE' | translate}}</a>
+				  </li>
+					<li>
+					<a href="#/projects">{{'PERSONAL_PROJECTS' | translate}}</a>
+					</li>
+	<!-- NOT YET AVAiLABLE
+				  <li>
+				   <a href="#">{{'EDUCATION' | translate}}</a>
+				  </li>
+				  <li>
+				   <a href="#">{{'TRAINING' | translate}}</a>
+				  </li>
+	-->
+				</ul>
+
+		    <ul id="ul-lang" class="nav navbar-nav navbar-right xs-sm-hidden">
+			    <li class="pull-right">
+				  	<img ng-src="{{langSwitchImg}}" ng-click="switchLanguage()"></img>
+				  </li>
+			  </ul>
 		</div>
-
-	  	<nav class="collapse navbar-collapse navbar-ex1-collapse" role="navigation">
-			<ul id="ul-lang" class="nav navbar-nav">
-			  <li class="active">
-			   <a href="#">{{'WHO_I_AM' | translate}}</a>
-			  </li>
-<!-- NOT YET AVAiLABLE
-			  <li>
-			   <a href="#">{{'EXPERTISE' | translate}}</a>
-			  </li>
--->
-			  <li>
-			   <a href="#/experience">{{'EXPERIENCE' | translate}}</a>
-			  </li>
-				<li>
-				<a href="#/projects">{{'PERSONAL_PROJECTS' | translate}}</a>
-				</li>
-<!-- NOT YET AVAiLABLE
-			  <li>
-			   <a href="#">{{'EDUCATION' | translate}}</a>
-			  </li>
-			  <li>
-			   <a href="#">{{'TRAINING' | translate}}</a>
-			  </li>
--->
-			</ul>
-
-			<ul id="ul-lang" class="nav navbar-nav navbar-right xs-sm-hidden">
-		       <li class="pull-right">
-			  	<img ng-src="{{langSwitchImg}}" ng-click="switchLanguage()"></img>
-			  </li>
-		    </ul>
-		</nav>
+	</nav>
+<!--
 	</div>
+-->
 </header>
