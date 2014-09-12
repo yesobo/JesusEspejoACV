@@ -1,7 +1,7 @@
 /* global describe, beforeEach, browser, it, expect, repeater, input, expect, element */
-'use strict';
 
 describe('Experience View', function() {
+  'use strict';
 
   beforeEach(function() {
     browser().navigateTo('/#/experience');
@@ -11,7 +11,7 @@ describe('Experience View', function() {
     expect(repeater('.employment').count()).toBe(7);
 
     input('searchQuery').enter('Bankia');
-    
+
     expect(repeater('.employment').count()).toBe(1);
 
     input('searchQuery').enter('2012');
@@ -20,17 +20,17 @@ describe('Experience View', function() {
 
   it('should change the language of period count when clicking on language flag', function() {
 
-    expect(element('#ul-lang img').attr('src')).toBe('images/lang_spanish.png');
+    expect(element('#divLangDesk img').attr('src')).toBe('images/lang_spanish.png');
 
     var elem = element('.periodCount:first > span').text();
 
     expect(elem).toContain('year');
     expect(elem).toContain('month');
 
-    element('#ul-lang img').click();
+    element('#divLangDesk img').click();
 
     elem = element('.periodCount:first > span').text();
-    
+
     expect(elem).toContain('año');
     expect(elem).toContain('mes');
   });
@@ -51,11 +51,11 @@ describe('Experience View', function() {
 
   it('should translate the employer.employerName (list group title)', function() {
     browser().navigateTo('/#/projects');
-    expect(element('#ul-lang img').attr('src')).toBe('images/lang_spanish.png');
+    expect(element('#divLangDesk img').attr('src')).toBe('images/lang_spanish.png');
     var elem = element('.employerName:first').text();
     expect(elem).toContain('Current projects');
-  
-    element('#ul-lang img').click();
+
+    element('#divLangDesk img').click();
 
     elem = element('.employerName:first').text();
     expect(elem).toContain('Proyectos en desarrollo');

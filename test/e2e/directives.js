@@ -1,31 +1,32 @@
 /* global describe, beforeEach, browser, it, expect, element: true */
-'use strict';
 describe('Directives', function() {
+	'use strict';
 	describe('navmenu', function() {
-		
+
 		beforeEach(function() {
 			browser().navigateTo('/');
 		});
 
 		it('should change the language icon as user clicks on it', function() {
-			element('#ul-lang img').click();
-			expect(element('#ul-lang img').attr('src')).toBe('images/lang_english.png');
+			element('#divLangDesk img').click();
+			expect(element('#divLangDesk img').attr('src'))
+				.toBe('images/lang_english.png');
 		});
 	});
 
 	describe('seachButton', function() {
-		
+
 		beforeEach(function() {
 			browser().navigateTo('/#/experience');
 		});
-		
+
 		describe('allows user to search responsively', function() {
 
 			var isMobile = false;
 
 			var setMobile = function(value) {
 				isMobile = value;
-			}
+			};
 
 			beforeEach(function() {
 				element(':first').query(function(first, done) {
@@ -57,7 +58,6 @@ describe('Directives', function() {
 					}
 				});
 			});
-		})
+		});
 	});
-})
-
+});

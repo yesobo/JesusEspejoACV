@@ -1,18 +1,18 @@
 /* global describe, ddescribe, beforeEach, inject, it, expect, $: true */
-'use strict';
 
 describe('navMenuDirective', function() {
+  'use strict';
 
   beforeEach(module('NavMenuDirective'));
-  
+
   // load the templates
   beforeEach(module('app/views/templates/navmenu.html'));
   // tip: could load the template in a module declared at karma.conf with ngHtml2JsPreprocessor
-  
+
   var element;
 
   beforeEach(inject(function($templateCache, _$compile_, _$rootScope_) {
-    
+
     var template = $templateCache.get('app/views/templates/navmenu.html');
     $templateCache.put('views/templates/navmenu.html', template);
     var elem = angular.element('<nav-menu></nav-menu>');
@@ -24,8 +24,9 @@ describe('navMenuDirective', function() {
 
   describe('navmenu', function() {
     it('should set the language image to spanish by default', function() {
-      // .find() is limited to tag name 
-      expect($(element.find('ul')[1]).find('li>img').attr('src'))
+      // .find() is limited to tag name
+      expect($(element.find('div')[4])
+        .find('img').attr('src'))
         .toBe('images/lang_spanish.png');
     });
   });
