@@ -316,7 +316,19 @@ $panel-inside-color: $very-light-color;
   }
   .panel-footer {
     background-color: $panel-main-color;
+    height: 20px;
   }
+}
+
+$circle_radius: 20px;
+.round-button-circle {
+  width: $circle_radius * 2;
+  height: $circle_radius * 2;
+  margin:auto;
+  background: #c1dbf2;
+  border-radius: 50%;
+  position: relative;
+  border: 2px solid white;
 }
 
 .positionTitle {
