@@ -10,14 +10,16 @@ angular.module('NavMenuDirective',
     scope: {},
     controller: function($scope, $element, $translate) {
 
-      $('.nav li').click(function() {
-        $('.nav .active').toggleClass('active');
-        $(this).toggleClass('active');
-        $('#resp-menu-btn').click();
-      });
+      $(document).ready(function() {
+        $('.nav li').click(function() {
+          $('.nav .active').toggleClass('active');
+          $(this).toggleClass('active');
+          $('#resp-menu-btn').click();
+        });
 
-      $('.navbar-nav li a').click(function() {
-        $('.navbar-collapse').collapse('hide');
+        $('.navbar-nav li a').click(function() {
+          $('.navbar-collapse').collapse('hide');
+        });
       });
 
       $scope.langSwitchImg = 'images/lang_spanish.png';
