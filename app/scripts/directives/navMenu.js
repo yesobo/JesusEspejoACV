@@ -1,9 +1,9 @@
 /*global $:false */
-'use strict';
 
 angular.module('NavMenuDirective',
   ['pascalprecht.translate'])
 .directive('navMenu', function() {
+  'use strict';
   return {
     restrict: 'E',
     transclude: true,
@@ -14,6 +14,10 @@ angular.module('NavMenuDirective',
         $('.nav .active').toggleClass('active');
         $(this).toggleClass('active');
         $('#resp-menu-btn').click();
+      });
+
+      $('.navbar-nav li a').click(function() {
+        $('.navbar-collapse').collapse('hide');
       });
 
       $scope.langSwitchImg = 'images/lang_spanish.png';
