@@ -301,10 +301,12 @@ $myPortrait_width: 10em;
 
 $panel-main-color: $light-color;
 $panel-inside-color: $very-light-color;
+$circle_radius: 25px;
 .employment {
   clear: left;
   background-color: $panel-inside-color;
   .panel-heading {
+    padding-bottom: $circle_radius !important;
     background-color: $light-color;
   }
   .panel-collapse {
@@ -320,7 +322,6 @@ $panel-inside-color: $very-light-color;
   }
 }
 
-$circle_radius: 20px;
 .round-button-circle {
   width: $circle_radius * 2;
   height: $circle_radius * 2;
@@ -329,6 +330,15 @@ $circle_radius: 20px;
   border-radius: 50%;
   position: relative;
   border: 2px solid white;
+  top: -$circle_radius;
+  border-left: 0px solid white;
+  border-bottom: none;
+  border-right: 0px solid white;
+
+  .glyphicon {
+    top: $circle_radius/2;
+    font-size: $circle_radius * 0.8;
+  }
 }
 
 .positionTitle {

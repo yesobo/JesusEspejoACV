@@ -22,7 +22,7 @@ angular.module('PanelCollapseButtonDirective', [])
         return {
             restrict: 'A',
             link: function(scope, elem) {
-                var jPanel = $(elem[0].parentElement.parentElement);
+                var jPanel = $(elem[0].parentElement.parentElement.parentElement);
                 var stickyZone = jPanel.children('.stickyZone');
                 var panelHeader = stickyZone.children('.panel-heading');
                 jPanel.on('shown.bs.collapse', function() {
