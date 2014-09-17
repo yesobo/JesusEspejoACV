@@ -318,7 +318,8 @@ $circle_radius: 25px;
   }
   .panel-footer {
     background-color: $panel-main-color;
-    height: 20px;
+    height: 10px;
+    cursor: default!important;
   }
 }
 
@@ -335,6 +336,12 @@ $circle_radius: 25px;
   border-bottom: none;
   border-right: 0px solid white;
 
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
   .glyphicon {
     top: $circle_radius/2;
     font-size: $circle_radius * 0.8;
