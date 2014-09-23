@@ -16,6 +16,10 @@ angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
             sc.rawSubtitle = 'WHERE_I_WORKED';
 
             sc.collapseScrollTop = 0;
+
+            sc.noFoundLinkText = 'PERSONAL_PROJECTS';
+            sc.myText = 'MY_PLUR';
+            sc.noFoundLink = '#/projects';
           }
           ])
     .controller('ProjectsCtrl', ['$scope', '$window', 'SharedData', '$translate', '$parse',
@@ -33,6 +37,10 @@ angular.module('JesusEspejoACVControllers', ['pascalprecht.translate'])
             sc.rawSubtitle = 'FOR_THE_LOVE_OF_ART';
 
             sc.collapseScrollTop = 0;
+
+            sc.noFoundLinkText = 'EXPERIENCE';
+            sc.myText = 'MY_SING';
+            sc.noFoundLink = '#/experience';
           }
           ])
     .controller('ExperienceDetailCtrl', ['$scope', '$routeParams', 'SharedData',

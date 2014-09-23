@@ -177,6 +177,12 @@ button.search {
   }
 }
 
+.noFoundMsg {
+  margin-top: 5vh;
+  font-size: 3em;
+  margin-left: 20px;
+}
+
 .period {
   margin-top: 10px;
   text-align: center;
@@ -275,6 +281,7 @@ $myPortrait_width: 10em;
 
 .employerNameWrapper {
   padding-left: 0px;
+  padding-right: 0px;
 }
 
 .employerName {
@@ -341,7 +348,7 @@ $circle_radius: 25px;
     width: 100%;
     height: 100%;
   }
-  
+
   .glyphicon {
     top: $circle_radius/2;
     font-size: $circle_radius * 0.8;
