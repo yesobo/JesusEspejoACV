@@ -1,5 +1,6 @@
 /* bootstrap-sass redefined variable */
 $icon-font-path: "fonts/";
+//$grid-float-breakpoint: 801px;
 
 $light-color: #c1dbf2;
 $very-light-color: #ddebf9;
@@ -158,7 +159,7 @@ button.search {
   overflow: hidden;
   width: 100%;
   > div {
-    margin-top: 30px auto;
+    margin-top: 30px;
     overflow: hidden;
     max-width: 300px;
     div {
@@ -388,9 +389,7 @@ $circle_radius: 25px;
   }
 }
 
-
-
-
+/************************** Retina display tablet ***************/
 
 
 /************************** Phone to tablet *********************/
@@ -667,6 +666,16 @@ html {
   }
   .title {
     font-size: 50px;
+  }
+  .main-view {
+    .menu-section {
+      .main {
+         .circle, .circle img {
+          width: 15em;
+          height: 15em;
+        }
+      }
+    }
   }
 }
 
