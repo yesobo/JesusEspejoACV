@@ -7,7 +7,9 @@ angular.module('NavMenuDirective',
   return {
     restrict: 'E',
     transclude: true,
-    scope: {},
+    scope: {
+      clickMenuItem: '='
+    },
     controller: function($scope, $element, $translate) {
 
       $(document).ready(function() {
@@ -38,6 +40,10 @@ angular.module('NavMenuDirective',
           $translate.uses('en');
           $scope.langSwitchImg = 'images/lang_spanish.png';
         }
+      };
+
+      $scope.clickMenuItem = function(menuItemNumber) {
+        $element.find('li')[menuItemNumber].children()[0].click();
       };
     },
     templateUrl: 'views/templates/navmenu.html',
