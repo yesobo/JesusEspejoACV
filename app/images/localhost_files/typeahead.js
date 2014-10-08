@@ -1,1 +1,0 @@
-Cannot GET /bower_components/bootstrap-sass/js/typeahead.js

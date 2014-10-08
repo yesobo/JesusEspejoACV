@@ -8,9 +8,25 @@ angular.module('NavMenuDirective',
     restrict: 'E',
     transclude: true,
     scope: {
-      clickMenuItem: '='
+      clickMenuItem: '=',
+      navMenuItems: '='
     },
-    controller: function($scope, $element, $translate) {
+    controller: function($scope, $element, $translate, $location) {
+
+      var menuItems = {
+        'WHO_I_AM': {
+          'position': 0,
+          'path': '/'
+        },
+        'EXPERIENCE': {
+          'position': 1,
+          'path': '/experience'
+        },
+        'PROJECTS': {
+          'position': 2,
+          'path': '/projects'
+        }
+      };
 
       $(document).ready(function() {
         $('.nav li').click(function() {
@@ -26,11 +42,7 @@ angular.module('NavMenuDirective',
         });
       });
 
-
       $scope.langSwitchImg = 'images/lang_spanish.png';
-      $scope.changeLanguage = function(langKey) {
-        $translate.uses(langKey);
-      };
 
       $scope.switchLanguage = function() {
         if($translate.uses() === 'en') {
@@ -42,9 +54,14 @@ angular.module('NavMenuDirective',
         }
       };
 
-      $scope.clickMenuItem = function(menuItemNumber) {
-        $element.find('li')[menuItemNumber].children()[0].click();
+      $scope.clickMenuItem = function(requestedMenu) {
+        var reqMenuPosition = menuItems[requestedMenu].position;
+        $($($element.find('li'))).removeClass('active');
+        $($($element.find('li')[reqMenuPosition])).addClass('active');
+        $location.path(menuItems[requestedMenu].path);
       };
+
+      $scope.navMenuItems = menuItems;
     },
     templateUrl: 'views/templates/navmenu.html',
     replace: true

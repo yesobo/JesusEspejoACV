@@ -60,15 +60,4 @@ describe('Experience View', function() {
     elem = element('.employerName:first').text();
     expect(elem).toContain('Proyectos en desarrollo');
   });
-
-  it('shouldn\'t show the not found message if there are results', function() {
-    var elem = element('.noFoundMsg');
-    expect(elem).not().toBeDefined();
-  });
-
-  it('should show a not-found text and link when no results obtained', function() {
-    input('searchQuery').enter('Unknown technology');
-    var elemText = element('.noFoundMsg > span:first').text();
-    expect(elemText).toContain('found');
-  });
 });

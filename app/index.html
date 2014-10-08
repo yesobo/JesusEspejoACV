@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-</head>
-  <body ng-app="JesusEspejoACVApp">
+  </head>
+  <body ng-app="JesusEspejoACVApp" ng-controller="AppCtrl">
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
@@ -28,8 +28,8 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-
-    <nav-menu></nav-menu>
+    <nav-menu click-menu-item="clickMenu" nav-menu-items="menuItems">
+    </nav-menu>
     <div class="container">
         <div class="main-view" ng-view=""></div>
     </div>

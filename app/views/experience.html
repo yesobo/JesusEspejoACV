@@ -88,9 +88,13 @@
     </div>
     <div  class="row-fluid"
           ng-show="!(!(query) || (employments | filter:query | filter:employer.employerName).length)">
-      <div class="noFoundMsg row">
+      <div class="notFoundMsg row">
         <span>{{'NO_RESULTS_FOUND'| translate}} {{myText| translate}}</span>
-        <span><a ng-href="{{noFoundLink}}">{{noFoundLinkText | translate}}</a></span>
+        <span>
+          <a ng-click="clickMenu(notFoundRequestedMenu);">
+            {{notFoundLinkText | translate}}
+          </a>
+        </span>
       </div>
     </div>
   </div>
