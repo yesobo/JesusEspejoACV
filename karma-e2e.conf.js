@@ -7,7 +7,7 @@ module.exports = function(config) {
     frameworks: ['ng-scenario'],
     // list of files / patterns to load in the browser
     files : [
-      'test/e2e/**/*.js'
+      'test/e2e/karma/**/*.js'
     ],
 
     // list of files to exclude

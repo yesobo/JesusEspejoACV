@@ -1,11 +1,10 @@
 // Generated on 2013-07-14 using generator-angular 0.3.0
-'use strict';
 var LIVERELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({ port: LIVERELOAD_PORT });
 var mountFolder = function (connect, dir) {
+  'use strict';
   return connect.static(require('path').resolve(dir));
 };
-
 // # Globbing
 // for performance reasons we're only matching one level down:
 // 'test/spec/{,*/}*.js'
@@ -13,6 +12,7 @@ var mountFolder = function (connect, dir) {
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
+  'use strict';
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
@@ -298,6 +298,13 @@ module.exports = function (grunt) {
         singleRun: true
       }
     },
+    protractor: {
+      options: {
+        keepAlive: true,
+        configFile: 'protractor.conf.js'
+      },
+      run: {}
+    },
     cdnify: {
       dist: {
         html: ['<%= yeoman.dist %>/*.html']
@@ -332,7 +339,7 @@ module.exports = function (grunt) {
         src: 'dist',
         dest: '/',
         exclusions: [
-          'dist/bower_components/**',
+          //'dist/bower_components/**',
           'dist/images/**'
         ]
       }
@@ -422,7 +429,8 @@ module.exports = function (grunt) {
     'coffee',
     'compass',
     'connect:livereload',
-    'karma'
+    'karma',
+    'protractor:run'
   ]);
 
   grunt.registerTask('test:unit', [
@@ -438,7 +446,8 @@ module.exports = function (grunt) {
     'coffee',
     'compass',
     'connect:livereload',
-    'karma:e2e'
+    'karma:e2e',
+    'protractor:run'
   ]);
 
   grunt.registerTask('build', [
