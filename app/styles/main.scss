@@ -358,12 +358,6 @@ $circle_radius: 25px;
     height: 100%;
   }
 
-  a:hover {
-    .glyphicon {
-      font-size: $circle_radius;
-    }
-  }
-
   .glyphicon {
     top: $circle_radius/2;
     font-size: $circle_radius * 0.8;
@@ -390,6 +384,14 @@ $circle_radius: 25px;
 }
 
 .my-accordion {
+  -ms-transform: rotate(0deg); /* IE 9 */
+  -webkit-transform: rotate(0deg)!important; /* Chrome, Safari, Opera */
+  transform: rotate(0deg);
+  -moz-transition: -moz-transform 0.5s ease;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  -o-transition: -o-transform 0.5s ease;
+  -ms-transition: -ms-transform 0.5s ease;
+  transition: transform 0.5s ease;
   >span {
     @extend .glyphicon;
     @extend .glyphicon-chevron-up;
@@ -397,9 +399,12 @@ $circle_radius: 25px;
 }
 
 .my-accordion.collapsed {
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -webkit-transform: rotate(180deg)!important; /* Chrome, Safari, Opera */
+  transform: rotate(180deg);
   >span {
     @extend .glyphicon;
-    @extend .glyphicon-chevron-down;
+    //@extend .glyphicon-chevron-down;
   }
 }
 
