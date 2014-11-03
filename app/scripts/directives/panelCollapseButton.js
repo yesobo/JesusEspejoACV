@@ -11,14 +11,11 @@ angular.module('PanelCollapseButtonDirective', [])
                 parent: jParent,
               }).on('sticky_kit:stick', function() {
                 scope.collapseScrollTop = $(document).scrollTop();
-                console.log('stick executed');
               }).on('sticky_kit:unstick', function() {
-                console.log('unstick executed');
               });
           }
 
         function unbindSticky(jElement) {
-            console.log('unbindSticky!');
             jElement.off('sticky_kit:stick');
           }
 
