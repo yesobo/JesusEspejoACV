@@ -7,6 +7,8 @@ $very-light-color: #ddebf9;
 $light-grey: #dddddd;
 $dark-blue: #428bca;
 
+$stuck_shadow: 0 2px 5px rgba(0,0,0,0.26);
+
 @import 'bootstrap-sass/lib/bootstrap';
 @import 'search-button';
 @import 'experience-details-2';
@@ -118,6 +120,11 @@ section.menu-section {
 .navbar {
   .brand {
     color: white;
+  }
+  &.navbar-fixed-top {
+    -webkit-box-shadow: $stuck_shadow;
+    -moz-box-shadow: $stuck_shadow;
+    box-shadow: $stuck_shadow;
   }
 
   ul#ul-lang {
@@ -324,7 +331,13 @@ $circle_radius: 25px;
   .panel-heading {
     padding-bottom: $circle_radius !important;
     background-color: $light-color;
+    &.is_stuck {
+      -webkit-box-shadow: $stuck_shadow;
+      -moz-box-shadow: $stuck_shadow;
+      box-shadow: $stuck_shadow;
+    }
   }
+
   .panel-collapse {
     background-color: $panel-inside-color;
     .panel-body {
