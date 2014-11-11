@@ -1,5 +1,4 @@
 node-modules
-app/bower_components
 .tmp
 .sass-cache
 .ftppass

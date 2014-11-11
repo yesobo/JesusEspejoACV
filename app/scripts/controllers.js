@@ -1,4 +1,4 @@
-/*gloabl angular: false */
+/*global angular: false */
 angular.module('JesusEspejoACVControllers',
 ['pascalprecht.translate'])
 .controller('AppCtrl', ['$scope', function(sc) {
