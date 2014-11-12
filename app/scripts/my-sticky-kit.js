@@ -25,7 +25,7 @@
       sticky_class = 'is_stuck';
     }
     _fn = function(elm, padding_bottom, parent_top, parent_height, top, height, el_float) {
-      var bottomed, detach, fixed, last_pos, offset, parent, recalc, recalc_and_tick, spacer, tick;
+      var bottomed, detach, fixed, last_pos, offset, parent, recalc, recalc_and_tick, spacer, tick, elem_width, fixed_css;
       if (elm.data('sticky_kit')) {
         return;
       }
@@ -41,8 +41,16 @@
       bottomed = false;
       spacer = $('<div />');
       spacer.css('position', elm.css('position'));
+      elem_width = elm.css('box-sizing') === 'border-box' ? elm.outerWidth() + 'px' : elm.width() + 'px';
+      fixed_css = {
+        position: 'fixed',
+        top: offset_top,
+        width: elem_width
+      };
+      elm.after(spacer);
+      spacer.hide();
       recalc = function() {
-        var border_top, padding_top, restore;
+        var border_top, padding_top, restore, spacer_display;
         border_top = parseInt(parent.css('border-top-width'), 10);
         padding_top = parseInt(parent.css('padding-top'), 10);
         padding_bottom = parseInt(parent.css('padding-bottom'), 10);
@@ -53,14 +61,18 @@
           top: '',
           width: '',
           bottom: ''
-        }), spacer.detach(), true) : void 0;
+        }), spacer.hide(), true) : void 0;
         top = elm.offset().top - parseInt(elm.css('margin-top'), 10) - offset_top;
         height = elm.outerHeight(true);
         el_float = elm.css('float');
+        spacer_display = elm.css('display');
+        if(elm.css('display') === 'block') {
+          spacer_display = 'none';
+        }
         spacer.css({
           width: elm.outerWidth(true),
           height: height,
-          display: elm.css('display'),
+          display: spacer_display,
           'vertical-align': elm.css('vertical-align'),
           'float': el_float
         });
@@ -97,7 +109,7 @@
             if (el_float === 'left' || el_float === 'right') {
               elm.insertAfter(spacer);
             }
-            spacer.detach();
+            spacer.hide();
             css = {
               position: '',
               width: '',
@@ -123,16 +135,13 @@
         } else {
           if (scroll > top) {
             fixed = true;
-            css = {
-              position: 'fixed',
-              top: offset
-            };
-            css.width = elm.css('box-sizing') === 'border-box' ? elm.outerWidth() + 'px' : elm.width() + 'px';
-            elm.css(css).addClass(sticky_class).after(spacer);
+            elm.css(fixed_css);
+            spacer.show();
             if (el_float === 'left' || el_float === 'right') {
               spacer.append(elm);
             }
-            elm.trigger('sticky_kit:stick');
+            // 1ms improved if stick event not used
+            //elm.trigger('sticky_kit:stick');
           }
         }
         if (fixed) {
@@ -184,7 +193,7 @@
         parent.position('position', '');
         if (fixed) {
           elm.insertAfter(spacer).removeClass(sticky_class);
-          return spacer.remove();
+          return spacer.hide();
         }
       };
       win.on('touchmove', tick);
