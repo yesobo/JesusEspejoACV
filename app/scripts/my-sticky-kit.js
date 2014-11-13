@@ -24,8 +24,10 @@
     if (sticky_class === null) {
       sticky_class = 'is_stuck';
     }
-    _fn = function(elm, padding_bottom, parent_top, parent_height, top, height, el_float) {
-      var bottomed, detach, fixed, last_pos, offset, parent, recalc, recalc_and_tick, spacer, tick, elem_width, fixed_css;
+    _fn = function(elm, recalc_padding_bottom, parent_top, parent_height, top, height, el_float) {
+      var bottomed, detach, fixed, last_pos, offset, parent, recalc, recalc_and_tick, spacer, tick, elem_width, fixed_css, unstick_css;
+      var recalc_border_top, recalc_padding_top;
+
       if (elm.data('sticky_kit')) {
         return;
       }
@@ -49,12 +51,18 @@
       };
       elm.after(spacer);
       spacer.hide();
+      unstick_css = {
+        position: '',
+        width: '',
+        top: ''
+      };
+      recalc_border_top = parseInt(parent.css('border-top-width'), 10);
+      recalc_padding_top = parseInt(parent.css('padding-top'), 10);
+      recalc_padding_bottom = parseInt(parent.css('padding-bottom'), 10);
+
       recalc = function() {
-        var border_top, padding_top, restore, spacer_display;
-        border_top = parseInt(parent.css('border-top-width'), 10);
-        padding_top = parseInt(parent.css('padding-top'), 10);
-        padding_bottom = parseInt(parent.css('padding-bottom'), 10);
-        parent_top = parent.offset().top + border_top + padding_top;
+        var restore, spacer_display;
+        parent_top = parent.offset().top + recalc_border_top + recalc_padding_top;
         parent_height = parent.height();
         restore = fixed ? (fixed = false, bottomed = false, elm.insertAfter(spacer).css({
           position: '',
@@ -87,7 +95,7 @@
       last_pos = void 0;
       offset = offset_top;
       tick = function() {
-        var css, delta, scroll, will_bottom, win_height;
+        var delta, scroll, will_bottom, win_height;
         scroll = win.scrollTop();
         if (last_pos !== null) {
           delta = scroll - last_pos;
@@ -101,7 +109,7 @@
               position: 'fixed',
               bottom: '',
               top: offset
-            }).trigger('sticky_kit:unbottom');
+            });
           }
           if (scroll < top) {
             fixed = false;
@@ -110,12 +118,7 @@
               elm.insertAfter(spacer);
             }
             spacer.hide();
-            css = {
-              position: '',
-              width: '',
-              top: ''
-            };
-            elm.css(css).removeClass(sticky_class).trigger('sticky_kit:unstick');
+            elm.css(unstick_css).removeClass(sticky_class);
           }
           if (inner_scrolling) {
             win_height = win.height();
@@ -157,9 +160,9 @@
             }
             return elm.css({
               position: 'absolute',
-              bottom: padding_bottom,
+              bottom: recalc_padding_bottom,
               top: 'auto'
-            }).trigger('sticky_kit:bottom');
+            });
           }
         }
       };
