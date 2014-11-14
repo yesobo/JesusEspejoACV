@@ -6,11 +6,15 @@ $sizes: 22px;
     padding-left: $sizes;
     padding-right: $sizes;
     background-color: white;
-    input{
-        border: none;
-        width: 100%;
+    form {
+      height: 100%;
+      width: 100%;
+      #searchInput {
+          border: none;
+          width: 100%;
+      }
     }
-    input:focus {
+    #searchInput:focus {
         //width: 80%;
         outline: none;
     }
@@ -35,7 +39,7 @@ $sizes: 22px;
 @media (max-width: 480px) {
 
   .searchButtonContainer {
-    > input, button {
+    > #searchForm, button {
       display: none;
     }
     > span {
@@ -60,10 +64,13 @@ $sizes: 22px;
     span {
       margin-left: -37px!important;
     }
-    input {
+    #searchForm {
       display: block;
       height: 100%;
       font-size: 2em;
+      #searchInput {
+        height: 100%;
+      }
     }
     button {
       display: block!important;

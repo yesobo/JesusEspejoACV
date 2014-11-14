@@ -43,7 +43,7 @@ describe('Directives', function() {
 			it('search button works responsively', function() {
 				element(':first').query(function(first, done) {
 					if(isMobile) {
-						var searchInput = element('.searchButtonContainer > input', 'MOBILE TESTING');
+						var searchInput = element('.searchButtonContainer #searchInput', 'MOBILE TESTING');
 						expect(searchInput.css('display')).toBe('none');
 						// deletes the input value on close button click
 						input('searchQuery').enter('at sistemas');
@@ -52,7 +52,7 @@ describe('Directives', function() {
 						// hides the input on blur CANNOT BE TESTED WITH KARMA E2E
 						done();
 					} else {
-						expect(element('.searchButtonContainer > input', 'TABLET/DESKTOP TESTING')
+						expect(element('.searchButtonContainer #searchInput', 'TABLET/DESKTOP TESTING')
 							.css('display')).toBe('block');
 						done();
 					}

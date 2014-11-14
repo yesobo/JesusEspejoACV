@@ -17,7 +17,7 @@ angular.module('SearchButtonDirective', [])
 
       $scope.clear = function() {
         $scope.searchQuery = '';
-        $('.searchButtonContainer > input').focus();
+        $('#searchInput').focus();
       };
 
       $scope.showInput = function() {
@@ -40,13 +40,23 @@ angular.module('SearchButtonDirective', [])
         if($scope.isCollapsed) {
           $scope.expandHandler();
           $scope.showInput();
-          $('.searchButtonContainer > input').focus();
+          $('.searchButtonContainer #searchInput').focus();
         }
       };
 
       $scope.blur = function() {
-        $scope.hideInput();
-        $scope.blurHandler();
+        if(!$scope.searchQuery) {
+          $scope.hideInput();
+          $scope.blurHandler();
+        }
+      };
+
+      $scope.hideKeyboard = function() {
+        var field = document.createElement('input');
+        field.setAttribute('type', 'text');
+        $('.searchButtonContainer').appendChild(field);
+        field.setAttribute('style', 'display:none;');
+        field.focus();
       };
     },
     templateUrl: 'views/templates/search-button.html',
@@ -72,5 +82,13 @@ angular.module('SearchButtonDirective', [])
         }, 0, false);
       }
     });
+  };
+})
+
+.directive('handlePhoneSubmit', function () {
+  return function (scope, element) {
+    $(element).submit(function() {
+        $('#searchInput').blur();
+      });
   };
 });
