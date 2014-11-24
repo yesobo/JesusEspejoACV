@@ -1,47 +1,44 @@
 'use strict';
 
 angular.module('MainLeftDirective', [])
+.controller('MainLeftController', ['$scope', '$window', function($scope, $window) {
+  var activateSearchButton = true;
+
+  $scope.sectionTitleWrapperVisible = true;
+
+  $scope.showTitle = function() {
+    if ($window.innerWidth <= 480) {
+      $scope.sectionTitleWrapperVisible = true;
+    }
+  }
+
+  $scope.hideTitle = function() {
+    if ($window.innerWidth <= 480) {
+      $scope.sectionTitleWrapperVisible = false;
+    }
+  }
+
+  $scope.exitSearchMode = function(query) {
+    if ($window.innerWidth <= 480) {
+      if (!query || query === '') {
+        $scope.sectionTitleWrapperVisible = true;
+      } else {
+        $scope.sectionTitleWrapper = false;
+      }
+    }
+  };
+}])
+
 .directive('mainLeft', function() {
   return {
     restrict: 'E',
-    transclude: true,
+    transclude: false,
     scope: {
-      //searchQuery: '=',
-      //expandHandler: '&onExpand',
-      //blurHandler: '&customBlur',
       customQuery: '=',
       customTitle: '=',
       customSubtitle: '='
     },
-    controller: function($scope, $window) {
-      var NO_FOCUS_SEARCH = 0;
-      $scope.sectionTitleWrapperVisible = true;
-      $scope.activateSearchButton = true;
-      $scope.searchButtonInputFocus = false;
-
-      $scope.hideAndExpand = function(mode) {
-          if ($window.innerWidth <= 480) {
-            if ($scope.activateSearchButton) {
-              $scope.activateSearchButton = false;
-              if (mode === NO_FOCUS_SEARCH) {
-                $scope.sectionTitleWrapperVisible = true;
-              } else {
-                $scope.sectionTitleWrapperVisible = false;
-                $scope.searchButtonInputFocus = true;
-              }
-            }
-          }
-        };
-
-      $scope.exitSearchMode = function() {
-          if ($window.innerWidth <= 480) {
-            if (!$scope.query || $scope.query === '') {
-              $scope.sectionTitleWrapperVisible = true;
-              $scope.activateSearchButton = true;
-            }
-          }
-        };
-    },
+    controller: 'MainLeftController',
     templateUrl: 'views/templates/main-left.html',
     replace: true
   };

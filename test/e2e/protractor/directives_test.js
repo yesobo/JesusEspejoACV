@@ -29,6 +29,5 @@ describe('Protractor Directives', function() {
       var experienceMenu = element.all(by.css('#ul-lang > li')).get(1);
       expect(experienceMenu.getAttribute('class')).toMatch('active');
     });
-
   });
 });

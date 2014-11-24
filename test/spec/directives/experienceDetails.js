@@ -1,7 +1,7 @@
 /* global describe, ddescribe, beforeEach, inject, it, expect, $: true */
 'use strict';
 
-describe('experienceDetailsDirective', function() {
+describe('directive: experienceDetails', function() {
 
   beforeEach(module('ExperienceDetailsDirective'));
 
@@ -10,6 +10,7 @@ describe('experienceDetailsDirective', function() {
   // tip: could load the template in a module declared at karma.conf with ngHtml2JsPreprocessor
 
   var $compile, $rootScope, template, element;
+
   var experienceDetailObj = {
     position : "Programador Web J2EE/EJB/Front-end/Reporting",
     tasks: [

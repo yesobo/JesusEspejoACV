@@ -4,8 +4,10 @@
     <h5 class="subtitle">{{customSubtitle}}</h5>
   </div>
   <div id="searchWrapper">
-    <search-button search-query="customQuery" on-expand="hideAndExpand()"
-      custom-blur="exitSearchMode()"
+    <search-button search-query="customQuery"
+      on-expand="hideTitle()"
+      on-collapse="showTitle()"
+      custom-blur="exitSearchMode"
       custom-placeholder="'SEARCH' | translate">
     </search-button>
   </div>

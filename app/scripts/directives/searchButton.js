@@ -2,65 +2,75 @@
 'use strict';
 
 angular.module('SearchButtonDirective', [])
+.controller('SearchButtonController', ['$scope', '$window', function($scope, window) {
+
+  var isCollapsed = window.innerWidth <= 480;
+
+  var showInput = function() {
+    $('.searchButtonContainer').toggleClass('mobSearchMode', 'slow', 'linear');
+    isCollapsed = false;
+    $scope.expandHandler();
+  };
+
+  var hideInput = function() {
+    $('.searchButtonContainer').toggleClass('mobSearchMode', 'slow', 'linear');
+    isCollapsed = true;
+    $scope.collapseHandler();
+  };
+
+  $scope.clear = function() {
+    $('#searchInput').focus();
+    if(window.innerWidth <= 480) {
+      if($scope.searchQuery === '' ||
+          typeof($scope.searchQuery) === 'undefined') {
+        hideInput();
+      }
+    }
+    $scope.searchQuery = '';
+  };
+
+  $scope.click = function() {
+    if(isCollapsed) {
+      showInput();
+      $('.searchButtonContainer #searchInput').focus();
+    }
+  };
+
+  $scope.blur = function() {
+    if(!isCollapsed) {
+      if($scope.searchQuery === '' ||
+          typeof($scope.searchQuery) === 'undefined') {
+        hideInput();
+        $scope.blurHandler();
+      }
+    }
+  };
+
+  $scope.hideKeyboard = function() {
+    var field = document.createElement('input');
+    field.setAttribute('type', 'text');
+    $('.searchButtonContainer').appendChild(field);
+    field.setAttribute('style', 'display:none;');
+    field.focus();
+  };
+}])
 .directive('searchButton', function() {
   return {
     restrict: 'E',
-    transclude: true,
+    transclude: false,
     scope: {
       searchQuery: '=',
+      customPlaceholder: '=',
       expandHandler: '&onExpand',
-      blurHandler: '&customBlur',
-      customPlaceholder: '='
-    },
-    controller: function($scope) {
-      $scope.isCollapsed = true;
-
-      $scope.clear = function() {
-        $scope.searchQuery = '';
-        $('#searchInput').focus();
-      };
-
-      $scope.showInput = function() {
-        if($scope.isCollapsed) {
-          $('.searchButtonContainer').toggleClass('mobSearchMode', 'slow', 'linear');
-          $scope.isCollapsed = false;
-        }
-      };
-
-      $scope.hideInput = function() {
-        if(window.innerWidth <= 480 ) {
-          if(!$scope.searchQuery || $scope.searchQuery === '') {
-            $('.searchButtonContainer').toggleClass('mobSearchMode', 'slow', 'linear');
-            $scope.isCollapsed = true;
-          }
-        }
-      };
-
-      $scope.expand = function() {
-        if($scope.isCollapsed) {
-          $scope.expandHandler();
-          $scope.showInput();
-          $('.searchButtonContainer #searchInput').focus();
-        }
-      };
-
-      $scope.blur = function() {
-        if(!$scope.searchQuery) {
-          $scope.hideInput();
-          $scope.blurHandler();
-        }
-      };
-
-      $scope.hideKeyboard = function() {
-        var field = document.createElement('input');
-        field.setAttribute('type', 'text');
-        $('.searchButtonContainer').appendChild(field);
-        field.setAttribute('style', 'display:none;');
-        field.focus();
-      };
+      collapseHandler: '&onCollapse',
+      blurHandler: '&customBlur'
     },
     templateUrl: 'views/templates/search-button.html',
-    replace: true
+    replace: true,
+    controller: 'SearchButtonController',
+    link: function(scope, element, attrs) {
+
+    }
   };
 })
 

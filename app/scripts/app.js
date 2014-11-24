@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('JesusEspejoACVApp',
-  ['JesusEspejoACVServices', 'JesusEspejoACVDirectives',
+  ['ngRoute', 'JesusEspejoACVServices', 'JesusEspejoACVDirectives',
     'JesusEspejoACVControllers', 'JesusEspejoACVFilters',
     'pascalprecht.translate'])
   .config(['$routeProvider', function ($routeProvider) {
