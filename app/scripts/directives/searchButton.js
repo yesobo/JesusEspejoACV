@@ -2,58 +2,9 @@
 'use strict';
 
 angular.module('SearchButtonDirective', [])
-.controller('SearchButtonController', ['$scope', '$window', function($scope, window) {
-
-  var isCollapsed = window.innerWidth <= 480;
-
-  var showInput = function() {
-    $('.searchButtonContainer').toggleClass('mobSearchMode', 'slow', 'linear');
-    isCollapsed = false;
-    $scope.expandHandler();
-  };
-
-  var hideInput = function() {
-    $('.searchButtonContainer').toggleClass('mobSearchMode', 'slow', 'linear');
-    isCollapsed = true;
-    $scope.collapseHandler();
-  };
-
-  $scope.clear = function() {
-    $('#searchInput').focus();
-    if(window.innerWidth <= 480) {
-      if($scope.searchQuery === '' ||
-          typeof($scope.searchQuery) === 'undefined') {
-        hideInput();
-      }
-    }
-    $scope.searchQuery = '';
-  };
-
-  $scope.click = function() {
-    if(isCollapsed) {
-      showInput();
-      $('.searchButtonContainer #searchInput').focus();
-    }
-  };
-
-  $scope.blur = function() {
-    if(!isCollapsed) {
-      if($scope.searchQuery === '' ||
-          typeof($scope.searchQuery) === 'undefined') {
-        hideInput();
-        $scope.blurHandler();
-      }
-    }
-  };
-
-  $scope.hideKeyboard = function() {
-    var field = document.createElement('input');
-    field.setAttribute('type', 'text');
-    $('.searchButtonContainer').appendChild(field);
-    field.setAttribute('style', 'display:none;');
-    field.focus();
-  };
-}])
+.controller('SearchButtonController', function($scope, $window) {
+  $scope.window = $window;
+})
 .directive('searchButton', function() {
   return {
     restrict: 'E',
@@ -68,8 +19,49 @@ angular.module('SearchButtonDirective', [])
     templateUrl: 'views/templates/search-button.html',
     replace: true,
     controller: 'SearchButtonController',
-    link: function(scope, element, attrs) {
+    link: function(scope, element) {
 
+      var isCollapsed = scope.window.innerWidth <= 480;
+
+      var showInput = function() {
+        $(element).toggleClass('mobSearchMode', 'slow', 'linear');
+        isCollapsed = false;
+        scope.expandHandler();
+      };
+
+      var hideInput = function() {
+        $(element).toggleClass('mobSearchMode', 'slow', 'linear');
+        isCollapsed = true;
+        scope.collapseHandler();
+      };
+
+      scope.clear = function() {
+        $('#searchInput').focus();
+        if(scope.window.innerWidth <= 480) {
+          if(scope.searchQuery === '' ||
+              typeof(scope.searchQuery) === 'undefined') {
+            hideInput();
+          }
+        }
+        scope.searchQuery = '';
+      };
+
+      scope.click = function() {
+        if(isCollapsed) {
+          showInput();
+          $('.searchButtonContainer #searchInput').focus();
+        }
+      };
+
+      scope.blur = function() {
+        if(!isCollapsed) {
+          if(scope.searchQuery === '' ||
+              typeof(scope.searchQuery) === 'undefined') {
+            hideInput();
+            scope.blurHandler();
+          }
+        }
+      };
     }
   };
 })

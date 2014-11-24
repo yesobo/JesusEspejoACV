@@ -1,6 +1,5 @@
 /*global angular: false */
-angular.module('JesusEspejoACVControllers',
-['pascalprecht.translate'])
+angular.module('JesusEspejoACVControllers', [])
 .controller('AppCtrl', ['$scope', function(sc) {
   'use strict';
 
@@ -13,7 +12,7 @@ angular.module('JesusEspejoACVControllers',
 }
 ])
 .controller('ExperienceCtrl',
-['$scope', '$window', 'SharedData', '$translate', '$parse',
+['$scope', '$window', 'SharedData',
 function(sc, window, SharedData) {
   'use strict';
   var employments = sc.employments =
@@ -34,7 +33,7 @@ function(sc, window, SharedData) {
   sc.notFoundRequestedMenu = 'PROJECTS';
 }
 ])
-.controller('ProjectsCtrl', ['$scope', '$window', 'SharedData', '$translate', '$parse',
+.controller('ProjectsCtrl', ['$scope', '$window', 'SharedData',
 function(sc, window, SharedData) {
   'use strict';
   var projects = sc.employments =

@@ -1,7 +1,7 @@
 /* global describe, beforeEach, inject, it, expect, $: true */
 'use strict';
 
-describe('directive: search-button', function() {
+ddescribe('directive: search-button', function() {
 
   beforeEach(module('SearchButtonDirective'));
 
@@ -32,14 +32,12 @@ describe('directive: search-button', function() {
   }));
 
   describe('should display', function() {
-
     it('the glyphicon, input and cancel button', function() {
       expect($(element.find('span')[0]).hasClass('glyphicon-search')).toBe(true);
       expect($(element.find('form')[0]).attr('handle-phone-submit')).toBeDefined();
       expect($(element.find('input')[0]).attr('id')).toBe('searchInput');
       expect($(element.find('button')[0]).hasClass('close')).toBe(true);
     });
-
   });
 
   describe('should not transclude content', function() {
@@ -57,37 +55,4 @@ describe('directive: search-button', function() {
       expect(isolated.blurHandler()).toBe(3);
     });
   });
-
-  ddescribe('SearchButtonController', function() {
-    beforeEach(inject(function($controller, $window) {
-      $controller('SearchButtonController', {$scope: scope});
-
-      scope.$digest();
-    }));
-
-    it('clear function resets the query', function() {
-      scope.clear();
-      expect(scope.searchQuery).toBe('');
-    });
-
-    describe('on desktop', function() {
-      beforeEach(function() {
-        window.innerWidth = 480;
-      });
-    });
-
-    describe('on mobile', function() {
-      beforeEach(function() {
-        window.innerWidth = 479;
-      });
-      it('clear function without query hides the input', function() {
-        isolated.searchQuery = '';
-        scope.clear();
-        expect($(element).find('.searchButtonContainer').hasClass('mobSearchMode')).toBe(true);
-      });
-      it('on click shows the input', function() {
-        isCollapsed = false;
-      });
-    });
-  })
 });

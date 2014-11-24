@@ -67,7 +67,7 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
         var auxExperience;
         var foundInEmployersArray = {};
         var newResultEmployerObject = {};
-        for (var i in allExperience) {
+        for (var i = 0; i < allExperience.length; i++) {
           auxExperience = allExperience[i];
           // If i've already stored the employer I check the dates
           foundInEmployersArray = searchObject(resultArray, 'employerName', auxExperience.employer.name);
