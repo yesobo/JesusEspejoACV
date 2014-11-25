@@ -45,11 +45,11 @@ angular.module('NavMenuDirective',
       $scope.langSwitchImg = 'images/lang_spanish.png';
 
       $scope.switchLanguage = function() {
-        if($translate.uses() === 'en') {
-          $translate.uses('es');
+        if($translate.use() === 'en') {
+          $translate.use('es');
           $scope.langSwitchImg = 'images/lang_english.png';
         } else {
-          $translate.uses('en');
+          $translate.use('en');
           $scope.langSwitchImg = 'images/lang_spanish.png';
         }
       };

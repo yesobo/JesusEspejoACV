@@ -16,56 +16,55 @@ angular.module('JesusEspejoACVFilters', ['pascalprecht.translate'])
 .filter('datesDiff', ['$translate', '$q',
 	function($translate, $q) {
 
+		var datesTranslation = {};
+
+		$translate('MONTHS').then(function(monthsTranslated) {
+			datesTranslation.MONTHS = monthsTranslated;
+		});
+
+		$translate('MONTH').then(function(monthTranslated) {
+			datesTranslation.MONTH = monthTranslated;
+		});
+
+		$translate('YEARS').then(function(yearsTranslated) {
+			datesTranslation.YEARS = yearsTranslated;
+		});
+
+		$translate('YEAR').then(function(yearTranslated) {
+			datesTranslation.YEAR = yearTranslated;
+		});
+
 		var getMonthsLabel = function(months) {
-			var deferred = $q.defer();
 
 			var result = '';
 			if ( months > 0 ) {
 				result += months + ' ';
 				if (months > 1) {
-					$translate('MONTHS').then(function(monthsTranslated) {
-						result += monthsTranslated;
-						deferred.resolve(result);
-					});
+					result += datesTranslation.MONTHS;
 				} else {
-					$translate('MONTH').then(function(monthTranslated) {
-						result += monthTranslated;
-						deferred.resolve(result);
-					});
+					result += datesTranslation.MONTH;
 				}
-			} else {
-				deferred.resolve('');
 			}
 
-			return deferred.promise;
+			return result;
 		};
 
 		var getYearsLabel = function(years, months) {
-			var deferred = $q.defer();
 
 			var result = '';
 			if ( years > 0 ) {
 				result += years + ' ';
 				if ( years > 1) {
-					$translate('YEARS').then(function(yearsTranslated) {
-						result += yearsTranslated;
-						deferred.resolve(result);
-					});
+					result += datesTranslation.YEARS;
 				} else {
-					$translate('YEAR').then(function(yearTranslated) {
-						result += yearTranslated;
-						deferred.resolve(result);
-					});
+					result += datesTranslation.YEAR;
 				}
 				if ( months > 0) {
 					result += ' ';
-					deferred.resolve(result);
 				}
-			} else {
-				deferred.resolve('');
 			}
 
-			return deferred.promise;
+			return result;
 		};
 
 		return function(datesObj) {
@@ -81,10 +80,6 @@ angular.module('JesusEspejoACVFilters', ['pascalprecht.translate'])
 			var years = Math.floor(monthDiff / 12);
 			var months = monthDiff % 12;
 
-			getYearsLabel(years, months).then(function(yearsLabel) {
-				getMonthsLabel(months).then(function(monthsLabel) {
-					return yearsLabel + monthsLabel;
-				});
-			});
+			return getYearsLabel(years, months) + getMonthsLabel(months);
 		};
 	}]);
