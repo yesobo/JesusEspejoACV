@@ -12,14 +12,14 @@ describe('directive:searchButton', function() {
     });
   });
 
-  describe('on mobile', function() {
+  ddescribe('on mobile', function() {
     beforeEach(function() {
       var width = 479;
       var height = 600;
       browser.driver.manage().window().setSize(width, height);
     });
 
-    iit('should hide search input', function() {
+    it('should hide search input', function() {
       var searchInput = element(by.model('searchQuery'));
       searchInput.sendKeys('unknown tech');
       var clearButton = element(by.css('.close'));

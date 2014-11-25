@@ -18,21 +18,26 @@ angular.module('JesusEspejoACVFilters', ['pascalprecht.translate'])
 
 		var datesTranslation = {};
 
-		$translate('MONTHS').then(function(monthsTranslated) {
-			datesTranslation.MONTHS = monthsTranslated;
-		});
+		var initializeLabels = function() {
 
-		$translate('MONTH').then(function(monthTranslated) {
-			datesTranslation.MONTH = monthTranslated;
-		});
+			var deferred = $q.defer();
 
-		$translate('YEARS').then(function(yearsTranslated) {
-			datesTranslation.YEARS = yearsTranslated;
-		});
+			$translate('MONTHS').then(function(monthsTranslated) {
+				datesTranslation.MONTHS = monthsTranslated;
+				$translate('MONTH').then(function(monthTranslated) {
+					datesTranslation.MONTH = monthTranslated;
+					$translate('YEARS').then(function(yearsTranslated) {
+						datesTranslation.YEARS = yearsTranslated;
+						$translate('YEAR').then(function(yearTranslated) {
+							datesTranslation.YEAR = yearTranslated;
+							deferred.resolve('OK');
+						});
+					});
+				});
+			});
 
-		$translate('YEAR').then(function(yearTranslated) {
-			datesTranslation.YEAR = yearTranslated;
-		});
+			return deferred.promise;
+		};
 
 		var getMonthsLabel = function(months) {
 
@@ -67,7 +72,7 @@ angular.module('JesusEspejoACVFilters', ['pascalprecht.translate'])
 			return result;
 		};
 
-		return function(datesObj) {
+		var getMonthsDiff = function(datesObj) {
 			var dStart = new Date(datesObj[0]);
 			var dEnd;
 			if(datesObj[1] === '') {
@@ -77,9 +82,17 @@ angular.module('JesusEspejoACVFilters', ['pascalprecht.translate'])
 			}
 			var monthDiff = (dEnd.getFullYear() -
 				dStart.getFullYear()) * 12 + dEnd.getMonth() - dStart.getMonth();
-			var years = Math.floor(monthDiff / 12);
-			var months = monthDiff % 12;
 
-			return getYearsLabel(years, months) + getMonthsLabel(months);
+			return monthDiff;
+		};
+
+		return function(datesObj) {
+			initializeLabels().then(function() {
+				var monthDiff = getMonthsDiff(datesObj);
+				var years = Math.floor(monthDiff / 12);
+				var months = monthDiff % 12;
+				var result = getYearsLabel(years, months) + getMonthsLabel(months);
+				return result;
+			});
 		};
 	}]);
