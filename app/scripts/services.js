@@ -109,44 +109,77 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
       return monthDiff;
     };
 
-    var api = {
-      getYearsMonthsDiff: function(datesObj) {
-        var result = {};
+    var getYearsMonthsDiff = function(datesObj) {
+      var result = {};
 
-        result.years = '';
-        result.months = '';
+      result.years = '';
+      result.months = '';
 
-        var monthDiff = getMonthsDiff(datesObj);
-        var years = Math.floor(monthDiff / 12);
-        var months = monthDiff % 12;
-        result.years = years;
-        result.months = months;
+      var monthDiff = getMonthsDiff(datesObj);
+      var years = Math.floor(monthDiff / 12);
+      var months = monthDiff % 12;
+      result.years = years;
+      result.months = months;
 
-        return result;
-      },
-      getYearsLabel: function(years) {
-        var result = '';
-        if ( years > 0 ) {
-          if ( years > 1) {
-            result = 'YEARS';
-          } else {
-            result = 'YEAR';
-          }
-        }
-        return result;
-      },
-      getMonthsLabel: function(months) {
-        var result = '';
-        if ( months > 0 ) {
-          if (months > 1) {
-            result = 'MONTHS';
-          } else {
-            result = 'MONTH';
-          }
-        }
-        return result;
-      }
+      return result;
     };
 
+    var getYearsLabel = function(years) {
+      var result = '';
+      if ( years > 0 ) {
+        if ( years > 1) {
+          result = 'YEARS';
+        } else {
+          result = 'YEAR';
+        }
+      }
+      return result;
+    };
+
+    var getMonthsLabel = function(months) {
+      var result = '';
+      if ( months > 0 ) {
+        if (months > 1) {
+          result = 'MONTHS';
+        } else {
+          result = 'MONTH';
+        }
+      }
+      return result;
+    };
+
+    var createDateDiffMap = function(startEndCollection, key) {
+      var result = {};
+      var loopDiffObject, loopYearsLabel, loopMonthsLabel, resultKey, startEndObj;
+      for(var startEndKey in startEndCollection) {
+        startEndObj = startEndCollection[startEndKey];
+        loopDiffObject =
+          getYearsMonthsDiff([startEndObj.start, startEndObj.end]);
+
+        loopYearsLabel = getYearsLabel(loopDiffObject.years);
+        loopMonthsLabel = getMonthsLabel(loopDiffObject.months);
+        if(loopDiffObject.years === 0) {
+          loopDiffObject.years = '';
+        }
+        if(loopDiffObject.months === 0) {
+          loopDiffObject.months = '';
+        }
+
+        resultKey = startEndObj[key];
+
+        result[resultKey] = {
+          years: loopDiffObject.years,
+          yearLabel: loopYearsLabel,
+          months: loopDiffObject.months,
+          monthLabel: loopMonthsLabel
+        };
+      }
+
+      return result;
+    };
+
+    var api = {
+      createDateDiffMap : createDateDiffMap
+    };
     return api;
   }]);
