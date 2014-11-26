@@ -12,13 +12,50 @@ angular.module('JesusEspejoACVControllers', [])
 }
 ])
 .controller('ExperienceCtrl',
-['$scope', '$window', 'SharedData',
-function(sc, window, SharedData) {
+['$scope', '$window', 'SharedData', 'DatesDiff',
+function(sc, window, SharedData, DatesDiff) {
   'use strict';
+
+  function createDateDiffMap(startEndCollection, key) {
+    var result = {};
+    var loopDiffObject, loopYearsLabel, loopMonthsLabel, resultKey, startEndObj;
+    for(var startEndKey in startEndCollection) {
+      startEndObj = startEndCollection[startEndKey];
+      loopDiffObject =
+        DatesDiff.getYearsMonthsDiff([startEndObj.start, startEndObj.end]);
+
+      loopYearsLabel = DatesDiff.getYearsLabel(loopDiffObject.years);
+      loopMonthsLabel = DatesDiff.getMonthsLabel(loopDiffObject.months);
+      if(loopDiffObject.years === 0) {
+        loopDiffObject.years = '';
+      }
+      if(loopDiffObject.months === 0) {
+        loopDiffObject.months = '';
+      }
+
+      resultKey = startEndObj[key];
+
+      result[resultKey] = {
+        years: loopDiffObject.years,
+        yearLabel: loopYearsLabel,
+        months: loopDiffObject.months,
+        monthLabel: loopMonthsLabel
+      };
+    }
+
+    return result;
+  }
+
   var employments = sc.employments =
   SharedData.getEmploymentsResource().query(function() {
-    sc.employersDates =
+    var employersDates = sc.employersDates =
     SharedData.getEmployersPeriods(employments);
+
+    sc.employersDateDiffMap =
+      createDateDiffMap(employersDates, 'employerName');
+
+    sc.employmentsDateDiffMap =
+      createDateDiffMap(employments, 'locator');
   });
 
   sc.buttonContainerClass = '';

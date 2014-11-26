@@ -93,4 +93,60 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
       }
     };
   }])
-;
+  .factory('DatesDiff', [function() {
+
+    var getMonthsDiff = function(datesObj) {
+      var dStart = new Date(datesObj[0]);
+      var dEnd;
+      if(datesObj[1] === '') {
+        dEnd = new Date();
+      } else {
+        dEnd = new Date(datesObj[1]);
+      }
+      var monthDiff = (dEnd.getFullYear() -
+        dStart.getFullYear()) * 12 + dEnd.getMonth() - dStart.getMonth();
+
+      return monthDiff;
+    };
+
+    var api = {
+      getYearsMonthsDiff: function(datesObj) {
+        var result = {};
+
+        result.years = '';
+        result.months = '';
+
+        var monthDiff = getMonthsDiff(datesObj);
+        var years = Math.floor(monthDiff / 12);
+        var months = monthDiff % 12;
+        result.years = years;
+        result.months = months;
+
+        return result;
+      },
+      getYearsLabel: function(years) {
+        var result = '';
+        if ( years > 0 ) {
+          if ( years > 1) {
+            result = 'YEARS';
+          } else {
+            result = 'YEAR';
+          }
+        }
+        return result;
+      },
+      getMonthsLabel: function(months) {
+        var result = '';
+        if ( months > 0 ) {
+          if (months > 1) {
+            result = 'MONTHS';
+          } else {
+            result = 'MONTH';
+          }
+        }
+        return result;
+      }
+    };
+
+    return api;
+  }]);

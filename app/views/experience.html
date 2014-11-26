@@ -20,7 +20,10 @@
                 </span>
               </div>
               <div class="periodCount primary-inverse col-lg-12 col-md-12">
-                <span>{{[employer.start, employer.end] | datesDiff}}</span>
+                <span>{{ employersDateDiffMap[employer.employerName].years}}</span>
+                <span>{{ employersDateDiffMap[employer.employerName].yearLabel | translate}}</span>
+                <span>{{ employersDateDiffMap[employer.employerName].months}}</span>
+                <span>{{ employersDateDiffMap[employer.employerName].monthLabel | translate}}</span>
               </div>
             </div>
           </div>
@@ -50,7 +53,10 @@
                         </span>
                       </div>
                       <div class="periodCount default-inverse">
-                        <span>{{[employment.start, employment.end] | datesDiff}}</span>
+                        <span>{{ employmentsDateDiffMap[employment.locator].years}}</span>
+                        <span>{{ employmentsDateDiffMap[employment.locator].yearLabel | translate}}</span>
+                        <span>{{ employmentsDateDiffMap[employment.locator].months}}</span>
+                        <span>{{ employmentsDateDiffMap[employment.locator].monthLabel | translate}}</span>
                       </div>
                     </div>
                     <h3 class="positionTitle panel-title">
