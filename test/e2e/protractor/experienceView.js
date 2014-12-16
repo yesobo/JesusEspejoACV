@@ -4,6 +4,9 @@ describe('view:experience', function() {
   'use strict';
 
   beforeEach(function() {
+    var width = 1280;
+    var height = 768;
+    browser.driver.manage().window().setSize(width, height);
     browser.get('#/experience');
   });
 
