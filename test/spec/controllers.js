@@ -7,9 +7,9 @@ describe('Controller: ExperienceCtrl', function () {
   beforeEach(module('JesusEspejoACVControllers'));
 
   var MainCtrl,
-    scope,
-    mockEmploymentsResource,
-    $httpBackend;
+  scope,
+  mockEmploymentsResource,
+  $httpBackend;
 
   beforeEach(function() {
 
@@ -53,7 +53,7 @@ describe('Controller: ExperienceCtrl', function () {
         getEmploymentsResource: function() {
           return mockEmploymentsResource;
         },
-        getEmployersPeriods: function() {
+        getGroupedPeriods: function() {
           var expectedResult = [];
           expectedResult.Employer1 = {
             start: '2009-06-01 00:00:00 UTC',
@@ -68,19 +68,41 @@ describe('Controller: ExperienceCtrl', function () {
         }
       };
     });
+
+    $provide.factory('mockDatesDiff', function() {
+      return {
+        createDateDiffMap: function() {
+          var expectedResultJSONMap = {
+            'Employer1': {
+              'monthLabel': 'MONTH',
+              'months': 1,
+              'yearLabel': 'YEAR',
+              'years': 1
+            },
+            'Employer2': {
+              'monthLabel': 'MONTH',
+              'months': 1,
+              'yearLabel': '',
+              'years': ''
+            }
+          };
+          return expectedResultJSONMap;
+        }
+      };
+    });
   }));
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope, $injector,
-      mockSharedData) {
+      mockSharedData, mockDatesDiff) {
 
     $httpBackend = $injector.get('$httpBackend');
     scope = $rootScope.$new();
     MainCtrl = $controller('ExperienceCtrl',
-      {$scope: scope, SharedData: mockSharedData});
+      {$scope: scope, SharedData: mockSharedData, DatesDiff: mockDatesDiff});
   }));
 
-  it('should create "employments" model with 2 employments fetched from xhr',
+  it('should create "employments" model with 4 employments fetched from xhr',
       function () {
     expect(mockEmploymentsResource.query).toHaveBeenCalled();
     expect(scope.employments.length).toBe(4);

@@ -1,4 +1,4 @@
-/* global describe, ddescribe, beforeEach, inject, it, expect, $: true */
+/* global describe, beforeEach, inject, it, expect, $: true */
 'use strict';
 
 describe('directive: experienceDetails', function() {

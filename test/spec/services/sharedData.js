@@ -18,7 +18,7 @@ describe('Service', function() {
 			start: '2011-04-01 00:00:00 UTC',
 			end: '2013-07-16 07:27:05 UTC'
 		};
-
+/*
 		var testResponseObjArray = [
 			{
 				employer: {
@@ -49,6 +49,7 @@ describe('Service', function() {
 				end: '2013-07-16 07:27:05 UTC'
 		  }
 		];
+*/
 
 		var testResponseJSONArray = [
 			{
@@ -56,28 +57,32 @@ describe('Service', function() {
 					'name': 'Employer1'
 				},
 				'start': '2009-06-01 00:00:00 UTC',
-				'end': '2009-10-01 00:00:00 UTC'
+				'end': '2009-10-01 00:00:00 UTC',
+				'auxKey': 'value1'
 			},
 			{
 				'employer': {
 					'name': 'Employer1'
 				},
 				'start': '2010-04-01 00:00:00 UTC',
-				'end': '2011-04-01 00:00:00 UTC'
+				'end': '2011-04-01 00:00:00 UTC',
+				'auxKey': 'value1'
 			},
 			{
 				'employer': {
 					'name': 'Employer2'
 				},
 				'start': '2011-04-01 00:00:00 UTC',
-				'end': '2012-06-01 00:00:00 UTC'
+				'end': '2012-06-01 00:00:00 UTC',
+				'auxKey': 'value2'
 			},
 			{
 				'employer': {
 					'name': 'Employer2'
 				},
 				'start': '2012-10-01 00:00:00 UTC',
-				'end': '2013-07-16 07:27:05 UTC'
+				'end': '2013-07-16 07:27:05 UTC',
+				'auxKey': 'value3'
 		  }
 		];
 
@@ -90,6 +95,8 @@ describe('Service', function() {
 			sharedData = $injector.get('SharedData');
 			$httpBackend = $injector.get('$httpBackend');
 			$httpBackend.whenGET('data/employment.json')
+				.respond(testResponseJSONArray);
+			$httpBackend.whenGET('data/projects.json')
 				.respond(testResponseJSONArray);
 		}));
 
@@ -105,7 +112,31 @@ describe('Service', function() {
 			});
 		});
 
-		describe('getEmployersPeriods', function() {
+		describe('getProjectsResource', function() {
+
+			it('should return a resource with the query method to the test data',
+			function() {
+
+				var data = sharedData.getProjectsResource().query();
+				$httpBackend.flush();
+				expect(data).toBeDefined();
+				expect(data.length).toBe(4);
+			});
+		});
+
+		describe('filterJSON', function() {
+
+			it('should return an array filtered by key: value',
+			function() {
+
+				var filtered = sharedData.filterJSON(testResponseJSONArray, 'auxKey',
+					'value1');
+				expect(filtered.length).toBe(2);
+			});
+		});
+
+
+		describe('getGroupedPeriods', function() {
 
 			it('returns all the employer\'s first and last dates of the given array',
 				function() {
@@ -116,7 +147,7 @@ describe('Service', function() {
 				runs(function() {
 					allExperience = sharedData.getEmploymentsResource().query(function() {
 						data = true;
-						data = sharedData.getEmployersPeriods(allExperience);
+						data = sharedData.getGroupedPeriods(allExperience);
 					});
 				});
 

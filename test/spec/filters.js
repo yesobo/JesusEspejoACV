@@ -21,33 +21,4 @@ describe('filter', function() {
 			return resultFunction;
 		});
 	}));
-
-	describe('myDate', function() {
-
-		var myDateFilter;
-
-		beforeEach(inject(function($filter) {
-			myDateFilter = $filter('myDate');
-		}));
-		
-		it('exists', function() {
-			expect(myDateFilter).not.toBeNull();
-		});
-		it('should convert dates to MM-yyyy format', function() {
-			expect(myDateFilter('2010-04-01T00:00:00')).toBe('04-2010');
-		});
-	});
-
-
-	describe('datesDiff', function() {
-
-		it('should return dates difference in years and months',
-			function() {
-				inject(function($filter) {
-					expect($filter('datesDiff')(
-						['2010-04-01T00:00:00', '2011-05-01T00:00:00'])).toBe('1 year 1 month');
-				});
-			}
-		);
-	});
 });

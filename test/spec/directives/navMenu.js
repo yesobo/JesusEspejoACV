@@ -1,4 +1,4 @@
-/* global describe, ddescribe, spyOn, beforeEach, inject, it, expect, $: true */
+/* global describe, spyOn, beforeEach, inject, it, expect, $: true */
 describe('navMenuDirective', function() {
   'use strict';
 
@@ -19,7 +19,7 @@ describe('navMenuDirective', function() {
     scope = _$rootScope_;
     element = _$compile_(elem)(scope);
     scope.$digest();
-    internalScope = element.scope();
+    internalScope = element.isolateScope();
   }));
 
   describe('navmenu', function() {

@@ -2,7 +2,6 @@
 
 angular.module('MainLeftDirective', [])
 .controller('MainLeftController', ['$scope', '$window', function($scope, $window) {
-  var activateSearchButton = true;
 
   $scope.sectionTitleWrapperVisible = true;
 
@@ -10,13 +9,13 @@ angular.module('MainLeftDirective', [])
     if ($window.innerWidth <= 480) {
       $scope.sectionTitleWrapperVisible = true;
     }
-  }
+  };
 
   $scope.hideTitle = function() {
     if ($window.innerWidth <= 480) {
       $scope.sectionTitleWrapperVisible = false;
     }
-  }
+  };
 
   $scope.exitSearchMode = function(query) {
     if ($window.innerWidth <= 480) {

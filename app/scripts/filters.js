@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('JesusEspejoACVFilters', ['pascalprecht.translate'])
+angular.module('JesusEspejoACVFilters', [])
 .filter('myDate', ['$filter',
 	function($filter) {
 	    var angularDateFilter = $filter('date');

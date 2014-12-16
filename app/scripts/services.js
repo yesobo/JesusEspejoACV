@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
-.factory('SharedData', ['$resource', '$http', function ($resource, $http) {
-    var experience = [];
-    var searchObject = function(collection, firstLevelKey, value) {
+.factory('SharedData', ['$resource', function ($resource) {
+
+    function searchObject(collection, firstLevelKey, value) {
       var foundObject = null;
       for (var i = 0, len = collection.length; i < len; i++) {
         if(collection[i][firstLevelKey] === value) {
@@ -12,7 +12,75 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
         }
       }
       return foundObject;
-    };
+    }
+
+    /**
+     * Returns the JSON objects of the provided Array that matches the key: value
+     *   pair given as parameters
+     * @param {Array} obj - Array to be filtered.
+     * @param {String} key - Propery to be filtered by.
+     * @param {String} val - Value of the property that matches the resulting
+     *   collection elements.
+     * @returns {Array}
+     */
+    function _filterJSON(obj, key, val) {
+      var objects = [];
+      for (var i in obj) {
+        if (obj[i][key] === val) {
+          objects.push(obj[i]);
+        }
+      }
+      return objects;
+    }
+
+    /**
+    * Groups related by a given key events from a given collection of events,
+    *   returning a collection of event objects that represents the period of
+    *   time where these related events took place.
+    * @param {json} eventsCollection - collection of event objects with 'start'
+    *   , 'end' and 'employer' properties.
+    * @param {String} relationKey - the key wich event objects are related by.
+    * @returns {json} periodObject that represents the period during related
+    *  events took place.
+    *  {
+    *    employerName: "name",
+    *    webSite: "website",
+    *    imageUrl: "url",
+    *    start: "2010-04-01T00:00:00",
+    *    end: "2011-02-12T00:00:00"
+    *  }
+    */
+    function _groupEvents(eventsCollection) {
+      var resultArray = [];
+      var auxObject;
+      var minStartMaxEnd = {};
+      var newEventsGroup = {};
+      for (var i = 0; i < eventsCollection.length; i++) {
+        auxObject = eventsCollection[i];
+        // If i've already created the events group I check the max and min dates
+        minStartMaxEnd = searchObject(resultArray, 'employerName',
+          auxObject.employer.name);
+        if( minStartMaxEnd ){
+          if(minStartMaxEnd.start > auxObject.start) {
+            minStartMaxEnd.start = auxObject.start;
+          }
+          if(minStartMaxEnd.end < auxObject.end) {
+            minStartMaxEnd.end = auxObject.end;
+          }
+        } else {
+          newEventsGroup = {
+              employerName: auxObject.employer.name,
+              webSite: auxObject.employer.webSite,
+              imageUrl: auxObject.employer.imageUrl,
+              start: auxObject.start,
+              end: auxObject.end
+            };
+          resultArray.push(newEventsGroup);
+        }
+      }
+      return resultArray;
+    }
+
     return {
       getEmploymentsResource: function() {
         var actions = {
@@ -34,63 +102,8 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
         return $resource('data/projects.json', {},
           actions);
       },
-      getSharedDataHttp: function(callBack) {
-        $http.get('data/employment.json').success(function(data){
-          experience = data;
-          return callBack(experience);
-        });
-      },
-      setSharedData: function(data) {
-        angular.copy(data, experience);
-      },
-      filterJSON: function(obj, key, val) {
-        var objects = [];
-        for (var i in obj) {
-          if (obj[i][key] === val) {
-            objects.push(obj[i]);
-          }
-        }
-        return objects;
-      },
-      /*
-        returned JS object example:
-            {
-              employerName: '',
-              webSite: '',
-              imageUrl: '',
-              start: '',
-              end: ''
-            };
-       */
-      getEmployersPeriods: function(allExperience) {
-        var resultArray = [];
-        var auxExperience;
-        var foundInEmployersArray = {};
-        var newResultEmployerObject = {};
-        for (var i = 0; i < allExperience.length; i++) {
-          auxExperience = allExperience[i];
-          // If i've already stored the employer I check the dates
-          foundInEmployersArray = searchObject(resultArray, 'employerName', auxExperience.employer.name);
-          if( foundInEmployersArray ){
-            if(foundInEmployersArray.start > auxExperience.start) {
-              foundInEmployersArray.start = auxExperience.start;
-            }
-            if(foundInEmployersArray.end < auxExperience.end) {
-              foundInEmployersArray.end = auxExperience.end;
-            }
-          } else {
-            newResultEmployerObject = {
-              employerName: auxExperience.employer.name,
-              webSite: auxExperience.employer.webSite,
-              imageUrl: auxExperience.employer.imageUrl,
-              start: auxExperience.start,
-              end: auxExperience.end
-            };
-            resultArray.push(newResultEmployerObject);
-          }
-        }
-        return resultArray;
-      }
+      filterJSON: _filterJSON,
+      getGroupedPeriods: _groupEvents
     };
   }])
   .factory('DatesDiff', [function() {
@@ -148,6 +161,24 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
       return result;
     };
 
+    /**
+     * Returns an map of entries whose keys are a common property of the objects
+     *  included in the provided array, and whose values are objects that represents
+     *  the time between start and end dates of these objects, expressed with
+     *  month(s) and year(s)
+     * @param {Array} startEndCollection - Array of objects with 'start' and 'end'
+     *   properties.
+     * @param {String} key - object property used as the key of the map entry.
+     * @result {Object}
+     *    {
+     *      "key": {
+     *        "monthLabel": "MONTH",
+     *        "months": 3,
+     *        "yearLabel": "YEARS",
+     *        "years": 3
+     *      }
+     *    }
+     */
     var createDateDiffMap = function(startEndCollection, key) {
       var result = {};
       var loopDiffObject, loopYearsLabel, loopMonthsLabel, resultKey, startEndObj;
@@ -174,7 +205,6 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
           monthLabel: loopMonthsLabel
         };
       }
-
       return result;
     };
 

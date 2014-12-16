@@ -1,10 +1,10 @@
-<div class="searchButtonContainer" ng-click="expand()">
+<div class="searchButtonContainer" ng-click="click()">
 	<span class="glyphicon glyphicon-search"></span>
 	<form id="searchForm" handle-phone-submit="">
 		<input id="searchInput" class="" type="search" ng-model="searchQuery" ng-blur="blur()" placeholder="{{customPlaceholder}}">
 		
 	</form>
-	<button type="button" class="close" ng-click="clear()">
+	<button type="submit" class="close" ng-click="clear(); $event.stopPropagation();">
 	  &times;
 	</button>
 </div>

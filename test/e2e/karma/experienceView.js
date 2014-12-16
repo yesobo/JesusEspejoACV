@@ -31,10 +31,6 @@ describe('Experience View', function() {
 
     elem = element('.periodCount:first > span').text();
 
-    console.log(element('.periodCount:first > span').text());
-
-    pause();
-
     expect(elem).toContain('año');
     expect(elem).toContain('mes');
   });

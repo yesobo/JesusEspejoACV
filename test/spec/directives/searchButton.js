@@ -1,7 +1,7 @@
 /* global describe, beforeEach, inject, it, expect, $: true */
 'use strict';
 
-ddescribe('directive: search-button', function() {
+describe('directive: search-button', function() {
 
   beforeEach(module('SearchButtonDirective'));
 

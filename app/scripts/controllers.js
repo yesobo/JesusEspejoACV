@@ -19,7 +19,7 @@ function(sc, window, SharedData, DatesDiff) {
   var employments = sc.employments =
   SharedData.getEmploymentsResource().query(function() {
     var employersDates = sc.employersDates =
-    SharedData.getEmployersPeriods(employments);
+    SharedData.getGroupedPeriods(employments, 'employerName');
 
     sc.employersDateDiffMap =
       DatesDiff.createDateDiffMap(employersDates, 'employerName');
@@ -46,7 +46,7 @@ function(sc, window, SharedData, DatesDiff) {
   var projects = sc.employments =
   SharedData.getProjectsResource().query(function() {
     var employersDates = sc.employersDates =
-    SharedData.getEmployersPeriods(projects);
+    SharedData.getGroupedPeriods(projects);
 
     sc.employersDateDiffMap =
       DatesDiff.createDateDiffMap(employersDates, 'employerName');
