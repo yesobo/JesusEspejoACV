@@ -14,6 +14,7 @@ module.exports = function(config) {
         'app/bower_components/angular-translate/angular-translate.js',
         'app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
         'app/bower_components/jquery/jquery.js',
+        'app/bower_components/oclazyload/dist/ocLazyLoad.js',
         'app/scripts/*.js',
         'app/scripts/**/*.js',
         //'test/mock/**/*.js',

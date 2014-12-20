@@ -1,5 +1,5 @@
 /*global angular: false */
-angular.module('JesusEspejoACVControllers', [])
+angular.module('JesusEspejoACVControllers', ['oc.lazyLoad'])
 .controller('AppCtrl', ['$scope', function(sc) {
   'use strict';
 
@@ -12,9 +12,13 @@ angular.module('JesusEspejoACVControllers', [])
 }
 ])
 .controller('ExperienceCtrl',
-['$scope', '$window', 'SharedData', 'DatesDiff',
-function(sc, window, SharedData, DatesDiff) {
+['$scope', '$window', 'SharedData', 'DatesDiff', '$ocLazyLoad',
+function(sc, window, SharedData, DatesDiff, $ocLazyLoad) {
   'use strict';
+
+  $ocLazyLoad.load([{
+    files: ['scripts/my-sticky-kit.js']
+  }]);
 
   var employments = sc.employments =
   SharedData.getEmploymentsResource().query(function() {
@@ -41,8 +45,12 @@ function(sc, window, SharedData, DatesDiff) {
 }
 ])
 .controller('ProjectsCtrl', ['$scope', '$window', 'SharedData', 'DatesDiff',
-function(sc, window, SharedData, DatesDiff) {
+'$ocLazyLoad', function(sc, window, SharedData, DatesDiff, $ocLazyLoad) {
   'use strict';
+
+  $ocLazyLoad.load([{
+    files: ['scripts/my-sticky-kit.js']
+  }]);
   var projects = sc.employments =
   SharedData.getProjectsResource().query(function() {
     var employersDates = sc.employersDates =
