@@ -1,4 +1,4 @@
-/* global describe, beforeEach, inject, it, expect, $: true */
+/* global describe, beforeEach, inject, it, expect: true */
 'use strict';
 
 describe('directive: experienceDetails', function() {
@@ -9,9 +9,29 @@ describe('directive: experienceDetails', function() {
   beforeEach(module('app/views/templates/experienceDetails.html'));
   // tip: could load the template in a module declared at karma.conf with ngHtml2JsPreprocessor
 
-  var $compile, $rootScope, template, element;
+  var mockTranslateFilter, mockTranslation;
+  mockTranslation = 'Task description translated'
+  // mock translate filter
+  beforeEach(function() {
+
+    module(function($provide) {
+      $provide.value('translateFilter', mockTranslateFilter);
+    });
+
+    mockTranslateFilter = function(value) {
+      var result = "";
+      if (value === 'Locator.tasks.0.description') {
+        result = mockTranslation;
+      }
+      return result;
+    };
+  });
+
+
+  var $compile, $rootScope, element;
 
   var experienceDetailObj = {
+    locator: "Locator",
     position : "Programador Web J2EE/EJB/Front-end/Reporting",
     tasks: [
       {
@@ -42,6 +62,7 @@ describe('directive: experienceDetails', function() {
   };
 
   var experienceDetailJSON = {
+    "locator": "Locator",
     "position" : "Programador Web J2EE/EJB/Front-end/Reporting",
     "tasks": [
       {
@@ -82,7 +103,7 @@ describe('directive: experienceDetails', function() {
     $rootScope.experienceDetailObj = experienceDetailJSON;
 
     var htmlString = '' +
-      '<experience-details details-obj="experienceDetailObj">' + experienceDetailJSON.tasks[0].description + '</experience-details>';
+      '<experience-details details-obj="experienceDetailObj"></experience-details>';
     var elem = angular.element(htmlString);
     element = $compile(elem)($rootScope);
 
@@ -99,11 +120,12 @@ describe('directive: experienceDetails', function() {
     expect(taskTech).toBe(experienceDetailObj.tasks[0].techs[0].name);
   });
 
-  it('should list the experience\'s tasks descriptions inserted as transcluded content', function() {
+  it('should list the tasks descriptions trasnlation of the experience\'s inserted as parameter', function() {
 
     // .find() is limited to tag name
-    var transcludeElement = element.find('ul').find('li').find('span').find('span')[0].innerHTML;
-    expect(transcludeElement).toBe(experienceDetailObj.tasks[0].description);
+    debugger;
+    var taskDescription = element.find('ul').find('li').find('span').find('div')[0].innerHTML;
+    expect(taskDescription).toBe(mockTranslation);
   });
 
 });

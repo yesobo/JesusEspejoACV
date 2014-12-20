@@ -1,13 +1,13 @@
 
 'use strict';
 
-angular.module('ExperienceDetailsDirective', [])
+angular.module('ExperienceDetailsDirective', ['pascalprecht.translate'])
 .directive('experienceDetails', function() {
   return {
     restrict: 'E',
     templateUrl: 'views/templates/experienceDetails.html',
     //replace: true,
-    transclude: true,
+    //transclude: true,
     scope: {
       detailsObjAttr: '=detailsObj'
     },
