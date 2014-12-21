@@ -260,7 +260,8 @@ module.exports = function (grunt) {
             'images/{,*/}*.{gif,webp,svg}',
             'styles/fonts/*',
             'data/*.*',
-            'fonts/*.*'
+            'fonts/*.*',
+            'scripts/xhr/*.*'
           ]
         }, {
           expand: true,
@@ -325,6 +326,9 @@ module.exports = function (grunt) {
         files: {
           '<%= yeoman.dist %>/scripts/scripts.js': [
             '<%= yeoman.dist %>/scripts/scripts.js'
+          ],
+          '<%= yeoman.dist %>/scripts/xhr/my-sticky-kit.js': [
+            '<%= yeoman.dist %>/scripts/xhr/my-sticky-kit.js'
           ]
         }
       }
@@ -339,7 +343,7 @@ module.exports = function (grunt) {
         src: 'dist',
         dest: '/',
         exclusions: [
-          'dist/bower_components/**',
+          //'dist/bower_components/**',
           'dist/images/**'
         ]
       }

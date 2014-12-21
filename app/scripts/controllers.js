@@ -17,7 +17,7 @@ function(sc, window, SharedData, DatesDiff, $ocLazyLoad) {
   'use strict';
 
   $ocLazyLoad.load([{
-    files: ['scripts/my-sticky-kit.js']
+    files: ['scripts/xhr/my-sticky-kit.js']
   }]);
 
   var employments = sc.employments =
@@ -49,7 +49,7 @@ function(sc, window, SharedData, DatesDiff, $ocLazyLoad) {
   'use strict';
 
   $ocLazyLoad.load([{
-    files: ['scripts/my-sticky-kit.js']
+    files: ['scripts/xhr/my-sticky-kit.js']
   }]);
   var projects = sc.employments =
   SharedData.getProjectsResource().query(function() {
