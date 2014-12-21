@@ -343,7 +343,7 @@ module.exports = function (grunt) {
         src: 'dist',
         dest: '/',
         exclusions: [
-          //'dist/bower_components/**',
+          'dist/bower_components/**',
           'dist/images/**'
         ]
       }
