@@ -143,6 +143,16 @@ section.menu-section {
   }
 }
 
+#blog {
+  height: 92vh;
+
+  iframe {
+    height: 92vh;
+    background-color: white;
+    border: none;
+  }
+}
+
 button.search {
     padding: 0;
     cursor: pointer;

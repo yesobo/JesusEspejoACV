@@ -21,6 +21,10 @@ angular.module('JesusEspejoACVApp',
         templateUrl: 'views/experience.html',
         controller: 'ProjectsCtrl'
       })
+      .when('/blog', {
+        templateUrl: 'views/blog.html'
+        //controller: 'ProjectsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
