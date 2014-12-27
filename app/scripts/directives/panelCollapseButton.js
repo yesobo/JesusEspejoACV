@@ -37,6 +37,11 @@ angular.module('PanelCollapseButtonDirective', [])
                     });
                   });
                 });
+                jPanel.on('hidden.bs.collapse', function() {
+                  deferred.promise.then(function() {
+                    $(document.body).trigger('sticky_kit:recalc');
+                  });
+                });
               }
           };
       }]);
