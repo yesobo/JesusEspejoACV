@@ -21,11 +21,7 @@ angular.module('JeaCollapseDirective', [])
     $(document.body).trigger('sticky_kit:recalc');
   }
 
-  function closedCallback(scope, panelHeader, stickyZone) {
-    var scrollBackNeeded = false;
-    if(panelHeader.css('position') === 'fixed') {
-      scrollBackNeeded = true;
-    }
+  function closedCallback(scope, panelHeader, stickyZone, scrollBackNeeded) {
     unbindSticky(panelHeader);
     var intScrollTo = $(stickyZone).offset().top - panelHeader.height();
     if(scrollBackNeeded) {
@@ -45,16 +41,27 @@ angular.module('JeaCollapseDirective', [])
       var stickyZone = elem[0].parentElement;
       var panelHeader = $(stickyZone.children[0]);
       var collapsePanel = elem[0];
+      var scrollBackNeeded = false;
 
-      var collapseListener = function() {
+      var collapseListener = function(scrollBackNeeded) {
         if(collapsePanel.opened) {
           openedCallBack(scope, panelHeader, stickyZone);
         } else {
-          closedCallback(scope, panelHeader, stickyZone);
+          closedCallback(scope, panelHeader, stickyZone, scrollBackNeeded);
         }
       };
 
-      elem[0].addEventListener('core-resize', collapseListener);
+      elem[0].addEventListener('core-collapse-open', function() {
+        if(panelHeader.css('position') === 'fixed') {
+          scrollBackNeeded = true;
+          panelHeader.css({position: 'fixed', top: '-50px'});
+        } else {
+          scrollBackNeeded = false;
+        }
+      });
+      elem[0].addEventListener('core-resize', function() {
+        collapseListener(scrollBackNeeded);
+      });
     }
   };
 }]);
