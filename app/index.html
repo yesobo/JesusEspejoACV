@@ -16,6 +16,12 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+    <!-- 1. Load platform support before any code that touches the DOM. -->
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <!-- 2. Load Polymer core-collapse -->
+    <link rel="import" href="bower_components/core-collapse/core-collapse.html">
+
   </head>
   <body ng-app="JesusEspejoACVApp" ng-controller="AppCtrl">
     <!--[if lt IE 7]>
@@ -79,6 +85,7 @@
     <script src="scripts/directives/navMenu.js"></script>
     <script src="scripts/directives/searchButton.js"></script>
     <script src="scripts/directives/experienceDetails.js"></script>
+    <script src="scripts/directives/collapse.js"></script>
     <script src="scripts/directives/panelCollapseButton.js"></script>
     <script src="scripts/directives/directives.js"></script>
     <script src="scripts/directives/mainLeft.js"></script>

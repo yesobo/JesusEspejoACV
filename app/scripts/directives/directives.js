@@ -4,6 +4,7 @@ angular.module('JesusEspejoACVDirectives',
   ['NavMenuDirective',
   'SearchButtonDirective',
   'ExperienceDetailsDirective',
-  'PanelCollapseButtonDirective',
+  'JeaCollapseButtonDirective',
+  'JeaCollapseDirective',
   'MainLeftDirective'
   ]);

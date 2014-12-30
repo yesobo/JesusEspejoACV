@@ -64,15 +64,26 @@
                       </span>
                     </h3>
                   </div>
-                  <div id="positionDetails-{{employment.locator}}" class="panel-collapse collapse">
+<!--
+                  <div jea-collapse id="positionDetails-{{employment.locator}}"
+                    class="panel-collapse collapse">
+
                     <ul class="panel-body">
                       <experience-details details-obj="employment"></experience-details>
                     </ul>
+
                   </div>
+                -->
+                  <core-collapse jea-collapse="" id="{{'positionDetails' + employment.locator}}" class="panel-collapse">
+                    <ul class="panel-body">
+                      <experience-details details-obj="employment"></experience-details>
+                    </ul>
+                  </core-collapse>
+
                 </div>
                 <div class="panel-footer panel-footer-arrow">
                   <div class="round-button-circle">
-                    <a jea-collapse-button="" class="my-accordion accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#positionDetails-{{employment.locator}}" collapse-scroll-top="{{collapseScrollTop}}">
+                    <a jea-collapse-button="" ng-click="collapsePanel('positionDetails' + employment.locator)" class="my-accordion accordion-toggle collapsed">
                       <span class="glyphicon glyphicon-chevron-down"></span>
                     </a>
                   </div>
