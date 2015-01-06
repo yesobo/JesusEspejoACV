@@ -67,33 +67,48 @@
                       </span>
                     </h3>
                   </div>
-<!--
-                  <div jea-collapse id="positionDetails-{{employment.locator}}"
-                    class="panel-collapse collapse">
 
-                    <ul class="panel-body">
-                      <experience-details details-obj="employment"></experience-details>
-                    </ul>
-
-                  </div>
-                -->
                   <core-collapse jea-collapse id="{{'positionDetails' + employment.locator}}"
                     class="panel-collapse">
                     <ul class="panel-body">
                       <experience-details details-obj="employment"></experience-details>
                     </ul>
                   </core-collapse>
-
                 </div>
+
                 <div class="panel-footer panel-footer-arrow">
-                  <div class="round-button-circle">
+                  <div class="round-button-circle desktop">
                     <a jea-collapse-button
                       ng-click="collapsePanel('positionDetails' + employment.locator)"
                       class="my-accordion accordion-toggle collapsed">
                       <span class="glyphicon glyphicon-chevron-down"></span>
                     </a>
                   </div>
+
+                  <div class="round-button-circle mobile">
+                    <a jea-collapse-button
+                      ng-click="employment.opened = true;"
+                      class="my-accordion accordion-toggle collapsed">
+                      <core-icon icon="more-horiz"></core-icon>
+                    </a>
+                  </div>
+
                 </div>
+
+                <paper-action-dialog backdrop jea-layer
+                  ng-opened="employment.opened"
+                  heading="{{ employment.locator + '.position' | translate }}"
+                  transition="core-transition-center"
+                  layered>
+                  <ul class="panel-body">
+                    <experience-details details-obj="employment"></experience-details>
+                  </ul>
+                  <paper-button affirmative="" autofocus="" role="button"
+                    tabindex="0">
+                    {{'CLOSE' | translate}}
+                  </paper-button>
+                </paper-action-dialog>
+
               </div>
               <p></p>
               <p></p>

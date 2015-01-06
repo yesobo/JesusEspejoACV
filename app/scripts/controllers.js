@@ -1,5 +1,5 @@
 /*global angular: false */
-angular.module('JesusEspejoACVControllers', ['oc.lazyLoad'])
+angular.module('JesusEspejoACVControllers', ['oc.lazyLoad', ])
 .controller('AppCtrl', ['$scope', function(sc) {
   'use strict';
 

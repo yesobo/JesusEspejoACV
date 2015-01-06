@@ -21,9 +21,14 @@
     <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
     <!-- 2. Load Polymer core-collapse -->
     <link rel="import" href="bower_components/core-collapse/core-collapse.html">
+    <link rel="import" href="bower_components/paper-dialog/paper-action-dialog.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/core-icon/core-icon.html">
+    <link rel="import" href="bower_components/core-icons/core-icons.html">
 
   </head>
-  <body ng-app="JesusEspejoACVApp" ng-controller="AppCtrl">
+  <body ng-app="JesusEspejoACVApp" ng-controller="AppCtrl"
+    unresolved>
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
@@ -69,6 +74,7 @@
     <!-- endbuild -->
 
     <!-- build:js scripts/modules.js -->
+    <script src="bower_components/ng-polymer-elements/ng-polymer-elements.js"></script>
     <script src="bower_components/oclazyload/dist/ocLazyLoad.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -89,6 +95,7 @@
     <script src="scripts/directives/panelCollapseButton.js"></script>
     <script src="scripts/directives/directives.js"></script>
     <script src="scripts/directives/mainLeft.js"></script>
+    <script src="scripts/directives/jeaLayer.js"></script>
     <!-- endbuild -->
 
 </body>

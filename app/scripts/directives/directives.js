@@ -6,5 +6,6 @@ angular.module('JesusEspejoACVDirectives',
   'ExperienceDetailsDirective',
   'JeaCollapseButtonDirective',
   'JeaCollapseDirective',
-  'MainLeftDirective'
+  'MainLeftDirective',
+  'JeaLayerDirective'
   ]);

@@ -12,7 +12,7 @@ $stuck_shadow: 0 2px 5px rgba(0,0,0,0.26);
 
 @import 'bootstrap-sass/lib/bootstrap';
 @import 'search-button';
-@import 'experience-details-2';
+@import 'experience-details';
 
 /* Put your CSS here */
 
@@ -47,6 +47,10 @@ body {
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
+}
+
+.hideScroll {
+  overflow: hidden;
 }
 
 .main-view {
@@ -375,7 +379,7 @@ $circle_radius: 25px;
   width: $circle_radius * 2;
   height: $circle_radius * 2;
   margin:auto;
-  background: #c1dbf2;
+  background: $light-color;
   border-radius: 50%;
   position: relative;
   top: -$circle_radius;
@@ -519,6 +523,9 @@ $circle_radius: 25px;
 /************************** Phone to wide tablet ************************/
 @media (max-width: 991px) {
 
+.desktop {
+  display: none;
+}
 
 html {
   margin-left: 0px;
@@ -527,6 +534,10 @@ html {
   body {
     margin-left: 0px;
     margin-right: 0px;
+
+    core-overlay-layer {
+      z-index: 1100;
+    }
 
     .container {
       margin-left: 0px;
@@ -545,6 +556,7 @@ html {
         .main-left {
           margin-right: 20px;
           overflow: hidden;
+          position: relative;
 
           .title {
             font-size: 30px;
@@ -557,6 +569,12 @@ html {
           }
         }
       }
+
+      .employment {
+        core-icon {
+          top: 12px;
+        }
+      }
     }
   }
 }
@@ -565,10 +583,6 @@ html {
     .title, .subtitle {
       display: inline-block;
     }
-  }
-
-  .main-left {
-    position: relative;
   }
 
   .main {
@@ -696,6 +710,9 @@ html {
 
 /************************* Wide tablet to Desktop (Bootstrap) ***************/
 @media (min-width: 992px) {
+  .mobile {
+    display: none;
+  }
   .navbar .btn-navbar {
     display: none;
   }

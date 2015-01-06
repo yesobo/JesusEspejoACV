@@ -1,42 +1,121 @@
-.taskList {
-  list-style-type: disc;
+.tasksList {
+  padding: 10px;
+  .liTask {
+    list-style-type: none;
+    clear: both;
+    padding-top: 30px;
+    .taskDescription {
+      font-size: 18px;
+      color: #8e8d8d;
+    }
+    .techList {
+      list-style-type: none;
+      margin: 10px 0px 0px 40px;
+      // wraps float children
+      overflow: hidden;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      border-radius: 30px;
+      border: 1px solid #bbbbbb;
+      background-color: white;
+
+      .imageWrapper {
+        height: 100px;
+        width: 100px;
+        border: none;
+        line-height: 100px;
+        float: left;
+        overflow: hidden;
+
+        img {
+          max-width: 100%;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
 }
 
-.liTask {
-  margin-top: 10px;
-  clear: both;
-}
+/************************* Wide tablet to Desktop (Bootstrap) ***************/
+$close_radius: 20px;
+$close_color: white;
+@media (max-width: 991px) {
 
-.taskTechList {
-  overflow: hidden;
-  border:1px solid black;  
-  padding: 0px;
-  
-  > li {
-    display: block;
-    float: left;
-    transform: rotate(-60deg);
-    -ms-transform: rotate(-60deg);
-    -webkit-transform: rotate(-800deg);
-    vertical-align: bottom;
-    margin-top: 80px;
-    width: 41px;
-    height: 41px;
-    padding: 5px;
+  html /deep/ paper-action-dialog::shadow #scroller {
+    padding: 0px;
+
+    h1 {
+      background-color: #c1dbf2;
+      padding-top: 0.67em;
+      margin: 0px;
+      padding-bottom: 0.67em;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
   }
 
-  div.techName {
-    width: 135px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    padding-left: 10px;
-    margin-left: -10px;
-    height: 41px; 
+  html /deep/ paper-action-dialog {
+    background-color: #ddebf9;
+    .round-button-circle {
+      width: $close_radius * 2;
+      height: $close_radius * 2;
+      margin:auto;
+      background: $close_color;
+      border-radius: 50%;
+      position: fixed;
+      top: -$close_radius;
+      right: -13px;
+      background-color: $close_color;
+      -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+      -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+      box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        color: black;
+      }
+    }
+    .panel-body {
+      padding-left: 0px;
+      experience-details {
+        .tasksList {
+          padding-left: 10px;
+          padding-right: 10px;
+          .liTask {
+            list-style-type: none;
+            clear: both;
+            padding-top: 15px;
+            .taskDescription {
+              font-size: 18px;
+              color: #8e8d8d;
+            }
+            .techList {
+              margin-left: 10px;
+              overflow: hidden;
+              border-radius: 30px;
+              border: 1px solid #bbb;
+              background-color: #fff;
+              li {
+                list-style-type: none;
+                .imageWrapper {
+                  height: 100px;
+                  width: 100px;
+                  border: none;
+                  line-height: 100px;
+                  float: left;
+                  img {
+                    max-width: 100%;
+                    vertical-align: middle;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
-
-}
-
-
-span.taskDescription {
-  
 }

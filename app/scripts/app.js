@@ -3,7 +3,7 @@
 angular.module('JesusEspejoACVApp',
   ['ngRoute', 'JesusEspejoACVServices', 'JesusEspejoACVDirectives',
     'JesusEspejoACVControllers', 'JesusEspejoACVFilters',
-    'pascalprecht.translate'])
+    'pascalprecht.translate', 'ng-polymer-elements'])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
