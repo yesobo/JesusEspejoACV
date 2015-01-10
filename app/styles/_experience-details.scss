@@ -41,8 +41,10 @@ $close_radius: 20px;
 $close_color: white;
 @media (max-width: 991px) {
 
-  html /deep/ paper-action-dialog::shadow #scroller {
+  html /deep/ paper-dialog::shadow #scroller {
     padding: 0px;
+    width: 95vw;
+    height: 95vh;
 
     h1 {
       background-color: #c1dbf2;
@@ -54,8 +56,20 @@ $close_color: white;
     }
   }
 
-  html /deep/ paper-action-dialog {
+  html /deep/ paper-dialog {
     background-color: #ddebf9;
+    core-header-panel {
+      height: 100%;
+    }
+
+    .core-header {
+      font-size: 20px;
+      padding: 10px;
+      background-color: #428bca;
+      color: #FFF;
+      transition: height 0.2s;
+    }
+
     .round-button-circle {
       width: $close_radius * 2;
       height: $close_radius * 2;
@@ -117,5 +131,24 @@ $close_color: white;
         }
       }
     }
+  }
+}
+
+/************************** Phones *****************************/
+@media (max-width: 321px) {
+  html /deep/ paper-dialog {
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+
+    core-header-panel {
+      widht: 100
+    }
+  }
+
+  html /deep/ paper-dialog::shadow #scroller {
+    padding: 0px;
+    width: 100vw;
+    height: 100vh;
   }
 }

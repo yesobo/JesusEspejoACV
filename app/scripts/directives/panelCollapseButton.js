@@ -6,13 +6,22 @@ angular.module('JeaCollapseButtonDirective', [])
     .directive('jeaCollapseButton', [function() {
 
       return {
-          restrict: 'A',
-          link: function(scope, elem) {
-            scope.collapsePanel = function(panelId) {
-              $(elem).toggleClass('collapsed').promise().done(function() {
-                document.querySelector('#' + panelId).toggle();
+          restrict: 'E',
+          transclude: true,
+          template: '<a class="collapsed"><ng-transclude</ng-transclude></a>',
+          link: function(scope, elem, attr) {
+            var panelid = attr.panelid;
+            console.log(panelid);
+            var collapsePanel = function(panelid) {
+              $(elem).find('a').toggleClass('collapsed').promise().done(function() {
+                document.querySelector('#' + panelid).toggle();
               });
             };
+            if(panelid != "") {
+              elem.on('click', function() {
+                collapsePanel(panelid);
+              });
+            }
           }
         };
     }]);

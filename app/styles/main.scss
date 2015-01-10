@@ -420,7 +420,7 @@ $circle_radius: 25px;
   cursor: pointer;
 }
 
-.my-accordion {
+.my-accordion > a {
   -ms-transform: rotate(0deg); /* IE 9 */
   -webkit-transform: rotate(0deg)!important; /* Chrome, Safari, Opera */
   transform: rotate(0deg);
@@ -435,7 +435,7 @@ $circle_radius: 25px;
   }
 }
 
-.my-accordion.collapsed {
+.my-accordion > a.collapsed {
   -ms-transform: rotate(180deg); /* IE 9 */
   -webkit-transform: rotate(180deg)!important; /* Chrome, Safari, Opera */
   transform: rotate(180deg);
