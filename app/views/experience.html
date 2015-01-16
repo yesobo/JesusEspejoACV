@@ -102,11 +102,16 @@
                   layered>
                   <core-header-panel mode="waterfall">
                     <div class="core-header">
-                      {{ employment.locator + '.position' | translate }}
+                      <a ng-click="employment.opened = false">
+                        <core-icon icon="close" class="icon-button"></core-icon>
+                      </a>
+                      <div ng-bind="employment.locator + '.position' | translate">
+                      </div>
                     </div>
                     <div class="content" fit>
                       <ul class="panel-body">
-                        <experience-details details-obj="employment"></experience-details>
+                        <experience-details details-obj="employment">
+                        </experience-details>
                       </ul>
                     </div>
                   </core-header-panel>

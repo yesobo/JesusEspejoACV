@@ -60,14 +60,19 @@ $close_color: white;
     background-color: #ddebf9;
     core-header-panel {
       height: 100%;
-    }
+      .core-header {
+        font-size: 20px;
+        padding: 10px;
+        background-color: #428bca;
+        color: #FFF;
+        transition: height 0.2s;
 
-    .core-header {
-      font-size: 20px;
-      padding: 10px;
-      background-color: #428bca;
-      color: #FFF;
-      transition: height 0.2s;
+        core-icon.icon-button {
+          margin-bottom: 9px;
+          color: $darker-blue;
+          cursor: pointer;
+        }
+      }
     }
 
     .round-button-circle {
@@ -101,13 +106,18 @@ $close_color: white;
           .liTask {
             list-style-type: none;
             clear: both;
-            padding-top: 15px;
+            padding-top: 0px;
+            margin-bottom: 20px;
             .taskDescription {
               font-size: 18px;
               color: #8e8d8d;
+              > div {
+                margin-bottom: 5px;
+              }
             }
             .techList {
               margin-left: 10px;
+              margin-bottom: 25px;
               overflow: hidden;
               border-radius: 30px;
               border: 1px solid #bbb;

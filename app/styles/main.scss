@@ -447,8 +447,160 @@ $circle_radius: 25px;
 
 /************************** Retina display tablet ***************/
 
+/************************** Phones (Iphone 4/5) *****************************/
+@media (max-width: 321px) {
+  .nav-collapse320 {
+    &.collapse {
+      overflow: hidden;
+      height: 0;
+    }
+    .nav {
+      float: none;
+      margin: 0 0 10px;
+      > li {
+        float: none;
+        > a {
+          padding: 9px 15px;
+          font-weight: bold;
+          color: #777777;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+        }
+      }
+    }
+    clear: both;
+  }
+  .nav-collapse .dropdown-menu a {
+    padding: 9px 15px;
+    font-weight: bold;
+    color: #777777;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  .navbar-inverse .nav-collapse320 {
+    .nav > li > a, .dropdown-menu a {
+      color: #999999;
+    }
+  }
+  .navbar .nav {
+    margin: 0px;
+  }
 
-/************************** Phone to tablet *********************/
+  aside {
+    padding-left: 5px!important;
+    padding-right: 5px!important;
+    .main-left {
+      margin-right: 0px!important;
+      .sectionTitleWrapper {
+        margin-right: 10px;
+      }
+      #searchWrapper {
+        .searchButtonContainer {
+          margin-right: 1px!important;
+        }
+      }
+    }
+  }
+
+}
+/************************** Phone to Desktop *********************/
+@media (min-width: 321px) {
+  .container > .navbar-header, .container > .navbar-collapse {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+
+  .nav-collapse320.collapse {
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
+/******************* Phone *******************/
+@media (max-width: 480px) {
+
+  .container > .navbar-header, .container > .navbar-collapse {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  .nav-collapse480 {
+    &.collapse {
+      overflow: visible !important;
+      height: auto !important;
+    }
+    .nav {
+      float: none;
+      margin: 0 0 10px;
+      > li {
+        float: none;
+        > a {
+          padding: 9px 15px;
+          font-weight: bold;
+          color: #777777;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+        }
+      }
+    }
+    clear: both;
+  }
+
+  .nav-collapse .dropdown-menu a {
+    padding: 9px 15px;
+    font-weight: bold;
+    color: #777777;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  .navbar-inverse .nav-collapse480 {
+    .nav > li > a, .dropdown-menu a {
+      color: #999999;
+    }
+  }
+  .secondLastName {
+    display: none;
+  }
+
+  body {
+    padding-left: 0;
+    padding-right: 0px;
+    margin-right: 0px;
+    margin-left: 0;
+  }
+
+  .main-left div {
+    min-width: 33px;
+  }
+
+  aside {
+    padding-left: 10px;
+  }
+  .container {
+    padding: 0;
+  }
+  .pull-right {
+    margin-right: 15px;
+  }
+
+  .employerNameWrapper {
+    width: 70%;
+  }
+}
+
+/************************** Phone to desktop *************/
+@media (min-width: 480px) {
+  .nav-collapse480.collapse {
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
+/*********** Phone to Landscape phone and small tablets (Nexus 7) *************/
 @media (max-width: 767px) {
 
   .main {
@@ -519,8 +671,45 @@ $circle_radius: 25px;
   }
 }
 
+/************************** Tablets *********************/
+@media (max-width: 979px) and (min-width: 768px) {
+  .row-fluid [class*="span"] {
+    min-height: 0px;
+  }
+}
 
-/************************** Phone to wide tablet ************************/
+/************************** Tablet to Desktop *********************/
+
+@media (min-width: 768px) {
+  #left > {
+    h2, h5 {
+      display: inline;
+    }
+  }
+  .md-lg-hidden {
+    display: none;
+  }
+  .main-left {
+    width: inherit;
+  }
+  .periodColumn {
+    padding: 0px;
+  }
+}
+
+
+/************************** Landscape tablet to Desktop *************/
+@media (min-width: 852px) {
+  .nav-collapse830.collapse {
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .title {
+    font-size: 45px;
+  }
+}
+
+/************************** Phone to Big tablet ************************/
 @media (max-width: 991px) {
 
 .desktop {
@@ -656,59 +845,7 @@ html {
   }
 }
 
-/************************** Tablet to Desktop *********************/
-@media (min-width: 321px) {
-  .container > .navbar-header, .container > .navbar-collapse {
-    margin-right: 15px;
-    margin-left: 15px;
-  }
-
-  .nav-collapse320.collapse {
-    height: auto !important;
-    overflow: visible !important;
-  }
-}
-
-/************************** Tablets *********************/
-
-/************************** Wide tablets *********************/
-@media (max-width: 979px) and (min-width: 768px) {
-  .row-fluid [class*="span"] {
-    min-height: 0px;
-  }
-}
-
-/************************** Wide tablet to Desktop *********************/
-
-@media (min-width: 768px) {
-  #left > {
-    h2, h5 {
-      display: inline;
-    }
-  }
-  .md-lg-hidden {
-    display: none;
-  }
-  .main-left {
-    width: inherit;
-  }
-  .periodColumn {
-    padding: 0px;
-  }
-}
-
-/************************** Wide tablet to Desktop *************/
-@media (min-width: 852px) {
-  .nav-collapse830.collapse {
-    height: auto !important;
-    overflow: visible !important;
-  }
-  .title {
-    font-size: 45px;
-  }
-}
-
-/************************* Wide tablet to Desktop (Bootstrap) ***************/
+/************************* Big tablet to Desktop (Bootstrap) ***************/
 @media (min-width: 992px) {
   .mobile {
     display: none;
@@ -745,130 +882,5 @@ html {
         }
       }
     }
-  }
-}
-
-/************************** Phones *****************************/
-@media (max-width: 321px) {
-  .nav-collapse320 {
-    &.collapse {
-      overflow: hidden;
-      height: 0;
-    }
-    .nav {
-      float: none;
-      margin: 0 0 10px;
-      > li {
-        float: none;
-        > a {
-          padding: 9px 15px;
-          font-weight: bold;
-          color: #777777;
-          -webkit-border-radius: 3px;
-          -moz-border-radius: 3px;
-          border-radius: 3px;
-        }
-      }
-    }
-    clear: both;
-  }
-  .nav-collapse .dropdown-menu a {
-    padding: 9px 15px;
-    font-weight: bold;
-    color: #777777;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-  }
-  .navbar-inverse .nav-collapse320 {
-    .nav > li > a, .dropdown-menu a {
-      color: #999999;
-    }
-  }
-  .navbar .nav {
-    margin: 0px;
-  }
-
-}
-
-/******************* Phone and Wide Phone *******************/
-@media (max-width: 480px) {
-
-  .container > .navbar-header, .container > .navbar-collapse {
-    margin-right: 0px;
-    margin-left: 0px;
-  }
-
-  .nav-collapse480 {
-    &.collapse {
-      overflow: visible !important;
-      height: auto !important;
-    }
-    .nav {
-      float: none;
-      margin: 0 0 10px;
-      > li {
-        float: none;
-        > a {
-          padding: 9px 15px;
-          font-weight: bold;
-          color: #777777;
-          -webkit-border-radius: 3px;
-          -moz-border-radius: 3px;
-          border-radius: 3px;
-        }
-      }
-    }
-    clear: both;
-  }
-
-  .nav-collapse .dropdown-menu a {
-    padding: 9px 15px;
-    font-weight: bold;
-    color: #777777;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-  }
-  .navbar-inverse .nav-collapse480 {
-    .nav > li > a, .dropdown-menu a {
-      color: #999999;
-    }
-  }
-  .secondLastName {
-    display: none;
-  }
-
-  body {
-    padding-left: 0;
-    padding-right: 0px;
-    margin-right: 0px;
-    margin-left: 0;
-  }
-
-  .main-left div {
-    min-width: 33px;
-  }
-
-  aside {
-    padding-left: 10px;
-  }
-  .container {
-    padding: 0;
-  }
-  .pull-right {
-    margin-right: 15px;
-  }
-
-  .employerNameWrapper {
-    width: 70%;
-  }
-}
-
-/************************** Wide phone to desktop *************/
-@media (min-width: 480px) {
-  .nav-collapse480.collapse {
-    height: auto !important;
-    overflow: visible !important;
   }
 }
