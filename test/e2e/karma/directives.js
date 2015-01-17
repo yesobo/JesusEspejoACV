@@ -1,4 +1,4 @@
-/* global describe, beforeEach, browser, it, expect, element: true */
+/* global describe, beforeEach, browser, it, expect, element, input: true */
 describe('Directives', function() {
 	'use strict';
 	describe('navmenu', function() {
@@ -48,7 +48,7 @@ describe('Directives', function() {
 						// deletes the input value on close button click
 						input('searchQuery').enter('at sistemas');
 						element('.searchButtonContainer > button', 'HOLA QUE TAL').click();
-						expect(input('searchQuery').val()).toBe("");
+						expect(input('searchQuery').val()).toBe('');
 						// hides the input on blur CANNOT BE TESTED WITH KARMA E2E
 						done();
 					} else {

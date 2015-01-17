@@ -77,21 +77,22 @@
                 </div>
 
                 <div class="panel-footer panel-footer-arrow">
-                  <div class="round-button-circle desktop">
+
+                  <div class="round-button-circle">
+
                     <jea-collapse-button
                       panelid="{{'positionDetails' + employment.locator}}"
-                      class="my-accordion accordion-toggle collapsed">
+                      class="my-accordion accordion-toggle collapsed desktop">
                       <span class="glyphicon glyphicon-chevron-up"></span>
                     </jea-collapse-button>
-                  </div>
 
-                  <div class="round-button-circle mobile">
                     <jea-collapse-button
                       panelid=""
                       ng-click="employment.opened = true;"
-                      class="my-accordion accordion-toggle collapsed">
+                      class="my-accordion accordion-toggle collapsed mobile">
                       <core-icon icon="more-horiz"></core-icon>
                     </jea-collapse-button>
+
                   </div>
 
                 </div>

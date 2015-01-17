@@ -29,6 +29,8 @@
   "CURRENT_PROJECTS": "Current projects",
   "PREVIOUS_PROJECTS": "Previous projects",
 
+  "CLOSE": "CLOSE", 
+
   "APMetro": {
     "position": "J2EE/EJB/Front-end/Reporting Web Developer",
     "tasks": [

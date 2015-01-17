@@ -454,6 +454,14 @@ module.exports = function (grunt) {
     'protractor:run'
   ]);
 
+  grunt.registerTask('test:prot', [
+    'clean:server',
+    'coffee',
+    'compass',
+    'connect:livereload',
+    'protractor:run'
+  ]);
+
   grunt.registerTask('build', [
     'clean:dist',
     'useminPrepare',

@@ -64,30 +64,48 @@
                       </span>
                     </h3>
                   </div>
-<!--
-                  <div jea-collapse id="positionDetails-{{employment.locator}}"
-                    class="panel-collapse collapse">
 
-                    <ul class="panel-body">
-                      <experience-details details-obj="employment"></experience-details>
-                    </ul>
-
-                  </div>
-                -->
                   <core-collapse jea-collapse="" id="{{'positionDetails' + employment.locator}}" class="panel-collapse">
                     <ul class="panel-body">
                       <experience-details details-obj="employment"></experience-details>
                     </ul>
                   </core-collapse>
+                </div>
+
+                <div class="panel-footer panel-footer-arrow">
+
+                  <div class="round-button-circle">
+
+                    <jea-collapse-button panelid="{{'positionDetails' + employment.locator}}" class="my-accordion accordion-toggle collapsed desktop">
+                      <span class="glyphicon glyphicon-chevron-up"></span>
+                    </jea-collapse-button>
+
+                    <jea-collapse-button panelid="" ng-click="employment.opened = true;" class="my-accordion accordion-toggle collapsed mobile">
+                      <core-icon icon="more-horiz"></core-icon>
+                    </jea-collapse-button>
+
+                  </div>
 
                 </div>
-                <div class="panel-footer panel-footer-arrow">
-                  <div class="round-button-circle">
-                    <a jea-collapse-button="" ng-click="collapsePanel('positionDetails' + employment.locator)" class="my-accordion accordion-toggle collapsed">
-                      <span class="glyphicon glyphicon-chevron-down"></span>
-                    </a>
-                  </div>
-                </div>
+
+                <paper-dialog backdrop="" jea-layer="" ng-opened="employment.opened" transition="core-transition-center" layered="">
+                  <core-header-panel mode="waterfall">
+                    <div class="core-header">
+                      <a ng-click="employment.opened = false">
+                        <core-icon icon="close" class="icon-button"></core-icon>
+                      </a>
+                      <div ng-bind="employment.locator + '.position' | translate">
+                      </div>
+                    </div>
+                    <div class="content" fit="">
+                      <ul class="panel-body">
+                        <experience-details details-obj="employment">
+                        </experience-details>
+                      </ul>
+                    </div>
+                  </core-header-panel>
+                </paper-dialog>
+
               </div>
               <p></p>
               <p></p>

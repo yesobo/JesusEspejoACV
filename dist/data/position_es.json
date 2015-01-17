@@ -30,6 +30,8 @@
 	"CURRENT_PROJECTS": "Proyectos en desarrollo",
 	"PREVIOUS_PROJECTS": "Proyectos anteriores",
 
+	"CLOSE": "CERRAR",
+
 	"APMetro": {
 		"position" : "Programador Web J2EE/EJB/Front-end/Reporting",
 		"tasks": [
