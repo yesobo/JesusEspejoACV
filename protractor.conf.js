@@ -8,5 +8,7 @@ exports.config = {
 
   jasmineNodeOpts: {
     showColors: true
-  }
+  },
+
+  chromeOnly: true
 }
