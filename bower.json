@@ -12,7 +12,7 @@
     "angular-translate-loader-static-files": "2.4.2",
     "json3": "~3.2.4",
     "jquery": "~2.0.3",
-    "bootstrap-sass": "~3.0.0",
+    "bootstrap-sass": "~3.3.3",
     "es5-shim": "~2.0.8",
     "oclazyload": "0.5.1",
     "polymer": "Polymer/polymer#~0.5.2",
