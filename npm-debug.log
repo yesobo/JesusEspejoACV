@@ -1,0 +1,156 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'webdriver-manager' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.36
+4 verbose cache add [ 'webdriver-manager', null ]
+5 verbose cache add name=undefined spec="webdriver-manager" args=["webdriver-manager",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'webdriver-manager',
+6 verbose parsed url   path: 'webdriver-manager',
+6 verbose parsed url   href: 'webdriver-manager' }
+7 silly lockFile 56806f4b-webdriver-manager webdriver-manager
+8 verbose lock webdriver-manager /Users/yesobo/.npm/56806f4b-webdriver-manager.lock
+9 silly lockFile 56806f4b-webdriver-manager webdriver-manager
+10 silly lockFile 56806f4b-webdriver-manager webdriver-manager
+11 verbose addNamed [ 'webdriver-manager', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 3ee93e3a-webdriver-manager webdriver-manager@
+14 verbose lock webdriver-manager@ /Users/yesobo/.npm/3ee93e3a-webdriver-manager.lock
+15 silly addNameRange { name: 'webdriver-manager', range: '*', hasData: false }
+16 verbose request where is /webdriver-manager
+17 verbose request registry https://registry.npmjs.org/
+18 verbose request id 7b5cceda9f188ea3
+19 verbose url raw /webdriver-manager
+20 verbose url resolving [ 'https://registry.npmjs.org/', './webdriver-manager' ]
+21 verbose url resolved https://registry.npmjs.org/webdriver-manager
+22 verbose request where is https://registry.npmjs.org/webdriver-manager
+23 info trying registry request attempt 1 at 19:18:11
+24 http GET https://registry.npmjs.org/webdriver-manager
+25 http 200 https://registry.npmjs.org/webdriver-manager
+26 silly registry.get cb [ 200,
+26 silly registry.get   { date: 'Mon, 09 Feb 2015 18:18:13 GMT',
+26 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly registry.get     etag: '"61CAHEV3GMNYB1WUZV8S0O3JU"',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=60',
+26 silly registry.get     'content-length': '12117',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '0',
+26 silly registry.get     'x-served-by': 'cache-fra1237-FRA',
+26 silly registry.get     'x-cache': 'MISS',
+26 silly registry.get     'x-cache-hits': '0',
+26 silly registry.get     'x-timer': 'S1423505892.230965,VS0,VE904',
+26 silly registry.get     vary: 'Accept',
+26 silly registry.get     'keep-alive': 'timeout=10, max=50',
+26 silly registry.get     connection: 'Keep-Alive' } ]
+27 silly addNameRange number 2 { name: 'webdriver-manager', range: '*', hasData: true }
+28 silly addNameRange versions [ 'webdriver-manager',
+28 silly addNameRange   [ '0.0.1',
+28 silly addNameRange     '0.0.2',
+28 silly addNameRange     '0.0.3',
+28 silly addNameRange     '0.0.4',
+28 silly addNameRange     '0.0.5',
+28 silly addNameRange     '0.0.6',
+28 silly addNameRange     '0.0.7',
+28 silly addNameRange     '0.0.8',
+28 silly addNameRange     '1.0.0',
+28 silly addNameRange     '1.0.1',
+28 silly addNameRange     '2.0.0' ] ]
+29 verbose addNamed [ 'webdriver-manager', '2.0.0' ]
+30 verbose addNamed [ '2.0.0', '2.0.0' ]
+31 silly lockFile 64948a18-webdriver-manager-2-0-0 webdriver-manager@2.0.0
+32 verbose lock webdriver-manager@2.0.0 /Users/yesobo/.npm/64948a18-webdriver-manager-2-0-0.lock
+33 silly lockFile 2c9438bc-ager-webdriver-manager-2-0-0-tgz https://registry.npmjs.org/webdriver-manager/-/webdriver-manager-2.0.0.tgz
+34 verbose lock https://registry.npmjs.org/webdriver-manager/-/webdriver-manager-2.0.0.tgz /Users/yesobo/.npm/2c9438bc-ager-webdriver-manager-2-0-0-tgz.lock
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/webdriver-manager/-/webdriver-manager-2.0.0.tgz',
+35 verbose addRemoteTarball   '7262389b3b7291c1d002b4de3ddde97bb4fe5d1a' ]
+36 info retry fetch attempt 1 at 19:18:13
+37 verbose fetch to= /var/folders/xb/lkry6d2s3w70f706zhcttf180000gn/T/npm-1623-F7sSgpS6/registry.npmjs.org/webdriver-manager/-/webdriver-manager-2.0.0.tgz
+38 http GET https://registry.npmjs.org/webdriver-manager/-/webdriver-manager-2.0.0.tgz
+39 http 200 https://registry.npmjs.org/webdriver-manager/-/webdriver-manager-2.0.0.tgz
+40 silly lockFile 2c9438bc-ager-webdriver-manager-2-0-0-tgz https://registry.npmjs.org/webdriver-manager/-/webdriver-manager-2.0.0.tgz
+41 silly lockFile 2c9438bc-ager-webdriver-manager-2-0-0-tgz https://registry.npmjs.org/webdriver-manager/-/webdriver-manager-2.0.0.tgz
+42 silly lockFile 64948a18-webdriver-manager-2-0-0 webdriver-manager@2.0.0
+43 silly lockFile 64948a18-webdriver-manager-2-0-0 webdriver-manager@2.0.0
+44 silly lockFile 3ee93e3a-webdriver-manager webdriver-manager@
+45 silly lockFile 3ee93e3a-webdriver-manager webdriver-manager@
+46 silly resolved [ { name: 'webdriver-manager',
+46 silly resolved     version: '2.0.0',
+46 silly resolved     description: 'Protactor\'s webdriver-manager as an standalone Node.js module.',
+46 silly resolved     dependencies:
+46 silly resolved      { 'adm-zip': '^0.4.4',
+46 silly resolved        async: '^0.9.0',
+46 silly resolved        optimist: '^0.6.1',
+46 silly resolved        request: '^2.36.0' },
+46 silly resolved     repository:
+46 silly resolved      { type: 'git',
+46 silly resolved        url: 'git@github.com:pose/webdriver-manager.git' },
+46 silly resolved     license: 'MIT',
+46 silly resolved     main: './lib/index.js',
+46 silly resolved     bin: { 'webdriver-manager': 'bin/webdriver-manager' },
+46 silly resolved     gitHead: '5283492a0ec6d500d0f3eb93fcd0a3dc775b5c57',
+46 silly resolved     bugs: { url: 'https://github.com/pose/webdriver-manager/issues' },
+46 silly resolved     homepage: 'https://github.com/pose/webdriver-manager',
+46 silly resolved     _id: 'webdriver-manager@2.0.0',
+46 silly resolved     scripts: {},
+46 silly resolved     _shasum: '7262389b3b7291c1d002b4de3ddde97bb4fe5d1a',
+46 silly resolved     _from: 'webdriver-manager@',
+46 silly resolved     _npmVersion: '1.4.28',
+46 silly resolved     _npmUser: { name: 'pose', email: 'albertopose@gmail.com' },
+46 silly resolved     maintainers: [ [Object] ],
+46 silly resolved     dist:
+46 silly resolved      { shasum: '7262389b3b7291c1d002b4de3ddde97bb4fe5d1a',
+46 silly resolved        tarball: 'http://registry.npmjs.org/webdriver-manager/-/webdriver-manager-2.0.0.tgz' },
+46 silly resolved     directories: {},
+46 silly resolved     _resolved: 'https://registry.npmjs.org/webdriver-manager/-/webdriver-manager-2.0.0.tgz' } ]
+47 info install webdriver-manager@2.0.0 into /usr/local/lib
+48 info installOne webdriver-manager@2.0.0
+49 verbose lib/node_modules/webdriver-manager unbuild
+50 verbose tar unpack /Users/yesobo/.npm/webdriver-manager/2.0.0/package.tgz
+51 silly lockFile e88ab3cb-b-node-modules-webdriver-manager tar:///usr/local/lib/node_modules/webdriver-manager
+52 verbose lock tar:///usr/local/lib/node_modules/webdriver-manager /Users/yesobo/.npm/e88ab3cb-b-node-modules-webdriver-manager.lock
+53 silly lockFile ebdaff8c-driver-manager-2-0-0-package-tgz tar:///Users/yesobo/.npm/webdriver-manager/2.0.0/package.tgz
+54 verbose lock tar:///Users/yesobo/.npm/webdriver-manager/2.0.0/package.tgz /Users/yesobo/.npm/ebdaff8c-driver-manager-2-0-0-package-tgz.lock
+55 silly gunzTarPerm modes [ '755', '644' ]
+56 error Error: EACCES, mkdir '/usr/local/lib/node_modules/webdriver-manager'
+56 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/webdriver-manager']
+56 error   errno: 3,
+56 error   code: 'EACCES',
+56 error   path: '/usr/local/lib/node_modules/webdriver-manager',
+56 error   fstream_type: 'Directory',
+56 error   fstream_path: '/usr/local/lib/node_modules/webdriver-manager',
+56 error   fstream_class: 'DirWriter',
+56 error   fstream_stack:
+56 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+56 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+56 error      'Object.oncomplete (fs.js:108:15)' ] }
+57 error Please try running this command again as root/Administrator.
+58 error System Darwin 13.3.0
+59 error command "node" "/usr/local/bin/npm" "install" "-g" "webdriver-manager"
+60 error cwd /Users/yesobo/dev/JesusEspejoACV
+61 error node -v v0.10.36
+62 error npm -v 1.4.28
+63 error path /usr/local/lib/node_modules/webdriver-manager
+64 error fstream_path /usr/local/lib/node_modules/webdriver-manager
+65 error fstream_type Directory
+66 error fstream_class DirWriter
+67 error code EACCES
+68 error errno 3
+69 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/webdriver-manager'
+70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+70 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+70 error fstream_stack Object.oncomplete (fs.js:108:15)
+71 verbose exit [ 3, true ]

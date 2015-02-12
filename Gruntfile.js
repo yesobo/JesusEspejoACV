@@ -185,9 +185,55 @@ module.exports = function (grunt) {
       }
     },
     useminPrepare: {
-      html: '<%= yeoman.app %>/index.html',
-      options: {
-        dest: '<%= yeoman.dist %>'
+      dist: {
+        src: '<%= yeoman.app %>/index.html',
+        options: {
+          dest: '<%= yeoman.dist %>',
+          flow: {
+            steps: {
+              myjs: ['concat'],
+              js: ['concat', 'uglifyjs'],
+              css: ['concat', 'cssmin']
+            },
+            post: {
+              myjs: [{
+                name: 'concat',
+                createConfig: function (context, block) {
+                  var generated = context.options.generated;
+                  generated.options = {
+                    banner: "(function(window, document) {",
+                    footer: "})(wrap(window), wrap(document));"
+                  }
+                }
+              }]
+            }
+          }
+        }
+      },
+      dev: {
+        src: '<%= yeoman.app %>/index.html',
+        options: {
+          dest: '<%= yeoman.dist %>',
+          flow: {
+            steps: {
+              myjs: ['concat'],
+              js: ['concat'],
+              css: ['concat']
+            },
+            post: {
+              myjs: [{
+                name: 'concat',
+                createConfig: function (context, block) {
+                  var generated = context.options.generated;
+                  generated.options = {
+                    banner: "(function(window, document) {",
+                    footer: "})(wrap(window), wrap(document));"
+                  }
+                }
+              }]
+            }
+          }
+        }
       }
     },
     usemin: {
@@ -411,7 +457,7 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
-      'clean:server' ,
+      'clean:server',
       'concurrent:server',
       'connect:livereload',
       'open',
@@ -464,14 +510,28 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'useminPrepare',
+    'useminPrepare:dist',
     'concurrent:dist',
     'concat',
     'copy',
     'cdnify',
-    'ngmin',
+    //'ngmin', ng-min is deprecated, use grunt-ng-anotate
     'cssmin',
     'uglify',
+    //'rev',
+    'usemin'
+  ]);
+
+  grunt.registerTask('build:dev', [
+    'clean:dist',
+    'useminPrepare:dev',
+    'concurrent:dist',
+    'concat',
+    'copy',
+    'cdnify',
+    //'ngmin', ng-min is deprecated, use grunt-ng-anotate
+    //'cssmin',
+    //'uglify',
     //'rev',
     'usemin'
   ]);
