@@ -1,1 +1,742 @@
-"use strict";angular.module("JesusEspejoACVApp",["ngRoute","JesusEspejoACVServices","JesusEspejoACVDirectives","JesusEspejoACVControllers","JesusEspejoACVFilters","pascalprecht.translate","ng-polymer-elements"]).config(["$routeProvider",function(a){a.when("/",{templateUrl:"views/aboutme.html"}).when("/experience",{templateUrl:"views/experience.html",controller:"ExperienceCtrl"}).when("/experience/:start",{templateUrl:"views/experience-detail.html",controller:"ExperienceDetailCtrl"}).when("/projects",{templateUrl:"views/experience.html",controller:"ProjectsCtrl"}).when("/blog",{templateUrl:"views/blog.html"}).otherwise({redirectTo:"/"})}]).config(["$translateProvider",function(a){a.translations("test",{WHO_I_AM:"Quien soy",ABOUT_ME:"Sobre mí",TECHNICAL_SKILLS:"Tecnologías",EXPERTISE:"Tecnologías",EXPERIENCE:"Experiencia",EDUCATION:"Educación",TRAINING:"Cursos",ABOUT_ME_EXPL:"Perfil profesional e Información de Contacto",ABOUT_ME_P1:"Hola, soy Jesús, desarrollador web y amante de las nuevas tecnologías.",ABOUT_ME_P2:"Como verás, he dedicado los últimos años en crear sitios web y disfrutar de las tecnologías web en el trabajo y mi tiempo libre. Me encantaría compartir mis conocimientos contigo, así que no dudes en contactar conmigo si estás interesado.",AT:"en",PRESENT:"Hoy",YEAR:"año",YEARS:"años",MONTH:"mes",MONTHS:"meses",SEARCH:"buscar"}),a.useStaticFilesLoader({prefix:"/data/position_",suffix:".json"}),a.preferredLanguage("en")}]),angular.module("JesusEspejoACVServices",["ng","ngResource"]).factory("SharedData",["$resource",function(a){function b(a,b,c){for(var d=null,e=0,f=a.length;f>e;e++)if(a[e][b]===c){d=a[e];break}return d}function c(a,b,c){var d=[];for(var e in a)a[e][b]===c&&d.push(a[e]);return d}function d(a){for(var c,d=[],e={},f={},g=0;g<a.length;g++)c=a[g],e=b(d,"employerName",c.employer.name),e?(e.start>c.start&&(e.start=c.start),e.end<c.end&&(e.end=c.end)):(f={employerName:c.employer.name,webSite:c.employer.webSite,imageUrl:c.employer.imageUrl,start:c.start,end:c.end},d.push(f));return d}return{getEmploymentsResource:function(){var b={query:{method:"GET",isArray:!0}};return a("data/employment.json",{},b)},getProjectsResource:function(){var b={query:{method:"GET",isArray:!0}};return a("data/projects.json",{},b)},filterJSON:c,getGroupedPeriods:d}}]).factory("DatesDiff",[function(){var a=function(a){var b,c=new Date(a[0]);b=""===a[1]?new Date:new Date(a[1]);var d=12*(b.getFullYear()-c.getFullYear())+b.getMonth()-c.getMonth();return d},b=function(b){var c={};c.years="",c.months="";var d=a(b),e=Math.floor(d/12),f=d%12;return c.years=e,c.months=f,c},c=function(a){var b="";return a>0&&(b=a>1?"YEARS":"YEAR"),b},d=function(a){var b="";return a>0&&(b=a>1?"MONTHS":"MONTH"),b},e=function(a,e){var f,g,h,i,j,k={};for(var l in a)j=a[l],f=b([j.start,j.end]),g=c(f.years),h=d(f.months),0===f.years&&(f.years=""),0===f.months&&(f.months=""),i=j[e],k[i]={years:f.years,yearLabel:g,months:f.months,monthLabel:h};return k},f={createDateDiffMap:e};return f}]),angular.module("JesusEspejoACVControllers",["oc.lazyLoad"]).controller("AppCtrl",["$scope",function(a){a.clickMenu={},a.menuItems={}}]).controller("ExperienceCtrl",["$scope","$window","SharedData","DatesDiff","$ocLazyLoad",function(a,b,c,d,e){e.load([{files:["scripts/xhr/my-sticky-kit.js"]}]);var f=a.employments=c.getEmploymentsResource().query(function(){var b=a.employersDates=c.getGroupedPeriods(f,"employerName");a.employersDateDiffMap=d.createDateDiffMap(b,"employerName"),a.employmentsDateDiffMap=d.createDateDiffMap(f,"locator")});a.buttonContainerClass="",a.rawTitle="EXPERIENCE",a.rawSubtitle="WHERE_I_WORKED",a.collapseScrollTop=0,a.notFoundLinkText="PERSONAL_PROJECTS",a.myText="MY_PLUR",a.notFoundRequestedMenu="PROJECTS"}]).controller("ProjectsCtrl",["$scope","$window","SharedData","DatesDiff","$ocLazyLoad",function(a,b,c,d,e){e.load([{files:["scripts/xhr/my-sticky-kit.js"]}]);var f=a.employments=c.getProjectsResource().query(function(){var b=a.employersDates=c.getGroupedPeriods(f);a.employersDateDiffMap=d.createDateDiffMap(b,"employerName"),a.employmentsDateDiffMap=d.createDateDiffMap(f,"locator")});a.buttonContainerClass="",a.rawTitle="PERSONAL_PROJECTS",a.rawSubtitle="FOR_THE_LOVE_OF_ART",a.collapseScrollTop="",a.notFoundLinkText="EXPERIENCE",a.myText="MY_SING",a.notFoundRequestedMenu="EXPERIENCE"}]).controller("ExperienceDetailCtrl",["$scope","$routeParams","SharedData",function(a,b,c){var d=c.getSharedData().query(function(){a.experience=c.filterJSON(d,"start",b.start)[0]})}]),angular.module("JesusEspejoACVFilters",[]).filter("myDate",["$filter",function(a){var b=a("date");return function(a){var c=new Date(a);return""===a&&(c=new Date),b(c.getTime(),"MM-yyyy")}}]),angular.module("NavMenuDirective",["pascalprecht.translate"]).directive("navMenu",function(){return{restrict:"E",transclude:!0,scope:{clickMenuItem:"=",navMenuItems:"="},controller:function(a,b,c,d){var e={WHO_I_AM:{position:0,path:"/"},EXPERIENCE:{position:1,path:"/experience"},PROJECTS:{position:2,path:"/projects"}};$(document).ready(function(){$(".nav li").click(function(){$(".nav .active").toggleClass("active"),$(this).toggleClass("active"),$("#resp-menu-btn").click()}),$(document).on("click",".navbar-collapse.in",function(a){$(a.target).is("a")&&$(this).collapse("hide")})}),a.langSwitchImg="images/lang_spanish.png",a.switchLanguage=function(){"en"===c.use()?(c.use("es"),a.langSwitchImg="images/lang_english.png"):(c.use("en"),a.langSwitchImg="images/lang_spanish.png")},a.clickMenuItem=function(a){var c=e[a].position;$($(b.find("li"))).removeClass("active"),$($(b.find("li")[c])).addClass("active"),d.path(e[a].path)},a.navMenuItems=e},templateUrl:"views/templates/navmenu.html",replace:!0}}),angular.module("SearchButtonDirective",[]).controller("SearchButtonController",function(a,b){a.window=b}).directive("searchButton",function(){return{restrict:"E",transclude:!1,scope:{searchQuery:"=",customPlaceholder:"=",expandHandler:"&onExpand",collapseHandler:"&onCollapse",blurHandler:"&customBlur"},templateUrl:"views/templates/search-button.html",replace:!0,controller:"SearchButtonController",link:function(a,b){var c=a.window.innerWidth<=480,d=function(){$(b).toggleClass("mobSearchMode","slow","linear"),c=!1,a.expandHandler()},e=function(){$(b).toggleClass("mobSearchMode","slow","linear"),c=!0,a.collapseHandler()};a.clear=function(){$("#searchInput").focus(),a.window.innerWidth<=480&&(""===a.searchQuery||"undefined"==typeof a.searchQuery)&&e(),a.searchQuery=""},a.click=function(){c&&(d(),$(".searchButtonContainer #searchInput").focus())},a.blur=function(){c||(""===a.searchQuery||"undefined"==typeof a.searchQuery)&&(e(),a.blurHandler())}}}}).directive("ngBlur",function(){return function(a,b,c){b.bind("blur",function(){a.$apply(c.ngBlur)})}}).directive("ngFocus",function(a){return function(b,c,d){b.$watch(d.ngFocus,function(b){b&&a(function(){c[0].focus()},0,!1)})}}).directive("handlePhoneSubmit",function(){return function(a,b){$(b).submit(function(){$("#searchInput").blur()})}}),angular.module("ExperienceDetailsDirective",["pascalprecht.translate"]).directive("experienceDetails",function(){return{restrict:"E",templateUrl:"views/templates/experienceDetails.html",scope:{detailsObjAttr:"=detailsObj"},link:function(){}}}),angular.module("JeaCollapseDirective",[]).directive("jeaCollapse",[function(){function a(a,b){a.stick_in_parent({offset_top:50,parent:b})}function b(a){a.trigger("sticky_kit:detach")}function c(b,c,d){a(c,d,b),$(document.body).trigger("sticky_kit:recalc")}function d(a,c,d,e){b(c);var f=$(d).offset().top-c.height();e?$("body").animate({scrollTop:f},500,function(){a.$apply(function(){$(document.body).trigger("sticky_kit:recalc")})}):$(document.body).trigger("sticky_kit:recalc")}return{restrict:"A",link:function(a,b){var e=b[0].parentElement,f=$(e.children[0]),g=b[0],h=!1,i=function(b){g.opened?c(a,f,e):d(a,f,e,b)};b[0].addEventListener("core-collapse-open",function(){"fixed"===f.css("position")?(h=!0,f.css({position:"fixed",top:"-50px"})):h=!1}),b[0].addEventListener("core-resize",function(){i(h)})}}}]),angular.module("JeaCollapseButtonDirective",[]).directive("jeaCollapseButton",[function(){return{restrict:"E",transclude:!0,template:'<a class="collapsed"><ng-transclude</ng-transclude></a>',link:function(a,b,c){var d=c.panelid,e=function(a){$(b).find("a").toggleClass("collapsed").promise().done(function(){document.querySelector("#"+a).toggle()})};""!==d&&b.on("click",function(){e(d)})}}}]),angular.module("JesusEspejoACVDirectives",["NavMenuDirective","SearchButtonDirective","ExperienceDetailsDirective","JeaCollapseButtonDirective","JeaCollapseDirective","MainLeftDirective","JeaLayerDirective"]),angular.module("MainLeftDirective",[]).controller("MainLeftController",["$scope","$window",function(a,b){a.sectionTitleWrapperVisible=!0,a.showTitle=function(){b.innerWidth<=480&&(a.sectionTitleWrapperVisible=!0)},a.hideTitle=function(){b.innerWidth<=480&&(a.sectionTitleWrapperVisible=!1)},a.exitSearchMode=function(c){b.innerWidth<=480&&(c&&""!==c?a.sectionTitleWrapper=!1:a.sectionTitleWrapperVisible=!0)}}]).directive("mainLeft",function(){return{restrict:"E",transclude:!1,scope:{customQuery:"=",customTitle:"=",customSubtitle:"="},controller:"MainLeftController",templateUrl:"views/templates/main-left.html",replace:!0}}),angular.module("JeaLayerDirective",[]).directive("jeaLayer",function(){return{restrict:"A",link:function(a,b){b.bind("core-overlay-open",function(a){a.target.opened?$("body").addClass("hideScroll"):$("body").removeClass("hideScroll")})}}});
+'use strict';
+
+angular.module('JesusEspejoACVApp',
+  ['ngRoute', 'JesusEspejoACVServices', 'JesusEspejoACVDirectives',
+    'JesusEspejoACVControllers', 'JesusEspejoACVFilters',
+    'pascalprecht.translate', 'ng-polymer-elements'])
+  .config(['$routeProvider', function ($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/aboutme.html',
+      })
+      .when('/experience', {
+        templateUrl: 'views/experience.html',
+        controller: 'ExperienceCtrl'
+      })
+      .when('/experience/:start', {
+        templateUrl: 'views/experience-detail.html',
+        controller: 'ExperienceDetailCtrl'
+      })
+      .when('/projects', {
+        templateUrl: 'views/experience.html',
+        controller: 'ProjectsCtrl'
+      })
+      .when('/blog', {
+        templateUrl: 'views/blog.html'
+        //controller: 'ProjectsCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  }]).config(['$translateProvider', function ($translateProvider) {
+
+    $translateProvider.translations('test', {
+      /* Nav menu */
+      'WHO_I_AM': 'Quien soy',
+      'ABOUT_ME': 'Sobre mí',
+      'TECHNICAL_SKILLS': 'Tecnologías',
+      'EXPERTISE': 'Tecnologías',
+      'EXPERIENCE': 'Experiencia',
+      'EDUCATION': 'Educación',
+      'TRAINING': 'Cursos',
+
+      /* About me */
+      'ABOUT_ME_EXPL': 'Perfil profesional e Información de Contacto',
+      'ABOUT_ME_P1': 'Hola, soy Jesús, desarrollador web y amante de las nuevas tecnologías.',
+      'ABOUT_ME_P2': 'Como verás, he dedicado los últimos años en crear sitios web y disfrutar de las tecnologías web en el trabajo y mi tiempo libre. Me encantaría compartir mis conocimientos contigo, así que no dudes en contactar conmigo si estás interesado.',
+
+      /* Experience */
+      'AT': 'en',
+      'PRESENT': 'Hoy',
+      'YEAR': 'año',
+      'YEARS': 'años',
+      'MONTH': 'mes',
+      'MONTHS': 'meses',
+      'SEARCH': 'buscar'
+    });
+
+    $translateProvider.useStaticFilesLoader({
+      prefix: '/data/position_',
+      suffix: '.json'
+    });
+
+    $translateProvider.preferredLanguage('en');
+  }]);
+
+'use strict';
+
+angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
+.factory('SharedData', ['$resource', function ($resource) {
+
+    function searchObject(collection, firstLevelKey, value) {
+      var foundObject = null;
+      for (var i = 0, len = collection.length; i < len; i++) {
+        if(collection[i][firstLevelKey] === value) {
+          foundObject = collection[i];
+          break;
+        }
+      }
+      return foundObject;
+    }
+
+    /**
+     * Returns the JSON objects of the provided Array that matches the key: value
+     *   pair given as parameters
+     * @param {Array} obj - Array to be filtered.
+     * @param {String} key - Propery to be filtered by.
+     * @param {String} val - Value of the property that matches the resulting
+     *   collection elements.
+     * @returns {Array}
+     */
+    function _filterJSON(obj, key, val) {
+      var objects = [];
+      for (var i in obj) {
+        if (obj[i][key] === val) {
+          objects.push(obj[i]);
+        }
+      }
+      return objects;
+    }
+
+    /**
+    * Groups related by a given key events from a given collection of events,
+    *   returning a collection of event objects that represents the period of
+    *   time where these related events took place.
+    * @param {json} eventsCollection - collection of event objects with 'start'
+    *   , 'end' and 'employer' properties.
+    * @param {String} relationKey - the key wich event objects are related by.
+    * @returns {json} periodObject that represents the period during related
+    *  events took place.
+    *  {
+    *    employerName: "name",
+    *    webSite: "website",
+    *    imageUrl: "url",
+    *    start: "2010-04-01T00:00:00",
+    *    end: "2011-02-12T00:00:00"
+    *  }
+    */
+    function _groupEvents(eventsCollection) {
+      var resultArray = [];
+      var auxObject;
+      var minStartMaxEnd = {};
+      var newEventsGroup = {};
+      for (var i = 0; i < eventsCollection.length; i++) {
+        auxObject = eventsCollection[i];
+        // If i've already created the events group I check the max and min dates
+        minStartMaxEnd = searchObject(resultArray, 'employerName',
+          auxObject.employer.name);
+        if( minStartMaxEnd ){
+          if(minStartMaxEnd.start > auxObject.start) {
+            minStartMaxEnd.start = auxObject.start;
+          }
+          if(minStartMaxEnd.end < auxObject.end) {
+            minStartMaxEnd.end = auxObject.end;
+          }
+        } else {
+          newEventsGroup = {
+              employerName: auxObject.employer.name,
+              webSite: auxObject.employer.webSite,
+              imageUrl: auxObject.employer.imageUrl,
+              start: auxObject.start,
+              end: auxObject.end
+            };
+          resultArray.push(newEventsGroup);
+        }
+      }
+      return resultArray;
+    }
+
+    return {
+      getEmploymentsResource: function() {
+        var actions = {
+          'query': {
+            method: 'GET',
+            isArray: true
+          }
+        };
+        return $resource('data/employment.json', {},
+          actions);
+      },
+      getProjectsResource: function() {
+        var actions = {
+          'query': {
+            method: 'GET',
+            isArray: true
+          }
+        };
+        return $resource('data/projects.json', {},
+          actions);
+      },
+      filterJSON: _filterJSON,
+      getGroupedPeriods: _groupEvents
+    };
+  }])
+  .factory('DatesDiff', [function() {
+
+    var getMonthsDiff = function(datesObj) {
+      var dStart = new Date(datesObj[0]);
+      var dEnd;
+      if(datesObj[1] === '') {
+        dEnd = new Date();
+      } else {
+        dEnd = new Date(datesObj[1]);
+      }
+      var monthDiff = (dEnd.getFullYear() -
+        dStart.getFullYear()) * 12 + dEnd.getMonth() - dStart.getMonth();
+
+      return monthDiff;
+    };
+
+    var getYearsMonthsDiff = function(datesObj) {
+      var result = {};
+
+      result.years = '';
+      result.months = '';
+
+      var monthDiff = getMonthsDiff(datesObj);
+      var years = Math.floor(monthDiff / 12);
+      var months = monthDiff % 12;
+      result.years = years;
+      result.months = months;
+
+      return result;
+    };
+
+    var getYearsLabel = function(years) {
+      var result = '';
+      if ( years > 0 ) {
+        if ( years > 1) {
+          result = 'YEARS';
+        } else {
+          result = 'YEAR';
+        }
+      }
+      return result;
+    };
+
+    var getMonthsLabel = function(months) {
+      var result = '';
+      if ( months > 0 ) {
+        if (months > 1) {
+          result = 'MONTHS';
+        } else {
+          result = 'MONTH';
+        }
+      }
+      return result;
+    };
+
+    /**
+     * Returns an map of entries whose keys are a common property of the objects
+     *  included in the provided array, and whose values are objects that represents
+     *  the time between start and end dates of these objects, expressed with
+     *  month(s) and year(s)
+     * @param {Array} startEndCollection - Array of objects with 'start' and 'end'
+     *   properties.
+     * @param {String} key - object property used as the key of the map entry.
+     * @result {Object}
+     *    {
+     *      "key": {
+     *        "monthLabel": "MONTH",
+     *        "months": 3,
+     *        "yearLabel": "YEARS",
+     *        "years": 3
+     *      }
+     *    }
+     */
+    var createDateDiffMap = function(startEndCollection, key) {
+      var result = {};
+      var loopDiffObject, loopYearsLabel, loopMonthsLabel, resultKey, startEndObj;
+      for(var startEndKey in startEndCollection) {
+        startEndObj = startEndCollection[startEndKey];
+        loopDiffObject =
+          getYearsMonthsDiff([startEndObj.start, startEndObj.end]);
+
+        loopYearsLabel = getYearsLabel(loopDiffObject.years);
+        loopMonthsLabel = getMonthsLabel(loopDiffObject.months);
+        if(loopDiffObject.years === 0) {
+          loopDiffObject.years = '';
+        }
+        if(loopDiffObject.months === 0) {
+          loopDiffObject.months = '';
+        }
+
+        resultKey = startEndObj[key];
+
+        result[resultKey] = {
+          years: loopDiffObject.years,
+          yearLabel: loopYearsLabel,
+          months: loopDiffObject.months,
+          monthLabel: loopMonthsLabel
+        };
+      }
+      return result;
+    };
+
+    var api = {
+      createDateDiffMap : createDateDiffMap
+    };
+    return api;
+  }]);
+
+/*global angular: false */
+angular.module('JesusEspejoACVControllers', ['oc.lazyLoad'])
+.controller('AppCtrl', ['$scope', function(sc) {
+  'use strict';
+
+  sc.clickMenu = {
+    // exposed by navmenu directive for changing menu
+  };
+  sc.menuItems = {
+    // exposed by navmenu directive to get info about menu
+  };
+}
+])
+.controller('ExperienceCtrl',
+['$scope', '$window', 'SharedData', 'DatesDiff', '$ocLazyLoad',
+function(sc, window, SharedData, DatesDiff, $ocLazyLoad) {
+  'use strict';
+
+  $ocLazyLoad.load([{
+    files: ['scripts/xhr/my-sticky-kit.js']
+  }]);
+
+  var employments = sc.employments =
+  SharedData.getEmploymentsResource().query(function() {
+    var employersDates = sc.employersDates =
+    SharedData.getGroupedPeriods(employments, 'employerName');
+
+    sc.employersDateDiffMap =
+      DatesDiff.createDateDiffMap(employersDates, 'employerName');
+
+    sc.employmentsDateDiffMap =
+      DatesDiff.createDateDiffMap(employments, 'locator');
+  });
+
+  sc.buttonContainerClass = '';
+
+  sc.rawTitle = 'EXPERIENCE';
+  sc.rawSubtitle = 'WHERE_I_WORKED';
+
+  sc.collapseScrollTop = 0;
+
+  sc.notFoundLinkText = 'PERSONAL_PROJECTS';
+  sc.myText = 'MY_PLUR';
+  sc.notFoundRequestedMenu = 'PROJECTS';
+}
+])
+.controller('ProjectsCtrl', ['$scope', '$window', 'SharedData', 'DatesDiff',
+'$ocLazyLoad', function(sc, window, SharedData, DatesDiff, $ocLazyLoad) {
+  'use strict';
+
+  $ocLazyLoad.load([{
+    files: ['scripts/xhr/my-sticky-kit.js']
+  }]);
+  var projects = sc.employments =
+  SharedData.getProjectsResource().query(function() {
+    var employersDates = sc.employersDates =
+    SharedData.getGroupedPeriods(projects);
+
+    sc.employersDateDiffMap =
+      DatesDiff.createDateDiffMap(employersDates, 'employerName');
+
+    sc.employmentsDateDiffMap =
+      DatesDiff.createDateDiffMap(projects, 'locator');
+
+  });
+
+  sc.buttonContainerClass = '';
+
+  sc.rawTitle = 'PERSONAL_PROJECTS';
+  sc.rawSubtitle = 'FOR_THE_LOVE_OF_ART';
+
+  sc.collapseScrollTop = '';
+
+  sc.notFoundLinkText = 'EXPERIENCE';
+  sc.myText = 'MY_SING';
+  sc.notFoundRequestedMenu = 'EXPERIENCE';
+}
+])
+.controller('ExperienceDetailCtrl', ['$scope', '$routeParams', 'SharedData',
+function($scope, $routeParams, SharedData) {
+  'use strict';
+  var allExperiences = SharedData.getSharedData()
+  .query(function() {
+    $scope.experience =
+    SharedData.filterJSON(allExperiences, 'start',
+    $routeParams.start)[0];
+  });
+}
+]);
+
+'use strict';
+
+angular.module('JesusEspejoACVFilters', [])
+.filter('myDate', ['$filter',
+	function($filter) {
+	    var angularDateFilter = $filter('date');
+			return function(dateString) {
+				var d = new Date(dateString);
+				if(dateString === '') {
+					d = new Date();
+				}
+				return angularDateFilter(d.getTime(), 'MM-yyyy');
+			};
+		}]);
+
+/*global $:false */
+
+angular.module('NavMenuDirective',
+  ['pascalprecht.translate'])
+.directive('navMenu', function() {
+  'use strict';
+  return {
+    restrict: 'E',
+    transclude: true,
+    scope: {
+      clickMenuItem: '=',
+      navMenuItems: '='
+    },
+    controller: function($scope, $element, $translate, $location) {
+
+      var menuItems = {
+        'WHO_I_AM': {
+          'position': 0,
+          'path': '/'
+        },
+        'EXPERIENCE': {
+          'position': 1,
+          'path': '/experience'
+        },
+        'PROJECTS': {
+          'position': 2,
+          'path': '/projects'
+        }
+      };
+
+      $(document).ready(function() {
+        $('.nav li').click(function() {
+          $('.nav .active').toggleClass('active');
+          $(this).toggleClass('active');
+          $('#resp-menu-btn').click();
+        });
+
+        $(document).on('click','.navbar-collapse.in',function(e) {
+          if( $(e.target).is('a') ) {
+            $(this).collapse('hide');
+          }
+        });
+      });
+
+      $scope.langSwitchImg = 'images/lang_spanish.png';
+
+      $scope.switchLanguage = function() {
+        if($translate.use() === 'en') {
+          $translate.use('es');
+          $scope.langSwitchImg = 'images/lang_english.png';
+        } else {
+          $translate.use('en');
+          $scope.langSwitchImg = 'images/lang_spanish.png';
+        }
+      };
+
+      $scope.clickMenuItem = function(requestedMenu) {
+        var reqMenuPosition = menuItems[requestedMenu].position;
+        $($($element.find('li'))).removeClass('active');
+        $($($element.find('li')[reqMenuPosition])).addClass('active');
+        $location.path(menuItems[requestedMenu].path);
+      };
+
+      $scope.navMenuItems = menuItems;
+    },
+    templateUrl: 'views/templates/navmenu.html',
+    replace: true
+  };
+})
+
+;
+
+/*global $:false */
+'use strict';
+
+angular.module('SearchButtonDirective', [])
+.controller('SearchButtonController', function($scope, $window) {
+  $scope.window = $window;
+})
+.directive('searchButton', function() {
+  return {
+    restrict: 'E',
+    transclude: false,
+    scope: {
+      searchQuery: '=',
+      customPlaceholder: '=',
+      expandHandler: '&onExpand',
+      collapseHandler: '&onCollapse',
+      blurHandler: '&customBlur'
+    },
+    templateUrl: 'views/templates/search-button.html',
+    replace: true,
+    controller: 'SearchButtonController',
+    link: function(scope, element) {
+
+      var isCollapsed = scope.window.innerWidth <= 480;
+
+      var showInput = function() {
+        $(element).toggleClass('mobSearchMode', 'slow', 'linear');
+        isCollapsed = false;
+        scope.expandHandler();
+      };
+
+      var hideInput = function() {
+        $(element).toggleClass('mobSearchMode', 'slow', 'linear');
+        isCollapsed = true;
+        scope.collapseHandler();
+      };
+
+      scope.clear = function() {
+        $('#searchInput').focus();
+        if(scope.window.innerWidth <= 480) {
+          if(scope.searchQuery === '' ||
+              typeof(scope.searchQuery) === 'undefined') {
+            hideInput();
+          }
+        }
+        scope.searchQuery = '';
+      };
+
+      scope.click = function() {
+        if(isCollapsed) {
+          showInput();
+          $('.searchButtonContainer #searchInput').focus();
+        }
+      };
+
+      scope.blur = function() {
+        if(!isCollapsed) {
+          if(scope.searchQuery === '' ||
+              typeof(scope.searchQuery) === 'undefined') {
+            hideInput();
+            scope.blurHandler();
+          }
+        }
+      };
+    }
+  };
+})
+
+//Credit for ngBlur and ngFocus to https://github.com/addyosmani/todomvc/blob/master/architecture-examples/angularjs/js/directives/
+.directive('ngBlur', function() {
+  return function( scope, elem, attrs ) {
+    elem.bind('blur', function() {
+      scope.$apply(attrs.ngBlur);
+    });
+  };
+})
+
+.directive('ngFocus', function( $timeout ) {
+  return function( scope, elem, attrs ) {
+    scope.$watch(attrs.ngFocus, function( newval ) {
+      if ( newval ) {
+        $timeout(function() {
+          elem[0].focus();
+        }, 0, false);
+      }
+    });
+  };
+})
+
+.directive('handlePhoneSubmit', function () {
+  return function (scope, element) {
+    $(element).submit(function() {
+        $('#searchInput').blur();
+      });
+  };
+});
+
+
+'use strict';
+
+angular.module('ExperienceDetailsDirective', ['pascalprecht.translate'])
+.directive('experienceDetails', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'views/templates/experienceDetails.html',
+    //replace: true,
+    //transclude: true,
+    scope: {
+      detailsObjAttr: '=detailsObj'
+    },
+    link: function() {
+    }
+  };
+});
+
+/* global $ */
+/*jshint camelcase: false */
+'use strict';
+
+angular.module('JeaCollapseDirective', [])
+.directive('jeaCollapse', [function() {
+
+  function makeSticky(jElement, jParent) {
+    jElement.stick_in_parent({
+      offset_top: 50,
+      parent: jParent,
+    });
+  }
+
+  function unbindSticky(jElement) {
+    jElement.trigger('sticky_kit:detach');
+  }
+
+  function openedCallBack(scope, panelHeader, stickyZone) {
+    makeSticky(panelHeader, stickyZone, scope);
+    $(document.body).trigger('sticky_kit:recalc');
+  }
+
+  function closedCallback(scope, panelHeader, stickyZone, scrollBackNeeded) {
+    unbindSticky(panelHeader);
+    var intScrollTo = $(stickyZone).offset().top - panelHeader.height();
+    if(scrollBackNeeded) {
+      $('body').animate({scrollTop: intScrollTo}, 500, function() {
+        scope.$apply(function() {
+          $(document.body).trigger('sticky_kit:recalc');
+        });
+      });
+    } else {
+      $(document.body).trigger('sticky_kit:recalc');
+    }
+  }
+
+  return {
+    restrict: 'A',
+    link: function(scope, elem) {
+      var stickyZone = elem[0].parentElement;
+      var panelHeader = $(stickyZone.children[0]);
+      var collapsePanel = elem[0];
+      var scrollBackNeeded = false;
+
+      var collapseListener = function(scrollBackNeeded) {
+        if(collapsePanel.opened) {
+          openedCallBack(scope, panelHeader, stickyZone);
+        } else {
+          closedCallback(scope, panelHeader, stickyZone, scrollBackNeeded);
+        }
+      };
+
+      elem[0].addEventListener('core-collapse-open', function() {
+        if(panelHeader.css('position') === 'fixed') {
+          scrollBackNeeded = true;
+          panelHeader.css({position: 'fixed', top: '-50px'});
+        } else {
+          scrollBackNeeded = false;
+        }
+      });
+      elem[0].addEventListener('core-resize', function() {
+        collapseListener(scrollBackNeeded);
+      });
+    }
+  };
+}]);
+
+/* global $ */
+/*jshint camelcase: false */
+'use strict';
+
+angular.module('JeaCollapseButtonDirective', [])
+    .directive('jeaCollapseButton', [function() {
+
+      return {
+          restrict: 'E',
+          transclude: true,
+          template: '<a class="collapsed"><ng-transclude</ng-transclude></a>',
+          link: function(scope, elem, attr) {
+            var panelid = attr.panelid;
+            var collapsePanel = function(panelid) {
+              $(elem).find('a').toggleClass('collapsed').promise().done(function() {
+                document.querySelector('#' + panelid).toggle();
+              });
+            };
+            if(panelid !== '') {
+              elem.on('click', function() {
+                collapsePanel(panelid);
+              });
+            }
+          }
+        };
+    }]);
+
+'use strict';
+
+angular.module('JesusEspejoACVDirectives',
+  ['NavMenuDirective',
+  'SearchButtonDirective',
+  'ExperienceDetailsDirective',
+  'JeaCollapseButtonDirective',
+  'JeaCollapseDirective',
+  'MainLeftDirective',
+  'JeaLayerDirective'
+  ]);
+
+'use strict';
+
+angular.module('MainLeftDirective', [])
+.controller('MainLeftController', ['$scope', '$window', function($scope, $window) {
+
+  $scope.sectionTitleWrapperVisible = true;
+
+  $scope.showTitle = function() {
+    if ($window.innerWidth <= 480) {
+      $scope.sectionTitleWrapperVisible = true;
+    }
+  };
+
+  $scope.hideTitle = function() {
+    if ($window.innerWidth <= 480) {
+      $scope.sectionTitleWrapperVisible = false;
+    }
+  };
+
+  $scope.exitSearchMode = function(query) {
+    if ($window.innerWidth <= 480) {
+      if (!query || query === '') {
+        $scope.sectionTitleWrapperVisible = true;
+      } else {
+        $scope.sectionTitleWrapper = false;
+      }
+    }
+  };
+}])
+
+.directive('mainLeft', function() {
+  return {
+    restrict: 'E',
+    transclude: false,
+    scope: {
+      customQuery: '=',
+      customTitle: '=',
+      customSubtitle: '='
+    },
+    controller: 'MainLeftController',
+    templateUrl: 'views/templates/main-left.html',
+    replace: true
+  };
+});
+
+/* global $ : false */
+angular.module('JeaLayerDirective', [])
+.directive('jeaLayer', function() {
+  'use strict';
+  return {
+    restrict: 'A',
+    link: function(scope, elem) {
+      elem.bind('core-overlay-open', function(e) {
+        if(e.target.opened) {
+          $('body').addClass('hideScroll');
+        } else {
+          $('body').removeClass('hideScroll');
+        }
+      });
+    }
+  };
+});

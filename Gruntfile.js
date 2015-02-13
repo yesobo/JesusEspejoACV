@@ -169,9 +169,16 @@ module.exports = function (grunt) {
     },
     // not used since Uglify task does concat,
     // but still available if needed
-    /*concat: {
-      dist: {}
-    },*/
+    concat: {
+      bs_wrap: {
+        src: ['<%= yeoman.app %>/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js'],
+        dest: '<%= yeoman.dist %>/scripts/mybootstrap.js',
+        options: {
+          banner: "(function(window, document){",
+          footer: "})(wrap(window), wrap(document));"
+        }
+      }
+    },
     rev: {
       dist: {
         files: {
@@ -185,54 +192,14 @@ module.exports = function (grunt) {
       }
     },
     useminPrepare: {
-      dist: {
-        src: '<%= yeoman.app %>/index.html',
-        options: {
-          dest: '<%= yeoman.dist %>',
-          flow: {
-            steps: {
-              myjs: ['concat'],
-              js: ['concat', 'uglifyjs'],
-              css: ['concat', 'cssmin']
-            },
-            post: {
-              myjs: [{
-                name: 'concat',
-                createConfig: function (context, block) {
-                  var generated = context.options.generated;
-                  generated.options = {
-                    banner: "(function(window, document) {",
-                    footer: "})(wrap(window), wrap(document));"
-                  }
-                }
-              }]
-            }
-          }
-        }
-      },
-      dev: {
-        src: '<%= yeoman.app %>/index.html',
-        options: {
-          dest: '<%= yeoman.dist %>',
-          flow: {
-            steps: {
-              myjs: ['concat'],
-              js: ['concat'],
-              css: ['concat']
-            },
-            post: {
-              myjs: [{
-                name: 'concat',
-                createConfig: function (context, block) {
-                  var generated = context.options.generated;
-                  generated.options = {
-                    banner: "(function(window, document) {",
-                    footer: "})(wrap(window), wrap(document));"
-                  }
-                }
-              }]
-            }
-          }
+      html: '<%= yeoman.app %>/index.html',
+      options: {
+        flow: {
+          steps: {
+            js: ['concat'],
+            css: ['concat', 'cssmin']
+          },
+          post: {}
         }
       }
     },
@@ -240,7 +207,12 @@ module.exports = function (grunt) {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        dirs: ['<%= yeoman.dist %>']
+        dirs: ['<%= yeoman.dist %>'],
+        blockReplacements: {
+          myjs: function (block) {
+              return '<script src="' + block.dest + '"></script>';
+          }
+        }
       }
     },
     imagemin: {
@@ -370,12 +342,13 @@ module.exports = function (grunt) {
     uglify: {
       dist: {
         files: {
+          /*
           '<%= yeoman.dist %>/scripts/scripts.js': [
             '<%= yeoman.dist %>/scripts/scripts.js'
           ],
           '<%= yeoman.dist %>/scripts/xhr/my-sticky-kit.js': [
             '<%= yeoman.dist %>/scripts/xhr/my-sticky-kit.js'
-          ]
+          ]*/
         }
       }
     },
@@ -510,7 +483,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'useminPrepare:dist',
+    'useminPrepare',
     'concurrent:dist',
     'concat',
     'copy',
@@ -524,14 +497,14 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build:dev', [
     'clean:dist',
-    'useminPrepare:dev',
+    'useminPrepare',
     'concurrent:dist',
     'concat',
     'copy',
     'cdnify',
     //'ngmin', ng-min is deprecated, use grunt-ng-anotate
-    //'cssmin',
-    //'uglify',
+    'cssmin',
+    'uglify',
     //'rev',
     'usemin'
   ]);
