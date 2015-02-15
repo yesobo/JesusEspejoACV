@@ -170,12 +170,12 @@ module.exports = function (grunt) {
     // not used since Uglify task does concat,
     // but still available if needed
     concat: {
-      bs_wrap: {
+      bsWrap: {
         src: ['<%= yeoman.app %>/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js'],
         dest: '<%= yeoman.dist %>/scripts/mybootstrap.js',
         options: {
-          banner: "(function(window, document){",
-          footer: "})(wrap(window), wrap(document));"
+          banner: '(function(window, document){',
+          footer: '})(wrap(window), wrap(document));'
         }
       }
     },
@@ -201,7 +201,7 @@ module.exports = function (grunt) {
         dirs: ['<%= yeoman.dist %>'],
         blockReplacements: {
           myjs: function (block) {
-              return '<script src="' + block.dest + '"></script>';
+            return '<script src="' + block.dest + '"></script>';
           }
         }
       }
