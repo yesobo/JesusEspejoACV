@@ -1,3 +1,7 @@
+$darker-blue: #171070;
+$close_radius: 20px;
+$close_color: white;
+
 .tasksList {
   padding: 10px;
   .liTask {
@@ -11,14 +15,12 @@
     .techList {
       list-style-type: none;
       margin: 10px 0px 0px 40px;
-      // wraps float children
       overflow: hidden;
       -webkit-border-radius: 30px;
       -moz-border-radius: 30px;
       border-radius: 30px;
       border: 1px solid #bbbbbb;
       background-color: white;
-
       .imageWrapper {
         height: 100px;
         width: 100px;
@@ -26,7 +28,6 @@
         line-height: 100px;
         float: left;
         overflow: hidden;
-
         img {
           max-width: 100%;
           vertical-align: middle;
@@ -37,72 +38,168 @@
 }
 
 /************************* Wide tablet to Desktop (Bootstrap) ***************/
-$close_radius: 20px;
-$close_color: white;
 @media (max-width: 991px) {
+  html {
 
-  html /deep/ paper-dialog::shadow #scroller {
-    padding: 0px;
-    width: 95vw;
-    height: 95vh;
-
-    h1 {
-      background-color: #c1dbf2;
-      padding-top: 0.67em;
-      margin: 0px;
-      padding-bottom: 0.67em;
-      padding-left: 24px;
-      padding-right: 24px;
-    }
-  }
-
-  html /deep/ paper-dialog {
-    background-color: #ddebf9;
-    core-header-panel {
-      height: 100%;
-      .core-header {
-        font-size: 20px;
-        padding: 10px;
-        background-color: #428bca;
-        color: #FFF;
-        transition: height 0.2s;
-
-        core-icon.icon-button {
-          margin-bottom: 9px;
-          color: $darker-blue;
-          cursor: pointer;
+    /** NO shadow-DOM suport **/
+    paper-dialog {
+      background-color: #ddebf9;
+      width:95vw;
+      height:95vh;
+      #scroller {
+        padding: 0px;
+        width: 95vw;
+        height: 95vh;
+        max-height: none !important;
+        max-width: none !important;
+        core-header-panel {
+          height: 95vh;
+          #outerContainer .core-header {
+            font-size: 20px;
+            padding: 10px;
+            background-color: #428bca;
+            color: #FFF;
+            transition: height 0.2s;
+            core-icon.icon-button {
+              margin-bottom: 9px;
+              color: $darker-blue;
+              cursor: pointer;
+            }
+          }
+        }
+        .round-button-circle {
+          width: $close_radius * 2;
+          height: $close_radius * 2;
+          margin: auto;
+          background: $close_color;
+          border-radius: 50%;
+          position: fixed;
+          top: -$close_radius;
+          right: -13px;
+          background-color: $close_color;
+          -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+          -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+          a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            color: black;
+          }
+        }
+        .panel-body {
+          padding-left: 0px;
+          experience-details .tasksList {
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 0px;
+            .liTask {
+              list-style-type: none;
+              clear: both;
+              padding-top: 0px;
+              margin-bottom: 20px;
+              .taskDescription {
+                font-size: 18px;
+                color: #8e8d8d;
+                > div {
+                  margin-bottom: 5px;
+                }
+              }
+              .techList {
+                margin-left: 10px;
+                margin-bottom: 25px;
+                overflow: hidden;
+                border-radius: 30px;
+                border: 1px solid #bbb;
+                background-color: #fff;
+                li {
+                  list-style-type: none;
+                  .imageWrapper {
+                    height: 100px;
+                    width: 100px;
+                    border: none;
+                    line-height: 100px;
+                    float: left;
+                    img {
+                      max-width: 100%;
+                      vertical-align: middle;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        h1 {
+          background-color: #c1dbf2;
+          padding-top: 0.67em;
+          margin: 0px;
+          padding-bottom: 0.67em;
+          padding-left: 24px;
+          padding-right: 24px;
         }
       }
     }
+    /** End NO shadow-DOM support **/
 
-    .round-button-circle {
-      width: $close_radius * 2;
-      height: $close_radius * 2;
-      margin:auto;
-      background: $close_color;
-      border-radius: 50%;
-      position: fixed;
-      top: -$close_radius;
-      right: -13px;
-      background-color: $close_color;
-      -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
-      -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
-      box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
-
-      a {
-        display: block;
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        color: black;
+    /deep/ paper-dialog {
+      &::shadow #scroller {
+        padding: 0px;
+        width: 95vw;
+        height: 95vh;
+        h1 {
+          background-color: #c1dbf2;
+          padding-top: 0.67em;
+          margin: 0px;
+          padding-bottom: 0.67em;
+          padding-left: 24px;
+          padding-right: 24px;
+        }
       }
-    }
-    .panel-body {
-      padding-left: 0px;
-      experience-details {
-        .tasksList {
+      background-color: #ddebf9;
+      core-header-panel {
+        height: 100%;
+        .core-header {
+          font-size: 20px;
+          padding: 10px;
+          background-color: #428bca;
+          color: #FFF;
+          transition: height 0.2s;
+          core-icon.icon-button {
+            margin-bottom: 9px;
+            color: $darker-blue;
+            cursor: pointer;
+          }
+        }
+      }
+      .round-button-circle {
+        width: $close_radius * 2;
+        height: $close_radius * 2;
+        margin: auto;
+        background: $close_color;
+        border-radius: 50%;
+        position: fixed;
+        top: -20px;
+        right: -13px;
+        background-color: $close_color;
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+          color: black;
+        }
+      }
+      .panel-body {
+        padding-left: 0px;
+        experience-details .tasksList {
           padding-left: 10px;
           padding-right: 10px;
+          padding-top: 0px;
           .liTask {
             list-style-type: none;
             clear: both;
@@ -146,19 +243,35 @@ $close_color: white;
 
 /************************** Phones *****************************/
 @media (max-width: 321px) {
-  html /deep/ paper-dialog {
-    margin: 0px;
-    width: 100vw;
-    height: 100vh;
-
-    core-header-panel {
-      widht: 100
+  html {
+    /** No Shadow-DOM **/
+    paper-dialog {
+      margin: 0px;
+      width: 100vw;
+      height: 100vh;
+      #scroller {
+        padding: 0px;
+        width: 100vw;
+        height: 100vh;
+      }
+      core-header-panel {
+        width: 100%;
+      }
     }
-  }
+    /** END No Shadow-DOM **/
 
-  html /deep/ paper-dialog::shadow #scroller {
-    padding: 0px;
-    width: 100vw;
-    height: 100vh;
+    /deep/ paper-dialog {
+      margin: 0px;
+      width: 100vw;
+      height: 100vh;
+      core-header-panel {
+        width: 100%;
+      }
+      &::shadow #scroller {
+        padding: 0px;
+        width: 100vw;
+        height: 100vh;
+      }
+    }
   }
 }

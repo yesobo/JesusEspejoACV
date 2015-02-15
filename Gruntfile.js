@@ -193,15 +193,6 @@ module.exports = function (grunt) {
     },
     useminPrepare: {
       html: '<%= yeoman.app %>/index.html',
-      options: {
-        flow: {
-          steps: {
-            js: ['concat'],
-            css: ['concat', 'cssmin']
-          },
-          post: {}
-        }
-      }
     },
     usemin: {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
@@ -337,18 +328,25 @@ module.exports = function (grunt) {
           src: '*.js',
           dest: '<%= yeoman.dist %>/scripts'
         }]
+      },
+      tmp: {
+        files: [{
+          expand: true,
+          cwd: '.tmp/concat/scripts',
+          src: '*.js',
+          dest: '.tmp/concat/scripts'
+        }]
       }
     },
     uglify: {
       dist: {
         files: {
-          /*
-          '<%= yeoman.dist %>/scripts/scripts.js': [
-            '<%= yeoman.dist %>/scripts/scripts.js'
-          ],
           '<%= yeoman.dist %>/scripts/xhr/my-sticky-kit.js': [
             '<%= yeoman.dist %>/scripts/xhr/my-sticky-kit.js'
-          ]*/
+          ],
+          '<%= yeoman.dist %>/scripts/mybootstrap.js': [
+            '<%= yeoman.dist %>/scripts/mybootstrap.js'
+          ]
         }
       }
     },
@@ -488,7 +486,7 @@ module.exports = function (grunt) {
     'concat',
     'copy',
     'cdnify',
-    //'ngmin', ng-min is deprecated, use grunt-ng-anotate
+    'ngmin', // ng-min is deprecated, use grunt-ng-anotate
     'cssmin',
     'uglify',
     //'rev',
@@ -502,7 +500,7 @@ module.exports = function (grunt) {
     'concat',
     'copy',
     'cdnify',
-    //'ngmin', ng-min is deprecated, use grunt-ng-anotate
+    'ngmin', // ng-min is deprecated, use grunt-ng-anotate
     'cssmin',
     'uglify',
     //'rev',
