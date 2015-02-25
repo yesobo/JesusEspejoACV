@@ -493,20 +493,6 @@ module.exports = function (grunt) {
     'usemin'
   ]);
 
-  grunt.registerTask('build:dev', [
-    'clean:dist',
-    'useminPrepare',
-    'concurrent:dist',
-    'concat',
-    'copy',
-    'cdnify',
-    'ngmin', // ng-min is deprecated, use grunt-ng-anotate
-    'cssmin',
-    'uglify',
-    //'rev',
-    'usemin'
-  ]);
-
   grunt.registerTask('default', [
     'jshint',
     'test',

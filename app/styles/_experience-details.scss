@@ -37,23 +37,121 @@ $close_color: white;
   }
 }
 
+// Only iphone 4 (portrait)
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) and (orientation:portrait)
+{
+  html {
+    paper-dialog {
+      height: 440px;
+      #scroller {
+        width: 100vw;
+        height: 100vh;
+      }
+      core-header-panel {
+        height: 440px !important;
+      }
+    }
+  }
+}
+
+// Only iphone 4 (landscape)
+@media only screen and (min-device-width: 320px)  and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) and (orientation:landscape)
+{
+  html {
+    paper-dialog {
+      height: 320px;
+      core-header-panel {
+        height: 320px !important;
+      }
+    }
+  }
+}
+
+/************************** Phones *****************************/
+@media (max-width: 321px) {
+  html {
+
+    .round-button-circle {
+        z-index: 1;
+    }
+
+    /** No Shadow-DOM **/
+    paper-dialog {
+      margin: 0px;
+      width: 100vw;
+      height: 100vh;
+      // fix for iPhone
+      top: 0px;
+      #scroller {
+        width: 100vw !important;
+        height: 100vh !important;
+      }
+      core-header-panel {
+        width: 100%;
+        height: 100vh;
+      }
+    }
+
+    /** END No Shadow-DOM **/
+
+    /deep/ paper-dialog {
+      margin: 0px;
+      width: 100vw;
+      height: 100vh;
+      core-header-panel {
+        width: 100%;
+      }
+      &::shadow #scroller {
+        padding: 0px;
+        width: 100vw;
+        height: 100vh;
+      }
+    }
+  }
+}
+
+
 /************************* Wide tablet to Desktop (Bootstrap) ***************/
+@media (min-width: 322px) and (max-width: 991px) {
+  paper-dialog {
+    width:95vw;
+    height:95vh;
+
+    #scroller {
+      width: 95vw;
+      height: 95vh;
+    }
+    core-header-panel {
+      height: 95vh;
+    }
+  }
+
+  /deep/ paper-dialog {
+    &::shadow #scroller {
+      padding: 0px;
+      width: 95vw;
+      height: 95vh;
+    }
+  }
+
+  #scroller {
+    width: 95vw;
+    height: 95vh;
+    padding: none;
+  }
+}
+
 @media (max-width: 991px) {
   html {
 
     /** NO shadow-DOM suport **/
     paper-dialog {
       background-color: #ddebf9;
-      width:95vw;
-      height:95vh;
       #scroller {
         padding: 0px;
-        width: 95vw;
-        height: 95vh;
         max-height: none !important;
         max-width: none !important;
         core-header-panel {
-          height: 95vh;
           #outerContainer .core-header {
             font-size: 20px;
             padding: 10px;
@@ -143,11 +241,14 @@ $close_color: white;
     }
     /** End NO shadow-DOM support **/
 
+    /deep/ #scroller {
+      width: 95vw;
+      height: 95vh;
+      padding: 0px;
+    }
+
     /deep/ paper-dialog {
       &::shadow #scroller {
-        padding: 0px;
-        width: 95vw;
-        height: 95vh;
         h1 {
           background-color: #c1dbf2;
           padding-top: 0.67em;
@@ -158,6 +259,7 @@ $close_color: white;
         }
       }
       background-color: #ddebf9;
+      left: 0px!important; // dialog not centered on chrome
       core-header-panel {
         height: 100%;
         .core-header {
@@ -236,41 +338,6 @@ $close_color: white;
             }
           }
         }
-      }
-    }
-  }
-}
-
-/************************** Phones *****************************/
-@media (max-width: 321px) {
-  html {
-    /** No Shadow-DOM **/
-    paper-dialog {
-      margin: 0px;
-      width: 100vw;
-      height: 100vh;
-      #scroller {
-        padding: 0px;
-        width: 100vw;
-        height: 100vh;
-      }
-      core-header-panel {
-        width: 100%;
-      }
-    }
-    /** END No Shadow-DOM **/
-
-    /deep/ paper-dialog {
-      margin: 0px;
-      width: 100vw;
-      height: 100vh;
-      core-header-panel {
-        width: 100%;
-      }
-      &::shadow #scroller {
-        padding: 0px;
-        width: 100vw;
-        height: 100vh;
       }
     }
   }
