@@ -53,9 +53,9 @@
 	"PSanitas": {
 		"position": "Programador Web J2EE/EJB/JSF",
 		"tasks": [
-			{"description_en": "Desarrollo y Diseño de interfaces web a partir de maquetas"},
-            {"description_en": "Desarrollo J2EE a partir de diagramas de secuencia y de flujo"},
-            {"description_en": "Desarrollo de pruebas unitarias"}
+			{"description": "Desarrollo y Diseño de interfaces web a partir de maquetas"},
+            {"description": "Desarrollo J2EE a partir de diagramas de secuencia y de flujo"},
+            {"description": "Desarrollo de pruebas unitarias"}
 		]
 
 	},
