@@ -41,6 +41,11 @@ $close_color: white;
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) and (orientation:portrait)
 {
   html {
+
+    input#searchInput {
+      font-size: 0.9em;
+    }
+
     paper-dialog {
       height: 440px;
       #scroller {
@@ -58,6 +63,11 @@ $close_color: white;
 @media only screen and (min-device-width: 320px)  and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) and (orientation:landscape)
 {
   html {
+
+    input#searchInput {
+      font-size: 0.9em;
+    }
+    
     paper-dialog {
       height: 320px;
       core-header-panel {
