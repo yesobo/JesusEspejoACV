@@ -108,6 +108,16 @@ module.exports = function (grunt) {
           ]
         }]
       },
+      devdist: {
+        files: [{
+          dot: true,
+          src: [
+            '.tmp',
+            'devdist/*',
+            '!devdist/.git*'
+          ]
+        }]
+      },
       server: '.tmp'
     },
     jshint: {
@@ -177,6 +187,14 @@ module.exports = function (grunt) {
           banner: '(function(window, document){',
           footer: '})(wrap(window), wrap(document));'
         }
+      },
+      devdist: {
+        src: ['<%= yeoman.app %>/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js'],
+        dest: 'devdist/scripts/mybootstrap.js',
+        options: {
+          banner: '(function(window, document){',
+          footer: '})(wrap(window), wrap(document));'
+        }
       }
     },
     rev: {
@@ -213,6 +231,14 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.{png,jpg,jpeg}',
           dest: '<%= yeoman.dist %>/images'
+        }]
+      },
+      devdist: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/images',
+          src: '{,*/}*.{png,jpg,jpeg}',
+          dest: 'devdist/images'
         }]
       }
     },
@@ -252,6 +278,20 @@ module.exports = function (grunt) {
           ],
           dest: '<%= yeoman.dist %>'
         }]
+      },
+      devdist: {
+        options: {
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>',
+          src: [
+            '*.html',
+            'views/*.html',
+            'views/{,*/}*.html'
+          ],
+          dest: 'devdist'
+        }]
       }
     },
     // Put files not handled in other tasks here
@@ -280,6 +320,38 @@ module.exports = function (grunt) {
             'generated/*'
           ]
         }]
+      },
+      devdist: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= yeoman.app %>',
+          dest: 'devdist',
+          src: [
+            '*.{ico,png,txt}',
+            '.htaccess',
+            'bower_components/**/*',
+            'images/{,*/}*.{gif,webp,svg}',
+            'styles/fonts/*',
+            'data/*.*',
+            'fonts/*.*',
+            'scripts/{,*/}*.*'
+          ]
+        }, {
+          expand: true,
+          cwd: '.tmp/images',
+          dest: 'devdist/images',
+          src: [
+            'generated/*'
+          ]
+        }, {
+          expand: true,
+          cwd: '.tmp/styles',
+          dest: 'devdist/styles',
+          src: [
+            '*.css'
+          ]
+        }]
       }
     },
     concurrent: {
@@ -296,6 +368,12 @@ module.exports = function (grunt) {
         'compass:dist',
         'imagemin',
         'htmlmin'
+      ],
+      devdist: [
+        'coffee',
+        'compass:dist',
+        'imagemin:devdist',
+        'htmlmin:devdist'
       ]
     },
     karma: {
@@ -490,6 +568,15 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     //'rev',
+    'usemin'
+  ]);
+
+  grunt.registerTask('build:dev', [
+    'clean:devdist',
+    'useminPrepare',
+    'concurrent:devdist',
+    'concat:devdist',
+    'copy:devdist',
     'usemin'
   ]);
 

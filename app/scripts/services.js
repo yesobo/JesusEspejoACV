@@ -64,6 +64,9 @@ angular.module('JesusEspejoACVServices', ['ng', 'ngResource'])
           if(minStartMaxEnd.start > auxObject.start) {
             minStartMaxEnd.start = auxObject.start;
           }
+          if(auxObject.end === '') {
+            auxObject.end = new Date().toISOString();
+          }
           if(minStartMaxEnd.end < auxObject.end) {
             minStartMaxEnd.end = auxObject.end;
           }
