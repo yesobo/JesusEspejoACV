@@ -20,6 +20,8 @@
         "techs": [
             {"name": "Angular JS",
              "image": "angularJS.png"},
+            {"name": "Polymer 0.5",
+              "image": "polymer.png"},
             {"name": "Javascript",
              "image": "javascript.png"},
             {"name": "HTML5",
@@ -65,7 +67,7 @@
         "position": "me"
       }
     ],
-    "keywords": ["Angular", "AngularJS", "Angular JS", "Git", "Yeoman",
+    "keywords": ["Angular", "AngularJS", "Angular JS", "Polymer", "Git", "Yeoman",
       "Grunt", "HTML5", "Css3", "Gimp"]
   },
   {
