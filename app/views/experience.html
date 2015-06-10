@@ -69,7 +69,7 @@
                   </div>
 
                   <iron-collapse jea-collapse id="{{'positionDetails' + employment.locator}}"
-                    class="panel-collapse">
+                    class="panel-collapse desktop">
                     <ul class="panel-body">
                       <experience-details details-obj="employment"></experience-details>
                     </ul>
@@ -91,7 +91,7 @@
                       panelid=""
                       ng-click="employment.opened = true;"
                       class="my-accordion accordion-toggle collapsed mobile">
-                      <core-icon icon="more-horiz"></core-icon>
+                      <iron-icon icon="more-horiz"></iron-icon>
                     </jea-collapse-button>
 
                   </div>
@@ -101,12 +101,13 @@
                 <paper-dialog backdrop jea-layer
                   ng-opened="employment.opened"
                   transition="core-transition-center"
+                  class=""
                   layered>
 
                   <core-header-panel mode="waterfall">
                     <div class="core-header">
                       <a ng-click="employment.opened = false">
-                        <core-icon icon="close" class="icon-button"></core-icon>
+                        <iron-icon icon="close" class="icon-button"></iron-icon>
                       </a>
                       <div ng-bind="employment.locator + '.position' | translate">
                       </div>
