@@ -438,8 +438,7 @@ module.exports = function (grunt) {
         src: 'dist',
         dest: '/',
         exclusions: [
-          'dist/bower_components/**',
-          'dist/images/**'
+          'dist/bower_components/**'
         ]
       }
     }

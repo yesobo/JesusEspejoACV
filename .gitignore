@@ -2,6 +2,7 @@ node_modules
 app/bower_components
 dist
 devdist
+dev_notes.md
 .tmp
 .sass-cache
 .ftppass
