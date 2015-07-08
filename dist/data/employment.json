@@ -297,6 +297,104 @@
   },
   {
     "_id": {
+      "$oid": "51bb66a98c523b196aca5340"
+    },
+    "locator": "ARQBankia",
+    "client": {
+      "name": "Bankia",
+      "imageUrl": "bankia_logo.png",
+      "webSite": "http://www.bankia.es/"
+    },
+    "employer": {
+      "name": "AT Sistemas",
+      "imageUrl": "atsistemas_logo.png",
+      "webSite": "http://atsistemas.com/es/"
+    },
+    "full-time": "true",
+    "tasks": [
+      {
+        "techs": [
+            {
+              "name": "Java Swing",
+              "image": "swing.png"
+            },
+            {
+              "name": "Java 1.7",
+              "image": "java.png"
+            }
+         ]
+      },
+      {
+        "techs": [
+            {
+              "name": "AngularJS 1.4",
+              "image": "angularJS.png"
+            },
+            {
+              "name": "Grunt",
+              "image": "grunt.png"
+            },
+            {
+              "name": "Bower",
+              "image": "bower.png"
+            },
+            {
+              "name": "HTML5",
+              "image": "html5.png"
+            },
+            {
+              "name": "CSS3",
+              "image": "css3.png"
+            },
+            {
+              "name": "Karma",
+              "image": "karma.png"
+            }]
+        },
+        {
+        "techs": [
+            {
+              "name": "Bamboo",
+              "image": "bamboo.png"
+            },
+            {
+              "name": "Stash",
+              "image": "stash.png"
+            },
+            {
+              "name": "Grunt",
+              "image": "grunt.png"
+            }]
+        }
+    ],
+    "tools": [
+      {
+        "name": "JIRA"
+      },
+      {
+        "name": "Stash"
+      },
+      {
+        "name": "Bamboo"
+      },
+      {
+        "name": "Confluence"
+      },
+      {
+        "name": "Git"
+      }
+    ],
+    "start": "2014-10-01T00:00:00",
+    "end": "",
+    "project": "Arquitectura de Desarrollo Bankia",
+    "team": [
+
+    ],
+    "keywords": ["J2EE", "Java", "JEE", "JavaEE",
+      "front", "Swing"]
+  },
+  {
+    "_id": {
       "$oid": "51c0a366a28303b9ad86ac14"
     },
     "locator": "PSeres",

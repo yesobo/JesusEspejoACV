@@ -29,7 +29,7 @@
   "CURRENT_PROJECTS": "Current projects",
   "PREVIOUS_PROJECTS": "Previous projects",
 
-  "CLOSE": "CLOSE", 
+  "CLOSE": "CLOSE",
 
   "APMetro": {
     "position": "J2EE/EJB/Front-end/Reporting Web Developer",
@@ -100,6 +100,20 @@
       },
       {
         "description": "J2EE Development"
+      }
+    ]
+  },
+  "ARQBankia": {
+    "position": "Web/Desktop Front-end Developer",
+    "tasks": [
+      {
+        "description": "Java Swing component development based on mockups"
+      },
+      {
+        "description": "AngularJS Web Development based on mockups"
+      },
+      {
+        "description": "Web publishing CI management"
       }
     ]
   },

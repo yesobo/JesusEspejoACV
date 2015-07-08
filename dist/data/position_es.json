@@ -80,6 +80,20 @@
             {"description": "Desarrollo J2EE"}
         ]
 	},
+  "ARQBankia": {
+    "position": "Analista programador Front-end Web y Escritorio",
+    "tasks": [
+      {
+        "description": "Desarrollo de componentes visuales con Java Swing"
+      },
+      {
+        "description": "Desarrollo de interfaces web a partir de maquetas"
+      },
+      {
+        "description": "Gestión de integración contínua de proyecto web."
+      }
+    ]
+  },
 	"APVIECI": {
 		"position": "Analista programador Web J2EE/Java/Front-end",
         "tasks": [

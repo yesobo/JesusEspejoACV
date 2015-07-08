@@ -12,8 +12,8 @@ angular.module('JesusEspejoACVControllers', ['oc.lazyLoad'])
 }
 ])
 .controller('ExperienceCtrl',
-['$scope', '$window', 'SharedData', 'DatesDiff', '$ocLazyLoad',
-function(sc, window, SharedData, DatesDiff, $ocLazyLoad) {
+['$scope', '$window', 'SharedData', 'DatesDiff', '$ocLazyLoad', '$timeout',
+function(sc, window, SharedData, DatesDiff, $ocLazyLoad, timeout) {
   'use strict';
 
   $ocLazyLoad.load([{
@@ -42,6 +42,10 @@ function(sc, window, SharedData, DatesDiff, $ocLazyLoad) {
   sc.notFoundLinkText = 'PERSONAL_PROJECTS';
   sc.myText = 'MY_PLUR';
   sc.notFoundRequestedMenu = 'PROJECTS';
+
+  sc.openDialog = function(dialogId) {
+    document.querySelector('[dialog-id=' + dialogId + ']').open();
+  }
 }
 ])
 .controller('ProjectsCtrl', ['$scope', '$window', 'SharedData', 'DatesDiff',
@@ -74,6 +78,10 @@ function(sc, window, SharedData, DatesDiff, $ocLazyLoad) {
   sc.notFoundLinkText = 'EXPERIENCE';
   sc.myText = 'MY_SING';
   sc.notFoundRequestedMenu = 'EXPERIENCE';
+
+  sc.openDialog = function(dialogId) {
+    document.querySelector('[dialog-id=' + dialogId + ']').open();
+  }
 }
 ])
 .controller('ExperienceDetailCtrl', ['$scope', '$routeParams', 'SharedData',

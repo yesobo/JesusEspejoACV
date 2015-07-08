@@ -201,6 +201,7 @@ module.exports = function (grunt) {
       dist: {
         files: {
           src: [
+            '<%= yeoman.dist %>/components/{,*/}*.js',
             '<%= yeoman.dist %>/scripts/{,*/}*.js',
             '<%= yeoman.dist %>/styles/{,*/}*.css',
             '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
@@ -214,9 +215,13 @@ module.exports = function (grunt) {
     },
     usemin: {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
-      //css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+      // comment above for build:dev
+      //html: ['devdist/{,*/}*.html'],
+      css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
         dirs: ['<%= yeoman.dist %>'],
+        // comment above for build:dev
+        //dirs: ['devdist'],
         blockReplacements: {
           myjs: function (block) {
             return '<script src="' + block.dest + '"></script>';
@@ -306,6 +311,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             'bower_components/**/*',
+            'components/**/*',
             'images/{,*/}*.{gif,webp,svg}',
             'styles/fonts/*',
             'data/*.*',
@@ -331,6 +337,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             'bower_components/**/*',
+            'components/**/*',
             'images/{,*/}*.{gif,webp,svg}',
             'styles/fonts/*',
             'data/*.*',
@@ -469,6 +476,7 @@ module.exports = function (grunt) {
       },
       [
         'app/scripts/{,*/}*.js',
+        'components/{,*/}*.js',
         'app/data/{,*/}*.json',
         'app/styles/{,*/}*.css',
         'app/views/{,*/}*.html',

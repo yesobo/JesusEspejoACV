@@ -25,7 +25,8 @@ angular.module('JeaCollapseDirective', [])
     unbindSticky(panelHeader);
     var intScrollTo = $(stickyZone).offset().top - panelHeader.height();
     if(scrollBackNeeded) {
-      $('body').animate({scrollTop: intScrollTo}, 500, function() {
+      // Webkit and Firefox selector
+      $('body,html').animate({scrollTop: intScrollTo}, 500, function() {
         scope.$apply(function() {
           $(document.body).trigger('sticky_kit:recalc');
         });
@@ -50,16 +51,13 @@ angular.module('JeaCollapseDirective', [])
           closedCallback(scope, panelHeader, stickyZone, scrollBackNeeded);
         }
       };
-
-      elem[0].addEventListener('core-collapse-open', function() {
+      elem[0].addEventListener('transitionend', function() {
         if(panelHeader.css('position') === 'fixed') {
           scrollBackNeeded = true;
           panelHeader.css({position: 'fixed', top: '-50px'});
         } else {
           scrollBackNeeded = false;
         }
-      });
-      elem[0].addEventListener('core-resize', function() {
         collapseListener(scrollBackNeeded);
       });
     }

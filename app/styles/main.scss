@@ -49,10 +49,6 @@ body {
   color: #333;
 }
 
-.hideScroll {
-  overflow: hidden;
-}
-
 .main-view {
   min-height: 92vh;
 }
@@ -728,6 +724,12 @@ html {
       z-index: 1100;
     }
 
+    header {
+      >nav {
+        z-index: 10 !important; // overwrites bootstrap z-index 1030
+      }
+    }
+
     .container {
       margin-left: 0px;
       margin-right: 0px;
@@ -760,8 +762,10 @@ html {
       }
 
       .employment {
-        iron-icon {
-          top: 12px;
+        jea-collapse-button {
+          iron-icon {
+            top: 12px;
+          }
         }
       }
     }

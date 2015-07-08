@@ -7,5 +7,6 @@ angular.module('JesusEspejoACVDirectives',
   'JeaCollapseButtonDirective',
   'JeaCollapseDirective',
   'MainLeftDirective',
-  'JeaLayerDirective'
+  'JeaLayerDirective',
+  'PolymerDirectiveDirective'
   ]);

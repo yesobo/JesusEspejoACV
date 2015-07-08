@@ -37,6 +37,51 @@ $close_color: white;
   }
 }
 
+/************************** Phones *****************************/
+@media (max-width: 321px) {
+  html {
+
+    .round-button-circle {
+        z-index: 1;
+    }
+
+    /** No Shadow-DOM **/
+    jea-dialog {
+      margin: 0px;
+      max-width: 100vw;
+      max-height: 100vh;
+      width: 100vw;
+      height: 100vh;
+      // fix for iPhone
+      top: 0px;
+    }
+
+    /** END No Shadow-DOM **/
+
+    /deep/ jea-dialog {
+      margin: 0px;
+      max-width: 100vw;
+      max-height: 100vh;
+      width: 100vw;
+      height: 100vh;
+      /* TODO
+      paper-header-panel {
+        width: 100%;
+      }
+      */
+      &::shadow #scroller {
+        padding: 0px;
+        width: 100vw;
+        height: 100vh;
+      }
+    }
+  }
+}
+
+@mixin iphone-scroll-layer {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
 // Only iphone 4 (portrait)
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) and (orientation:portrait)
 {
@@ -46,14 +91,13 @@ $close_color: white;
       font-size: 0.9em;
     }
 
-    paper-dialog {
-      height: 440px;
-      #scroller {
-        width: 100vw;
-        height: 100vh;
-      }
-      core-header-panel {
-        height: 440px !important;
+    jea-dialog {
+      max-height: 100%;
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+      #main-container {
+        @include iphone-scroll-layer;
       }
     }
   }
@@ -67,222 +111,132 @@ $close_color: white;
     input#searchInput {
       font-size: 0.9em;
     }
-    
-    paper-dialog {
+
+    jea-dialog {
       height: 320px;
-      core-header-panel {
-        height: 320px !important;
+      #main-container {
+        @include iphone-scroll-layer;
       }
     }
   }
 }
-
-/************************** Phones *****************************/
-@media (max-width: 321px) {
-  html {
-
-    .round-button-circle {
-        z-index: 1;
-    }
-
-    /** No Shadow-DOM **/
-    paper-dialog {
-      margin: 0px;
-      width: 100vw;
-      height: 100vh;
-      // fix for iPhone
-      top: 0px;
-      #scroller {
-        width: 100vw !important;
-        height: 100vh !important;
-      }
-      core-header-panel {
-        width: 100%;
-        height: 100vh;
-      }
-    }
-
-    /** END No Shadow-DOM **/
-
-    /deep/ paper-dialog {
-      margin: 0px;
-      width: 100vw;
-      height: 100vh;
-      core-header-panel {
-        width: 100%;
-      }
-      &::shadow #scroller {
-        padding: 0px;
-        width: 100vw;
-        height: 100vh;
-      }
-    }
-  }
-}
-
 
 /************************* Wide tablet to Desktop (Bootstrap) ***************/
+$dialog-height-991: 95vh;
+$dialog-width-991: 95vw;
 @media (min-width: 322px) and (max-width: 991px) {
-  paper-dialog {
-    width:95vw;
-    height:95vh;
-
-    #scroller {
-      width: 95vw;
-      height: 95vh;
-    }
-    core-header-panel {
-      height: 95vh;
+  jea-dialog {
+    width:$dialog-width-991;
+    height:$dialog_height-991;
+    max-height: $dialog-height-991;
+    max-width: $dialog-width-991;
+  }
+  /** Mozilla-only CSS **/
+  @-moz-document url-prefix() {
+    jea-dialog {
+      top: (100 - $dialog-height-991)/2;
+      left: (100 - $dialog-width-991)/2;
     }
   }
 
-  /deep/ paper-dialog {
+  /deep/ jea-dialog {
     &::shadow #scroller {
       padding: 0px;
-      width: 95vw;
-      height: 95vh;
+      width: $dialog-width-991;
+      height: $dialog-height-991;
     }
   }
 
   #scroller {
-    width: 95vw;
-    height: 95vh;
+    width: $dialog-width-991;
+    height: $dialog-height-991;
     padding: none;
   }
 }
 
+@mixin dialog-header {
+  font-size: 20px;
+  padding: 10px;
+  background-color: #428bca;
+  color: #FFF;
+  transition: height 0.2s;
+  iron-icon.icon-button {
+    margin-bottom: 9px;
+    color: $darker-blue;
+    cursor: pointer;
+  }
+}
+
+@mixin panel-body {
+  padding-left: 0px;
+  experience-details .tasksList {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    .liTask {
+      list-style-type: none;
+      clear: both;
+      padding-top: 0px;
+      margin-bottom: 20px;
+      .taskDescription {
+        font-size: 18px;
+        color: #8e8d8d;
+        > div {
+          margin-bottom: 5px;
+        }
+      }
+      .techList {
+        margin-left: 10px;
+        margin-bottom: 25px;
+        overflow: hidden;
+        border-radius: 30px;
+        border: 1px solid #bbb;
+        background-color: #fff;
+        li {
+          list-style-type: none;
+          .imageWrapper {
+            height: 100px;
+            width: 100px;
+            border: none;
+            line-height: 100px;
+            float: left;
+            img {
+              max-width: 100%;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 991px) {
+
   html {
 
     /** NO shadow-DOM suport **/
-    paper-dialog {
+    jea-dialog {
       background-color: #ddebf9;
-      #scroller {
-        padding: 0px;
-        max-height: none !important;
-        max-width: none !important;
-        core-header-panel {
-          #outerContainer .core-header {
-            font-size: 20px;
-            padding: 10px;
-            background-color: #428bca;
-            color: #FFF;
-            transition: height 0.2s;
-            core-icon.icon-button {
-              margin-bottom: 9px;
-              color: $darker-blue;
-              cursor: pointer;
-            }
-          }
-        }
-        .round-button-circle {
-          width: $close_radius * 2;
-          height: $close_radius * 2;
-          margin: auto;
-          background: $close_color;
-          border-radius: 50%;
-          position: fixed;
-          top: -$close_radius;
-          right: -13px;
-          background-color: $close_color;
-          -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
-          -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
-          a {
-            display: block;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-            color: black;
-          }
-        }
-        .panel-body {
-          padding-left: 0px;
-          experience-details .tasksList {
-            padding-left: 10px;
-            padding-right: 10px;
-            padding-top: 0px;
-            .liTask {
-              list-style-type: none;
-              clear: both;
-              padding-top: 0px;
-              margin-bottom: 20px;
-              .taskDescription {
-                font-size: 18px;
-                color: #8e8d8d;
-                > div {
-                  margin-bottom: 5px;
-                }
-              }
-              .techList {
-                margin-left: 10px;
-                margin-bottom: 25px;
-                overflow: hidden;
-                border-radius: 30px;
-                border: 1px solid #bbb;
-                background-color: #fff;
-                li {
-                  list-style-type: none;
-                  .imageWrapper {
-                    height: 100px;
-                    width: 100px;
-                    border: none;
-                    line-height: 100px;
-                    float: left;
-                    img {
-                      max-width: 100%;
-                      vertical-align: middle;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        h1 {
-          background-color: #c1dbf2;
-          padding-top: 0.67em;
-          margin: 0px;
-          padding-bottom: 0.67em;
-          padding-left: 24px;
-          padding-right: 24px;
+      position: fixed;
+
+      paper-header-panel {
+        .paper-header {
+          @include dialog-header;
         }
       }
+
+      @include panel-body;
     }
     /** End NO shadow-DOM support **/
 
-    /deep/ #scroller {
-      width: 95vw;
-      height: 95vh;
-      padding: 0px;
-    }
-
-    /deep/ paper-dialog {
-      &::shadow #scroller {
-        h1 {
-          background-color: #c1dbf2;
-          padding-top: 0.67em;
-          margin: 0px;
-          padding-bottom: 0.67em;
-          padding-left: 24px;
-          padding-right: 24px;
+    /deep/ jea-dialog {
+      paper-header-panel {
+        .paper-header {
+          @include dialog-header;
         }
-      }
-      background-color: #ddebf9;
-      left: 0px!important; // dialog not centered on chrome
-      core-header-panel {
-        height: 100%;
-        .core-header {
-          font-size: 20px;
-          padding: 10px;
-          background-color: #428bca;
-          color: #FFF;
-          transition: height 0.2s;
-          core-icon.icon-button {
-            margin-bottom: 9px;
-            color: $darker-blue;
-            cursor: pointer;
-          }
+        .content {
+          overflow: scroll;
         }
       }
       .round-button-circle {
@@ -306,49 +260,7 @@ $close_color: white;
           color: black;
         }
       }
-      .panel-body {
-        padding-left: 0px;
-        experience-details .tasksList {
-          padding-left: 10px;
-          padding-right: 10px;
-          padding-top: 0px;
-          .liTask {
-            list-style-type: none;
-            clear: both;
-            padding-top: 0px;
-            margin-bottom: 20px;
-            .taskDescription {
-              font-size: 18px;
-              color: #8e8d8d;
-              > div {
-                margin-bottom: 5px;
-              }
-            }
-            .techList {
-              margin-left: 10px;
-              margin-bottom: 25px;
-              overflow: hidden;
-              border-radius: 30px;
-              border: 1px solid #bbb;
-              background-color: #fff;
-              li {
-                list-style-type: none;
-                .imageWrapper {
-                  height: 100px;
-                  width: 100px;
-                  border: none;
-                  line-height: 100px;
-                  float: left;
-                  img {
-                    max-width: 100%;
-                    vertical-align: middle;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+      @include panel-body
     }
   }
 }

@@ -11,12 +11,16 @@ angular.module('JeaCollapseButtonDirective', [])
           template: '<a class="collapsed"><ng-transclude</ng-transclude></a>',
           link: function(scope, elem, attr) {
             var panelid = attr.panelid;
+            var collapsePaperDialog = function(panelId) {
+              document.querySelector('[dialog-id=' + panelid + ']').toggle();
+            }
             var collapsePanel = function(panelid) {
               $(elem).find('a').toggleClass('collapsed').promise().done(function() {
                 document.querySelector('#' + panelid).toggle();
               });
             };
-            if(panelid !== '') {
+            if(panelid !== ''
+              && typeof(panelid) !== 'undefined') {
               elem.on('click', function() {
                 collapsePanel(panelid);
               });

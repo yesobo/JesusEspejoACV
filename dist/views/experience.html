@@ -1,3 +1,6 @@
+<link rel="import" href="../bower_components/neon-animation/animations/scale-up-animation.html">
+<link rel="import" href="../bower_components/neon-animation/animations/scale-down-animation.html">
+
 <section id="experience" class="row-fluid menu-section">
   <aside class="col-lg-3 col-md-3 full-height-column subHeader">
     <main-left custom-query="query" custom-title="rawTitle | translate" custom-subtitle="rawSubtitle | translate">
@@ -65,11 +68,12 @@
                     </h3>
                   </div>
 
-                  <core-collapse jea-collapse="" id="{{'positionDetails' + employment.locator}}" class="panel-collapse">
+                  <iron-collapse polymer-directive="" jea-collapse="" id="{{'positionDetails' + employment.locator}}" class="panel-collapse desktop">
                     <ul class="panel-body">
                       <experience-details details-obj="employment"></experience-details>
                     </ul>
-                  </core-collapse>
+                  </iron-collapse>
+
                 </div>
 
                 <div class="panel-footer panel-footer-arrow">
@@ -80,34 +84,34 @@
                       <span class="glyphicon glyphicon-chevron-up"></span>
                     </jea-collapse-button>
 
-                    <jea-collapse-button panelid="" ng-click="employment.opened = true;" class="my-accordion accordion-toggle collapsed mobile">
-                      <core-icon icon="more-horiz"></core-icon>
+                    <jea-collapse-button ng-click="openDialog('positionDetails' + employment.locator)" class="my-accordion accordion-toggle collapsed mobile">
+                      <iron-icon icon="more-horiz"></iron-icon>
                     </jea-collapse-button>
 
                   </div>
 
                 </div>
+                <jea-dialog with-backdrop="" polymer-directive="" class="max-height: 95vh; max-width: 95vw" dialog-id="{{'positionDetails' + employment.locator}}" entry-animation="scale-up-animation" exit-animation="scale-down-animation">
 
-                <paper-dialog backdrop="" jea-layer="" ng-opened="employment.opened" transition="core-transition-center" layered="">
+                    <paper-header-panel mode="waterfall">
 
-                  <core-header-panel mode="waterfall">
-                    <div class="core-header">
-                      <a ng-click="employment.opened = false">
-                        <core-icon icon="close" class="icon-button"></core-icon>
-                      </a>
-                      <div ng-bind="employment.locator + '.position' | translate">
-                      </div>
-                    </div>
-                    <div class="content" fit="">
-                      <ul class="panel-body">
-                        <experience-details details-obj="employment">
-                        </experience-details>
-                      </ul>
-                    </div>
-                  </core-header-panel>
+                        <div class="paper-header">
+                          <a onclick="$('jea-dialog:visible')[0].close()" class="jea-close">
+                            <iron-icon icon="close" class="icon-button"></iron-icon>
+                          </a>
+                          <div ng-bind="employment.locator + '.position' | translate">
+                          </div>
+                        </div>
+                        <div class="content">
+                          <ul class="panel-body">
+                            <experience-details details-obj="employment">
+                            </experience-details>
+                          </ul>
+                        </div>
+                    </paper-header-panel>
 
-                </paper-dialog>
 
+                </jea-dialog>
               </div>
               <p></p>
               <p></p>

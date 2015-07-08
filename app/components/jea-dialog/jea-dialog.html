@@ -1,0 +1,78 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-overlay-behavior/iron-overlay-behavior.html">
+<link rel="import" href="../../bower_components/neon-animation/neon-animation-runner-behavior.html">
+
+<dom-module id="jea-dialog">
+
+  <style>
+
+    :host {
+      background: white;
+      color: black;
+      padding: 0;
+      box-shadow: rgba(0, 0, 0, 0.24) -2.3408942051048403px 5.524510324047423px 12.090680100755666px 0px, rgba(0, 0, 0, 0.12) 0px 0px 12px 0px;
+      overflow: hidden;
+    }
+
+  </style>
+
+  <template>
+    <content></content>
+  </template>
+
+</dom-module>
+
+<script>
+
+(function() {
+
+  Polymer({
+
+    is: 'jea-dialog',
+
+    listeners: {
+      'neon-animation-finish': '_onNeonAnimationFinish'
+    },
+
+    behaviors: [
+      Polymer.IronOverlayBehavior,
+      Polymer.NeonAnimationRunnerBehavior
+    ],
+
+    _onNeonAnimationFinish: function() {
+        if (this.opened) {
+          this._finishRenderOpened();
+          this._hideBodyScroll();
+        } else {
+          this._finishRenderClosed();
+          this._showBodyScroll();
+        }
+    },
+
+    _renderOpened: function() {
+      if (this.withBackdrop) {
+        this.backdropElement.open();
+      }
+      this.playAnimation('entry');
+    },
+
+    _renderClosed: function() {
+      if (this.withBackdrop) {
+        this.backdropElement.close();
+      }
+      this.playAnimation('exit');
+    },
+
+    _hideBodyScroll: function() {
+      window.document.body.style.overflow =  'hidden';
+    },
+
+    _showBodyScroll: function() {
+      window.document.body.style.overflow =  'auto';
+    }
+
+  });
+
+})();
+
+</script>
