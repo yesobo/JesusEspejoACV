@@ -1,7 +1,8 @@
-/* global describe, beforeEach, it, expect, inject, spyOn: false */
-'use strict';
+/*eslint-env jasmine */
+/*global inject, module, $*/
 
 describe('Controller: ExperienceCtrl', function () {
+  'use strict';
 
   // load the controller's module
   beforeEach(module('JesusEspejoACVControllers'));
@@ -19,7 +20,7 @@ describe('Controller: ExperienceCtrl', function () {
     };
 
     spyOn(mockEmploymentsResource, 'query')
-      .andCallFake( function(callback) {
+      .and.callFake( function(callback) {
         var employments = [
           {
             employer: 'Employer1',
