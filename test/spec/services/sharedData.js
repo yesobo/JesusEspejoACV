@@ -1,7 +1,8 @@
-/* global describe, beforeEach, inject, it, expect, runs, waitsFor: false*/
-'use strict';
+/*eslint-env jasmine */
+/*global inject, module*/
 
 describe('Service', function() {
+	'use strict';
 
 	describe('SharedData', function() {
 
@@ -18,38 +19,6 @@ describe('Service', function() {
 			start: '2011-04-01 00:00:00 UTC',
 			end: '2013-07-16 07:27:05 UTC'
 		};
-/*
-		var testResponseObjArray = [
-			{
-				employer: {
-					name: 'Employer1'
-				},
-				start: '2009-06-01 00:00:00 UTC',
-				end: '2009-10-01 00:00:00 UTC'
-			},
-			{
-				employer: {
-					name: 'Employer1'
-				},
-				start: '2010-04-01 00:00:00 UTC',
-				end: '2011-04-01 00:00:00 UTC'
-			},
-			{
-				employer: {
-					name: 'Employer2'
-				},
-				start: '2011-04-01 00:00:00 UTC',
-				end: '2012-06-01 00:00:00 UTC'
-			},
-			{
-				employer: {
-					name: 'Employer2'
-				},
-				start: '2012-10-01 00:00:00 UTC',
-				end: '2013-07-16 07:27:05 UTC'
-		  }
-		];
-*/
 
 		var testResponseJSONArray = [
 			{
@@ -135,28 +104,22 @@ describe('Service', function() {
 			});
 		});
 
+		var data, allExperience;
 
 		describe('getGroupedPeriods', function() {
+
+			beforeEach(function(done) {
+				allExperience = sharedData.getEmploymentsResource().query(function() {
+					data = true;
+					data = sharedData.getGroupedPeriods(allExperience);
+					done();
+				});
+				$httpBackend.flush();
+			});
 
 			it('returns all the employer\'s first and last dates of the given array',
 				function() {
 
-				var allExperience = null;
-				var data = null;
-
-				runs(function() {
-					allExperience = sharedData.getEmploymentsResource().query(function() {
-						data = true;
-						data = sharedData.getGroupedPeriods(allExperience);
-					});
-				});
-
-				waitsFor(function() {
-					$httpBackend.flush();
-					return data !== null;
-				}, 'Data should not be null', 5000);
-
-				runs(function() {
 					expect(data).not.toBe(null);
 					expect(data.length).toBe(2);
 					expect(data[0].employerName).toBe(expectedEmployer1.employerName);
@@ -165,7 +128,7 @@ describe('Service', function() {
 					expect(data[1].employerName).toBe(expectedEmployer2.employerName);
 					expect(data[1].start).toBe(expectedEmployer2.start);
 					expect(data[1].end).toBe(expectedEmployer2.end);
-				});
+
 			});
 		});
 	});
