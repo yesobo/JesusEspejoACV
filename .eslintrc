@@ -1,6 +1,8 @@
 {
     "env": {
-      "browser": true    },
+      "browser": true,
+      "jasmine": true
+    },
     "rules": {
       "no-use-before-define": 0,
       "quotes": 0
