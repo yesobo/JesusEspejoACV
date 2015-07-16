@@ -1,5 +1,5 @@
 /*eslint-env jasmine */
-/*global inject, module, $*/
+/*global inject, module*/
 
 describe('Controller: ExperienceCtrl', function () {
   'use strict';
@@ -7,7 +7,7 @@ describe('Controller: ExperienceCtrl', function () {
   // load the controller's module
   beforeEach(module('JesusEspejoACVControllers'));
 
-  var MainCtrl,
+  var mainCtrl,
   scope,
   mockEmploymentsResource,
   $httpBackend;
@@ -99,7 +99,7 @@ describe('Controller: ExperienceCtrl', function () {
 
     $httpBackend = $injector.get('$httpBackend');
     scope = $rootScope.$new();
-    MainCtrl = $controller('ExperienceCtrl',
+    mainCtrl = $controller('ExperienceCtrl',
       {$scope: scope, SharedData: mockSharedData, DatesDiff: mockDatesDiff});
   }));
 

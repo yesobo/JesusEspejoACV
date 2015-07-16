@@ -13,7 +13,7 @@ angular.module('JesusEspejoACVControllers', ['oc.lazyLoad'])
 ])
 .controller('ExperienceCtrl',
 ['$scope', '$window', 'SharedData', 'DatesDiff', '$ocLazyLoad', '$timeout',
-function(sc, window, SharedData, DatesDiff, $ocLazyLoad, timeout) {
+function(sc, window, SharedData, DatesDiff, $ocLazyLoad) {
   'use strict';
 
   $ocLazyLoad.load([{
@@ -45,7 +45,7 @@ function(sc, window, SharedData, DatesDiff, $ocLazyLoad, timeout) {
 
   sc.openDialog = function(dialogId) {
     document.querySelector('[dialog-id=' + dialogId + ']').open();
-  }
+  };
 }
 ])
 .controller('ProjectsCtrl', ['$scope', '$window', 'SharedData', 'DatesDiff',
@@ -81,7 +81,7 @@ function(sc, window, SharedData, DatesDiff, $ocLazyLoad, timeout) {
 
   sc.openDialog = function(dialogId) {
     document.querySelector('[dialog-id=' + dialogId + ']').open();
-  }
+  };
 }
 ])
 .controller('ExperienceDetailCtrl', ['$scope', '$routeParams', 'SharedData',
