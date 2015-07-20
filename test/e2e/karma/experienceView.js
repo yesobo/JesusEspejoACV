@@ -3,19 +3,21 @@
 describe('Experience View', function() {
   'use strict';
 
+  const EMPLS_COUNT = 8, BANKIA_RESULTS = 2, YEAR_RESULTS = 2;
+
   beforeEach(function() {
     browser().navigateTo('/#/experience');
   });
 
   it('should filter the employments list as user types into the search box', function() {
-    expect(repeater('.employment').count()).toBe(7);
+    expect(repeater('.employment').count()).toBe(EMPLS_COUNT);
 
     input('searchQuery').enter('Bankia');
 
-    expect(repeater('.employment').count()).toBe(1);
+    expect(repeater('.employment').count()).toBe(BANKIA_RESULTS);
 
     input('searchQuery').enter('2012');
-    expect(repeater('.employment').count()).toBe(2);
+    expect(repeater('.employment').count()).toBe(YEAR_RESULTS);
   });
 
   it('should change the language of period count when clicking on language flag', function() {

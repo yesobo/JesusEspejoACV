@@ -51,11 +51,10 @@ function jeaStickCollapseHeader($window) {
     var scrollBackNeeded = false;
 
     elem.bind(collapseEndEvent, function() {
-      $window.alert('transitionend handled');
       collapseEndListener(scrollBackNeeded, collapsePanel.opened);
     });
 
-    collapsePanel.addEventListener(collapseInitEvent, function(event) {
+    elem.bind(collapseInitEvent, function(event) {
       if(jStickyHeader.css('position') === 'fixed') {
         scrollBackNeeded = true;
         jStickyHeader.css({position: 'fixed', top: '-50px'});

@@ -9,6 +9,7 @@ describe('view:experience', function() {
     });
   };
 
+
   beforeEach(function() {
     var width = 1280;
     var height = 768;
@@ -83,13 +84,12 @@ describe('view:experience', function() {
       it('desktop button is hidden', function() {
         expect(desktopButton.isDisplayed()).toBeFalsy();
       });
-      it('mobile button has its referenced panel id', function() {
-        expect(mobileButton.getAttribute('panelid')).toBe('');
-      });
-      it('on click shows a paper-dialog', function() {
+      it('on click shows a jea-dialog with backdrop', function() {
         mobileButton.click();
-        var overlayLayer = element.all(by.css('core-overlay-layer')).get(0);
-        expect(hasClass(overlayLayer, 'core-opened')).toBeTruthy();
+        var overlayLayer = element.all(by.css('iron-overlay-backdrop')).get(0);
+        expect(overlayLayer.getAttribute('opened')).toBeTruthy();
+        var dialog = element.all(by.css('jea-dialog')).get(0);
+        expect(dialog.isDisplayed()).toBeTruthy();
       });
     });
   });

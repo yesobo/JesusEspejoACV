@@ -123,7 +123,6 @@ describe('directive: experienceDetails', function() {
   it('should list the tasks descriptions trasnlation of the experience\'s inserted as parameter', function() {
 
     // .find() is limited to tag name
-    debugger;
     var taskDescription = element.find('ul').find('li').find('span').find('div')[0].innerHTML;
     expect(taskDescription).toBe(mockTranslation);
   });

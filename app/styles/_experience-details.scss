@@ -236,7 +236,7 @@ $dialog-width-991: 95vw;
           @include dialog-header;
         }
         .content {
-          overflow: scroll;
+          overflow: auto;
         }
       }
       .round-button-circle {
