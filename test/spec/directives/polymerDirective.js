@@ -1,7 +1,7 @@
 /*eslint-env jquery */
 /*global inject, angular, module*/
 
-fdescribe("directive: collapse", function () {
+describe("directive: collapse", function () {
   "use strict";
   var scope, document, element, timeout;
 
