@@ -1,4 +1,4 @@
-/* global document, angular */
+/* global document, angular, $*/
 /*eslint-env jquery */
 /* jshint camelcase: false */
 
@@ -22,9 +22,9 @@
 */
 angular
   .module('jea.directives.stickCollapseHeader', [])
-  .directive('jeaStickCollapseHeader', ['$window', jeaStickCollapseHeader]);
+  .directive('jeaStickCollapseHeader', [jeaStickCollapseHeader]);
 
-function jeaStickCollapseHeader($window) {
+function jeaStickCollapseHeader() {
   'use strict';
 
   return {
