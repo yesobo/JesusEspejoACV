@@ -1,3 +1,4 @@
+/*global require, module: true */
 // Generated on 2013-07-14 using generator-angular 0.3.0
 var LIVERELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({ port: LIVERELOAD_PORT });
@@ -24,7 +25,9 @@ module.exports = function (grunt) {
 
   try {
     yeomanConfig.app = require('./bower.json').appPath || yeomanConfig.app;
-  } catch (e) {}
+  } catch (e) {
+    grunt.log.write('Error getting app name');
+  }
 
   grunt.initConfig({
     yeoman: yeomanConfig,
@@ -108,16 +111,6 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      devdist: {
-        files: [{
-          dot: true,
-          src: [
-            '.tmp',
-            'devdist/*',
-            '!devdist/.git*'
-          ]
-        }]
-      },
       server: '.tmp'
     },
     jshint: {
@@ -180,7 +173,7 @@ module.exports = function (grunt) {
     // not used since Uglify task does concat,
     // but still available if needed
     concat: {
-      bsWrap: {
+      dist: {
         src: ['<%= yeoman.app %>/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js'],
         dest: '<%= yeoman.dist %>/scripts/mybootstrap.js',
         options: {
@@ -188,9 +181,9 @@ module.exports = function (grunt) {
           footer: '})(wrap(window), wrap(document));'
         }
       },
-      devdist: {
+      server: {
         src: ['<%= yeoman.app %>/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js'],
-        dest: 'devdist/scripts/mybootstrap.js',
+        dest: '.tmp/scripts/mybootstrap.js',
         options: {
           banner: '(function(window, document){',
           footer: '})(wrap(window), wrap(document));'
@@ -212,21 +205,15 @@ module.exports = function (grunt) {
     },
     useminPrepare: {
       html: '<%= yeoman.app %>/index.html',
+      options: {
+        dest: '<%= yeoman.dist %>'
+      }
     },
     usemin: {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
-      // comment above for build:dev
-      //html: ['devdist/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        dirs: ['<%= yeoman.dist %>'],
-        // comment above for build:dev
-        //dirs: ['devdist'],
-        blockReplacements: {
-          myjs: function (block) {
-            return '<script src="' + block.dest + '"></script>';
-          }
-        }
+        dirs: ['<%= yeoman.dist %>']
       }
     },
     imagemin: {
@@ -236,14 +223,6 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>/images',
           src: '{,*/}*.{png,jpg,jpeg}',
           dest: '<%= yeoman.dist %>/images'
-        }]
-      },
-      devdist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg}',
-          dest: 'devdist/images'
         }]
       }
     },
@@ -283,20 +262,6 @@ module.exports = function (grunt) {
           ],
           dest: '<%= yeoman.dist %>'
         }]
-      },
-      devdist: {
-        options: {
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>',
-          src: [
-            '*.html',
-            'views/*.html',
-            'views/{,*/}*.html'
-          ],
-          dest: 'devdist'
-        }]
       }
     },
     // Put files not handled in other tasks here
@@ -326,45 +291,13 @@ module.exports = function (grunt) {
             'generated/*'
           ]
         }]
-      },
-      devdist: {
-        files: [{
-          expand: true,
-          dot: true,
-          cwd: '<%= yeoman.app %>',
-          dest: 'devdist',
-          src: [
-            '*.{ico,png,txt}',
-            '.htaccess',
-            'bower_components/**/*',
-            'components/**/*',
-            'images/{,*/}*.{gif,webp,svg}',
-            'styles/fonts/*',
-            'data/*.*',
-            'fonts/*.*',
-            'scripts/{,*/}*.*'
-          ]
-        }, {
-          expand: true,
-          cwd: '.tmp/images',
-          dest: 'devdist/images',
-          src: [
-            'generated/*'
-          ]
-        }, {
-          expand: true,
-          cwd: '.tmp/styles',
-          dest: 'devdist/styles',
-          src: [
-            '*.css'
-          ]
-        }]
       }
     },
     concurrent: {
       server: [
         'coffee:dist',
-        'compass:server'
+        'compass:server',
+        'concat:server'
       ],
       test: [
         'coffee',
@@ -375,12 +308,6 @@ module.exports = function (grunt) {
         'compass:dist',
         'imagemin',
         'htmlmin'
-      ],
-      devdist: [
-        'coffee',
-        'compass:dist',
-        'imagemin:devdist',
-        'htmlmin:devdist'
       ]
     },
     karma: {
@@ -445,10 +372,11 @@ module.exports = function (grunt) {
         src: 'dist',
         dest: '/',
         exclusions: [
-          'dist/bower_components/**'
+          //'dist/bower_components/**'
         ]
       }
-    }
+    },
+    processhtml: {}
   });
 
   // Find unused images
@@ -472,14 +400,14 @@ module.exports = function (grunt) {
     // Find images in content
     grunt.file.expand(
       {
-        filter: 'isFile',
+        filter: 'isFile'
       },
       [
         'app/scripts/{,*/}*.js',
         'components/{,*/}*.js',
         'app/data/{,*/}*.json',
         'app/styles/{,*/}*.css',
-        'app/views/{,*/}*.html',
+        'app/views/{,*/}*.html'
       ]
     ).forEach(
         function(file){ // Change this to narrow down the search
@@ -494,11 +422,11 @@ module.exports = function (grunt) {
 
     // Output unused images
     var unused = grunt.util._.difference(assets, links);
-    console.log('Found '+ links.length +' used images:');
-    console.log('Found '+ unused.length +' unused images:');
+    grunt.log.writeln('Found ' + links.length + ' used images:');
+    grunt.log.writeln('Found ' + unused.length + ' unused images:');
     unused.forEach(
       function(el){
-        console.log(el);
+        grunt.log.writeln(el);
       }
     );
   });
@@ -569,21 +497,12 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'concat',
-    'copy',
+    'copy:dist',
     'cdnify',
     'ngmin', // ng-min is deprecated, use grunt-ng-anotate
     'cssmin',
     'uglify',
     //'rev',
-    'usemin'
-  ]);
-
-  grunt.registerTask('build:dev', [
-    'clean:devdist',
-    'useminPrepare',
-    'concurrent:devdist',
-    'concat:devdist',
-    'copy:devdist',
     'usemin'
   ]);
 

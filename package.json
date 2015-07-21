@@ -28,6 +28,7 @@
     "grunt-karma": "~0.7.1",
     "grunt-ngmin": "~0.0.2",
     "grunt-open": "~0.2.0",
+    "grunt-processhtml": "^0.3.8",
     "grunt-protractor-runner": "^1.1.4",
     "grunt-rev": "~0.1.0",
     "grunt-usemin": "^3.0.0",
