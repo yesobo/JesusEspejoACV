@@ -20,7 +20,7 @@
         "techs": [
             {"name": "Angular JS",
              "image": "angularJS.png"},
-            {"name": "Polymer 0.5",
+            {"name": "Polymer 1.0",
               "image": "polymer.png"},
             {"name": "Javascript",
              "image": "javascript.png"},
