@@ -1,24 +1,29 @@
-/* bootstrap-sass redefined variable */
-$icon-font-path: "fonts/";
+// bootstrap-sass redefined variable
+$icon-font-path: 'fonts/';
 //$grid-float-breakpoint: 801px;
 
 $light-color: #c1dbf2;
 $very-light-color: #ddebf9;
-$light-grey: #dddddd;
+$light-grey: #ddd;
 $dark-blue: #428bca;
 $darker-blue: #171070;
+$amarillo: #ebff71;
+$white: #fff;
+$semi-white: #eee;
+$gray: #999;
+$dark-gray: #333;
 
-$stuck_shadow: 0 2px 5px rgba(0,0,0,0.26);
+$stuck-shadow: 0 2px 5px rgba(0, 0, 0, .26);
 
 @import 'bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'search-button';
 @import 'experience-details';
 
-/* Put your CSS here */
+// Put your CSS here
 
 .primary {
   background-color: $dark-blue;
-  color: #ffffff;
+  color: $white;
 }
 
 .primary-inverse {
@@ -26,31 +31,28 @@ $stuck_shadow: 0 2px 5px rgba(0,0,0,0.26);
 }
 
 .default {
-  background-color: #999999;
-  color: #ffffff;
+  background-color: $gray;
+  color: $white;
 }
 
 .default-inverse {
-  color: #999999;
+  color: $gray;
 }
 
-$main-margin: 0px;
+$main-margin: 0;
 
 html {
-  margin: $main-margin;
   height: 100vh;
+  margin: $main-margin;
 }
 
 body {
+  background-color: $amarillo;
+  background-image: linear-gradient(90deg, transparent 20%, $white 40%, $white 80%, rgba(255, 255, 255, .0) 100%);
+  color: $dark-gray;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 100vh;
   margin: $main-margin;
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
-}
-
-.main-view {
-  min-height: 92vh;
 }
 
 #cover {
@@ -62,23 +64,24 @@ body {
 }
 
 .hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
+  background-color: $semi-white;
+  border-radius: 6px;
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
+  margin: 50px auto 0;
   padding: 60px;
+  width: 300px;
+
   h1 {
     font-size: 60px;
-    line-height: 1;
     letter-spacing: -1px;
+    line-height: 1;
   }
 }
 
 .row-fluid [class*="span"] {
-  min-height: 0px;
+  min-height: 0;
 }
 
 .container-fluid {
@@ -86,6 +89,7 @@ body {
 }
 
 $top-menu-margin: 50px;
+
 section.menu-section {
   margin-top: $top-menu-margin;
 }
@@ -95,11 +99,13 @@ section.menu-section {
   border-color: $darker-blue;
 
   .nav .active > a {
-    color: white;
     background-color: $dark-blue;
-    &:hover, &:focus {
-      color: white;
+    color: $white;
+
+    &:hover,
+    &:focus {
       background-color: $dark-blue;
+      color: $white;
     }
   }
 }
@@ -108,14 +114,14 @@ section.menu-section {
 .navitem-wrapper {
   max-height: 40px;
   overflow: visible;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
+  padding-top: 0;
 }
 
 .navbar img {
+  cursor: pointer;
   max-height: 100%;
   max-width: 100%;
-  cursor: pointer;
 }
 
 .navbar-inverse {
@@ -124,15 +130,19 @@ section.menu-section {
   }
 }
 
+$navbar-text-color: #D4CEFF;
 .navbar {
   -webkit-transform: translate3d(0,0,0);
-  .brand {
-    color: white;
+  .navbar-nav>li>a {
+    color: $navbar-text-color;
+  }
+  .navbar-brand {
+    color: $navbar-text-color;
   }
   &.navbar-fixed-top {
-    -webkit-box-shadow: $stuck_shadow;
-    -moz-box-shadow: $stuck_shadow;
-    box-shadow: $stuck_shadow;
+    -webkit-box-shadow: $stuck-shadow;
+    -moz-box-shadow: $stuck-shadow;
+    box-shadow: $stuck-shadow;
   }
 
   ul#ul-lang {
@@ -229,7 +239,7 @@ button.search {
   color: #ffffff;
   font-weight: bold;
   padding: 0px;
-  border: solid 1px #999999;
+  border: solid 1px $gray;
   width: 20em;
    .periodCount {
     display:inline;
@@ -278,7 +288,6 @@ button.search {
 }
 
 .sectionTitleWrapper {
-  margin-right: 20px;
   color: #ffffff;
 }
 
@@ -351,9 +360,9 @@ $circle_radius: 25px;
     padding-bottom: $circle_radius !important;
     background-color: $light-color;
     &.is_stuck {
-      -webkit-box-shadow: $stuck_shadow;
-      -moz-box-shadow: $stuck_shadow;
-      box-shadow: $stuck_shadow;
+      -webkit-box-shadow: $stuck-shadow;
+      -moz-box-shadow: $stuck-shadow;
+      box-shadow: $stuck-shadow;
     }
   }
 
@@ -477,7 +486,7 @@ $circle_radius: 25px;
   }
   .navbar-inverse .nav-collapse320 {
     .nav > li > a, .dropdown-menu a {
-      color: #999999;
+      color: $gray;
     }
   }
   .navbar .nav {
@@ -555,7 +564,7 @@ $circle_radius: 25px;
   }
   .navbar-inverse .nav-collapse480 {
     .nav > li > a, .dropdown-menu a {
-      color: #999999;
+      color: $gray;
     }
   }
   .secondLastName {
@@ -662,7 +671,7 @@ $circle_radius: 25px;
   }
   .navbar-inverse .nav-collapse830 {
     .nav > li > a, .dropdown-menu a {
-      color: #999999;
+      color: $gray;
     }
   }
 }
@@ -850,6 +859,7 @@ html {
 }
 
 /************************* Big tablet to Desktop (Bootstrap) ***************/
+$col-left-width: 29%;
 @media (min-width: 992px) {
   .mobile {
     display: none;
@@ -860,26 +870,42 @@ html {
   .full-height-column {
     min-height: 92vh;
   }
+  aside {
+    width: col-left-width;
+  }
   .main-left {
-    max-width: 970px * 0.25 - (15 * 2);
+    max-width: 1170px * 0.22 - (15 * 2);
+    height: 100vh;
+    background-color: $dark-blue;
+    padding: 15px;
+  }
+  .main-view {
+    .menu-section {
+      background-color: transparent;
+      .main {
+        background-color: transparent;
+        border-left: 0;
+      }
+    }
   }
   .subtitle {
     max-width: 250px;
   }
-
 }
 
 /************************** Large dektop (bootstrap) **************/
 @media (min-width: 1200px) {
-  .main-left {
-    max-width: 1170px * 0.25 - (15 * 2);
-  }
   .title {
     font-size: 50px;
+  }
+  .main-left {
+    max-width: 1170px * 0.26 - (15 * 2);
   }
   .main-view {
     .menu-section {
       .main {
+        background-color: transparent;
+        width: 100% - &col-left-width;
          .circle, .circle img {
           width: 15em;
           height: 15em;
