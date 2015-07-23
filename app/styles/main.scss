@@ -728,6 +728,8 @@ html {
   body {
     margin-left: 0px;
     margin-right: 0px;
+    background: repeating-linear-gradient(45deg,
+                $amarillo, $amarillo 15px, $white 0, $white 30px);
 
     core-overlay-layer {
       z-index: 1100;
@@ -858,26 +860,36 @@ html {
   }
 }
 
-/************************* Big tablet to Desktop (Bootstrap) ***************/
+//************************* Big tablet to Desktop (Bootstrap) ***************/
 $col-left-width: 29%;
 @media (min-width: 992px) {
   .mobile {
     display: none;
   }
+
   .navbar .btn-navbar {
     display: none;
   }
+
   .full-height-column {
     min-height: 92vh;
   }
+
   aside {
     width: col-left-width;
   }
+
   .main-left {
-    max-width: 1170px * 0.22 - (15 * 2);
-    height: 100vh;
     background-color: $dark-blue;
-    padding: 15px;
+    background-image: linear-gradient(90deg, hsla(360, 100%, 100%, .3) 0%,
+                            hsla(360, 100%, 100%, .4) 1%,
+                            hsla(360, 100%, 100%, .0) 6%,
+                            hsla(360, 100%, 100%, .0) 94%,
+                            hsla(360, 100%, 100%, .4) 99%,
+                            hsla(360, 100%, 100%, .3) 100%);
+    height: 100vh;
+    max-width: 1170px * .22 - (15 * 2);
+    padding: 16px;
   }
   .main-view {
     .menu-section {
