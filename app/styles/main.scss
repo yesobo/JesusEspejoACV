@@ -12,6 +12,7 @@ $white: #fff;
 $semi-white: #eee;
 $gray: #999;
 $dark-gray: #333;
+$light-green: #af5959;
 
 $stuck-shadow: 0 2px 5px rgba(0, 0, 0, .26);
 
@@ -20,6 +21,10 @@ $stuck-shadow: 0 2px 5px rgba(0, 0, 0, .26);
 @import 'experience-details';
 
 // Put your CSS here
+
+.green {
+  color: $light-green;
+}
 
 .primary {
   background-color: $dark-blue;
@@ -39,6 +44,14 @@ $stuck-shadow: 0 2px 5px rgba(0, 0, 0, .26);
   color: $gray;
 }
 
+.lower-case {
+  text-transform: lowercase;
+}
+
+.capital {
+  text-transform: capitalize;
+}
+
 $main-margin: 0;
 
 html {
@@ -48,20 +61,137 @@ html {
 
 body {
   background-color: $amarillo;
-  background-image: linear-gradient(90deg, transparent 20%, $white 40%, $white 80%, rgba(255, 255, 255, .0) 100%);
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, $white 20%, $white 80%, rgba(255, 255, 255, 0) 100%);
   color: $dark-gray;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 100vh;
   margin: $main-margin;
 }
 
-#cover {
-  font-size: 1.5em;
+@keyframes hide {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
-#salutation {
-  font-size: 4.5em;
+@-webkit-keyframes hide {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
+
+.aboutme {
+  &.main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  article {
+    font-size: 2.5em;
+    height: auto;
+    max-height: 800px;
+    text-align: center;
+
+    &.cover {
+      min-height: 96vh;
+    }
+
+    &.experience {
+      height: 100vh;
+    }
+
+    p {
+      width: 90%;
+      margin: auto;
+    }
+  }
+  .vertical-middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .experience {
+    position: relative;
+
+    p {
+      background: -webkit-radial-gradient(center, ellipse cover, white 0%, rgba(255, 255, 255, 0.1) 67%, rgba(255, 255, 255, 0) 71%);
+      color: black;
+      display: table;
+      height: 100%;
+      position: relative;
+      text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+      z-index: 3;
+
+    }
+  }
+
+  .background {
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+
+    &.server {
+      background-image: url('../images/server.jpg');
+    }
+
+    &.colors {
+      animation: hide 12s infinite;
+      background-image: url('../images/pencils.jpg');
+    }
+  }
+}
+
+.link-menu {
+  border-bottom: 4px solid white;
+  cursor: pointer;
+  background: radial-gradient(ellipse 103% 50%, hsla(360, 100%, 100%, 1) 15%, hsla(360, 100%, 100%, 0.5) 35%, hsla(360, 100%, 100%, 0) 54%);
+  background-position: center center;
+  background-size: 100% 0%;
+  background-repeat: no-repeat;
+  padding-bottom: 2px;
+  padding: 2px;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-size: 100% 200%;
+    border-bottom: none;
+    text-decoration: none;
+  }
+}
+
+
+@media (orientation: landscape) {
+  .aboutme {
+    article {
+      height: auto;
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  .aboutme {
+    article {
+      font-size: 2.5em;
+      min-height: 100vh;
+    }
+  }
+}
+
+.aboutme {
+  .social {
+    background-color: $darker-blue;
+    color: $white;
+    min-height: auto;
+    padding: 1em;
+    padding-bottom: 1.5em;
+  }
+}
+
 
 .hero-unit {
   background-color: $semi-white;
@@ -109,7 +239,6 @@ section.menu-section {
     }
   }
 }
-
 
 .navitem-wrapper {
   max-height: 40px;
@@ -269,8 +398,16 @@ button.search {
 }
 
 .menu-section {
-    background-color: $dark-blue;
     overflow: hidden;
+}
+
+.main-view {
+  .menu-section {
+    .main {
+      background-color: transparent;
+      width: 100% - &col-left-width;
+    }
+  }
 }
 
 .main-left {
@@ -291,15 +428,25 @@ button.search {
   color: #ffffff;
 }
 
-$myPortrait_width: 10em;
+$myPortrait_width: 15rem;
+
+@keyframes flip {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(180deg); }
+}
+
+@-webkit-keyframes flip {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(180deg); }
+}
+
 .circle {
+  z-index: 1;
   border-radius: 50%;
   width: $myPortrait_width;
   height: $myPortrait_width;
-  display: inline;
   position: relative;
-  float: left;
-  margin-right: 20px;
+  margin: auto;
   margin-top: 4px;
   border: 4px solid white;
   -webkit-box-shadow: 0px 0px 15px rgba(3, 3, 3, 0.3);
@@ -308,8 +455,195 @@ $myPortrait_width: 10em;
   overflow: hidden;
 
   img {
-    width: $myPortrait_width;
-    height: $myPortrait_width;
+    transition: transform .5s ease-in-out;
+    &:hover {
+      transform: scale(1.3, 1.3);
+    }
+  }
+}
+
+.projects {
+  padding-bottom: 1em;
+  position: relative;
+  .flex-container {
+    display: flex;
+  }
+}
+
+.flasks {
+  position: relative;
+  display: table;
+  width: 100%;
+  z-index: 2;
+  top: 10%;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+    margin: auto;
+  }
+
+  &.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    * {
+      flex: 1 100%;
+    }
+  }
+}
+
+$sphere-top-init: 5%;
+$sphere-distance: 5%;
+.sphere {
+  display: block;
+  background: black;
+  background: radial-gradient(circle at 15px 15px, #5cabff, #000);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin: 0;
+  position: absolute;
+  z-index: 1;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 1%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
+    -webkit-filter: blur(5px);
+    z-index: 2;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle at 50% 30%, rgba(245, 237, 48, 0), rgba(200, 190, 20, 0.2) 50%, #575300 100%);
+  }
+
+  .shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotateX(90deg) translateZ(-150px);
+    z-index: -1;
+  }
+
+  &.node {
+    top: 20%;
+    left: 20px;
+    background: url(../images/nodejs_2.png) no-repeat;
+    background-color: #303030;
+    background-size: contain;
+    background-position: 7px 10px;
+  }
+
+  &.polymer {
+    top: 35%;
+    left: 88%;
+    background: url(../images/polymer.png) no-repeat;
+    background-color: #FFF;
+    background-size: contain;
+    background-position: 1px 10px;
+  }
+
+  &.react {
+    top: 15%;
+    left: 15%;
+    background: url(../images/react.png) no-repeat;
+    background-color: #2d2d2d;
+    background-size: contain;
+    background-position: 0px 1px;
+  }
+
+  &.es6 {
+    top: .5%;
+    left: 75%;
+    background: url(../images/es6.png) no-repeat;
+    background-color: #FBDE34;
+    background-size: contain;
+    background-position: 0px 1px;
+  }
+}
+
+.salutation {
+  font-size: 123px;
+  color: $light-green;
+  font-style: italic;
+  font-family: serif;
+}
+
+.circle, .circle img , .flip-container {
+ width: auto;
+ max-width: 70vw;
+ height: 15rem;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000;
+  margin: 20px auto;
+}
+
+/* flip the pane when hovered */
+.flip-container .flipper {
+  -webkit-animation: flip 4s;
+  animation: flip 4s;
+  -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+  animation-fill-mode: forwards;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	top: 0;
+	left: 0;
+  -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+  backface-visibility: hidden;
+  height: $myPortrait_width;
+  width: 100%;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+  position: absolute;
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+.circle {
+  width: 100%;
+  &.back {
+    position: relative;
+    width: 15rem;
+  }
+  img {
+    margin: auto;
   }
 }
 
@@ -452,64 +786,6 @@ $circle_radius: 25px;
 
 /************************** Retina display tablet ***************/
 
-/************************** Phones (Iphone 4/5) *****************************/
-@media (max-width: 321px) {
-  .nav-collapse320 {
-    &.collapse {
-      overflow: hidden;
-      height: 0;
-    }
-    .nav {
-      float: none;
-      margin: 0 0 10px;
-      > li {
-        float: none;
-        > a {
-          padding: 9px 15px;
-          font-weight: bold;
-          color: #777777;
-          -webkit-border-radius: 3px;
-          -moz-border-radius: 3px;
-          border-radius: 3px;
-        }
-      }
-    }
-    clear: both;
-  }
-  .nav-collapse .dropdown-menu a {
-    padding: 9px 15px;
-    font-weight: bold;
-    color: #777777;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-  }
-  .navbar-inverse .nav-collapse320 {
-    .nav > li > a, .dropdown-menu a {
-      color: $gray;
-    }
-  }
-  .navbar .nav {
-    margin: 0px;
-  }
-
-  aside {
-    padding-left: 5px!important;
-    padding-right: 5px!important;
-    .main-left {
-      margin-right: 0px!important;
-      .sectionTitleWrapper {
-        margin-right: 10px;
-      }
-      #searchWrapper {
-        .searchButtonContainer {
-          margin-right: 1px!important;
-        }
-      }
-    }
-  }
-
-}
 /************************** Phone to Desktop *********************/
 @media (min-width: 321px) {
   .container > .navbar-header, .container > .navbar-collapse {
@@ -520,6 +796,10 @@ $circle_radius: 25px;
   .nav-collapse320.collapse {
     height: auto !important;
     overflow: visible !important;
+  }
+
+  .projects  {
+    height: 110vh;
   }
 }
 
@@ -577,7 +857,7 @@ $circle_radius: 25px;
     margin-right: 0px;
     margin-left: 0;
   }
-
+  
   .main-left div {
     min-width: 33px;
   }
@@ -588,6 +868,13 @@ $circle_radius: 25px;
   .container {
     padding: 0;
   }
+
+  .aboutme {
+    article {
+      font-size: 2.0em;
+    }
+  }
+
   .pull-right {
     margin-right: 15px;
   }
@@ -595,6 +882,75 @@ $circle_radius: 25px;
   .employerNameWrapper {
     width: 70%;
   }
+}
+
+/************************** Phones (Iphone 4/5) *****************************/
+@media (max-width: 321px) {
+  .nav-collapse320 {
+    &.collapse {
+      overflow: hidden;
+      height: 0;
+    }
+    .nav {
+      float: none;
+      margin: 0 0 10px;
+      > li {
+        float: none;
+        > a {
+          padding: 9px 15px;
+          font-weight: bold;
+          color: #777777;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+        }
+      }
+    }
+    clear: both;
+  }
+  .nav-collapse .dropdown-menu a {
+    padding: 9px 15px;
+    font-weight: bold;
+    color: #777777;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  .navbar-inverse .nav-collapse320 {
+    .nav > li > a, .dropdown-menu a {
+      color: $gray;
+    }
+  }
+  .navbar .nav {
+    margin: 0px;
+  }
+
+  .aboutme {
+    article {
+      font-size: 1.5em;
+    }
+
+    .flasks {
+      top: 5%;
+    }
+  }
+
+  aside {
+    padding-left: 5px!important;
+    padding-right: 5px!important;
+    .main-left {
+      margin-right: 0px!important;
+      .sectionTitleWrapper {
+        margin-right: 10px;
+      }
+      #searchWrapper {
+        .searchButtonContainer {
+          margin-right: 1px!important;
+        }
+      }
+    }
+  }
+
 }
 
 /************************** Phone to desktop *************/
@@ -615,6 +971,13 @@ $circle_radius: 25px;
     padding-top: 10px;
     padding-left:5px;
   }
+
+  .aboutme {
+    .social {
+      height: 90vh;
+    }
+  }
+
   .xs-sm-hidden {
     display: none;
   }
@@ -691,6 +1054,13 @@ $circle_radius: 25px;
       display: inline;
     }
   }
+
+  .flasks {
+    .flex-side {
+      flex: 3 100px;
+    }
+  }
+
   .md-lg-hidden {
     display: none;
   }
@@ -711,6 +1081,22 @@ $circle_radius: 25px;
   }
   .title {
     font-size: 45px;
+  }
+
+  .flasks {
+    .flex-left {
+      order: 1;
+    }
+
+    .flex-center {
+      flex: 1 512px;
+      order: 2;
+    }
+
+    .flex-right {
+      order: 3;
+    }
+
   }
 }
 
@@ -863,6 +1249,11 @@ html {
 //************************* Big tablet to Desktop (Bootstrap) ***************/
 $col-left-width: 29%;
 @media (min-width: 992px) {
+  body>.container {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
   .mobile {
     display: none;
   }
@@ -907,22 +1298,15 @@ $col-left-width: 29%;
 
 /************************** Large dektop (bootstrap) **************/
 @media (min-width: 1200px) {
+  body>.container {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
   .title {
     font-size: 50px;
   }
   .main-left {
     max-width: 1170px * 0.26 - (15 * 2);
-  }
-  .main-view {
-    .menu-section {
-      .main {
-        background-color: transparent;
-        width: 100% - &col-left-width;
-         .circle, .circle img {
-          width: 15em;
-          height: 15em;
-        }
-      }
-    }
   }
 }

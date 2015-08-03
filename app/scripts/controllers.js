@@ -11,9 +11,11 @@ angular.module('JesusEspejoACVControllers', ['oc.lazyLoad'])
   };
 }
 ])
+.controller('RestartSkrollrCtrl', ['$timeout', restartSkrollrCtrl])
+.controller('DestroySkrollrCtrl', [destroySkrollr])
 .controller('ExperienceCtrl',
 ['$scope', '$window', 'SharedData', 'DatesDiff', '$ocLazyLoad', '$timeout',
-function(sc, window, SharedData, DatesDiff, $ocLazyLoad) {
+function(sc, window, SharedData, DatesDiff, $ocLazyLoad, timeout) {
   'use strict';
 
   $ocLazyLoad.load([{
@@ -46,10 +48,12 @@ function(sc, window, SharedData, DatesDiff, $ocLazyLoad) {
   sc.openDialog = function(dialogId) {
     document.querySelector('[dialog-id=' + dialogId + ']').open();
   };
+
+  destroySkrollr();
 }
 ])
 .controller('ProjectsCtrl', ['$scope', '$window', 'SharedData', 'DatesDiff',
-'$ocLazyLoad', function(sc, window, SharedData, DatesDiff, $ocLazyLoad) {
+'$ocLazyLoad', '$timeout', function(sc, window, SharedData, DatesDiff, $ocLazyLoad, timeout) {
   'use strict';
 
   $ocLazyLoad.load([{
@@ -82,6 +86,8 @@ function(sc, window, SharedData, DatesDiff, $ocLazyLoad) {
   sc.openDialog = function(dialogId) {
     document.querySelector('[dialog-id=' + dialogId + ']').open();
   };
+
+  destroySkrollr();
 }
 ])
 .controller('ExperienceDetailCtrl', ['$scope', '$routeParams', 'SharedData',
@@ -95,3 +101,15 @@ function($scope, $routeParams, SharedData) {
   });
 }
 ]);
+
+function restartSkrollrCtrl(timeout) {
+  timeout(function() {
+    var s = skrollr.init();
+    s.refresh();
+  }, 0);
+}
+
+function destroySkrollr() {
+  var s = skrollr.init();
+  s.destroy();
+}

@@ -25,6 +25,10 @@ angular.module('NavMenuDirective',
         'PROJECTS': {
           'position': 2,
           'path': '/projects'
+        },
+        'BLOG': {
+          'position': 3,
+          'path': '/blog'
         }
       };
 

@@ -8,6 +8,7 @@ angular.module('JesusEspejoACVApp',
     $routeProvider
       .when('/', {
         templateUrl: 'views/aboutme.html',
+        controller: 'RestartSkrollrCtrl'
       })
       .when('/experience', {
         templateUrl: 'views/experience.html',
@@ -22,8 +23,8 @@ angular.module('JesusEspejoACVApp',
         controller: 'ProjectsCtrl'
       })
       .when('/blog', {
-        templateUrl: 'views/blog.html'
-        //controller: 'ProjectsCtrl'
+        templateUrl: 'views/blog.html',
+        controller: 'DestroySkrollrCtrl'
       })
       .otherwise({
         redirectTo: '/'
