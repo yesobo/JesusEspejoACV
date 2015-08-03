@@ -1,4 +1,4 @@
-/*global angular: false */
+/*global angular, skrollr: false */
 angular.module('JesusEspejoACVControllers', ['oc.lazyLoad'])
 .controller('AppCtrl', ['$scope', function(sc) {
   'use strict';
@@ -15,7 +15,7 @@ angular.module('JesusEspejoACVControllers', ['oc.lazyLoad'])
 .controller('DestroySkrollrCtrl', [destroySkrollr])
 .controller('ExperienceCtrl',
 ['$scope', '$window', 'SharedData', 'DatesDiff', '$ocLazyLoad', '$timeout',
-function(sc, window, SharedData, DatesDiff, $ocLazyLoad, timeout) {
+function(sc, window, SharedData, DatesDiff, $ocLazyLoad) {
   'use strict';
 
   $ocLazyLoad.load([{
@@ -53,7 +53,7 @@ function(sc, window, SharedData, DatesDiff, $ocLazyLoad, timeout) {
 }
 ])
 .controller('ProjectsCtrl', ['$scope', '$window', 'SharedData', 'DatesDiff',
-'$ocLazyLoad', '$timeout', function(sc, window, SharedData, DatesDiff, $ocLazyLoad, timeout) {
+'$ocLazyLoad', '$timeout', function(sc, window, SharedData, DatesDiff, $ocLazyLoad) {
   'use strict';
 
   $ocLazyLoad.load([{
@@ -103,6 +103,7 @@ function($scope, $routeParams, SharedData) {
 ]);
 
 function restartSkrollrCtrl(timeout) {
+  'use strict';
   timeout(function() {
     var s = skrollr.init();
     s.refresh();
@@ -110,6 +111,7 @@ function restartSkrollrCtrl(timeout) {
 }
 
 function destroySkrollr() {
+  'use strict';
   var s = skrollr.init();
   s.destroy();
 }
