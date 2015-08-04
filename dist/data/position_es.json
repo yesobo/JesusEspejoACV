@@ -10,13 +10,22 @@
 
 	"ABOUT_ME_EXPL": "Perfil profesional e Información de Contacto",
 	"HELLO":"Hola",
-	"ABOUT_ME_P1": ", soy Jesús, desarrollador web y amante de las nuevas tecnologías.",
-	"ABOUT_ME_P2": "Como verás, he dedicado los últimos años en crear y disfrutar de las tecnologías web en el trabajo y mi tiempo libre. Me encantaría compartir mis conocimientos, así que no dudes en contactar conmigo si estás interesado.",
+	"HI": "Hola",
+	"ABOUT_ME_P1": "Me encanta hacer sitios web.",
+	"ABOUT_ME_P2": "Cada proyecto es un desafíao para mi imaginación y una oportunidad para expresarme mientras aprendo del trabajo de otros desarrolladores de cualquier parte del mundo.",
+	"ABOUT_ME_EXPERIENCE": "adquirida ayundando a empresas a contruir sus sitios web me hace sentir cómodo cuando desarrollo tanto para front-end como back-end.",
+	"ABOUT_ME_P3": "Como verás, he dedicado los últimos años en crear y disfrutar de las tecnologías web en el trabajo y mi tiempo libre. Me encantaría compartir mis conocimientos, así que no dudes en contactar conmigo si estás interesado.",
+	"ABOUT_ME_PROJECTS_P1": "Me encanta experimentar con las tendencias en desarrollo web",
+  "ABOUT_ME_PROJECTS_P2": " son el resultado de algunos de éstos experimentos",
+	"ABOUT_ME_SOCIAL_P1": "Si quiere saber todavía más sobre lo que hago puedes leer ",
+	"ABOUT_ME_SOCIAL_P2": " o ponerte en contacto conmigo por email o en las redes sociales",
+
+	"MY": "Mis",
 
 	"NO_RESULTS_FOUND": "¿No hay resultados? Echa un vistazo a",
 	"MY_SING": "mi",
 	"MY_PLUR": "mis",
-
+	"THE": "La",
 	"AT": "en",
 	"PRESENT": "Hoy",
 	"YEAR": "año",

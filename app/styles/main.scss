@@ -1,18 +1,42 @@
+@import 'colors';
+
 // bootstrap-sass redefined variable
 $icon-font-path: 'fonts/';
 //$grid-float-breakpoint: 801px;
 
 $light-color: #c1dbf2;
 $very-light-color: #ddebf9;
-$light-grey: #ddd;
+$light-gray: #ddd;
 $dark-blue: #428bca;
-$darker-blue: #171070;
-$amarillo: #ebff71;
 $white: #fff;
 $semi-white: #eee;
 $gray: #999;
 $dark-gray: #333;
-$light-green: #af5959;
+
+$green: #AEEE00;
+$light-green: #BAFF6B;
+$lighter-green: #F1FFE1;
+$dark-green: #6F7F5C;
+$dark-green-inverse: #5D7F35;
+$darker-green: #6F7F5C;
+$blue: #01B0F0;
+$pink: #FF358B;
+$gray: #333333;
+$black: #000000;
+
+$header-color: $dark-green;
+$header-color-inverse: $dark-green-inverse;
+$background-color: #AEEE00;
+$navbar-text-color: #AEEE00;
+$footer-color: $dark-green;
+$social-text-color: $green;
+$collapse-panel-background-color: $light-green;
+$button-color: $darker-green;
+
+$period-box-inverse-color: $white;
+$period-box-color: $darker-green;
+
+$panel-inside-color: $lighter-green;
 
 $stuck-shadow: 0 2px 5px rgba(0, 0, 0, .26);
 
@@ -23,25 +47,25 @@ $stuck-shadow: 0 2px 5px rgba(0, 0, 0, .26);
 // Put your CSS here
 
 .green {
-  color: $light-green;
+  color: $dark-green;
 }
 
 .primary {
-  background-color: $dark-blue;
-  color: $white;
+  background-color: $period-box-color;
+  color: $period-box-inverse-color;
 }
 
 .primary-inverse {
-  color: $dark-blue;
+  color: $period-box-color;
 }
 
 .default {
-  background-color: $gray;
+  background-color: $period-box-color;
   color: $white;
 }
 
 .default-inverse {
-  color: $gray;
+  color: $period-box-color;
 }
 
 .lower-case {
@@ -60,12 +84,39 @@ html {
 }
 
 body {
-  background-color: $amarillo;
-  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, $white 20%, $white 80%, rgba(255, 255, 255, 0) 100%);
+  background-color: $background-color;
+  background-image: linear-gradient(90deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.6) 20%,
+    rgba(255, 255, 255, 1) 80%,
+    rgba(255, 255, 255, 1) 100%);
   color: $dark-gray;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 100vh;
   margin: $main-margin;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $darker-green;
+  >span {
+    color: $darker-green;
+  }
+}
+
+a {
+  color: $white;
+
+  &:hover {
+    color: $darker-green;
+  }
+}
+
+a.inverse {
+  color: $darker-green;
+
+  &:hover {
+    color: $green;
+  }
 }
 
 @keyframes hide {
@@ -88,17 +139,9 @@ body {
 
   article {
     font-size: 2.5em;
-    height: auto;
+    //TODO: height: auto;
     max-height: 800px;
     text-align: center;
-
-    &.cover {
-      min-height: 96vh;
-    }
-
-    &.experience {
-      height: 100vh;
-    }
 
     p {
       width: 90%;
@@ -110,14 +153,19 @@ body {
     vertical-align: middle;
   }
 
+  .cover {
+    margin-bottom: 10vh;
+  }
+
   .experience {
     position: relative;
-
+    height: 60vh;
     p {
       background: -webkit-radial-gradient(center, ellipse cover, white 0%, rgba(255, 255, 255, 0.1) 67%, rgba(255, 255, 255, 0) 71%);
-      color: black;
+      color: $black;
       display: table;
       height: 100%;
+      //TODO: padding: 10vh 0;
       position: relative;
       text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
       z-index: 3;
@@ -147,10 +195,15 @@ body {
 }
 
 .link-menu {
-  border-bottom: 4px solid white;
+  border-bottom: 4px solid;
+  border-bottom-color: $white;
+  background: linear-gradient(
+    $white 0, $white 100%);
+  color: $white;
+
   cursor: pointer;
-  background: radial-gradient(ellipse 103% 50%, hsla(360, 100%, 100%, 1) 15%, hsla(360, 100%, 100%, 0.5) 35%, hsla(360, 100%, 100%, 0) 54%);
-  background-position: center center;
+  background-color: transparent;
+  background-position: bottom;
   background-size: 100% 0%;
   background-repeat: no-repeat;
   padding-bottom: 2px;
@@ -161,6 +214,19 @@ body {
     background-size: 100% 200%;
     border-bottom: none;
     text-decoration: none;
+
+  }
+
+  &.inverse {
+    border-bottom-color: $dark-green;
+    background-image: linear-gradient(
+      $dark-green 0, $dark-green 100%);
+    background-color: transparent;
+    color: $dark-green;
+
+    &:hover {
+      color: $white;
+    }
   }
 }
 
@@ -177,18 +243,21 @@ body {
   .aboutme {
     article {
       font-size: 2.5em;
-      min-height: 100vh;
+      min-height: 70vh;
     }
   }
 }
 
 .aboutme {
   .social {
-    background-color: $darker-blue;
-    color: $white;
+    background-color: $header-color;
+    color: $social-text-color;
     min-height: auto;
-    padding: 1em;
-    padding-bottom: 1.5em;
+
+    p {
+      top: 5vh;
+      position: relative;
+    }
   }
 }
 
@@ -225,17 +294,17 @@ section.menu-section {
 }
 
 .navbar-inverse {
-  background-color: $darker-blue;
-  border-color: $darker-blue;
+  background-color: $header-color;
+  border-color: $header-color;
 
   .nav .active > a {
-    background-color: $dark-blue;
+    background-color: $dark-green-inverse;
     color: $white;
 
     &:hover,
     &:focus {
-      background-color: $dark-blue;
-      color: $white;
+      background-color: $dark-green-inverse;
+      color: $green;
     }
   }
 }
@@ -259,7 +328,6 @@ section.menu-section {
   }
 }
 
-$navbar-text-color: #D4CEFF;
 .navbar {
   -webkit-transform: translate3d(0,0,0);
   .navbar-nav>li>a {
@@ -355,20 +423,20 @@ button.search {
 .period {
   margin-top: 10px;
   text-align: center;
-  color: #ffffff;
+  color: $period-box-inverse-color;
   font-weight: bold;
   height: 46px;
   padding: 0px;
-  border: solid 1px $dark-blue;
+  border: solid 1px $period-box-color;
 }
 
 .period-mini {
   font-size: 13px;
   text-align: center;
-  color: #ffffff;
+  color: $period-box-inverse-color;
   font-weight: bold;
   padding: 0px;
-  border: solid 1px $gray;
+  border: solid 1px $period-box-color;
   width: 20em;
    .periodCount {
     display:inline;
@@ -392,9 +460,10 @@ button.search {
 }
 
 .periodColumn {
-  width: 10.2em!important;
+  float: none;
   line-height: 22px;
   margin-top: 10px;
+  width: 10.2em!important;
 }
 
 .menu-section {
@@ -416,7 +485,7 @@ button.search {
 
 .title {
   font-family: Pacifico;
-  text-shadow: 4px 4px 2px rgba(78, 80, 62, 1);
+  text-shadow: 4px 4px 2px $white;
 }
 
 
@@ -425,7 +494,7 @@ button.search {
 }
 
 .sectionTitleWrapper {
-  color: #ffffff;
+  color: $darker-green;
 }
 
 $myPortrait_width: 15rem;
@@ -463,7 +532,7 @@ $myPortrait_width: 15rem;
 }
 
 .projects {
-  padding-bottom: 1em;
+  //TODO: padding-bottom: 1em;
   position: relative;
   .flex-container {
     display: flex;
@@ -476,6 +545,10 @@ $myPortrait_width: 15rem;
   width: 100%;
   z-index: 2;
   top: 10%;
+
+  p:last-child {
+    margin-bottom: 10vh;
+  }
 
   img {
     max-height: 100%;
@@ -498,7 +571,7 @@ $sphere-top-init: 5%;
 $sphere-distance: 5%;
 .sphere {
   display: block;
-  background: black;
+  background: $darker-green;
   background: radial-gradient(circle at 15px 15px, #5cabff, #000);
   border-radius: 50%;
   height: 50px;
@@ -578,7 +651,7 @@ $sphere-distance: 5%;
 
 .salutation {
   font-size: 123px;
-  color: $light-green;
+  color: $darker-green;
   font-style: italic;
   font-family: serif;
 }
@@ -680,9 +753,9 @@ $sphere-distance: 5%;
 }
 
 $panel-main-color: $light-color;
-$panel-inside-color: $very-light-color;
 $circle_radius: 25px;
 .employment {
+  border-color: $darker-green;
   clear: left;
   background-color: $panel-inside-color;
   -webkit-box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.2);
@@ -691,8 +764,9 @@ $circle_radius: 25px;
   margin-bottom: 30px;
 
   .panel-heading {
-    padding-bottom: $circle_radius !important;
-    background-color: $light-color;
+    padding-bottom: $circle_radius + 20px !important;
+    background-color: $collapse-panel-background-color;
+    color: $gray;
     &.is_stuck {
       -webkit-box-shadow: $stuck-shadow;
       -moz-box-shadow: $stuck-shadow;
@@ -708,7 +782,8 @@ $circle_radius: 25px;
     }
   }
   .panel-footer {
-    background-color: $panel-main-color;
+    border-top: 0;
+    background-color: $collapse-panel-background-color;
     height: 10px;
     cursor: default!important;
   }
@@ -718,11 +793,10 @@ $circle_radius: 25px;
   width: $circle_radius * 2;
   height: $circle_radius * 2;
   margin:auto;
-  background: $light-color;
   border-radius: 50%;
   position: relative;
   top: -$circle_radius;
-  background-color: $panel-inside-color;
+  background-color: $button-color;
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
   box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
@@ -732,6 +806,7 @@ $circle_radius: 25px;
     width: 100%;
     height: 100%;
     cursor: pointer;
+    color: $green;
   }
 
   .glyphicon {
@@ -799,7 +874,7 @@ $circle_radius: 25px;
   }
 
   .projects  {
-    height: 110vh;
+    //TODO: height: 110vh;
   }
 }
 
@@ -857,7 +932,7 @@ $circle_radius: 25px;
     margin-right: 0px;
     margin-left: 0;
   }
-  
+
   .main-left div {
     min-width: 33px;
   }
@@ -1056,8 +1131,10 @@ $circle_radius: 25px;
   }
 
   .flasks {
+
     .flex-side {
       flex: 3 100px;
+      margin-bottom: 10vh;
     }
   }
 
@@ -1114,8 +1191,6 @@ html {
   body {
     margin-left: 0px;
     margin-right: 0px;
-    background: repeating-linear-gradient(45deg,
-                $amarillo, $amarillo 15px, $white 0, $white 30px);
 
     core-overlay-layer {
       z-index: 1100;
@@ -1138,7 +1213,9 @@ html {
         width: 100%;
         padding-left: 20px;
         position: relative;
-        background-color: $dark-blue;
+        background-color: $white;
+        padding-top: 10px;
+        padding-bottom: 10px;
         z-index: 2;
 
         .main-left {
@@ -1172,6 +1249,10 @@ html {
   .sectionTitleWrapper > {
     .title, .subtitle {
       display: inline-block;
+    }
+    .subtitle {
+      margin-left: 3px;
+      margin-right: 9px;
     }
   }
 
@@ -1266,21 +1347,41 @@ $col-left-width: 29%;
     min-height: 92vh;
   }
 
+  article {
+
+    &.experience {
+      p {
+          //TODO: padding: 15vh;
+      }
+    }
+
+    &.cover {
+      padding: 10vh;
+    }
+  }
+
+  .flasks {
+    padding: 10vh;
+  }
+
   aside {
     width: col-left-width;
   }
 
   .main-left {
-    background-color: $dark-blue;
-    background-image: linear-gradient(90deg, hsla(360, 100%, 100%, .3) 0%,
-                            hsla(360, 100%, 100%, .4) 1%,
-                            hsla(360, 100%, 100%, .0) 6%,
-                            hsla(360, 100%, 100%, .0) 94%,
-                            hsla(360, 100%, 100%, .4) 99%,
-                            hsla(360, 100%, 100%, .3) 100%);
-    height: 100vh;
+    background-color: #BAFF6B;
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.7) 0px,
+      rgba(255, 255, 255, 0.7) 20px,
+      rgba(255, 255, 255, 0) 0px,
+      rgba(255, 255, 255, 0) 40px);
+    height: auto;
     max-width: 1170px * .22 - (15 * 2);
     padding: 16px;
+    top: -180%;
+    transform: translate(0px, 0px);
+    transition: all 1s linear;
   }
   .main-view {
     .menu-section {
@@ -1291,7 +1392,22 @@ $col-left-width: 29%;
       }
     }
   }
+
+  .aboutme article {
+    min-height: 25vh;
+    .experience {
+      p {
+        //TODO: padding: 5vh;
+      }
+    }
+  }
+
+  .panel-footer {
+    border-top: 1px solid $darker-green;
+  }
+
   .subtitle {
+    margin-top: 15px;
     max-width: 250px;
   }
 }
@@ -1307,6 +1423,7 @@ $col-left-width: 29%;
     font-size: 50px;
   }
   .main-left {
-    max-width: 1170px * 0.26 - (15 * 2);
+    position: fixed;
+    min-width: 23%;
   }
 }

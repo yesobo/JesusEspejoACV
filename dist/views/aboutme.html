@@ -1,21 +1,76 @@
-<section class="row-fluid menu-section">
-	<aside class="col-lg-3 col-md-3">
-		<div class="main-left">
-			<div class="sectionTitleWrapper">
-				<h2 class="title">{{'WHO_I_AM' | translate}}</h2>
-				<h5 class="subtitle">{{'ABOUT_ME_EXPL' | translate}}</h5>
+<section id="skrollr-body" class="row-fluid menu-section">
+	<div class="main aboutme">
+		<article class="cover">
+			<div class="flip-container">
+				<div class="flipper">
+					<div class="back circle">
+						<img class="" src="images/jesus_espejo_portrait.png" alt="this is me!">
+					</div>
+					<div class="front salutation">
+						{{'HI' | translate}}!
+					</div>
+				</div>
 			</div>
-		</div>
-	</aside>
-	<div class="col-lg-9 col-md-9 main">
-		<article>
-			<span class="circle">
-				<img style="float:left" src="images/jesus_espejo_portrait.png" alt="this is me!">
-			</span>
-			<p id="cover">
-				<span id="salutation">{{'HELLO' | translate}}</span>
-				{{'ABOUT_ME_P1' | translate}}
-				{{'ABOUT_ME_P2' | translate}}
+			<p class="cover">
+				<span class="green">{{'ABOUT_ME_P1' | translate}}</span>
+				<br>
+				<span class="vertical-middle">{{'ABOUT_ME_P2' | translate}}</span>
+			</p>
+		</article>
+		<article class="experience">
+			<div class="background server">
+
+			</div>
+			<div class="background colors">
+
+			</div>
+			<p>
+				<span class="vertical-middle">{{'THE' | translate}}
+					<a ng-click="clickMenu('EXPERIENCE');" class="lower-case link-menu">
+						{{'EXPERIENCE'| translate}}</a>
+					{{'ABOUT_ME_EXPERIENCE' | translate}}
+				</span>
+			</p>
+		</article>
+		<article id="projects" class="projects">
+				<div class="flasks flex-container">
+					<div class="flex-center">
+						<img class="" src="images/flasks.png" alt="">
+					</div>
+					<p class="flex-left flex-side">
+						<span class="">
+							{{'ABOUT_ME_PROJECTS_P1' | translate}}
+						</span>
+					</p>
+					<p class="flex-right flex-side">
+						<span class="">
+							<span class="capital">{{'MY_PLUR' | translate}}</span>
+							<a ng-click="clickMenu('PROJECTS');" class="lower-case link-menu">
+								{{'PERSONAL_PROJECTS'| translate}}</a>.
+							{{'ABOUT_ME_PROJECTS_P2' | translate}}
+						</span>
+					</p>
+				</div>
+			<figure id="node" class="sphere node" data-bottom-top="left: 4%; top: .5%;" data-center-bottom="left: 49%; top: 10%;" data-top-bottom="left: 46%; top: 50%;">
+				<span class="shadow"></span>
+			</figure>
+			<figure id="polymer" class="sphere polymer" data-bottom-top="left: 90%; top: .5%;" data-center-bottom="left: 48%; top: 10%;" data-top-top="left: 48%; top: 50%;">
+				<span class="shadow"></span>
+			</figure>
+			<figure id="react" class="sphere react" data-bottom-top="left: 25%; top: .5%;" data-center-top="left: 47%; top: 10%;" data-top-bottom="left:48%; top: 50%;">
+				<span class="shadow"></span>
+			</figure>
+			<figure id="es6" class="sphere es6" data-bottom-top="left: 75%; top: .5%;" data-center-top="left: 48%; top: 10%;" data-top-top="left: 46%; top: 50%;">
+				<span class="shadow"></span>
+			</figure>
+		</article>
+		<article class="social">
+			<p>
+				{{ 'ABOUT_ME_SOCIAL_P1' | translate }}
+				<a ng-click="clickMenu('BLOG');" class="lower-case link-menu">
+				{{ 'MY_SING' | translate }} blog
+				</a>
+				{{ 'ABOUT_ME_SOCIAL_P2' | translate }}
 			</p>
 			<p>
 				<div class="socialIcons">
