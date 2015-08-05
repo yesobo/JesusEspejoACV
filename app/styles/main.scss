@@ -23,6 +23,8 @@ $blue: #01B0F0;
 $pink: #FF358B;
 $gray: #333333;
 $black: #000000;
+$semi-black: rgba(0, 0, 0, 0.5);
+$almost-black: rgba(0, 0, 0, 0.1);
 
 $header-color: $dark-green;
 $header-color-inverse: $dark-green-inverse;
@@ -161,13 +163,15 @@ a.inverse {
     position: relative;
     height: 60vh;
     p {
-      background: -webkit-radial-gradient(center, ellipse cover, white 0%, rgba(255, 255, 255, 0.1) 67%, rgba(255, 255, 255, 0) 71%);
-      color: $black;
+      background: -webkit-radial-gradient(center, ellipse cover, $black 0%, $semi-black 70%, $almost-black 82%);
+      color: $light-green;
       display: table;
       height: 100%;
       //TODO: padding: 10vh 0;
       position: relative;
-      text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+      text-shadow: 2px 0 0 $black, -2px 0 0 $black, 0 2px 0 $black, 0 -2px 0 $black, 1px 1px $black, -1px -1px 0 $black, 1px -1px 0 $black, -1px 1px 0 $black;
+      width: 100%;
+      padding: 0 5%;
       z-index: 3;
 
     }
