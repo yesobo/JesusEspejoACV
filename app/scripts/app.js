@@ -8,7 +8,7 @@ angular.module('JesusEspejoACVApp',
     $routeProvider
       .when('/', {
         templateUrl: 'views/aboutme.html',
-        controller: 'RestartSkrollrCtrl'
+        controller: 'AboutmeCtrl'
       })
       .when('/experience', {
         templateUrl: 'views/experience.html',

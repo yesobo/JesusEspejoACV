@@ -1,6 +1,6 @@
 /*global angular, skrollr: false */
 angular.module('JesusEspejoACVControllers', ['oc.lazyLoad'])
-.controller('AppCtrl', ['$scope', function(sc) {
+.controller('AppCtrl', ['$scope', '$window', function(sc, win) {
   'use strict';
 
   sc.clickMenu = {
@@ -11,7 +11,7 @@ angular.module('JesusEspejoACVControllers', ['oc.lazyLoad'])
   };
 }
 ])
-.controller('RestartSkrollrCtrl', ['$timeout', restartSkrollrCtrl])
+.controller('AboutmeCtrl', ['$timeout', aboutmeCtrl])
 .controller('DestroySkrollrCtrl', [destroySkrollr])
 .controller('ExperienceCtrl',
 ['$scope', '$window', 'SharedData', 'DatesDiff', '$ocLazyLoad', '$timeout',
@@ -101,6 +101,10 @@ function($scope, $routeParams, SharedData) {
   });
 }
 ]);
+
+function aboutmeCtrl(timeout) {
+  restartSkrollrCtrl(timeout);
+}
 
 function restartSkrollrCtrl(timeout) {
   'use strict';

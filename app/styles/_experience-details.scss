@@ -12,7 +12,7 @@ $close_color: white;
     padding-top: 30px;
     .taskDescription {
       font-size: 18px;
-      color: $dark-green;
+      color: $color-secondary-1-0;
     }
     .techList {
       list-style-type: none;
@@ -160,12 +160,12 @@ $dialog-width-991: 95vw;
   font-size: 20px;
   font-weight: bold;
   padding: 10px;
-  background-color: $light-green;
-  color: $darker-green;
+  background-color: $color-secondary-1-2;
+  color: $color-secondary-1-4;
   transition: height 0.2s;
   iron-icon.icon-button {
     margin-bottom: 9px;
-    color: $darker-green;
+    color: $color-secondary-1-4;
     cursor: pointer;
   }
 }
@@ -220,7 +220,7 @@ $dialog-width-991: 95vw;
 
     /** NO shadow-DOM suport **/
     jea-dialog {
-      background-color: $lighter-green;
+      background-color: $color-secondary-1-2;
       position: fixed;
 
       paper-header-panel {
@@ -239,7 +239,7 @@ $dialog-width-991: 95vw;
           @include dialog-header;
         }
         .content {
-          background-color: $lighter-green;
+          background-color: $color-secondary-1-2;
           overflow: auto;
         }
       }
@@ -251,7 +251,7 @@ $dialog-width-991: 95vw;
         position: fixed;
         top: -20px;
         right: -13px;
-        background-color: $green;
+        background-color: $color-secondary-1-0;
         -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
         box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);

@@ -1,10 +1,33 @@
-$green: #AEEE00;
-$light-green: #BAFF6B;
-$lighter-green: #F1FFE1;
-$dark-green: #6F7F5C;
-$dark-green-inverse: #5D7F35;
-$darker-green: #6F7F5C;
-$blue: #01B0F0;
-$pink: #FF358B;
-$gray: #333333;
-$black: #000000;
+$white: #FFF;
+$white-50: hsla(256, 100%, 100%, 0.5);
+$white-80: hsla(256, 100%, 100%, 0.8);
+
+$black: #000;
+$black-50: hsla(0, 0, 0, 0.5);
+$black-80: hsla(0, 0, 0, 0.8);
+
+$color-primary-0: #FFFF00;	// Main Primary color */
+$color-primary-1: #FFFF64;  // lightest
+$color-primary-2: #FFFF39;  // light
+$color-primary-3: #C6C600;  // dark
+$color-primary-4: #9B9B00;  // darkest
+
+$color-secondary-1-0: #00AA72;	// Main Secondary color (1) */
+$color-secondary-1-1: #4BBF99;  // lightest
+$color-secondary-1-2: #27AF83;  // light
+$color-secondary-1-3: #008458;  // dark
+$color-secondary-1-4: #006746;  // darkest
+
+$color-secondary-2-0: #FF8B00;	// Main Secondary color (2) */
+$color-secondary-2-1: #FFB864;  // lightest
+$color-secondary-2-2: #FFA539;  // light
+$color-secondary-2-3: #C66B00;  // dark
+$color-secondary-2-4: #9B5400;  // darkest
+
+$background-color-from: $color-primary-0;
+$background-color-to: $color-primary-0;
+
+$header-background: $white;
+$header-text: $color-secondary-1-3;
+$header-text-action: $white-80;
+$header-text-action-inverse: $black-80;

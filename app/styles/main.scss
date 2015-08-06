@@ -4,41 +4,18 @@
 $icon-font-path: 'fonts/';
 //$grid-float-breakpoint: 801px;
 
-$light-color: #c1dbf2;
-$very-light-color: #ddebf9;
-$light-gray: #ddd;
-$dark-blue: #428bca;
-$white: #fff;
-$semi-white: #eee;
-$gray: #999;
-$dark-gray: #333;
 
-$green: #AEEE00;
-$light-green: #BAFF6B;
-$lighter-green: #F1FFE1;
-$dark-green: #6F7F5C;
-$dark-green-inverse: #5D7F35;
-$darker-green: #6F7F5C;
-$blue: #01B0F0;
-$pink: #FF358B;
-$gray: #333333;
-$black: #000000;
-$semi-black: rgba(0, 0, 0, 0.5);
-$almost-black: rgba(0, 0, 0, 0.1);
 
-$header-color: $dark-green;
-$header-color-inverse: $dark-green-inverse;
-$background-color: #AEEE00;
 $navbar-text-color: #AEEE00;
-$footer-color: $dark-green;
-$social-text-color: $green;
-$collapse-panel-background-color: $light-green;
-$button-color: $darker-green;
+$footer-color: $color-secondary-1-0;
+$social-text-color: $color-primary-0;
+$collapse-panel-background-color: $color-primary-4;
+$button-color: $color-secondary-1-0;
 
 $period-box-inverse-color: $white;
-$period-box-color: $darker-green;
+$period-box-color: $color-secondary-1-0;
 
-$panel-inside-color: $lighter-green;
+$panel-inside-color: $color-secondary-2-4;
 
 $stuck-shadow: 0 2px 5px rgba(0, 0, 0, .26);
 
@@ -48,8 +25,97 @@ $stuck-shadow: 0 2px 5px rgba(0, 0, 0, .26);
 
 // Put your CSS here
 
-.green {
-  color: $dark-green;
+
+
+$main-margin: 0;
+
+html {
+  height: 100vh;
+  margin: $main-margin;
+}
+
+body {
+  background-color: $background-color-from;
+  /*
+  background-image: linear-gradient(90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 20%,
+    rgba(255, 255, 255, 1) 80%,
+    rgba(255, 255, 255, 1) 100%);
+  */
+  color: $black;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: $main-margin;
+}
+
+.navbar {
+  background-color: $header-background;
+  border-color: $header-text;
+  color: $header-text;
+
+  .navbar-nav > li > a, .navbar-brand {
+    color: $header-text;
+
+    &:hover,
+    &:focus {
+      color: $header-text-action-inverse;
+    }
+  }
+
+  .nav .active > a {
+    background-color: $header-text;
+    color: $header-background;
+
+    &:hover,
+    &:focus {
+      background-color: $header-text;
+      color: $header-text-action;
+    }
+  }
+
+  .navbar-toggle {
+    border-color: $header-text;
+    color: $header-text;
+
+    .icon-bar {
+      background-color: $header-text;
+    }
+
+    &:hover {
+      background-color: $header-text;
+
+      .icon-bar {
+        background-color: $header-background;
+      }
+    }
+  }
+
+  -webkit-transform: translate3d(0,0,0);
+  &.navbar-fixed-top {
+    -webkit-box-shadow: $stuck-shadow;
+    -moz-box-shadow: $stuck-shadow;
+    box-shadow: $stuck-shadow;
+  }
+
+  ul {
+    height: 100%;
+  }
+
+  .lang {
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+
+    img {
+      max-width: 70%;
+      padding: 15% 0;
+    }
+  }
+}
+
+.cover {
+  color: $color-secondary-2-3;
+  margin-bottom: 10vh;
 }
 
 .primary {
@@ -78,30 +144,10 @@ $stuck-shadow: 0 2px 5px rgba(0, 0, 0, .26);
   text-transform: capitalize;
 }
 
-$main-margin: 0;
-
-html {
-  height: 100vh;
-  margin: $main-margin;
-}
-
-body {
-  background-color: $background-color;
-  background-image: linear-gradient(90deg,
-    rgba(255, 255, 255, 0.6) 0%,
-    rgba(255, 255, 255, 0.6) 20%,
-    rgba(255, 255, 255, 1) 80%,
-    rgba(255, 255, 255, 1) 100%);
-  color: $dark-gray;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  height: 100vh;
-  margin: $main-margin;
-}
-
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: $darker-green;
+  color: $color-secondary-1-4;
   >span {
-    color: $darker-green;
+    color: $color-secondary-1-4;
   }
 }
 
@@ -109,15 +155,15 @@ a {
   color: $white;
 
   &:hover {
-    color: $darker-green;
+    color: $color-secondary-1-4;
   }
 }
 
 a.inverse {
-  color: $darker-green;
+  color: $color-secondary-1-4;
 
   &:hover {
-    color: $green;
+    color: $color-secondary-1-0;
   }
 }
 
@@ -155,16 +201,12 @@ a.inverse {
     vertical-align: middle;
   }
 
-  .cover {
-    margin-bottom: 10vh;
-  }
-
   .experience {
     position: relative;
     height: 60vh;
     p {
-      background: -webkit-radial-gradient(center, ellipse cover, $black 0%, $semi-black 70%, $almost-black 82%);
-      color: $light-green;
+      background: -webkit-radial-gradient(center, ellipse cover, $black 0%, $black-50 70%, $black-80 82%);
+      color: $color-secondary-1-1;
       display: table;
       height: 100%;
       //TODO: padding: 10vh 0;
@@ -222,11 +264,11 @@ a.inverse {
   }
 
   &.inverse {
-    border-bottom-color: $dark-green;
+    border-bottom-color: $color-secondary-1-0;
     background-image: linear-gradient(
-      $dark-green 0, $dark-green 100%);
+      $color-secondary-1-0 0, $color-secondary-1-0 100%);
     background-color: transparent;
-    color: $dark-green;
+    color: $color-secondary-1-0;
 
     &:hover {
       color: $white;
@@ -254,7 +296,7 @@ a.inverse {
 
 .aboutme {
   .social {
-    background-color: $header-color;
+    background-color: $header-text;
     color: $social-text-color;
     min-height: auto;
 
@@ -267,7 +309,7 @@ a.inverse {
 
 
 .hero-unit {
-  background-color: $semi-white;
+  background-color: $white-50;
   border-radius: 6px;
   font-size: 18px;
   font-weight: 200;
@@ -295,64 +337,6 @@ $top-menu-margin: 50px;
 
 section.menu-section {
   margin-top: $top-menu-margin;
-}
-
-.navbar-inverse {
-  background-color: $header-color;
-  border-color: $header-color;
-
-  .nav .active > a {
-    background-color: $dark-green-inverse;
-    color: $white;
-
-    &:hover,
-    &:focus {
-      background-color: $dark-green-inverse;
-      color: $green;
-    }
-  }
-}
-
-.navitem-wrapper {
-  max-height: 40px;
-  overflow: visible;
-  padding-bottom: 0;
-  padding-top: 0;
-}
-
-.navbar img {
-  cursor: pointer;
-  max-height: 100%;
-  max-width: 100%;
-}
-
-.navbar-inverse {
-  .nav > li.active > a, .dropdown-menu a {
-    color: white;
-  }
-}
-
-.navbar {
-  -webkit-transform: translate3d(0,0,0);
-  .navbar-nav>li>a {
-    color: $navbar-text-color;
-  }
-  .navbar-brand {
-    color: $navbar-text-color;
-  }
-  &.navbar-fixed-top {
-    -webkit-box-shadow: $stuck-shadow;
-    -moz-box-shadow: $stuck-shadow;
-    box-shadow: $stuck-shadow;
-  }
-
-  ul#ul-lang {
-    height: 100%;
-    img {
-      width: 50px;
-      height: 50px;
-    }
-  }
 }
 
 #blog {
@@ -498,7 +482,7 @@ button.search {
 }
 
 .sectionTitleWrapper {
-  color: $darker-green;
+  color: $color-secondary-1-4;
 }
 
 $myPortrait_width: 15rem;
@@ -575,7 +559,7 @@ $sphere-top-init: 5%;
 $sphere-distance: 5%;
 .sphere {
   display: block;
-  background: $darker-green;
+  background: $color-secondary-1-4;
   background: radial-gradient(circle at 15px 15px, #5cabff, #000);
   border-radius: 50%;
   height: 50px;
@@ -655,7 +639,7 @@ $sphere-distance: 5%;
 
 .salutation {
   font-size: 123px;
-  color: $darker-green;
+  color: $color-secondary-1-4;
   font-style: italic;
   font-family: serif;
 }
@@ -756,10 +740,10 @@ $sphere-distance: 5%;
   max-width: 120px;
 }
 
-$panel-main-color: $light-color;
+$panel-main-color: $color-primary-3;
 $circle_radius: 25px;
 .employment {
-  border-color: $darker-green;
+  border-color: $color-secondary-1-4;
   clear: left;
   background-color: $panel-inside-color;
   -webkit-box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.2);
@@ -810,7 +794,7 @@ $circle_radius: 25px;
     width: 100%;
     height: 100%;
     cursor: pointer;
-    color: $green;
+    color: $color-secondary-1-0;
   }
 
   .glyphicon {
@@ -887,7 +871,7 @@ $circle_radius: 25px;
 
   .container > .navbar-header, .container > .navbar-collapse {
     margin-right: 0px;
-    margin-left: 0px;
+    margin-left: 5px;
   }
 
   .nav-collapse480 {
@@ -1407,7 +1391,7 @@ $col-left-width: 29%;
   }
 
   .panel-footer {
-    border-top: 1px solid $darker-green;
+    border-top: 1px solid $color-secondary-1-4;
   }
 
   .subtitle {

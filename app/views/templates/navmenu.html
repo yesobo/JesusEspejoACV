@@ -1,6 +1,8 @@
 
 <header class="">
-  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+  <nav class="navbar navbar-default navbar-fixed-top navbar-inverse"
+    ng-class=""
+      role="navigation">
 		<div class="container">
 			<div class="navbar-header">
 	      <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse"
@@ -13,7 +15,7 @@
 	      <a class="navbar-brand" href="#/">
 		  		Jesús Espejo <span class="secondLastName">Arnas</span>
 		  	</a>
-        <div id="divLangMobi" class="pull-right md-lg-hidden">
+        <div id="divLangMobi" class="lang pull-right md-lg-hidden">
           <img ng-src="{{langSwitchImg}}" ng-click="switchLanguage()"></img>
         </div>
 	    </div>
@@ -46,7 +48,7 @@
 				  </li>
 	-->
 				</ul>
-        <div id="divLangDesk" class="pull-right xs-sm-hidden">
+        <div id="divLangDesk" class="lang pull-right xs-sm-hidden">
           <img ng-src="{{langSwitchImg}}" ng-click="switchLanguage()"></img>
         </div>
 		</div>
