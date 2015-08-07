@@ -6,7 +6,9 @@ describe('directive: navmenu', function() {
     browser.get('/');
   });
 
-  it('should active the projects menu li when experience not found link clicked', function() {
+  it('should active the projects menu li when experience not found link clicked',
+    function() {
+
     browser.get('#/experience');
     var searchInput = element(by.model('searchQuery'));
     searchInput.sendKeys('unknown tech');
@@ -18,7 +20,9 @@ describe('directive: navmenu', function() {
     expect(projectsMenu.getAttribute('class')).toMatch('active');
   });
 
-  it('should active the experience menu li when projects not found link clicked', function() {
+  it('should active the experience menu li when projects not found link clicked',
+    function() {
+
     browser.get('#/projects');
     var searchInput = element(by.model('searchQuery'));
     searchInput.sendKeys('unknown tech');
@@ -29,4 +33,12 @@ describe('directive: navmenu', function() {
     var experienceMenu = element.all(by.css('#ul-lang > li')).get(1);
     expect(experienceMenu.getAttribute('class')).toMatch('active');
   });
+
+  iit('should change class to scrolled on scroll', function() {
+    var nav = element.all(by.css('header')).get(0);
+    expect(nav.getAttribute('class')).not.toMatch('scrolled');
+    browser.executeScript('window.scrollTo(0,10);').then(function() {
+      expect(nav.getAttribute('class')).toMatch('scrolled');
+    })
+  })
 });

@@ -44,6 +44,17 @@ angular.module('NavMenuDirective',
             $(this).collapse('hide');
           }
         });
+
+        $(window).scroll(function() {
+          if($(window).scrollTop() > 3) {
+            $element.addClass('scrolled');
+          } else {
+            if($element.hasClass('scrolled')) {
+              $element.addClass('from-scrolled');
+            }
+            $element.removeClass('scrolled');
+          }
+        })
       });
 
       $scope.langSwitchImg = 'images/lang_spanish.png';

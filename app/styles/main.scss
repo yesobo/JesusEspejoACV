@@ -1,5 +1,15 @@
 @import 'colors';
 
+@keyframes bottom-up-background {
+  from { background-position: 0 50px; }
+  to { background-position: 0 0; }
+}
+
+@keyframes bottom-up-background-inverse {
+  from { background-position: 0 0; }
+  to { background-position: 0 50px; }
+}
+
 // bootstrap-sass redefined variable
 $icon-font-path: 'fonts/';
 //$grid-float-breakpoint: 801px;
@@ -48,67 +58,136 @@ body {
   margin: $main-margin;
 }
 
-.navbar {
-  background-color: $header-background;
-  border-color: $header-text;
-  color: $header-text;
+header {
 
-  .navbar-nav > li > a, .navbar-brand {
-    color: $header-text;
-
-    &:hover,
-    &:focus {
-      color: $header-text-action-inverse;
+  &.from-scrolled {
+    > .navbar .nav .active > a {
+      animation: bottom-up-background-inverse 0.5s ease;
+      animation-fill-mode: backwards;
+      animation-count: 1;
+      background-image: linear-gradient($header-text 0, $header-text 100%);
     }
   }
 
-  .nav .active > a {
-    background-color: $header-text;
-    color: $header-background;
-
-    &:hover,
-    &:focus {
-      background-color: $header-text;
-      color: $header-text-action;
-    }
-  }
-
-  .navbar-toggle {
+  > .navbar {
+    background-color: $transparent;
+    border: 0;
+    box-shadow: none;
     border-color: $header-text;
     color: $header-text;
+    transition: all .5s ease-in-out;
 
-    .icon-bar {
-      background-color: $header-text;
+    .navbar-nav > li > a, .navbar-brand {
+      color: $header-text;
+
+      &:hover,
+      &:focus {
+        color: $header-text-action-inverse;
+      }
     }
 
-    &:hover {
-      background-color: $header-text;
+    .nav .active > a {
+
+      background-color: $transparent;
+      border-bottom: 2px solid $header-text;
+
+      background-position: 0 50px;
+      background-repeat: no-repeat;
+      background-image: linear-gradient($transparent 0, $transparent 100%);
+      color: $header-text-action-inverse;
+
+      &:hover,
+      &:focus {
+        background-color: $transparent;
+        color: $header-text-action-inverse;
+      }
+    }
+
+    .navbar-toggle {
+      border-color: $header-text;
+      color: $header-text;
 
       .icon-bar {
-        background-color: $header-background;
+        background-color: $header-text;
+      }
+
+      &:hover {
+        background-color: $header-text;
+
+        .icon-bar {
+          background-color: $header-background;
+        }
+      }
+    }
+
+    ul {
+      height: 100%;
+    }
+
+    .lang {
+      cursor: pointer;
+      position: relative;
+      height: 100%;
+
+      img {
+        max-width: 70%;
+        padding: 15% 0;
       }
     }
   }
 
-  -webkit-transform: translate3d(0,0,0);
-  &.navbar-fixed-top {
-    -webkit-box-shadow: $stuck-shadow;
-    -moz-box-shadow: $stuck-shadow;
-    box-shadow: $stuck-shadow;
-  }
+  &.scrolled {
+    > .navbar {
+      background-color: $header-background;
+      transition: background 0.5s ease;
 
-  ul {
-    height: 100%;
-  }
+      -webkit-transform: translate3d(0,0,0);
+      &.navbar-fixed-top {
+        -webkit-box-shadow: $stuck-shadow;
+        -moz-box-shadow: $stuck-shadow;
+        box-shadow: $stuck-shadow;
+      }
 
-  .lang {
-    cursor: pointer;
-    position: relative;
-    height: 100%;
+      .navbar-nav > li > a, .navbar-brand {
+        color: $header-text;
 
-    img {
-      max-width: 70%;
-      padding: 15% 0;
+        &:hover,
+        &:focus {
+          color: $header-text-action-inverse;
+        }
+      }
+
+      .nav .active > a {
+        animation: bottom-up-background 0.5s ease;
+        animation-fill-mode: forwards;
+        animation-count: 1;
+        background-color: $transparent;
+        background-image: linear-gradient($header-text 0%, $header-text 100%);
+        color: $header-background;
+
+        &:hover,
+        &:focus {
+          background-color: $transparent;
+          color: $header-text-action;
+        }
+      }
+
+      .navbar-toggle {
+        border-color: $header-text;
+        color: $header-text;
+
+        .icon-bar {
+          background-color: $header-text;
+        }
+
+        &:hover {
+          background-color: $header-text;
+
+          .icon-bar {
+            background-color: $header-background;
+          }
+        }
+      }
     }
   }
 }
