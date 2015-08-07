@@ -75,16 +75,6 @@ module.exports = function (grunt) {
           }
         }
       },
-      test: {
-        options: {
-          middleware: function (connect) {
-            return [
-              mountFolder(connect, '.tmp'),
-              mountFolder(connect, 'test')
-            ];
-          }
-        }
-      },
       dist: {
         options: {
           middleware: function (connect) {
@@ -322,7 +312,7 @@ module.exports = function (grunt) {
     },
     protractor: {
       options: {
-        keepAlive: false,
+        keepAlive: true,
         configFile: 'protractor.conf.js'
       },
       run: {}
@@ -491,6 +481,15 @@ module.exports = function (grunt) {
     'compass',
     'connect:livereload',
     'protractor:run'
+  ]);
+
+  grunt.registerTask('test:prot_watch', [
+    'clean:server',
+    'coffee',
+    'compass',
+    'connect:livereload',
+    'protractor:run',
+    'watch'
   ]);
 
   grunt.registerTask('build', [
