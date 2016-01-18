@@ -1,0 +1,30 @@
+$color-background2: #fff;
+
+.projects {
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%,
+    rgb(84, 12, 12) 47%,
+    rgb(84, 12, 12) 50%,
+    rgba(255, 255, 255, .5) 51%,
+    rgba(255, 255, 255, .96) 71%,
+    $color-background2 100%);
+  padding-bottom: 90px;
+}
+
+.cutting-edge {
+  bottom: 4%;
+  font: normal normal bold 12vmin/100% "Poiret One", Helvetica, sans-serif;
+  left: 7%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 30px;
+  position: absolute;
+  text-align: left;
+  z-index: 2;
+}
+
+@media (min-width: 992px) {
+  .flasks {
+    padding: 10vh;
+    padding-bottom: 5vh;
+  }
+}

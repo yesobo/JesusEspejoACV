@@ -11,7 +11,7 @@ angular.module('NavMenuDirective',
       clickMenuItem: '=',
       navMenuItems: '='
     },
-    controller: function($scope, $element, $translate, $location) {
+    controller: function($scope, $element, $translate, $location, $timeout) {
 
       var menuItems = {
         'WHO_I_AM': {
@@ -49,9 +49,10 @@ angular.module('NavMenuDirective',
           if($(window).scrollTop() > 3) {
             $element.addClass('scrolled');
           } else {
-            if($element.hasClass('scrolled')) {
-              $element.addClass('from-scrolled');
-            }
+            $element.addClass('from-scrolled');
+            $timeout(function() {
+              $element.removeClass('from-scrolled');
+            }, 500)
             $element.removeClass('scrolled');
           }
         })

@@ -1,0 +1,60 @@
+$color-title-strap: #540c0c;
+$color-background-main: #000;
+$color-straps: #fff;
+
+.clients {
+
+  background-color: $color-background-main;
+  border-top: 0 solid $color-background-main;
+  margin-left: -47px;
+  min-height: 95vh;
+  transform: rotate(7deg) skewY(-1deg);
+  width: 131%;
+
+  .title {
+    background-color: $color-straps;
+    border-bottom: 0 solid $color-straps;
+    color: $color-background-main;
+    font-size: 22vmin;
+    height: 23vmin;
+    margin-left: -5px;
+    margin-top: -20px;
+    padding-left: 20px;
+    text-align: left;
+    transform: rotate(0deg);
+  }
+
+  .logo-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 11vw;
+    margin-right: 38vw;
+    padding-top: 12%;
+    transform: rotate(-6deg);
+
+    .logo {
+      height: 14vw;
+      min-height: 170px;
+      min-width: 250px;
+      padding: 17px;
+      width: 14vw;
+
+      img {
+        max-height: 100%;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .top-right {
+    border-bottom: 22px solid $color-title-strap;
+    border-top: 14px solid $color-title-strap;
+    height: 300px;
+    position: relative;
+    top: 30vh;
+    transform: rotate(-57deg);
+    width: 120%;
+  }
+}

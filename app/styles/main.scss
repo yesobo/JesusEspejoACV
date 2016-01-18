@@ -5,18 +5,12 @@
   to { background-position: 0 0; }
 }
 
-@keyframes bottom-up-background-inverse {
-  from { background-position: 0 0; }
-  to { background-position: 0 50px; }
-}
-
 // bootstrap-sass redefined variable
 $icon-font-path: 'fonts/';
 //$grid-float-breakpoint: 801px;
 
 
-
-$navbar-text-color: #AEEE00;
+$navbar-text-color: #aeee00;
 $footer-color: $color-secondary-1-0;
 $social-text-color: $color-primary-0;
 $collapse-panel-background-color: $color-primary-4;
@@ -26,8 +20,6 @@ $period-box-inverse-color: $white;
 $period-box-color: $color-secondary-1-0;
 
 $panel-inside-color: $color-secondary-2-4;
-
-$stuck-shadow: 0 2px 5px rgba(0, 0, 0, .26);
 
 @import 'bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'search-button';
@@ -46,155 +38,10 @@ html {
 
 body {
   background-color: $background-color-from;
-  /*
-  background-image: linear-gradient(90deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 1) 20%,
-    rgba(255, 255, 255, 1) 80%,
-    rgba(255, 255, 255, 1) 100%);
-  */
   color: $black;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: $main-margin;
-}
-
-header {
-
-  &.from-scrolled {
-    > .navbar .nav .active > a {
-      animation: bottom-up-background-inverse 0.5s ease;
-      animation-fill-mode: backwards;
-      animation-count: 1;
-      background-image: linear-gradient($header-text 0, $header-text 100%);
-    }
-  }
-
-  > .navbar {
-    background-color: $transparent;
-    border: 0;
-    box-shadow: none;
-    border-color: $header-text;
-    color: $header-text;
-    transition: all .5s ease-in-out;
-
-    .navbar-nav > li > a, .navbar-brand {
-      color: $header-text;
-
-      &:hover,
-      &:focus {
-        color: $header-text-action-inverse;
-      }
-    }
-
-    .nav .active > a {
-
-      background-color: $transparent;
-      border-bottom: 2px solid $header-text;
-
-      background-position: 0 50px;
-      background-repeat: no-repeat;
-      background-image: linear-gradient($transparent 0, $transparent 100%);
-      color: $header-text-action-inverse;
-
-      &:hover,
-      &:focus {
-        background-color: $transparent;
-        color: $header-text-action-inverse;
-      }
-    }
-
-    .navbar-toggle {
-      border-color: $header-text;
-      color: $header-text;
-
-      .icon-bar {
-        background-color: $header-text;
-      }
-
-      &:hover {
-        background-color: $header-text;
-
-        .icon-bar {
-          background-color: $header-background;
-        }
-      }
-    }
-
-    ul {
-      height: 100%;
-    }
-
-    .lang {
-      cursor: pointer;
-      position: relative;
-      height: 100%;
-
-      img {
-        max-width: 70%;
-        padding: 15% 0;
-      }
-    }
-  }
-
-  &.scrolled {
-    > .navbar {
-      background-color: $header-background;
-      transition: background 0.5s ease;
-
-      -webkit-transform: translate3d(0,0,0);
-      &.navbar-fixed-top {
-        -webkit-box-shadow: $stuck-shadow;
-        -moz-box-shadow: $stuck-shadow;
-        box-shadow: $stuck-shadow;
-      }
-
-      .navbar-nav > li > a, .navbar-brand {
-        color: $header-text;
-
-        &:hover,
-        &:focus {
-          color: $header-text-action-inverse;
-        }
-      }
-
-      .nav .active > a {
-        animation: bottom-up-background 0.5s ease;
-        animation-fill-mode: forwards;
-        animation-count: 1;
-        background-color: $transparent;
-        background-image: linear-gradient($header-text 0%, $header-text 100%);
-        color: $header-background;
-
-        &:hover,
-        &:focus {
-          background-color: $transparent;
-          color: $header-text-action;
-        }
-      }
-
-      .navbar-toggle {
-        border-color: $header-text;
-        color: $header-text;
-
-        .icon-bar {
-          background-color: $header-text;
-        }
-
-        &:hover {
-          background-color: $header-text;
-
-          .icon-bar {
-            background-color: $header-background;
-          }
-        }
-      }
-    }
-  }
-}
-
-.cover {
-  color: $color-secondary-2-3;
-  margin-bottom: 10vh;
+  overflow-x: hidden;
 }
 
 .primary {
@@ -266,15 +113,14 @@ a.inverse {
 
   article {
     font-size: 2.5em;
-    //TODO: height: auto;
-    max-height: 800px;
     text-align: center;
 
     p {
-      width: 90%;
       margin: auto;
+      width: 90%;
     }
   }
+
   .vertical-middle {
     display: table-cell;
     vertical-align: middle;
@@ -355,38 +201,6 @@ a.inverse {
   }
 }
 
-
-@media (orientation: landscape) {
-  .aboutme {
-    article {
-      height: auto;
-    }
-  }
-}
-
-@media (orientation: portrait) {
-  .aboutme {
-    article {
-      font-size: 2.5em;
-      min-height: 70vh;
-    }
-  }
-}
-
-.aboutme {
-  .social {
-    background-color: $header-text;
-    color: $social-text-color;
-    min-height: auto;
-
-    p {
-      top: 5vh;
-      position: relative;
-    }
-  }
-}
-
-
 .hero-unit {
   background-color: $white-50;
   border-radius: 6px;
@@ -438,10 +252,6 @@ button.search {
 
 .main {
   height: 100%;
-  border-left: 1px solid #3a87ad;
-  padding-left: 1.5em;
-  padding-top: 10px;
-  background-color: #fafafa;
 }
 
 .mainColumn {
@@ -549,12 +359,6 @@ button.search {
 .main-left {
   position: fixed;
 }
-
-.title {
-  font-family: Pacifico;
-  text-shadow: 4px 4px 2px $white;
-}
-
 
 .asideExperience {
   min-width: 165px;
@@ -1110,14 +914,6 @@ $circle_radius: 25px;
     border-left: none;
     padding-left: 0;
     padding-right: 0;
-    padding-top: 10px;
-    padding-left:5px;
-  }
-
-  .aboutme {
-    .social {
-      height: 90vh;
-    }
   }
 
   .xs-sm-hidden {
@@ -1414,23 +1210,6 @@ $col-left-width: 29%;
     min-height: 92vh;
   }
 
-  article {
-
-    &.experience {
-      p {
-          //TODO: padding: 15vh;
-      }
-    }
-
-    &.cover {
-      padding: 10vh;
-    }
-  }
-
-  .flasks {
-    padding: 10vh;
-  }
-
   aside {
     width: col-left-width;
   }
@@ -1460,15 +1239,6 @@ $col-left-width: 29%;
     }
   }
 
-  .aboutme article {
-    min-height: 25vh;
-    .experience {
-      p {
-        //TODO: padding: 5vh;
-      }
-    }
-  }
-
   .panel-footer {
     border-top: 1px solid $color-secondary-1-4;
   }
@@ -1494,3 +1264,17 @@ $col-left-width: 29%;
     min-width: 23%;
   }
 }
+
+// new styles
+.layer2 {
+  background-color: black;
+  position: absolute;
+  top: 107vh;
+  z-index: 3;
+}
+
+@import 'header';
+@import 'aboutme';
+@import 'clients';
+@import 'projects';
+@import 'social';

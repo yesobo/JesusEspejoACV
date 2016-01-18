@@ -1,0 +1,119 @@
+$color-background-right: $black;
+$color-background-text: rgba(255, 255, 255, .09);
+$color-main-text: $white;
+
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Mono:400,100);
+
+$font-back: Algerian;
+$font-front-weight: normal;
+$font-front-family: 'Poiret One';
+$font-front-size: 13vmin;
+$font-front: normal normal $font-front-weight #{$font-front-size}/#{100%} $font-front-family, Helvetica, sans-serif;
+
+$background-rotation: -21deg;
+$background-top: -23vmax;
+
+$header-height: 50px;
+
+$full-stack-width: 60%;
+
+$width-title: 200vh;
+$left-title: $width-title / 2;
+
+@keyframes titlemovefirst {
+  0% { top: 100vh; }
+  100% { top: 210vh; }
+};
+
+@keyframes titlemove {
+  0% { top: -11rem; }
+  100% { top: 210vh; }
+};
+
+.aboutme {
+  font-family: $font-back, Helvetica, sans-serif;
+
+  .cover {
+    background-color: $transparent;
+    height: 100vh;
+  }
+}
+
+.right-half {
+  background-color: $color-background-right;
+  height: 200%;
+  left: 58vmax;
+  padding-top: $header-height;
+  position: absolute;
+  text-align: left;
+  top: $background-top;
+  transform: rotate($background-rotation);
+  width: 100%;
+
+  .title {
+    color: $color-background-text;
+    font-size: 11rem;
+    height: 160px;
+    overflow: hidden;
+    position: absolute;
+    text-align: left;
+    top: 59vh;
+    transform: rotate(90deg);
+    width: $width-title;
+
+    &.first {
+      // name duration timing-function delay iteration-count direction fill-mode play-state
+      animation: titlemovefirst 20s linear 0s 1 normal forwards,
+        titlemove 40s linear 20s infinite normal forwards;
+    }
+
+    &.second {
+      animation: titlemove 40s infinite linear;
+      animation-delay: 0s;
+      top: -10vh;
+    }
+  }
+
+  .front {
+    left: calc(-#{$left-title} - 52px);
+    right: 46vmin;
+  }
+
+  .back {
+    left: calc(-#{$left-title}   + 50px);
+  }
+}
+
+.left-half {
+  height: 100vh;
+  width: 100vw;
+
+  .my-frame {
+    background-image: url('../images/my_new_frame.png');
+    background-position: calc(36% - 100px) 100%;
+    background-repeat: no-repeat;
+    background-size: 55vh;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .full-stack {
+    background-color: $transparent;
+    bottom: 0;
+    color: $color-main-text;
+    font: $font-front;
+    height: auto;
+    left: auto;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    text-align: left;
+    top: auto;
+    vertical-align: baseline;
+    width: $full-stack-width;
+    z-index: 4;
+  }
+}
